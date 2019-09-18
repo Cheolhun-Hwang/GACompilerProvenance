@@ -1,0 +1,1433 @@
+﻿.text:00401110 ; =============== S U B R O U T I N E =======================================
+.text:00401110
+.text:00401110
+.text:00401110 ; LONG __stdcall _gnu_exception_handler(struct _EXCEPTION_POINTERS *ExceptionInfo)
+.text:00401110 __gnu_exception_handler@4 proc near     ; DATA XREF: ___mingw_CRTStartup:loc_401029↑o
+.text:00401110
+.text:00401110 var_2C          = dword ptr -2Ch
+.text:00401110 var_28          = dword ptr -28h
+.text:00401110 var_10          = dword ptr -10h
+.text:00401110 ExceptionInfo   = dword ptr  4
+.text:00401110
+.text:00401110 ; __unwind {
+.text:00401110                 push    ebx
+.text:00401111                 sub     esp, 28h
+.text:00401114                 mov     eax, [esp+2Ch+ExceptionInfo]
+.text:00401118                 mov     eax, [eax]
+.text:0040111A                 mov     eax, [eax]
+.text:0040111C                 cmp     eax, 0C0000091h
+.text:00401121                 ja      short loc_401160
+.text:00401123                 cmp     eax, 0C000008Dh
+.text:00401128                 jb      short loc_401177
+.text:0040112A
+.text:0040112A loc_40112A:                             ; CODE XREF: _gnu_exception_handler(x)+65↓j
+.text:0040112A                 mov     ebx, 1
+.text:0040112F
+.text:0040112F loc_40112F:                             ; CODE XREF: _gnu_exception_handler(x)+A4↓j
+.text:0040112F                 mov     [esp+2Ch+var_28], 0 ; void (__cdecl *)(int)
+.text:00401137                 mov     [esp+2Ch+var_2C], 8 ; int
+.text:0040113E                 call    _signal
+.text:00401143                 cmp     eax, 1
+.text:00401146                 jz      loc_401240
+.text:0040114C                 test    eax, eax
+.text:0040114E                 jnz     loc_4011F4
+.text:00401154
+.text:00401154 loc_401154:                             ; CODE XREF: _gnu_exception_handler(x)+63↓j
+.text:00401154                                         ; _gnu_exception_handler(x)+73↓j ...
+.text:00401154                 xor     eax, eax
+.text:00401156
+.text:00401156 loc_401156:                             ; CODE XREF: _gnu_exception_handler(x)+A0↓j
+.text:00401156                                         ; _gnu_exception_handler(x)+DF↓j ...
+.text:00401156                 add     esp, 28h
+.text:00401159                 pop     ebx
+.text:0040115A                 retn    4
+.text:0040115A ; ---------------------------------------------------------------------------
+.text:0040115D                 align 10h
+.text:00401160
+.text:00401160 loc_401160:                             ; CODE XREF: _gnu_exception_handler(x)+11↑j
+.text:00401160                 cmp     eax, 0C0000094h
+.text:00401165                 jz      short loc_4011B2
+.text:00401167                 cmp     eax, 0C0000096h
+.text:0040116C                 jz      short loc_401185
+.text:0040116E                 cmp     eax, 0C0000093h
+.text:00401173                 jnz     short loc_401154
+.text:00401175                 jmp     short loc_40112A
+.text:00401177 ; ---------------------------------------------------------------------------
+.text:00401177
+.text:00401177 loc_401177:                             ; CODE XREF: _gnu_exception_handler(x)+18↑j
+.text:00401177                 cmp     eax, 0C0000005h
+.text:0040117C                 jz      short loc_4011C0
+.text:0040117E                 cmp     eax, 0C000001Dh
+.text:00401183                 jnz     short loc_401154
+.text:00401185
+.text:00401185 loc_401185:                             ; CODE XREF: _gnu_exception_handler(x)+5C↑j
+.text:00401185                 mov     [esp+2Ch+var_28], 0 ; void (__cdecl *)(int)
+.text:0040118D                 mov     [esp+2Ch+var_2C], 4 ; int
+.text:00401194                 call    _signal
+.text:00401199                 cmp     eax, 1
+.text:0040119C                 jz      short loc_401207
+.text:0040119E                 test    eax, eax
+.text:004011A0                 jz      short loc_401154
+.text:004011A2                 mov     [esp+2Ch+var_2C], 4
+.text:004011A9                 call    eax
+.text:004011AB                 mov     eax, 0FFFFFFFFh
+.text:004011B0                 jmp     short loc_401156
+.text:004011B2 ; ---------------------------------------------------------------------------
+.text:004011B2
+.text:004011B2 loc_4011B2:                             ; CODE XREF: _gnu_exception_handler(x)+55↑j
+.text:004011B2                 xor     ebx, ebx
+.text:004011B4                 jmp     loc_40112F
+.text:004011B4 ; ---------------------------------------------------------------------------
+.text:004011B9                 align 10h
+.text:004011C0
+.text:004011C0 loc_4011C0:                             ; CODE XREF: _gnu_exception_handler(x)+6C↑j
+.text:004011C0                 mov     [esp+2Ch+var_28], 0 ; void (__cdecl *)(int)
+.text:004011C8                 mov     [esp+2Ch+var_2C], 0Bh ; int
+.text:004011CF                 call    _signal
+.text:004011D4                 cmp     eax, 1
+.text:004011D7                 jz      short loc_401223
+.text:004011D9                 test    eax, eax
+.text:004011DB                 jz      loc_401154
+.text:004011E1                 mov     [esp+2Ch+var_2C], 0Bh
+.text:004011E8                 call    eax
+.text:004011EA                 mov     eax, 0FFFFFFFFh
+.text:004011EF                 jmp     loc_401156
+.text:004011F4 ; ---------------------------------------------------------------------------
+.text:004011F4
+.text:004011F4 loc_4011F4:                             ; CODE XREF: _gnu_exception_handler(x)+3E↑j
+.text:004011F4                 mov     [esp+2Ch+var_2C], 8
+.text:004011FB                 call    eax
+.text:004011FD                 mov     eax, 0FFFFFFFFh
+.text:00401202                 jmp     loc_401156
+.text:00401207 ; ---------------------------------------------------------------------------
+.text:00401207
+.text:00401207 loc_401207:                             ; CODE XREF: _gnu_exception_handler(x)+8C↑j
+.text:00401207                 mov     [esp+2Ch+var_28], 1 ; void (__cdecl *)(int)
+.text:0040120F                 mov     [esp+2Ch+var_2C], 4 ; int
+.text:00401216                 call    _signal
+.text:0040121B                 or      eax, 0FFFFFFFFh
+.text:0040121E                 jmp     loc_401156
+.text:00401223 ; ---------------------------------------------------------------------------
+.text:00401223
+.text:00401223 loc_401223:                             ; CODE XREF: _gnu_exception_handler(x)+C7↑j
+.text:00401223                 mov     [esp+2Ch+var_28], 1 ; void (__cdecl *)(int)
+.text:0040122B                 mov     [esp+2Ch+var_2C], 0Bh ; int
+.text:00401232                 call    _signal
+.text:00401237                 or      eax, 0FFFFFFFFh
+.text:0040123A                 jmp     loc_401156
+.text:0040123A ; ---------------------------------------------------------------------------
+.text:0040123F                 align 10h
+.text:00401240
+.text:00401240 loc_401240:                             ; CODE XREF: _gnu_exception_handler(x)+36↑j
+.text:00401240                 mov     [esp+2Ch+var_28], 1 ; void (__cdecl *)(int)
+.text:00401248                 mov     [esp+2Ch+var_2C], 8 ; int
+.text:0040124F                 call    _signal
+.text:00401254                 test    ebx, ebx
+.text:00401256                 mov     eax, 0FFFFFFFFh
+.text:0040125B                 jz      loc_401156
+.text:00401261                 mov     [esp+2Ch+var_10], eax
+.text:00401265                 call    _fpreset
+.text:0040126A                 mov     eax, [esp+2Ch+var_10]
+.text:0040126E                 jmp     loc_401156
+.text:0040126E ; } // starts at 401110
+.text:0040126E __gnu_exception_handler@4 endp
+.text:0040126E
+.text:0040126E ; ---------------------------------------------------------------------------
+.text:00401273                 align 10h
+.text:00401280 ; [00000015 BYTES: COLLAPSED FUNCTION _mainCRTStartup. PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:00401295                 align 10h
+.text:004012A0
+.text:004012A0 ; =============== S U B R O U T I N E =======================================
+.text:004012A0
+.text:004012A0 ; Attributes: noreturn
+.text:004012A0
+.text:004012A0                 public _WinMainCRTStartup
+.text:004012A0 _WinMainCRTStartup proc near
+.text:004012A0
+.text:004012A0 var_1C          = dword ptr -1Ch
+.text:004012A0
+.text:004012A0 ; __unwind {
+.text:004012A0                 sub     esp, 1Ch
+.text:004012A3                 mov     [esp+1Ch+var_1C], 2
+.text:004012AA                 call    ds:__imp____set_app_type
+.text:004012B0                 call    ___mingw_CRTStartup
+.text:004012B0 ; } // starts at 4012A0
+.text:004012B0 _WinMainCRTStartup endp
+.text:004012B0
+.text:004012B0 ; ---------------------------------------------------------------------------
+.text:004012B5                 align 10h
+.text:004012C0
+.text:004012C0 ; =============== S U B R O U T I N E =======================================
+.text:004012C0
+.text:004012C0
+.text:004012C0 ; int __cdecl atexit(void (__cdecl *)())
+.text:004012C0                 public _atexit
+.text:004012C0 _atexit         proc near               ; CODE XREF: ___do_global_ctors+29↓p
+.text:004012C0                                         ; _register_frame_ctor+12↓p
+.text:004012C0 ; __unwind {
+.text:004012C0                 mov     eax, ds:__imp__atexit
+.text:004012C5                 jmp     eax
+.text:004012C5 ; } // starts at 4012C0
+.text:004012C5 _atexit         endp
+.text:004012C5
+.text:004012C5 ; ---------------------------------------------------------------------------
+.text:004012C7                 align 10h
+.text:004012D0
+.text:004012D0 ; =============== S U B R O U T I N E =======================================
+.text:004012D0
+.text:004012D0
+.text:004012D0 ; _onexit_t __cdecl _onexit(_onexit_t)
+.text:004012D0                 public __onexit
+.text:004012D0 __onexit        proc near
+.text:004012D0 ; __unwind {
+.text:004012D0                 mov     eax, ds:__imp___onexit
+.text:004012D5                 jmp     eax
+.text:004012D5 ; } // starts at 4012D0
+.text:004012D5 __onexit        endp
+.text:004012D5
+.text:004012D5 ; ---------------------------------------------------------------------------
+.text:004012D7                 align 10h
+.text:004012E0
+.text:004012E0 ; =============== S U B R O U T I N E =======================================
+.text:004012E0
+.text:004012E0
+.text:004012E0                 public ___gcc_register_frame
+.text:004012E0 ___gcc_register_frame proc near         ; CODE XREF: _register_frame_ctor+6↓p
+.text:004012E0
+.text:004012E0 lpModuleName    = dword ptr -1Ch
+.text:004012E0 lpProcName      = dword ptr -18h
+.text:004012E0
+.text:004012E0                 mov     ecx, _data
+.text:004012E6                 test    ecx, ecx
+.text:004012E8                 jz      short locret_401322
+.text:004012EA                 push    ebp
+.text:004012EB                 mov     ebp, esp
+.text:004012ED                 sub     esp, 18h
+.text:004012F0                 mov     [esp+1Ch+lpModuleName], offset ModuleName ; "libgcj-13.dll"
+.text:004012F7                 call    _GetModuleHandleA@4 ; GetModuleHandleA(x)
+.text:004012FC                 push    edx
+.text:004012FD                 test    eax, eax
+.text:004012FF                 jz      short loc_401324
+.text:00401301                 mov     [esp+1Ch+lpProcName], offset ProcName ; "_Jv_RegisterClasses"
+.text:00401309                 mov     [esp+1Ch+lpModuleName], eax ; hModule
+.text:0040130C                 call    _GetProcAddress@8 ; GetProcAddress(x,x)
+.text:00401311                 sub     esp, 8
+.text:00401314
+.text:00401314 loc_401314:                             ; CODE XREF: ___gcc_register_frame+49↓j
+.text:00401314                 test    eax, eax
+.text:00401316                 jz      short locret_401321
+.text:00401318                 mov     [esp+1Ch+lpModuleName], offset _data
+.text:0040131F                 call    eax
+.text:00401321
+.text:00401321 locret_401321:                          ; CODE XREF: ___gcc_register_frame+36↑j
+.text:00401321                 leave
+.text:00401322
+.text:00401322 locret_401322:                          ; CODE XREF: ___gcc_register_frame+8↑j
+.text:00401322                 retn
+.text:00401322 ; ---------------------------------------------------------------------------
+.text:00401323                 align 4
+.text:00401324
+.text:00401324 loc_401324:                             ; CODE XREF: ___gcc_register_frame+1F↑j
+.text:00401324                 mov     eax, 0
+.text:00401329                 jmp     short loc_401314
+.text:00401329 ___gcc_register_frame endp
+.text:00401329
+.text:00401329 ; ---------------------------------------------------------------------------
+.text:0040132B                 align 4
+.text:0040132C
+.text:0040132C ; =============== S U B R O U T I N E =======================================
+.text:0040132C
+.text:0040132C ; Attributes: bp-based frame
+.text:0040132C
+.text:0040132C ; void __cdecl __gcc_deregister_frame()
+.text:0040132C                 public ___gcc_deregister_frame
+.text:0040132C ___gcc_deregister_frame proc near       ; DATA XREF: _register_frame_ctor+B↓o
+.text:0040132C                 push    ebp
+.text:0040132D                 mov     ebp, esp
+.text:0040132F                 pop     ebp
+.text:00401330                 retn
+.text:00401330 ___gcc_deregister_frame endp
+.text:00401330
+.text:00401330 ; ---------------------------------------------------------------------------
+.text:00401331                 align 4
+.text:00401334
+.text:00401334 ; =============== S U B R O U T I N E =======================================
+.text:00401334
+.text:00401334 ; Attributes: bp-based frame fuzzy-sp
+.text:00401334
+.text:00401334 ; int __cdecl main(int argc, const char **argv, const char **envp)
+.text:00401334                 public _main
+.text:00401334 _main           proc near               ; CODE XREF: ___mingw_CRTStartup+F8↑p
+.text:00401334
+.text:00401334 argc            = dword ptr  8
+.text:00401334 argv            = dword ptr  0Ch
+.text:00401334 envp            = dword ptr  10h
+.text:00401334
+.text:00401334                 push    ebp
+.text:00401335                 mov     ebp, esp
+.text:00401337                 and     esp, 0FFFFFFF0h
+.text:0040133A                 sub     esp, 20h
+.text:0040133D                 call    ___main
+.text:00401342                 lea     eax, [esp+10h]
+.text:00401346                 mov     [esp+4], eax
+.text:0040134A                 mov     dword ptr [esp], offset aD ; " %d "
+.text:00401351                 call    _scanf
+.text:00401356                 mov     dword ptr [esp+1Ch], 1
+.text:0040135E                 jmp     loc_40148A
+.text:00401363 ; ---------------------------------------------------------------------------
+.text:00401363
+.text:00401363 loc_401363:                             ; CODE XREF: _main+163↓j
+.text:00401363                 mov     dword ptr [esp+0Ch], offset _p
+.text:0040136B                 mov     dword ptr [esp+8], offset _s
+.text:00401373                 mov     dword ptr [esp+4], offset _n
+.text:0040137B                 mov     dword ptr [esp], offset aDDD ; " %d %d %d"
+.text:00401382                 call    _scanf
+.text:00401387                 mov     dword ptr [esp+18h], 0
+.text:0040138F                 jmp     short loc_4013B1
+.text:00401391 ; ---------------------------------------------------------------------------
+.text:00401391
+.text:00401391 loc_401391:                             ; CODE XREF: _main+8B↓j
+.text:00401391                 mov     eax, [esp+18h]
+.text:00401395                 shl     eax, 2
+.text:00401398                 add     eax, offset _t
+.text:0040139D                 mov     [esp+4], eax
+.text:004013A1                 mov     dword ptr [esp], offset aD_0 ; " %d"
+.text:004013A8                 call    _scanf
+.text:004013AD                 inc     dword ptr [esp+18h]
+.text:004013B1
+.text:004013B1 loc_4013B1:                             ; CODE XREF: _main+5B↑j
+.text:004013B1                 mov     eax, ds:_n
+.text:004013B6                 cmp     [esp+18h], eax
+.text:004013BA                 setl    al
+.text:004013BD                 test    al, al
+.text:004013BF                 jnz     short loc_401391
+.text:004013C1                 mov     dword ptr [esp+14h], 0
+.text:004013C9                 mov     dword ptr [esp+18h], 0
+.text:004013D1                 jmp     loc_401456
+.text:004013D6 ; ---------------------------------------------------------------------------
+.text:004013D6
+.text:004013D6 loc_4013D6:                             ; CODE XREF: _main+130↓j
+.text:004013D6                 mov     eax, [esp+18h]
+.text:004013DA                 mov     eax, ds:_t[eax*4]
+.text:004013E1                 lea     ecx, [eax+2]
+.text:004013E4                 mov     edx, 55555556h
+.text:004013E9                 mov     eax, ecx
+.text:004013EB                 imul    edx
+.text:004013ED                 mov     eax, ecx
+.text:004013EF                 sar     eax, 1Fh
+.text:004013F2                 sub     edx, eax
+.text:004013F4                 mov     eax, ds:_p
+.text:004013F9                 cmp     edx, eax
+.text:004013FB                 jl      short loc_401403
+.text:004013FD                 inc     dword ptr [esp+14h]
+.text:00401401                 jmp     short loc_401452
+.text:00401403 ; ---------------------------------------------------------------------------
+.text:00401403
+.text:00401403 loc_401403:                             ; CODE XREF: _main+C7↑j
+.text:00401403                 mov     eax, ds:_s
+.text:00401408                 test    eax, eax
+.text:0040140A                 jle     short loc_401452
+.text:0040140C                 mov     eax, [esp+18h]
+.text:00401410                 mov     eax, ds:_t[eax*4]
+.text:00401417                 cmp     eax, 1
+.text:0040141A                 jle     short loc_401452
+.text:0040141C                 mov     eax, [esp+18h]
+.text:00401420                 mov     eax, ds:_t[eax*4]
+.text:00401427                 lea     ecx, [eax+4]
+.text:0040142A                 mov     edx, 55555556h
+.text:0040142F                 mov     eax, ecx
+.text:00401431                 imul    edx
+.text:00401433                 mov     eax, ecx
+.text:00401435                 sar     eax, 1Fh
+.text:00401438                 sub     edx, eax
+.text:0040143A                 mov     eax, ds:_p
+.text:0040143F                 cmp     edx, eax
+.text:00401441                 jl      short loc_401452
+.text:00401443                 inc     dword ptr [esp+14h]
+.text:00401447                 mov     eax, ds:_s
+.text:0040144C                 dec     eax
+.text:0040144D                 mov     ds:_s, eax
+.text:00401452
+.text:00401452 loc_401452:                             ; CODE XREF: _main+CD↑j
+.text:00401452                                         ; _main+D6↑j ...
+.text:00401452                 inc     dword ptr [esp+18h]
+.text:00401456
+.text:00401456 loc_401456:                             ; CODE XREF: _main+9D↑j
+.text:00401456                 mov     eax, ds:_n
+.text:0040145B                 cmp     [esp+18h], eax
+.text:0040145F                 setl    al
+.text:00401462                 test    al, al
+.text:00401464                 jnz     loc_4013D6
+.text:0040146A                 mov     eax, [esp+14h]
+.text:0040146E                 mov     [esp+8], eax
+.text:00401472                 mov     eax, [esp+1Ch]
+.text:00401476                 mov     [esp+4], eax
+.text:0040147A                 mov     dword ptr [esp], offset aCaseDD ; "Case #%d: %d\n"
+.text:00401481                 call    _printf
+.text:00401486                 inc     dword ptr [esp+1Ch]
+.text:0040148A
+.text:0040148A loc_40148A:                             ; CODE XREF: _main+2A↑j
+.text:0040148A                 mov     eax, [esp+10h]
+.text:0040148E                 cmp     [esp+1Ch], eax
+.text:00401492                 setle   al
+.text:00401495                 test    al, al
+.text:00401497                 jnz     loc_401363
+.text:0040149D                 mov     eax, 0
+.text:004014A2                 leave
+.text:004014A3                 retn
+.text:004014A3 _main           endp
+.text:004014A3
+.text:004014A3 ; ---------------------------------------------------------------------------
+.text:004014A4                 align 10h
+.text:004014B0
+.text:004014B0 ; =============== S U B R O U T I N E =======================================
+.text:004014B0
+.text:004014B0
+.text:004014B0 ; __stdcall __dyn_tls_dtor(x, x, x)
+.text:004014B0                 public ___dyn_tls_dtor@12
+.text:004014B0 ___dyn_tls_dtor@12 proc near            ; DATA XREF: .CRT:___xl_d↓o
+.text:004014B0
+.text:004014B0 var_1C          = dword ptr -1Ch
+.text:004014B0 var_18          = dword ptr -18h
+.text:004014B0 var_14          = dword ptr -14h
+.text:004014B0 arg_0           = dword ptr  4
+.text:004014B0 arg_4           = dword ptr  8
+.text:004014B0 arg_8           = dword ptr  0Ch
+.text:004014B0
+.text:004014B0 ; __unwind {
+.text:004014B0                 sub     esp, 1Ch
+.text:004014B3                 mov     eax, [esp+1Ch+arg_4]
+.text:004014B7                 test    eax, eax
+.text:004014B9                 jz      short loc_4014D0
+.text:004014BB                 cmp     eax, 3
+.text:004014BE                 jz      short loc_4014D0
+.text:004014C0                 mov     eax, 1
+.text:004014C5                 add     esp, 1Ch
+.text:004014C8                 retn    0Ch
+.text:004014C8 ; ---------------------------------------------------------------------------
+.text:004014CB                 align 10h
+.text:004014D0
+.text:004014D0 loc_4014D0:                             ; CODE XREF: __dyn_tls_dtor(x,x,x)+9↑j
+.text:004014D0                                         ; __dyn_tls_dtor(x,x,x)+E↑j
+.text:004014D0                 mov     edx, [esp+1Ch+arg_8]
+.text:004014D4                 mov     [esp+1Ch+var_18], eax
+.text:004014D8                 mov     eax, [esp+1Ch+arg_0]
+.text:004014DC                 mov     [esp+1Ch+var_14], edx
+.text:004014E0                 mov     [esp+1Ch+var_1C], eax
+.text:004014E3                 call    ___mingw_TLScallback
+.text:004014E8                 mov     eax, 1
+.text:004014ED                 add     esp, 1Ch
+.text:004014F0                 retn    0Ch
+.text:004014F0 ; } // starts at 4014B0
+.text:004014F0 ___dyn_tls_dtor@12 endp
+.text:004014F0
+.text:004014F0 ; ---------------------------------------------------------------------------
+.text:004014F3                 align 10h
+.text:00401500
+.text:00401500 ; =============== S U B R O U T I N E =======================================
+.text:00401500
+.text:00401500
+.text:00401500 ; __stdcall __dyn_tls_init(x, x, x)
+.text:00401500                 public ___dyn_tls_init@12
+.text:00401500 ___dyn_tls_init@12 proc near            ; CODE XREF: ___mingw_CRTStartup+24↑p
+.text:00401500                                         ; DATA XREF: .rdata:___dyn_tls_init_callback↓o ...
+.text:00401500
+.text:00401500 var_1C          = dword ptr -1Ch
+.text:00401500 var_18          = dword ptr -18h
+.text:00401500 var_14          = dword ptr -14h
+.text:00401500 arg_0           = dword ptr  4
+.text:00401500 arg_4           = dword ptr  8
+.text:00401500 arg_8           = dword ptr  0Ch
+.text:00401500
+.text:00401500 ; __unwind {
+.text:00401500                 push    esi
+.text:00401501                 push    ebx
+.text:00401502                 sub     esp, 14h
+.text:00401505                 cmp     ds:__CRT_MT, 2
+.text:0040150C                 mov     eax, [esp+1Ch+arg_4]
+.text:00401510                 jz      short loc_40151C
+.text:00401512                 mov     ds:__CRT_MT, 2
+.text:0040151C
+.text:0040151C loc_40151C:                             ; CODE XREF: __dyn_tls_init(x,x,x)+10↑j
+.text:0040151C                 cmp     eax, 2
+.text:0040151F                 jz      short loc_401533
+.text:00401521                 cmp     eax, 1
+.text:00401524                 jz      short loc_401568
+.text:00401526
+.text:00401526 loc_401526:                             ; CODE XREF: __dyn_tls_init(x,x,x)+43↓j
+.text:00401526                                         ; __dyn_tls_init(x,x,x)+84↓j
+.text:00401526                 add     esp, 14h
+.text:00401529                 mov     eax, 1
+.text:0040152E                 pop     ebx
+.text:0040152F                 pop     esi
+.text:00401530                 retn    0Ch
+.text:00401533 ; ---------------------------------------------------------------------------
+.text:00401533
+.text:00401533 loc_401533:                             ; CODE XREF: __dyn_tls_init(x,x,x)+1F↑j
+.text:00401533                 mov     esi, offset ___xd_z
+.text:00401538                 sub     esi, offset ___xd_z
+.text:0040153E                 sar     esi, 2
+.text:00401541                 test    esi, esi
+.text:00401543                 jle     short loc_401526
+.text:00401545                 xor     ebx, ebx
+.text:00401547
+.text:00401547 loc_401547:                             ; CODE XREF: __dyn_tls_init(x,x,x)+59↓j
+.text:00401547                 mov     eax, ds:___xd_z[ebx*4]
+.text:0040154E                 test    eax, eax
+.text:00401550                 jz      short loc_401554
+.text:00401552                 call    eax ; ___xd_z
+.text:00401554
+.text:00401554 loc_401554:                             ; CODE XREF: __dyn_tls_init(x,x,x)+50↑j
+.text:00401554                 add     ebx, 1
+.text:00401557                 cmp     ebx, esi
+.text:00401559                 jnz     short loc_401547
+.text:0040155B                 add     esp, 14h
+.text:0040155E                 mov     eax, 1
+.text:00401563                 pop     ebx
+.text:00401564                 pop     esi
+.text:00401565                 retn    0Ch
+.text:00401568 ; ---------------------------------------------------------------------------
+.text:00401568
+.text:00401568 loc_401568:                             ; CODE XREF: __dyn_tls_init(x,x,x)+24↑j
+.text:00401568                 mov     eax, [esp+1Ch+arg_8]
+.text:0040156C                 mov     [esp+1Ch+var_18], 1
+.text:00401574                 mov     [esp+1Ch+var_14], eax
+.text:00401578                 mov     eax, [esp+1Ch+arg_0]
+.text:0040157C                 mov     [esp+1Ch+var_1C], eax
+.text:0040157F                 call    ___mingw_TLScallback
+.text:00401584                 jmp     short loc_401526
+.text:00401584 ; } // starts at 401500
+.text:00401584 ___dyn_tls_init@12 endp
+.text:00401584
+.text:00401584 ; ---------------------------------------------------------------------------
+.text:00401586                 align 10h
+.text:00401590
+.text:00401590 ; =============== S U B R O U T I N E =======================================
+.text:00401590
+.text:00401590
+.text:00401590                 public ___tlregdtor
+.text:00401590 ___tlregdtor    proc near
+.text:00401590 ; __unwind {
+.text:00401590                 xor     eax, eax
+.text:00401592                 retn
+.text:00401592 ; } // starts at 401590
+.text:00401592 ___tlregdtor    endp
+.text:00401592
+.text:00401592 ; ---------------------------------------------------------------------------
+.text:00401593                 align 10h
+.text:004015A0
+.text:004015A0 ; =============== S U B R O U T I N E =======================================
+.text:004015A0
+.text:004015A0
+.text:004015A0                 public ___cpu_features_init
+.text:004015A0 ___cpu_features_init proc near          ; CODE XREF: ___mingw_CRTStartup+38↑p
+.text:004015A0 ; __unwind {
+.text:004015A0                 pushf
+.text:004015A1                 pushf
+.text:004015A2                 pop     eax
+.text:004015A3                 mov     edx, eax
+.text:004015A5                 xor     eax, 200000h
+.text:004015AA                 push    eax
+.text:004015AB                 popf
+.text:004015AC                 pushf
+.text:004015AD                 pop     eax
+.text:004015AE                 popf
+.text:004015AF                 xor     eax, edx
+.text:004015B1                 test    eax, 200000h
+.text:004015B6                 jz      locret_401661
+.text:004015BC                 push    ebx
+.text:004015BD                 xor     eax, eax
+.text:004015BF                 cpuid
+.text:004015C1                 test    eax, eax
+.text:004015C3                 jz      loc_401660
+.text:004015C9                 mov     eax, 1
+.text:004015CE                 cpuid
+.text:004015D0                 test    dh, 1
+.text:004015D3                 jz      short loc_4015DC
+.text:004015D5                 or      ds:___cpu_features, 1
+.text:004015DC
+.text:004015DC loc_4015DC:                             ; CODE XREF: ___cpu_features_init+33↑j
+.text:004015DC                 test    dh, 80h
+.text:004015DF                 jz      short loc_4015E8
+.text:004015E1                 or      ds:___cpu_features, 2
+.text:004015E8
+.text:004015E8 loc_4015E8:                             ; CODE XREF: ___cpu_features_init+3F↑j
+.text:004015E8                 test    edx, 800000h
+.text:004015EE                 jz      short loc_4015F7
+.text:004015F0                 or      ds:___cpu_features, 4
+.text:004015F7
+.text:004015F7 loc_4015F7:                             ; CODE XREF: ___cpu_features_init+4E↑j
+.text:004015F7                 test    edx, 1000000h
+.text:004015FD                 jz      short loc_401606
+.text:004015FF                 or      ds:___cpu_features, 8
+.text:00401606
+.text:00401606 loc_401606:                             ; CODE XREF: ___cpu_features_init+5D↑j
+.text:00401606                 test    edx, 2000000h
+.text:0040160C                 jz      short loc_401615
+.text:0040160E                 or      ds:___cpu_features, 10h
+.text:00401615
+.text:00401615 loc_401615:                             ; CODE XREF: ___cpu_features_init+6C↑j
+.text:00401615                 and     edx, 4000000h
+.text:0040161B                 jz      short loc_401624
+.text:0040161D                 or      ds:___cpu_features, 20h
+.text:00401624
+.text:00401624 loc_401624:                             ; CODE XREF: ___cpu_features_init+7B↑j
+.text:00401624                 test    cl, 1
+.text:00401627                 jz      short loc_401630
+.text:00401629                 or      ds:___cpu_features, 40h
+.text:00401630
+.text:00401630 loc_401630:                             ; CODE XREF: ___cpu_features_init+87↑j
+.text:00401630                 and     ch, 20h
+.text:00401633                 jnz     short loc_401663
+.text:00401635
+.text:00401635 loc_401635:                             ; CODE XREF: ___cpu_features_init+CD↓j
+.text:00401635                 mov     eax, 80000000h
+.text:0040163A                 cpuid
+.text:0040163C                 cmp     eax, 80000000h
+.text:00401641                 jbe     short loc_401660
+.text:00401643                 mov     eax, 80000001h
+.text:00401648                 cpuid
+.text:0040164A                 test    edx, edx
+.text:0040164C                 js      short loc_401670
+.text:0040164E
+.text:0040164E loc_40164E:                             ; CODE XREF: ___cpu_features_init+DA↓j
+.text:0040164E                 and     edx, 40000000h
+.text:00401654                 jz      short loc_401660
+.text:00401656                 or      ds:___cpu_features, 200h
+.text:00401660
+.text:00401660 loc_401660:                             ; CODE XREF: ___cpu_features_init+23↑j
+.text:00401660                                         ; ___cpu_features_init+A1↑j ...
+.text:00401660                 pop     ebx
+.text:00401661
+.text:00401661 locret_401661:                          ; CODE XREF: ___cpu_features_init+16↑j
+.text:00401661                 rep retn
+.text:00401663 ; ---------------------------------------------------------------------------
+.text:00401663
+.text:00401663 loc_401663:                             ; CODE XREF: ___cpu_features_init+93↑j
+.text:00401663                 or      ds:___cpu_features, 80h
+.text:0040166D                 jmp     short loc_401635
+.text:0040166D ; ---------------------------------------------------------------------------
+.text:0040166F                 align 10h
+.text:00401670
+.text:00401670 loc_401670:                             ; CODE XREF: ___cpu_features_init+AC↑j
+.text:00401670                 or      ds:___cpu_features, 100h
+.text:0040167A                 jmp     short loc_40164E
+.text:0040167A ; } // starts at 4015A0
+.text:0040167A ___cpu_features_init endp
+.text:0040167A
+.text:0040167A ; ---------------------------------------------------------------------------
+.text:0040167C                 align 10h
+.text:00401680
+.text:00401680 ; =============== S U B R O U T I N E =======================================
+.text:00401680
+.text:00401680
+.text:00401680 ; void __cdecl fpreset()
+.text:00401680                 public _fpreset
+.text:00401680 _fpreset        proc near               ; CODE XREF: ___mingw_CRTStartup+3D↑p
+.text:00401680                                         ; _gnu_exception_handler(x)+155↑p
+.text:00401680 ; __unwind {
+.text:00401680                 fninit
+.text:00401682                 retn
+.text:00401682 ; } // starts at 401680
+.text:00401682 _fpreset        endp
+.text:00401682
+.text:00401682 ; ---------------------------------------------------------------------------
+.text:00401683                 align 10h
+.text:00401690
+.text:00401690 ; =============== S U B R O U T I N E =======================================
+.text:00401690
+.text:00401690 ; Attributes: noreturn
+.text:00401690
+.text:00401690 ; void __cdecl __noreturn __report_error(char *, char)
+.text:00401690 ___report_error proc near               ; CODE XREF: ___write_memory_part_0+109↓p
+.text:00401690                                         ; __pei386_runtime_relocator+CF↓p ...
+.text:00401690
+.text:00401690 var_2C          = dword ptr -2Ch
+.text:00401690 var_28          = dword ptr -28h
+.text:00401690 var_24          = dword ptr -24h
+.text:00401690 var_20          = dword ptr -20h
+.text:00401690 var_10          = dword ptr -10h
+.text:00401690 arg_0           = dword ptr  4
+.text:00401690 arg_4           = byte ptr  8
+.text:00401690
+.text:00401690 ; __unwind {
+.text:00401690                 push    ebx
+.text:00401691                 sub     esp, 28h
+.text:00401694                 mov     ebx, ds:__imp___iob
+.text:0040169A                 lea     eax, [esp+2Ch+arg_4]
+.text:0040169E                 mov     [esp+2Ch+var_24], 17h ; size_t
+.text:004016A6                 mov     [esp+2Ch+var_28], 1 ; size_t
+.text:004016AE                 add     ebx, 40h ; '@'
+.text:004016B1                 mov     [esp+2Ch+var_20], ebx ; FILE *
+.text:004016B5                 mov     [esp+2Ch+var_2C], offset aMingwRuntimeFa ; "Mingw runtime failure:\n"
+.text:004016BC                 mov     [esp+2Ch+var_10], eax
+.text:004016C0                 call    _fwrite
+.text:004016C5                 mov     eax, [esp+2Ch+var_10]
+.text:004016C9                 mov     [esp+2Ch+var_2C], ebx ; FILE *
+.text:004016CC                 mov     [esp+2Ch+var_24], eax ; va_list
+.text:004016D0                 mov     eax, [esp+2Ch+arg_0]
+.text:004016D4                 mov     [esp+2Ch+var_28], eax ; char *
+.text:004016D8                 call    _vfprintf
+.text:004016DD                 call    _abort
+.text:004016DD ; } // starts at 401690
+.text:004016DD ___report_error endp
+.text:004016DD
+.text:004016DD ; ---------------------------------------------------------------------------
+.text:004016E2                 align 10h
+.text:004016F0
+.text:004016F0 ; =============== S U B R O U T I N E =======================================
+.text:004016F0
+.text:004016F0
+.text:004016F0 ; int __fastcall __write_memory_part_0(size_t, void *)
+.text:004016F0 ___write_memory_part_0 proc near        ; CODE XREF: __pei386_runtime_relocator+102↓p
+.text:004016F0                                         ; __pei386_runtime_relocator+164↓p ...
+.text:004016F0
+.text:004016F0 lpAddress       = dword ptr -5Ch
+.text:004016F0 lpBuffer        = dword ptr -58h
+.text:004016F0 dwLength        = dword ptr -54h
+.text:004016F0 lpflOldProtect  = dword ptr -50h
+.text:004016F0 var_3E          = byte ptr -3Eh
+.text:004016F0 var_3D          = byte ptr -3Dh
+.text:004016F0 flOldProtect    = dword ptr -3Ch
+.text:004016F0 Buffer          = _MEMORY_BASIC_INFORMATION ptr -38h
+.text:004016F0 var_10          = dword ptr -10h
+.text:004016F0 var_C           = dword ptr -0Ch
+.text:004016F0 var_8           = dword ptr -8
+.text:004016F0 var_4           = dword ptr -4
+.text:004016F0
+.text:004016F0 ; __unwind {
+.text:004016F0                 sub     esp, 5Ch
+.text:004016F3                 mov     [esp+5Ch+var_10], ebx
+.text:004016F7                 mov     ebx, eax
+.text:004016F9                 lea     eax, [esp+5Ch+Buffer]
+.text:004016FD                 mov     [esp+5Ch+dwLength], 1Ch ; dwLength
+.text:00401705                 mov     [esp+5Ch+lpBuffer], eax ; lpBuffer
+.text:00401709                 mov     [esp+5Ch+lpAddress], ebx ; lpAddress
+.text:0040170C                 mov     [esp+5Ch+var_C], esi
+.text:00401710                 mov     esi, edx
+.text:00401712                 mov     [esp+5Ch+var_8], edi
+.text:00401716                 mov     edi, ecx
+.text:00401718                 mov     [esp+5Ch+var_4], ebp
+.text:0040171C                 call    _VirtualQuery@12 ; VirtualQuery(x,x,x)
+.text:00401721                 sub     esp, 0Ch
+.text:00401724                 test    eax, eax
+.text:00401726                 jz      loc_4017E6
+.text:0040172C                 mov     eax, [esp+5Ch+Buffer.Protect]
+.text:00401730                 cmp     eax, 4
+.text:00401733                 jnz     short loc_401760
+.text:00401735
+.text:00401735 loc_401735:                             ; CODE XREF: ___write_memory_part_0+73↓j
+.text:00401735                 mov     [esp+5Ch+dwLength], edi ; size_t
+.text:00401739                 mov     [esp+5Ch+lpBuffer], esi ; void *
+.text:0040173D                 mov     [esp+5Ch+lpAddress], ebx ; void *
+.text:00401740                 call    _memcpy
+.text:00401745
+.text:00401745 loc_401745:                             ; CODE XREF: ___write_memory_part_0+C5↓j
+.text:00401745                                         ; ___write_memory_part_0+CC↓j ...
+.text:00401745                 mov     ebx, [esp+5Ch+var_10]
+.text:00401749                 mov     esi, [esp+5Ch+var_C]
+.text:0040174D                 mov     edi, [esp+5Ch+var_8]
+.text:00401751                 mov     ebp, [esp+5Ch+var_4]
+.text:00401755                 add     esp, 5Ch
+.text:00401758                 retn
+.text:00401758 ; ---------------------------------------------------------------------------
+.text:00401759                 align 10h
+.text:00401760
+.text:00401760 loc_401760:                             ; CODE XREF: ___write_memory_part_0+43↑j
+.text:00401760                 cmp     eax, 40h ; '@'
+.text:00401763                 jz      short loc_401735
+.text:00401765                 mov     eax, [esp+5Ch+Buffer.RegionSize]
+.text:00401769                 lea     ebp, [esp+5Ch+flOldProtect]
+.text:0040176D                 mov     [esp+5Ch+lpflOldProtect], ebp ; lpflOldProtect
+.text:00401771                 mov     [esp+5Ch+dwLength], 40h ; '@' ; flNewProtect
+.text:00401779                 mov     [esp+5Ch+lpBuffer], eax ; dwSize
+.text:0040177D                 mov     eax, [esp+5Ch+Buffer.BaseAddress]
+.text:00401781                 mov     [esp+5Ch+lpAddress], eax ; lpAddress
+.text:00401784                 call    _VirtualProtect@16 ; VirtualProtect(x,x,x,x)
+.text:00401789                 sub     esp, 10h
+.text:0040178C                 mov     eax, [esp+5Ch+Buffer.Protect]
+.text:00401790                 mov     [esp+5Ch+dwLength], edi ; size_t
+.text:00401794                 mov     [esp+5Ch+lpBuffer], esi ; void *
+.text:00401798                 mov     [esp+5Ch+lpAddress], ebx ; void *
+.text:0040179B                 cmp     eax, 40h ; '@'
+.text:0040179E                 setnz   [esp+5Ch+var_3E]
+.text:004017A3                 cmp     eax, 4
+.text:004017A6                 setnz   [esp+5Ch+var_3D]
+.text:004017AB                 call    _memcpy
+.text:004017B0                 cmp     [esp+5Ch+var_3D], 0
+.text:004017B5                 jz      short loc_401745
+.text:004017B7                 cmp     [esp+5Ch+var_3E], 0
+.text:004017BC                 jz      short loc_401745
+.text:004017BE                 mov     eax, [esp+5Ch+flOldProtect]
+.text:004017C2                 mov     [esp+5Ch+lpflOldProtect], ebp ; lpflOldProtect
+.text:004017C6                 mov     [esp+5Ch+dwLength], eax ; flNewProtect
+.text:004017CA                 mov     eax, [esp+5Ch+Buffer.RegionSize]
+.text:004017CE                 mov     [esp+5Ch+lpBuffer], eax ; dwSize
+.text:004017D2                 mov     eax, [esp+5Ch+Buffer.BaseAddress]
+.text:004017D6                 mov     [esp+5Ch+lpAddress], eax ; lpAddress
+.text:004017D9                 call    _VirtualProtect@16 ; VirtualProtect(x,x,x,x)
+.text:004017DE                 sub     esp, 10h
+.text:004017E1                 jmp     loc_401745
+.text:004017E6 ; ---------------------------------------------------------------------------
+.text:004017E6
+.text:004017E6 loc_4017E6:                             ; CODE XREF: ___write_memory_part_0+36↑j
+.text:004017E6                 mov     [esp+5Ch+dwLength], ebx
+.text:004017EA                 mov     [esp+5Ch+lpBuffer], 1Ch ; char
+.text:004017F2                 mov     [esp+5Ch+lpAddress], offset aVirtualqueryFa ; "  VirtualQuery failed for %d bytes at a"...
+.text:004017F9                 call    ___report_error
+.text:004017F9 ; } // starts at 4016F0
+.text:004017F9 ___write_memory_part_0 endp
+.text:004017F9
+.text:004017F9 ; ---------------------------------------------------------------------------
+.text:004017FE                 align 10h
+.text:00401800
+.text:00401800 ; =============== S U B R O U T I N E =======================================
+.text:00401800
+.text:00401800
+.text:00401800                 public __pei386_runtime_relocator
+.text:00401800 __pei386_runtime_relocator proc near    ; CODE XREF: ___mingw_CRTStartup+CF↑p
+.text:00401800
+.text:00401800 var_2C          = dword ptr -2Ch
+.text:00401800 var_28          = byte ptr -28h
+.text:00401800 var_14          = dword ptr -14h
+.text:00401800 var_10          = dword ptr -10h
+.text:00401800 var_C           = dword ptr -0Ch
+.text:00401800 var_8           = dword ptr -8
+.text:00401800 var_4           = dword ptr -4
+.text:00401800
+.text:00401800 ; __unwind {
+.text:00401800                 mov     eax, ds:_was_init_31048
+.text:00401805                 test    eax, eax
+.text:00401807                 jz      short loc_401810
+.text:00401809
+.text:00401809 locret_401809:                          ; CODE XREF: __pei386_runtime_relocator+27↓j
+.text:00401809                 retn
+.text:00401809 ; ---------------------------------------------------------------------------
+.text:0040180A                 align 10h
+.text:00401810
+.text:00401810 loc_401810:                             ; CODE XREF: __pei386_runtime_relocator+7↑j
+.text:00401810                 mov     eax, offset __rt_psrelocs_end
+.text:00401815                 sub     eax, offset __rt_psrelocs_end
+.text:0040181A                 cmp     eax, 7
+.text:0040181D                 mov     ds:_was_init_31048, 1
+.text:00401827                 jle     short locret_401809
+.text:00401829                 sub     esp, 2Ch
+.text:0040182C                 cmp     eax, 0Bh
+.text:0040182F                 mov     [esp+2Ch+var_C], ebx
+.text:00401833                 mov     [esp+2Ch+var_8], esi
+.text:00401837                 mov     [esp+2Ch+var_4], edi
+.text:0040183B                 jle     loc_401920
+.text:00401841                 mov     esi, ds:__rt_psrelocs_end
+.text:00401847                 test    esi, esi
+.text:00401849                 jnz     loc_4018D4
+.text:0040184F                 mov     ebx, ds:dword_403108
+.text:00401855                 test    ebx, ebx
+.text:00401857                 jnz     short loc_4018D4
+.text:00401859                 mov     ecx, ds:dword_40310C
+.text:0040185F                 mov     ebx, offset unk_403110
+.text:00401864                 test    ecx, ecx
+.text:00401866                 jz      loc_401925
+.text:0040186C                 mov     ebx, offset __rt_psrelocs_end
+.text:00401871
+.text:00401871 loc_401871:                             ; CODE XREF: __pei386_runtime_relocator+130↓j
+.text:00401871                 mov     eax, [ebx+8]
+.text:00401874                 cmp     eax, 1
+.text:00401877                 jnz     loc_4019C4
+.text:0040187D
+.text:0040187D loc_40187D:                             ; CODE XREF: __pei386_runtime_relocator+169↓j
+.text:0040187D                                         ; __pei386_runtime_relocator+19E↓j ...
+.text:0040187D                 add     ebx, 0Ch
+.text:00401880                 cmp     ebx, offset __rt_psrelocs_end
+.text:00401886                 jnb     loc_40190F
+.text:0040188C                 movzx   edx, byte ptr [ebx+8]
+.text:00401890                 mov     esi, [ebx+4]
+.text:00401893                 mov     ecx, [ebx]
+.text:00401895                 cmp     edx, 10h
+.text:00401898                 lea     eax, [esi+400000h]
+.text:0040189E                 mov     edi, [ecx+400000h]
+.text:004018A4                 jz      loc_401938
+.text:004018AA                 cmp     edx, 20h ; ' '
+.text:004018AD                 jz      loc_4019A3
+.text:004018B3                 cmp     edx, 8
+.text:004018B6                 jz      loc_401970
+.text:004018BC                 mov     dword ptr [esp+2Ch+var_28], edx ; char
+.text:004018C0                 mov     [esp+2Ch+var_2C], offset aUnknownPseudoR ; "  Unknown pseudo relocation bit size %d"...
+.text:004018C7                 mov     [esp+2Ch+var_14], 0
+.text:004018CF                 call    ___report_error
+.text:004018D4 ; ---------------------------------------------------------------------------
+.text:004018D4
+.text:004018D4 loc_4018D4:                             ; CODE XREF: __pei386_runtime_relocator+49↑j
+.text:004018D4                                         ; __pei386_runtime_relocator+57↑j
+.text:004018D4                 mov     ebx, offset __rt_psrelocs_end
+.text:004018D9
+.text:004018D9 loc_4018D9:                             ; CODE XREF: __pei386_runtime_relocator+129↓j
+.text:004018D9                                         ; __pei386_runtime_relocator+136↓j
+.text:004018D9                 cmp     ebx, offset __rt_psrelocs_end
+.text:004018DF                 jnb     short loc_40190F
+.text:004018E1
+.text:004018E1 loc_4018E1:                             ; CODE XREF: __pei386_runtime_relocator+10D↓j
+.text:004018E1                 mov     edx, [ebx+4]
+.text:004018E4                 mov     ecx, 4          ; size_t
+.text:004018E9                 lea     eax, [edx+400000h]
+.text:004018EF                 mov     edx, [edx+400000h]
+.text:004018F5                 add     edx, [ebx]
+.text:004018F7                 add     ebx, 8
+.text:004018FA                 mov     [esp+2Ch+var_10], edx
+.text:004018FE                 lea     edx, [esp+2Ch+var_10] ; void *
+.text:00401902                 call    ___write_memory_part_0
+.text:00401907                 cmp     ebx, offset __rt_psrelocs_end
+.text:0040190D                 jb      short loc_4018E1
+.text:0040190F
+.text:0040190F loc_40190F:                             ; CODE XREF: __pei386_runtime_relocator+86↑j
+.text:0040190F                                         ; __pei386_runtime_relocator+DF↑j
+.text:0040190F                 mov     ebx, [esp+2Ch+var_C]
+.text:00401913                 mov     esi, [esp+2Ch+var_8]
+.text:00401917                 mov     edi, [esp+2Ch+var_4]
+.text:0040191B                 add     esp, 2Ch
+.text:0040191E                 retn
+.text:0040191E ; ---------------------------------------------------------------------------
+.text:0040191F                 align 10h
+.text:00401920
+.text:00401920 loc_401920:                             ; CODE XREF: __pei386_runtime_relocator+3B↑j
+.text:00401920                 mov     ebx, offset __rt_psrelocs_end
+.text:00401925
+.text:00401925 loc_401925:                             ; CODE XREF: __pei386_runtime_relocator+66↑j
+.text:00401925                 mov     edx, [ebx]
+.text:00401927                 test    edx, edx
+.text:00401929                 jnz     short loc_4018D9
+.text:0040192B                 mov     eax, [ebx+4]
+.text:0040192E                 test    eax, eax
+.text:00401930                 jz      loc_401871
+.text:00401936                 jmp     short loc_4018D9
+.text:00401938 ; ---------------------------------------------------------------------------
+.text:00401938
+.text:00401938 loc_401938:                             ; CODE XREF: __pei386_runtime_relocator+A4↑j
+.text:00401938                 movzx   esi, word ptr [esi+400000h]
+.text:0040193F                 test    si, si
+.text:00401942                 movzx   edx, si
+.text:00401945                 jns     short loc_40194D
+.text:00401947                 or      edx, 0FFFF0000h
+.text:0040194D
+.text:0040194D loc_40194D:                             ; CODE XREF: __pei386_runtime_relocator+145↑j
+.text:0040194D                 sub     edx, ecx
+.text:0040194F                 mov     ecx, 2          ; size_t
+.text:00401954                 sub     edx, 400000h
+.text:0040195A                 add     edx, edi
+.text:0040195C                 mov     [esp+2Ch+var_14], edx
+.text:00401960                 lea     edx, [esp+2Ch+var_14] ; void *
+.text:00401964                 call    ___write_memory_part_0
+.text:00401969                 jmp     loc_40187D
+.text:00401969 ; ---------------------------------------------------------------------------
+.text:0040196E                 align 10h
+.text:00401970
+.text:00401970 loc_401970:                             ; CODE XREF: __pei386_runtime_relocator+B6↑j
+.text:00401970                 movzx   edx, byte ptr [eax]
+.text:00401973                 test    dl, dl
+.text:00401975                 movzx   esi, dl
+.text:00401978                 jns     short loc_401980
+.text:0040197A                 or      esi, 0FFFFFF00h
+.text:00401980
+.text:00401980 loc_401980:                             ; CODE XREF: __pei386_runtime_relocator+178↑j
+.text:00401980                 mov     edx, esi
+.text:00401982                 sub     edx, 400000h
+.text:00401988                 sub     edx, ecx
+.text:0040198A                 mov     ecx, 1          ; size_t
+.text:0040198F                 add     edx, edi
+.text:00401991                 mov     [esp+2Ch+var_14], edx
+.text:00401995                 lea     edx, [esp+2Ch+var_14] ; void *
+.text:00401999                 call    ___write_memory_part_0
+.text:0040199E                 jmp     loc_40187D
+.text:004019A3 ; ---------------------------------------------------------------------------
+.text:004019A3
+.text:004019A3 loc_4019A3:                             ; CODE XREF: __pei386_runtime_relocator+AD↑j
+.text:004019A3                 add     ecx, 400000h
+.text:004019A9                 sub     edi, ecx
+.text:004019AB                 mov     ecx, 4          ; size_t
+.text:004019B0                 add     edi, [eax]
+.text:004019B2                 lea     edx, [esp+2Ch+var_14] ; void *
+.text:004019B6                 mov     [esp+2Ch+var_14], edi
+.text:004019BA                 call    ___write_memory_part_0
+.text:004019BF                 jmp     loc_40187D
+.text:004019C4 ; ---------------------------------------------------------------------------
+.text:004019C4
+.text:004019C4 loc_4019C4:                             ; CODE XREF: __pei386_runtime_relocator+77↑j
+.text:004019C4                 mov     dword ptr [esp+2Ch+var_28], eax ; char
+.text:004019C8                 mov     [esp+2Ch+var_2C], offset aUnknownPseudoR_0 ; "  Unknown pseudo relocation protocol ve"...
+.text:004019CF                 call    ___report_error
+.text:004019CF ; } // starts at 401800
+.text:004019CF __pei386_runtime_relocator endp
+.text:004019CF
+.text:004019CF ; ---------------------------------------------------------------------------
+.text:004019D4                 align 10h
+.text:004019E0
+.text:004019E0 ; =============== S U B R O U T I N E =======================================
+.text:004019E0
+.text:004019E0
+.text:004019E0 ; void __cdecl __do_global_dtors()
+.text:004019E0                 public ___do_global_dtors
+.text:004019E0 ___do_global_dtors proc near            ; DATA XREF: ___do_global_ctors:loc_401A32↓o
+.text:004019E0 ; __unwind {
+.text:004019E0                 mov     eax, _p_1761
+.text:004019E5                 mov     eax, [eax]
+.text:004019E7                 test    eax, eax
+.text:004019E9                 jz      short locret_401A0A
+.text:004019EB                 sub     esp, 0Ch
+.text:004019EE                 xchg    ax, ax
+.text:004019F0
+.text:004019F0 loc_4019F0:                             ; CODE XREF: ___do_global_dtors+25↓j
+.text:004019F0                 call    eax
+.text:004019F2                 mov     eax, _p_1761
+.text:004019F7                 lea     edx, [eax+4]
+.text:004019FA                 mov     eax, [eax+4]
+.text:004019FD                 mov     _p_1761, edx
+.text:00401A03                 test    eax, eax
+.text:00401A05                 jnz     short loc_4019F0
+.text:00401A07                 add     esp, 0Ch
+.text:00401A0A
+.text:00401A0A locret_401A0A:                          ; CODE XREF: ___do_global_dtors+9↑j
+.text:00401A0A                 rep retn
+.text:00401A0A ; } // starts at 4019E0
+.text:00401A0A ___do_global_dtors endp
+.text:00401A0A
+.text:00401A0A ; ---------------------------------------------------------------------------
+.text:00401A0C                 align 10h
+.text:00401A10
+.text:00401A10 ; =============== S U B R O U T I N E =======================================
+.text:00401A10
+.text:00401A10
+.text:00401A10                 public ___do_global_ctors
+.text:00401A10 ___do_global_ctors proc near            ; CODE XREF: ___main+1A↓j
+.text:00401A10
+.text:00401A10 var_1C          = dword ptr -1Ch
+.text:00401A10
+.text:00401A10 ; __unwind {
+.text:00401A10                 push    ebx
+.text:00401A11                 sub     esp, 18h
+.text:00401A14                 mov     ebx, ds:___CTOR_LIST__
+.text:00401A1A                 cmp     ebx, 0FFFFFFFFh
+.text:00401A1D                 jz      short loc_401A43
+.text:00401A1F
+.text:00401A1F loc_401A1F:                             ; CODE XREF: ___do_global_ctors+47↓j
+.text:00401A1F                 test    ebx, ebx
+.text:00401A21                 jz      short loc_401A32
+.text:00401A23
+.text:00401A23 loc_401A23:                             ; CODE XREF: ___do_global_ctors+20↓j
+.text:00401A23                 call    ds:___CTOR_LIST__[ebx*4]
+.text:00401A2A                 sub     ebx, 1
+.text:00401A2D                 lea     esi, [esi+0]
+.text:00401A30                 jnz     short loc_401A23
+.text:00401A32
+.text:00401A32 loc_401A32:                             ; CODE XREF: ___do_global_ctors+11↑j
+.text:00401A32                 mov     [esp+1Ch+var_1C], offset ___do_global_dtors ; void (__cdecl *)()
+.text:00401A39                 call    _atexit
+.text:00401A3E                 add     esp, 18h
+.text:00401A41                 pop     ebx
+.text:00401A42                 retn
+.text:00401A43 ; ---------------------------------------------------------------------------
+.text:00401A43
+.text:00401A43 loc_401A43:                             ; CODE XREF: ___do_global_ctors+D↑j
+.text:00401A43                 xor     ebx, ebx
+.text:00401A45                 jmp     short loc_401A49
+.text:00401A47 ; ---------------------------------------------------------------------------
+.text:00401A47
+.text:00401A47 loc_401A47:                             ; CODE XREF: ___do_global_ctors+45↓j
+.text:00401A47                 mov     ebx, eax
+.text:00401A49
+.text:00401A49 loc_401A49:                             ; CODE XREF: ___do_global_ctors+35↑j
+.text:00401A49                 lea     eax, [ebx+1]
+.text:00401A4C                 mov     edx, ds:___CTOR_LIST__[eax*4]
+.text:00401A53                 test    edx, edx
+.text:00401A55                 jnz     short loc_401A47
+.text:00401A57                 jmp     short loc_401A1F
+.text:00401A57 ; } // starts at 401A10
+.text:00401A57 ___do_global_ctors endp
+.text:00401A57
+.text:00401A57 ; ---------------------------------------------------------------------------
+.text:00401A59                 align 10h
+.text:00401A60
+.text:00401A60 ; =============== S U B R O U T I N E =======================================
+.text:00401A60
+.text:00401A60
+.text:00401A60                 public ___main
+.text:00401A60 ___main         proc near               ; CODE XREF: ___mingw_CRTStartup+D7↑p
+.text:00401A60                                         ; _main+9↑p
+.text:00401A60 ; __unwind {
+.text:00401A60                 mov     ecx, ds:_initialized
+.text:00401A66                 test    ecx, ecx
+.text:00401A68                 jz      short loc_401A70
+.text:00401A6A                 rep retn
+.text:00401A6A ; ---------------------------------------------------------------------------
+.text:00401A6C                 align 10h
+.text:00401A70
+.text:00401A70 loc_401A70:                             ; CODE XREF: ___main+8↑j
+.text:00401A70                 mov     ds:_initialized, 1
+.text:00401A7A                 jmp     short ___do_global_ctors
+.text:00401A7A ; } // starts at 401A60
+.text:00401A7A ___main         endp
+.text:00401A7A
+.text:00401A7A ; ---------------------------------------------------------------------------
+.text:00401A7C                 align 10h
+.text:00401A80
+.text:00401A80 ; =============== S U B R O U T I N E =======================================
+.text:00401A80
+.text:00401A80
+.text:00401A80 ___mingwthr_run_key_dtors_part_0 proc near
+.text:00401A80                                         ; CODE XREF: ___mingw_TLScallback+79↓p
+.text:00401A80                                         ; ___mingw_TLScallback:loc_401C91↓p
+.text:00401A80
+.text:00401A80 lpCriticalSection= dword ptr -1Ch
+.text:00401A80
+.text:00401A80 ; __unwind {
+.text:00401A80                 push    esi
+.text:00401A81                 push    ebx
+.text:00401A82                 sub     esp, 14h
+.text:00401A85                 mov     [esp+1Ch+lpCriticalSection], offset ___mingwthr_cs ; lpCriticalSection
+.text:00401A8C                 call    _EnterCriticalSection@4 ; EnterCriticalSection(x)
+.text:00401A91                 mov     ebx, ds:_key_dtor_list
+.text:00401A97                 sub     esp, 4
+.text:00401A9A                 test    ebx, ebx
+.text:00401A9C                 jz      short loc_401ACB
+.text:00401A9E                 xchg    ax, ax
+.text:00401AA0
+.text:00401AA0 loc_401AA0:                             ; CODE XREF: ___mingwthr_run_key_dtors_part_0+49↓j
+.text:00401AA0                 mov     eax, [ebx]
+.text:00401AA2                 mov     [esp+1Ch+lpCriticalSection], eax ; dwTlsIndex
+.text:00401AA5                 call    _TlsGetValue@4  ; TlsGetValue(x)
+.text:00401AAA                 sub     esp, 4
+.text:00401AAD                 mov     esi, eax
+.text:00401AAF                 call    _GetLastError@0 ; GetLastError()
+.text:00401AB4                 test    eax, eax
+.text:00401AB6                 jnz     short loc_401AC4
+.text:00401AB8                 test    esi, esi
+.text:00401ABA                 jz      short loc_401AC4
+.text:00401ABC                 mov     eax, [ebx+4]
+.text:00401ABF                 mov     [esp+1Ch+lpCriticalSection], esi
+.text:00401AC2                 call    eax
+.text:00401AC4
+.text:00401AC4 loc_401AC4:                             ; CODE XREF: ___mingwthr_run_key_dtors_part_0+36↑j
+.text:00401AC4                                         ; ___mingwthr_run_key_dtors_part_0+3A↑j
+.text:00401AC4                 mov     ebx, [ebx+8]
+.text:00401AC7                 test    ebx, ebx
+.text:00401AC9                 jnz     short loc_401AA0
+.text:00401ACB
+.text:00401ACB loc_401ACB:                             ; CODE XREF: ___mingwthr_run_key_dtors_part_0+1C↑j
+.text:00401ACB                 mov     [esp+1Ch+lpCriticalSection], offset ___mingwthr_cs ; lpCriticalSection
+.text:00401AD2                 call    _LeaveCriticalSection@4 ; LeaveCriticalSection(x)
+.text:00401AD7                 sub     esp, 4
+.text:00401ADA                 add     esp, 14h
+.text:00401ADD                 pop     ebx
+.text:00401ADE                 pop     esi
+.text:00401ADF                 retn
+.text:00401ADF ; } // starts at 401A80
+.text:00401ADF ___mingwthr_run_key_dtors_part_0 endp
+.text:00401ADF
+.text:00401AE0
+.text:00401AE0 ; =============== S U B R O U T I N E =======================================
+.text:00401AE0
+.text:00401AE0
+.text:00401AE0                 public ____w64_mingwthr_add_key_dtor
+.text:00401AE0 ____w64_mingwthr_add_key_dtor proc near
+.text:00401AE0
+.text:00401AE0 var_1C          = dword ptr -1Ch
+.text:00401AE0 var_18          = dword ptr -18h
+.text:00401AE0 var_8           = dword ptr -8
+.text:00401AE0 var_4           = dword ptr -4
+.text:00401AE0 arg_0           = dword ptr  4
+.text:00401AE0 arg_4           = dword ptr  8
+.text:00401AE0
+.text:00401AE0 ; __unwind {
+.text:00401AE0                 sub     esp, 1Ch
+.text:00401AE3                 mov     eax, ds:___mingwthr_cs_init
+.text:00401AE8                 mov     [esp+1Ch+var_4], esi
+.text:00401AEC                 xor     esi, esi
+.text:00401AEE                 mov     [esp+1Ch+var_8], ebx
+.text:00401AF2                 test    eax, eax
+.text:00401AF4                 jnz     short loc_401B04
+.text:00401AF6
+.text:00401AF6 loc_401AF6:                             ; CODE XREF: ____w64_mingwthr_add_key_dtor+8A↓j
+.text:00401AF6                 mov     eax, esi
+.text:00401AF8                 mov     ebx, [esp+1Ch+var_8]
+.text:00401AFC                 mov     esi, [esp+1Ch+var_4]
+.text:00401B00                 add     esp, 1Ch
+.text:00401B03                 retn
+.text:00401B04 ; ---------------------------------------------------------------------------
+.text:00401B04
+.text:00401B04 loc_401B04:                             ; CODE XREF: ____w64_mingwthr_add_key_dtor+14↑j
+.text:00401B04                 mov     [esp+1Ch+var_18], 0Ch ; size_t
+.text:00401B0C                 mov     [esp+1Ch+var_1C], 1 ; size_t
+.text:00401B13                 call    _calloc
+.text:00401B18                 test    eax, eax
+.text:00401B1A                 mov     ebx, eax
+.text:00401B1C                 jz      short loc_401B65
+.text:00401B1E                 mov     eax, [esp+1Ch+arg_0]
+.text:00401B22                 mov     [esp+1Ch+var_1C], offset ___mingwthr_cs ; lpCriticalSection
+.text:00401B29                 mov     [ebx], eax
+.text:00401B2B                 mov     eax, [esp+1Ch+arg_4]
+.text:00401B2F                 mov     [ebx+4], eax
+.text:00401B32                 call    _EnterCriticalSection@4 ; EnterCriticalSection(x)
+.text:00401B37                 mov     eax, ds:_key_dtor_list
+.text:00401B3C                 mov     ds:_key_dtor_list, ebx
+.text:00401B42                 mov     [ebx+8], eax
+.text:00401B45                 sub     esp, 4
+.text:00401B48                 mov     [esp+1Ch+var_1C], offset ___mingwthr_cs ; lpCriticalSection
+.text:00401B4F                 call    _LeaveCriticalSection@4 ; LeaveCriticalSection(x)
+.text:00401B54                 mov     eax, esi
+.text:00401B56                 sub     esp, 4
+.text:00401B59                 mov     ebx, [esp+1Ch+var_8]
+.text:00401B5D                 mov     esi, [esp+1Ch+var_4]
+.text:00401B61                 add     esp, 1Ch
+.text:00401B64                 retn
+.text:00401B65 ; ---------------------------------------------------------------------------
+.text:00401B65
+.text:00401B65 loc_401B65:                             ; CODE XREF: ____w64_mingwthr_add_key_dtor+3C↑j
+.text:00401B65                 mov     esi, 0FFFFFFFFh
+.text:00401B6A                 jmp     short loc_401AF6
+.text:00401B6A ; } // starts at 401AE0
+.text:00401B6A ____w64_mingwthr_add_key_dtor endp
+.text:00401B6A
+.text:00401B6A ; ---------------------------------------------------------------------------
+.text:00401B6C                 align 10h
+.text:00401B70
+.text:00401B70 ; =============== S U B R O U T I N E =======================================
+.text:00401B70
+.text:00401B70
+.text:00401B70                 public ____w64_mingwthr_remove_key_dtor
+.text:00401B70 ____w64_mingwthr_remove_key_dtor proc near
+.text:00401B70
+.text:00401B70 lpCriticalSection= dword ptr -1Ch
+.text:00401B70 arg_0           = dword ptr  4
+.text:00401B70
+.text:00401B70 ; __unwind {
+.text:00401B70                 push    ebx
+.text:00401B71                 sub     esp, 18h
+.text:00401B74                 mov     eax, ds:___mingwthr_cs_init
+.text:00401B79                 mov     ebx, [esp+1Ch+arg_0]
+.text:00401B7D                 test    eax, eax
+.text:00401B7F                 jnz     short loc_401B88
+.text:00401B81                 add     esp, 18h
+.text:00401B84                 xor     eax, eax
+.text:00401B86                 pop     ebx
+.text:00401B87                 retn
+.text:00401B88 ; ---------------------------------------------------------------------------
+.text:00401B88
+.text:00401B88 loc_401B88:                             ; CODE XREF: ____w64_mingwthr_remove_key_dtor+F↑j
+.text:00401B88                 mov     [esp+1Ch+lpCriticalSection], offset ___mingwthr_cs ; lpCriticalSection
+.text:00401B8F                 call    _EnterCriticalSection@4 ; EnterCriticalSection(x)
+.text:00401B94                 mov     edx, ds:_key_dtor_list
+.text:00401B9A                 sub     esp, 4
+.text:00401B9D                 test    edx, edx
+.text:00401B9F                 jz      short loc_401BBF
+.text:00401BA1                 mov     eax, [edx]
+.text:00401BA3                 cmp     eax, ebx
+.text:00401BA5                 jnz     short loc_401BB8
+.text:00401BA7                 jmp     short loc_401BF4
+.text:00401BA7 ; ---------------------------------------------------------------------------
+.text:00401BA9                 align 10h
+.text:00401BB0
+.text:00401BB0 loc_401BB0:                             ; CODE XREF: ____w64_mingwthr_remove_key_dtor+4D↓j
+.text:00401BB0                 mov     ecx, [eax]
+.text:00401BB2                 cmp     ecx, ebx
+.text:00401BB4                 jz      short loc_401BD5
+.text:00401BB6                 mov     edx, eax
+.text:00401BB8
+.text:00401BB8 loc_401BB8:                             ; CODE XREF: ____w64_mingwthr_remove_key_dtor+35↑j
+.text:00401BB8                 mov     eax, [edx+8]
+.text:00401BBB                 test    eax, eax
+.text:00401BBD                 jnz     short loc_401BB0
+.text:00401BBF
+.text:00401BBF loc_401BBF:                             ; CODE XREF: ____w64_mingwthr_remove_key_dtor+2F↑j
+.text:00401BBF                 mov     [esp+1Ch+lpCriticalSection], offset ___mingwthr_cs ; lpCriticalSection
+.text:00401BC6                 call    _LeaveCriticalSection@4 ; LeaveCriticalSection(x)
+.text:00401BCB                 sub     esp, 4
+.text:00401BCE
+.text:00401BCE loc_401BCE:                             ; CODE XREF: ____w64_mingwthr_remove_key_dtor+82↓j
+.text:00401BCE                 add     esp, 18h
+.text:00401BD1                 xor     eax, eax
+.text:00401BD3                 pop     ebx
+.text:00401BD4                 retn
+.text:00401BD5 ; ---------------------------------------------------------------------------
+.text:00401BD5
+.text:00401BD5 loc_401BD5:                             ; CODE XREF: ____w64_mingwthr_remove_key_dtor+44↑j
+.text:00401BD5                 mov     ecx, [eax+8]
+.text:00401BD8                 mov     [edx+8], ecx
+.text:00401BDB
+.text:00401BDB loc_401BDB:                             ; CODE XREF: ____w64_mingwthr_remove_key_dtor+8E↓j
+.text:00401BDB                 mov     [esp+1Ch+lpCriticalSection], eax ; void *
+.text:00401BDE                 call    _free
+.text:00401BE3                 mov     [esp+1Ch+lpCriticalSection], offset ___mingwthr_cs ; lpCriticalSection
+.text:00401BEA                 call    _LeaveCriticalSection@4 ; LeaveCriticalSection(x)
+.text:00401BEF                 sub     esp, 4
+.text:00401BF2                 jmp     short loc_401BCE
+.text:00401BF4 ; ---------------------------------------------------------------------------
+.text:00401BF4
+.text:00401BF4 loc_401BF4:                             ; CODE XREF: ____w64_mingwthr_remove_key_dtor+37↑j
+.text:00401BF4                 mov     eax, [edx+8]
+.text:00401BF7                 mov     ds:_key_dtor_list, eax
+.text:00401BFC                 mov     eax, edx
+.text:00401BFE                 jmp     short loc_401BDB
+.text:00401BFE ; } // starts at 401B70
+.text:00401BFE ____w64_mingwthr_remove_key_dtor endp
+.text:00401BFE
+.text:00401C00
+.text:00401C00 ; =============== S U B R O U T I N E =======================================
+.text:00401C00
+.text:00401C00
+.text:00401C00                 public ___mingw_TLScallback
+.text:00401C00 ___mingw_TLScallback proc near          ; CODE XREF: __dyn_tls_dtor(x,x,x)+33↑p
+.text:00401C00                                         ; __dyn_tls_init(x,x,x)+7F↑p
+.text:00401C00
+.text:00401C00 lpCriticalSection= dword ptr -1Ch
+.text:00401C00 arg_4           = dword ptr  8
+.text:00401C00
+.text:00401C00 ; __unwind {
+.text:00401C00                 sub     esp, 1Ch
+.text:00401C03                 mov     eax, [esp+1Ch+arg_4]
+.text:00401C07                 cmp     eax, 1
+.text:00401C0A                 jz      short loc_401C50
+.text:00401C0C                 jb      short loc_401C20
+.text:00401C0E                 cmp     eax, 3
+.text:00401C11                 jz      short loc_401C70
+.text:00401C13
+.text:00401C13 loc_401C13:                             ; CODE XREF: ___mingw_TLScallback+31↓j
+.text:00401C13                                         ; ___mingw_TLScallback+4C↓j ...
+.text:00401C13                 mov     eax, 1
+.text:00401C18                 add     esp, 1Ch
+.text:00401C1B                 retn
+.text:00401C1B ; ---------------------------------------------------------------------------
+.text:00401C1C                 align 10h
+.text:00401C20
+.text:00401C20 loc_401C20:                             ; CODE XREF: ___mingw_TLScallback+C↑j
+.text:00401C20                 mov     eax, ds:___mingwthr_cs_init
+.text:00401C25                 test    eax, eax
+.text:00401C27                 jnz     short loc_401C91
+.text:00401C29
+.text:00401C29 loc_401C29:                             ; CODE XREF: ___mingw_TLScallback+96↓j
+.text:00401C29                 mov     eax, ds:___mingwthr_cs_init
+.text:00401C2E                 cmp     eax, 1
+.text:00401C31                 jnz     short loc_401C13
+.text:00401C33                 mov     [esp+1Ch+lpCriticalSection], offset ___mingwthr_cs ; lpCriticalSection
+.text:00401C3A                 mov     ds:___mingwthr_cs_init, 0
+.text:00401C44                 call    _DeleteCriticalSection@4 ; DeleteCriticalSection(x)
+.text:00401C49                 sub     esp, 4
+.text:00401C4C                 jmp     short loc_401C13
+.text:00401C4C ; ---------------------------------------------------------------------------
+.text:00401C4E                 align 10h
+.text:00401C50
+.text:00401C50 loc_401C50:                             ; CODE XREF: ___mingw_TLScallback+A↑j
+.text:00401C50                 mov     eax, ds:___mingwthr_cs_init
+.text:00401C55                 test    eax, eax
+.text:00401C57                 jz      short loc_401C80
+.text:00401C59
+.text:00401C59 loc_401C59:                             ; CODE XREF: ___mingw_TLScallback+8F↓j
+.text:00401C59                 mov     ds:___mingwthr_cs_init, 1
+.text:00401C63                 mov     eax, 1
+.text:00401C68                 add     esp, 1Ch
+.text:00401C6B                 retn
+.text:00401C6B ; ---------------------------------------------------------------------------
+.text:00401C6C                 align 10h
+.text:00401C70
+.text:00401C70 loc_401C70:                             ; CODE XREF: ___mingw_TLScallback+11↑j
+.text:00401C70                 mov     eax, ds:___mingwthr_cs_init
+.text:00401C75                 test    eax, eax
+.text:00401C77                 jz      short loc_401C13
+.text:00401C79                 call    ___mingwthr_run_key_dtors_part_0
+.text:00401C7E                 jmp     short loc_401C13
+.text:00401C80 ; ---------------------------------------------------------------------------
+.text:00401C80
+.text:00401C80 loc_401C80:                             ; CODE XREF: ___mingw_TLScallback+57↑j
+.text:00401C80                 mov     [esp+1Ch+lpCriticalSection], offset ___mingwthr_cs ; lpCriticalSection
+.text:00401C87                 call    _InitializeCriticalSection@4 ; InitializeCriticalSection(x)
+.text:00401C8C                 sub     esp, 4
+.text:00401C8F                 jmp     short loc_401C59
+.text:00401C91 ; ---------------------------------------------------------------------------
+.text:00401C91
+.text:00401C91 loc_401C91:                             ; CODE XREF: ___mingw_TLScallback+27↑j
+.text:00401C91                 call    ___mingwthr_run_key_dtors_part_0
+.text:00401C96                 jmp     short loc_401C29
+.text:00401C96 ; } // starts at 401C00
+.text:00401C96 ___mingw_TLScallback endp
+.text:00401C96
+.text:00401C96 ; ---------------------------------------------------------------------------
+.text:00401C98                 align 10h
+.text:00401CA0 ; [00000006 BYTES: COLLAPSED FUNCTION ___getmainargs. PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:00401CA6                 align 4
+.text:00401CA8 ; [00000006 BYTES: COLLAPSED FUNCTION __setmode. PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:00401CAE                 align 10h
+.text:00401CB0 ; [00000006 BYTES: COLLAPSED FUNCTION ___p__fmode. PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:00401CB6                 align 4
+.text:00401CB8 ; [00000006 BYTES: COLLAPSED FUNCTION ___p__environ. PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:00401CBE                 align 10h
+.text:00401CC0 ; [00000006 BYTES: COLLAPSED FUNCTION __cexit. PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:00401CC6                 align 4
+.text:00401CC8 ; [00000006 BYTES: COLLAPSED FUNCTION _signal. PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:00401CCE                 align 10h
+.text:00401CD0 ; [00000006 BYTES: COLLAPSED FUNCTION _scanf. PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:00401CD6                 align 4
+.text:00401CD8 ; [00000006 BYTES: COLLAPSED FUNCTION _printf. PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:00401CDE                 align 10h
+.text:00401CE0 ; [00000006 BYTES: COLLAPSED FUNCTION _fwrite. PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:00401CE6                 align 4
+.text:00401CE8 ; [00000006 BYTES: COLLAPSED FUNCTION _vfprintf. PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:00401CEE                 align 10h
+.text:00401CF0 ; [00000006 BYTES: COLLAPSED FUNCTION _abort. PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:00401CF6                 align 4
+.text:00401CF8 ; [00000006 BYTES: COLLAPSED FUNCTION _memcpy. PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:00401CFE                 align 10h
+.text:00401D00 ; [00000006 BYTES: COLLAPSED FUNCTION _calloc. PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:00401D06                 align 4
+.text:00401D08 ; [00000006 BYTES: COLLAPSED FUNCTION _free. PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:00401D0E                 align 10h
+.text:00401D10 ; [00000006 BYTES: COLLAPSED FUNCTION SetUnhandledExceptionFilter(x). PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:00401D16                 align 4
+.text:00401D18 ; [00000006 BYTES: COLLAPSED FUNCTION ExitProcess(x). PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:00401D1E                 align 10h
+.text:00401D20 ; [00000006 BYTES: COLLAPSED FUNCTION GetModuleHandleA(x). PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:00401D26                 align 4
+.text:00401D28 ; [00000006 BYTES: COLLAPSED FUNCTION GetProcAddress(x,x). PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:00401D2E                 align 10h
+.text:00401D30 ; [00000006 BYTES: COLLAPSED FUNCTION VirtualQuery(x,x,x). PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:00401D36                 align 4
+.text:00401D38 ; [00000006 BYTES: COLLAPSED FUNCTION VirtualProtect(x,x,x,x). PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:00401D3E                 align 10h
+.text:00401D40 ; [00000006 BYTES: COLLAPSED FUNCTION EnterCriticalSection(x). PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:00401D46                 align 4
+.text:00401D48 ; [00000006 BYTES: COLLAPSED FUNCTION TlsGetValue(x). PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:00401D4E                 align 10h
+.text:00401D50 ; [00000006 BYTES: COLLAPSED FUNCTION GetLastError(). PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:00401D56                 align 4
+.text:00401D58 ; [00000006 BYTES: COLLAPSED FUNCTION LeaveCriticalSection(x). PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:00401D5E                 align 10h
+.text:00401D60 ; [00000006 BYTES: COLLAPSED FUNCTION DeleteCriticalSection(x). PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:00401D66                 align 4
+.text:00401D68 ; [00000006 BYTES: COLLAPSED FUNCTION InitializeCriticalSection(x). PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:00401D6E                 align 10h
+.text:00401D70
+.text:00401D70 ; =============== S U B R O U T I N E =======================================
+.text:00401D70
+.text:00401D70 ; Attributes: bp-based frame
+.text:00401D70
+.text:00401D70 _register_frame_ctor proc near
+.text:00401D70                 push    ebp
+.text:00401D71                 mov     ebp, esp
+.text:00401D73                 sub     esp, 18h
+.text:00401D76                 call    ___gcc_register_frame
+.text:00401D7B                 mov     dword ptr [esp], offset ___gcc_deregister_frame ; void (__cdecl *)()
+.text:00401D82                 call    _atexit
+.text:00401D87                 leave
+.text:00401D88                 retn
+.text:00401D88 _register_frame_ctor endp
+.text:00401D88
+.text:00401D88 ; ---------------------------------------------------------------------------
+.text:00401D89                 align 4
+.text:00401D8C                 public ___CTOR_LIST__
+.text:00401D8C ; func_ptr __CTOR_LIST__[2]
+.text:00401D8C ___CTOR_LIST__  dd 0FFFFFFFFh, 401D70h  ; DATA XREF: ___do_global_ctors+4↑r
+.text:00401D8C                                         ; ___do_global_ctors:loc_401A23↑r ...
+.text:00401D94                 align 8
+.text:00401D98                 public __DTOR_LIST__
+.text:00401D98 ; func_ptr _DTOR_LIST__[2]
+.text:00401D98 __DTOR_LIST__   dd 0FFFFFFFFh, 0
+.text:00401DA0                 align 80h
+.text:00401E00                 dd 80h dup(?)
+.text:00401E00 _text           ends
+.text:00401E00

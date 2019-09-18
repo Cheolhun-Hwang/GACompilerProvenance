@@ -1,0 +1,102 @@
+﻿__text:0000000100000750 ; =============== S U B R O U T I N E =======================================
+__text:0000000100000750
+__text:0000000100000750 ; Attributes: bp-based frame
+__text:0000000100000750
+__text:0000000100000750 ; int __cdecl main(int argc, const char **argv, const char **envp)
+__text:0000000100000750                 public _main
+__text:0000000100000750 _main           proc near
+__text:0000000100000750
+__text:0000000100000750 var_24          = dword ptr -24h
+__text:0000000100000750 var_20          = qword ptr -20h
+__text:0000000100000750 var_14          = dword ptr -14h
+__text:0000000100000750 var_10          = dword ptr -10h
+__text:0000000100000750 var_C           = dword ptr -0Ch
+__text:0000000100000750 var_8           = dword ptr -8
+__text:0000000100000750 var_4           = dword ptr -4
+__text:0000000100000750
+__text:0000000100000750                 push    rbp
+__text:0000000100000751                 mov     rbp, rsp
+__text:0000000100000754                 sub     rsp, 30h
+__text:0000000100000758                 lea     rdi, aD         ; " %d "
+__text:000000010000075F                 lea     rsi, [rbp+var_C]
+__text:0000000100000763                 mov     [rbp+var_4], 0
+__text:000000010000076A                 mov     al, 0
+__text:000000010000076C                 call    _scanf
+__text:0000000100000771                 mov     [rbp+var_8], 1
+__text:0000000100000778                 mov     [rbp+var_14], eax
+__text:000000010000077B
+__text:000000010000077B loc_10000077B:                          ; CODE XREF: _main+11D↓j
+__text:000000010000077B                 mov     eax, [rbp+var_8]
+__text:000000010000077E                 cmp     eax, [rbp+var_C]
+__text:0000000100000781                 jg      loc_100000872
+__text:0000000100000787                 lea     rdi, _s         ; char *
+__text:000000010000078E                 mov     esi, 186A5h     ; int
+__text:0000000100000793                 mov     rax, cs:___stdinp_ptr
+__text:000000010000079A                 mov     rdx, [rax]      ; FILE *
+__text:000000010000079D                 call    _fgets
+__text:00000001000007A2                 lea     rdi, _s         ; char *
+__text:00000001000007A9                 mov     [rbp+var_20], rax
+__text:00000001000007AD                 call    _strlen
+__text:00000001000007B2                 mov     esi, eax
+__text:00000001000007B4                 mov     cs:_n, esi
+__text:00000001000007BA                 mov     [rbp+var_10], 0
+__text:00000001000007C1
+__text:00000001000007C1 loc_1000007C1:                          ; CODE XREF: _main+F2↓j
+__text:00000001000007C1                 mov     eax, [rbp+var_10]
+__text:00000001000007C4                 cmp     eax, cs:_n
+__text:00000001000007CA                 jge     loc_100000847
+__text:00000001000007D0                 mov     eax, 61h ; 'a'
+__text:00000001000007D5                 lea     rcx, _s
+__text:00000001000007DC                 movsxd  rdx, [rbp+var_10]
+__text:00000001000007E0                 movsx   esi, byte ptr [rcx+rdx]
+__text:00000001000007E4                 cmp     eax, esi
+__text:00000001000007E6                 jg      loc_100000832
+__text:00000001000007EC                 lea     rax, _s
+__text:00000001000007F3                 movsxd  rcx, [rbp+var_10]
+__text:00000001000007F7                 movsx   edx, byte ptr [rax+rcx]
+__text:00000001000007FB                 cmp     edx, 7Ah ; 'z'
+__text:0000000100000801                 jg      loc_100000832
+__text:0000000100000807                 lea     rax, _s
+__text:000000010000080E                 lea     rcx, __ZL1q     ; "yhesocvxduiglbkrztnwjpfmaq"
+__text:0000000100000815                 movsxd  rdx, [rbp+var_10]
+__text:0000000100000819                 movsx   esi, byte ptr [rax+rdx]
+__text:000000010000081D                 sub     esi, 61h ; 'a'
+__text:0000000100000823                 movsxd  rdx, esi
+__text:0000000100000826                 mov     dil, [rcx+rdx]
+__text:000000010000082A                 movsxd  rcx, [rbp+var_10]
+__text:000000010000082E                 mov     [rax+rcx], dil
+__text:0000000100000832
+__text:0000000100000832 loc_100000832:                          ; CODE XREF: _main+96↑j
+__text:0000000100000832                                         ; _main+B1↑j
+__text:0000000100000832                 jmp     $+5
+__text:0000000100000837 ; ---------------------------------------------------------------------------
+__text:0000000100000837
+__text:0000000100000837 loc_100000837:                          ; CODE XREF: _main:loc_100000832↑j
+__text:0000000100000837                 mov     eax, [rbp+var_10]
+__text:000000010000083A                 add     eax, 1
+__text:000000010000083F                 mov     [rbp+var_10], eax
+__text:0000000100000842                 jmp     loc_1000007C1
+__text:0000000100000847 ; ---------------------------------------------------------------------------
+__text:0000000100000847
+__text:0000000100000847 loc_100000847:                          ; CODE XREF: _main+7A↑j
+__text:0000000100000847                 lea     rdi, aCaseDS    ; "Case #%d: %s"
+__text:000000010000084E                 lea     rdx, _s
+__text:0000000100000855                 mov     esi, [rbp+var_8]
+__text:0000000100000858                 mov     al, 0
+__text:000000010000085A                 call    _printf
+__text:000000010000085F                 mov     [rbp+var_24], eax
+__text:0000000100000862                 mov     eax, [rbp+var_8]
+__text:0000000100000865                 add     eax, 1
+__text:000000010000086A                 mov     [rbp+var_8], eax
+__text:000000010000086D                 jmp     loc_10000077B
+__text:0000000100000872 ; ---------------------------------------------------------------------------
+__text:0000000100000872
+__text:0000000100000872 loc_100000872:                          ; CODE XREF: _main+31↑j
+__text:0000000100000872                 mov     eax, 0
+__text:0000000100000877                 add     rsp, 30h
+__text:000000010000087B                 pop     rbp
+__text:000000010000087C                 retn
+__text:000000010000087C _main           endp
+__text:000000010000087C
+__text:000000010000087C __text          ends
+__text:000000010000087C

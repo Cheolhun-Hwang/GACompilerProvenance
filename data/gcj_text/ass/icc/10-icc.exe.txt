@@ -1,0 +1,1402 @@
+﻿.text:0000000000400C10 ; =============== S U B R O U T I N E =======================================
+.text:0000000000400C10
+.text:0000000000400C10 ; Attributes: noreturn fuzzy-sp
+.text:0000000000400C10
+.text:0000000000400C10                 public _start
+.text:0000000000400C10 _start          proc near               ; DATA XREF: LOAD:0000000000400018↑o
+.text:0000000000400C10                 xor     ebp, ebp
+.text:0000000000400C12                 mov     r9, rdx         ; rtld_fini
+.text:0000000000400C15                 pop     rsi             ; argc
+.text:0000000000400C16                 mov     rdx, rsp        ; ubp_av
+.text:0000000000400C19                 and     rsp, 0FFFFFFFFFFFFFFF0h
+.text:0000000000400C1D                 push    rax
+.text:0000000000400C1E                 push    rsp             ; stack_end
+.text:0000000000400C1F                 mov     r8, offset __libc_csu_fini ; fini
+.text:0000000000400C26                 mov     rcx, offset __libc_csu_init ; init
+.text:0000000000400C2D                 mov     rdi, offset main ; main
+.text:0000000000400C34                 call    ___libc_start_main
+.text:0000000000400C39                 hlt
+.text:0000000000400C39 _start          endp
+.text:0000000000400C39
+.text:0000000000400C39 ; ---------------------------------------------------------------------------
+.text:0000000000400C3A                 align 4
+.text:0000000000400C3C
+.text:0000000000400C3C ; =============== S U B R O U T I N E =======================================
+.text:0000000000400C3C
+.text:0000000000400C3C
+.text:0000000000400C3C call_gmon_start proc near               ; CODE XREF: _init_proc+4↑p
+.text:0000000000400C3C                 sub     rsp, 8
+.text:0000000000400C40                 mov     rax, cs:__gmon_start___ptr
+.text:0000000000400C47                 test    rax, rax
+.text:0000000000400C4A                 jz      short loc_400C4E
+.text:0000000000400C4C                 call    rax ; __gmon_start__
+.text:0000000000400C4E
+.text:0000000000400C4E loc_400C4E:                             ; CODE XREF: call_gmon_start+E↑j
+.text:0000000000400C4E                 add     rsp, 8
+.text:0000000000400C52                 retn
+.text:0000000000400C52 call_gmon_start endp
+.text:0000000000400C52
+.text:0000000000400C52 ; ---------------------------------------------------------------------------
+.text:0000000000400C53                 align 20h
+.text:0000000000400C60
+.text:0000000000400C60 ; =============== S U B R O U T I N E =======================================
+.text:0000000000400C60
+.text:0000000000400C60 ; Attributes: bp-based frame
+.text:0000000000400C60
+.text:0000000000400C60 __do_global_dtors_aux proc near         ; CODE XREF: _term_proc+4↓p
+.text:0000000000400C60                 push    rbp
+.text:0000000000400C61                 mov     rbp, rsp
+.text:0000000000400C64                 push    rbx
+.text:0000000000400C65                 sub     rsp, 8
+.text:0000000000400C69                 cmp     cs:completed_6531, 0
+.text:0000000000400C70                 jnz     short loc_400CBD
+.text:0000000000400C72                 mov     ebx, offset __DTOR_END__
+.text:0000000000400C77                 mov     rax, cs:dtor_idx_6533
+.text:0000000000400C7E                 sub     rbx, offset __DTOR_LIST__
+.text:0000000000400C85                 sar     rbx, 3
+.text:0000000000400C89                 sub     rbx, 1
+.text:0000000000400C8D                 cmp     rax, rbx
+.text:0000000000400C90                 jnb     short loc_400CB6
+.text:0000000000400C92                 nop     word ptr [rax+rax+00h]
+.text:0000000000400C98
+.text:0000000000400C98 loc_400C98:                             ; CODE XREF: __do_global_dtors_aux+54↓j
+.text:0000000000400C98                 add     rax, 1
+.text:0000000000400C9C                 mov     cs:dtor_idx_6533, rax
+.text:0000000000400CA3                 call    ds:__DTOR_LIST__[rax*8]
+.text:0000000000400CAA                 mov     rax, cs:dtor_idx_6533
+.text:0000000000400CB1                 cmp     rax, rbx
+.text:0000000000400CB4                 jb      short loc_400C98
+.text:0000000000400CB6
+.text:0000000000400CB6 loc_400CB6:                             ; CODE XREF: __do_global_dtors_aux+30↑j
+.text:0000000000400CB6                 mov     cs:completed_6531, 1
+.text:0000000000400CBD
+.text:0000000000400CBD loc_400CBD:                             ; CODE XREF: __do_global_dtors_aux+10↑j
+.text:0000000000400CBD                 add     rsp, 8
+.text:0000000000400CC1                 pop     rbx
+.text:0000000000400CC2                 pop     rbp
+.text:0000000000400CC3                 retn
+.text:0000000000400CC3 __do_global_dtors_aux endp
+.text:0000000000400CC3
+.text:0000000000400CC3 ; ---------------------------------------------------------------------------
+.text:0000000000400CC4                 align 10h
+.text:0000000000400CD0
+.text:0000000000400CD0 ; =============== S U B R O U T I N E =======================================
+.text:0000000000400CD0
+.text:0000000000400CD0 ; Attributes: bp-based frame
+.text:0000000000400CD0
+.text:0000000000400CD0 frame_dummy     proc near               ; CODE XREF: _init_proc+9↑p
+.text:0000000000400CD0                 cmp     cs:__JCR_LIST__, 0
+.text:0000000000400CD8                 push    rbp
+.text:0000000000400CD9                 mov     rbp, rsp
+.text:0000000000400CDC                 jz      short loc_400CF0
+.text:0000000000400CDE                 mov     eax, 0
+.text:0000000000400CE3                 test    rax, rax
+.text:0000000000400CE6                 jz      short loc_400CF0
+.text:0000000000400CE8                 pop     rbp
+.text:0000000000400CE9                 mov     edi, offset __JCR_LIST__
+.text:0000000000400CEE                 jmp     rax
+.text:0000000000400CF0 ; ---------------------------------------------------------------------------
+.text:0000000000400CF0
+.text:0000000000400CF0 loc_400CF0:                             ; CODE XREF: frame_dummy+C↑j
+.text:0000000000400CF0                                         ; frame_dummy+16↑j
+.text:0000000000400CF0                 pop     rbp
+.text:0000000000400CF1                 retn
+.text:0000000000400CF1 frame_dummy     endp
+.text:0000000000400CF1
+.text:0000000000400CF1 ; ---------------------------------------------------------------------------
+.text:0000000000400CF2                 align 20h
+.text:0000000000400D00
+.text:0000000000400D00 ; =============== S U B R O U T I N E =======================================
+.text:0000000000400D00
+.text:0000000000400D00 ; Attributes: bp-based frame fuzzy-sp
+.text:0000000000400D00
+.text:0000000000400D00 ; int __cdecl main(int argc, const char **argv, const char **envp)
+.text:0000000000400D00                 public main
+.text:0000000000400D00 main            proc near               ; DATA XREF: _start+1D↑o
+.text:0000000000400D00
+.text:0000000000400D00 var_80          = qword ptr -80h
+.text:0000000000400D00 var_78          = qword ptr -78h
+.text:0000000000400D00 var_70          = qword ptr -70h
+.text:0000000000400D00
+.text:0000000000400D00 ; __unwind { // ___gxx_personality_v0
+.text:0000000000400D00                 push    rbp
+.text:0000000000400D01                 mov     rbp, rsp
+.text:0000000000400D04                 and     rsp, 0FFFFFFFFFFFFFF80h
+.text:0000000000400D08                 sub     rsp, 80h
+.text:0000000000400D0F                 mov     rsi, 0
+.text:0000000000400D19                 mov     edi, 3
+.text:0000000000400D1E                 call    __intel_new_feature_proc_init
+.text:0000000000400D23                 stmxcsr dword ptr [rsp+80h+var_80]
+.text:0000000000400D27                 mov     edi, offset format ; "%d"
+.text:0000000000400D2C                 mov     esi, offset tt
+.text:0000000000400D31                 or      dword ptr [rsp+80h+var_80], 8040h
+.text:0000000000400D38                 xor     eax, eax
+.text:0000000000400D3A                 ldmxcsr dword ptr [rsp+80h+var_80]
+.text:0000000000400D3E                 call    _scanf
+.text:0000000000400D43                 mov     edi, offset s
+.text:0000000000400D48                 call    _gets
+.text:0000000000400D4D                 xor     esi, esi
+.text:0000000000400D4F                 cmp     cs:tt, 0
+.text:0000000000400D56                 jle     loc_400DE2
+.text:0000000000400D5C                 mov     [rsp+80h+var_80], r14
+.text:0000000000400D60                 mov     r14d, esi
+.text:0000000000400D63                 mov     [rsp+80h+var_78], r15
+.text:0000000000400D68                 mov     [rsp+80h+var_70], rbx
+.text:0000000000400D6D
+.text:0000000000400D6D loc_400D6D:                             ; CODE XREF: main+D2↓j
+.text:0000000000400D6D                 mov     edi, offset s
+.text:0000000000400D72                 call    _gets
+.text:0000000000400D77                 inc     r14d
+.text:0000000000400D7A                 mov     edi, offset aCaseD ; "Case #%d: "
+.text:0000000000400D7F                 mov     esi, r14d
+.text:0000000000400D82                 xor     eax, eax
+.text:0000000000400D84                 call    _printf
+.text:0000000000400D89                 xor     r15d, r15d
+.text:0000000000400D8C                 cmp     cs:s, 0
+.text:0000000000400D93                 jz      short loc_400DC1
+.text:0000000000400D95                 mov     rbx, cs:res
+.text:0000000000400D9C
+.text:0000000000400D9C loc_400D9C:                             ; CODE XREF: main+BF↓j
+.text:0000000000400D9C                 movsx   rax, ds:s[r15]
+.text:0000000000400DA4                 cmp     rax, 20h ; ' '
+.text:0000000000400DA8                 jz      short loc_400DE9
+.text:0000000000400DAA                 movsx   edi, byte ptr [rax+rbx-61h] ; c
+.text:0000000000400DAF                 call    _putchar
+.text:0000000000400DB4
+.text:0000000000400DB4 loc_400DB4:                             ; CODE XREF: main+F3↓j
+.text:0000000000400DB4                 inc     r15
+.text:0000000000400DB7                 cmp     ds:s[r15], 0
+.text:0000000000400DBF                 jnz     short loc_400D9C
+.text:0000000000400DC1
+.text:0000000000400DC1 loc_400DC1:                             ; CODE XREF: main+93↑j
+.text:0000000000400DC1                 mov     edi, 0Ah        ; c
+.text:0000000000400DC6                 call    _putchar
+.text:0000000000400DCB                 cmp     r14d, cs:tt
+.text:0000000000400DD2                 jl      short loc_400D6D
+.text:0000000000400DD4                 mov     r14, [rsp+80h+var_80]
+.text:0000000000400DD8                 mov     r15, [rsp+80h+var_78]
+.text:0000000000400DDD                 mov     rbx, [rsp+80h+var_70]
+.text:0000000000400DE2
+.text:0000000000400DE2 loc_400DE2:                             ; CODE XREF: main+56↑j
+.text:0000000000400DE2                 xor     eax, eax
+.text:0000000000400DE4                 mov     rsp, rbp
+.text:0000000000400DE7                 pop     rbp
+.text:0000000000400DE8                 retn
+.text:0000000000400DE9 ; ---------------------------------------------------------------------------
+.text:0000000000400DE9
+.text:0000000000400DE9 loc_400DE9:                             ; CODE XREF: main+A8↑j
+.text:0000000000400DE9                 mov     edi, 20h ; ' '  ; c
+.text:0000000000400DEE                 call    _putchar
+.text:0000000000400DF3                 jmp     short loc_400DB4
+.text:0000000000400DF3 main            endp
+.text:0000000000400DF3
+.text:0000000000400DF3 ; ---------------------------------------------------------------------------
+.text:0000000000400DF5                 align 20h
+.text:0000000000400DF5 ; } // starts at 400D00
+.text:0000000000400E00
+.text:0000000000400E00 ; =============== S U B R O U T I N E =======================================
+.text:0000000000400E00
+.text:0000000000400E00
+.text:0000000000400E00 __sti__$E       proc near               ; CODE XREF: __libc_csu_init+59↓p
+.text:0000000000400E00                                         ; DATA XREF: .init_array:__init_array_start↓o
+.text:0000000000400E00
+.text:0000000000400E00 var_10          = byte ptr -10h
+.text:0000000000400E00
+.text:0000000000400E00 ; __unwind { // ___gxx_personality_v0
+.text:0000000000400E00                 sub     rsp, 18h
+.text:0000000000400E04                 mov     edi, offset _ZSt8__ioinit ; this
+.text:0000000000400E09                 call    __ZNSt8ios_base4InitC1Ev ; std::ios_base::Init::Init(void)
+.text:0000000000400E0E                 mov     edi, offset __ZNSt8ios_base4InitD1Ev ; lpfunc
+.text:0000000000400E13                 mov     esi, offset _ZSt8__ioinit ; obj
+.text:0000000000400E18                 mov     edx, offset __dso_handle ; lpdso_handle
+.text:0000000000400E1D                 call    ___cxa_atexit
+.text:0000000000400E22                 mov     edi, offset res
+.text:0000000000400E27                 mov     esi, offset aYhesocvxduiglb ; "yhesocvxduiglbkrztnwjpfmaq"
+.text:0000000000400E2C                 lea     rdx, [rsp+18h+var_10]
+.text:0000000000400E31 ;   try {
+.text:0000000000400E31                 call    __ZNSsC1EPKcRKSaIcE ; std::string::string(char const*,std::allocator<char> const&)
+.text:0000000000400E36                 mov     edi, offset __ZNSsD1Ev ; lpfunc
+.text:0000000000400E3B                 mov     esi, offset res ; obj
+.text:0000000000400E40                 mov     edx, offset __dso_handle ; lpdso_handle
+.text:0000000000400E45                 call    ___cxa_atexit
+.text:0000000000400E45 ;   } // starts at 400E31
+.text:0000000000400E4A                 add     rsp, 18h
+.text:0000000000400E4E                 retn
+.text:0000000000400E4F ; ---------------------------------------------------------------------------
+.text:0000000000400E4F ;   cleanup() // owned by 400E31
+.text:0000000000400E4F                 mov     [rsp+0], rax
+.text:0000000000400E53                 mov     rdi, [rsp+0]    ; struct _Unwind_Exception *
+.text:0000000000400E57                 call    __Unwind_Resume
+.text:0000000000400E57 __sti__$E       endp
+.text:0000000000400E57
+.text:0000000000400E57 ; ---------------------------------------------------------------------------
+.text:0000000000400E5C                 align 20h
+.text:0000000000400E5C ; } // starts at 400E00
+.text:0000000000400E60
+.text:0000000000400E60 ; =============== S U B R O U T I N E =======================================
+.text:0000000000400E60
+.text:0000000000400E60
+.text:0000000000400E60                 public __intel_new_feature_proc_init
+.text:0000000000400E60 __intel_new_feature_proc_init proc near ; CODE XREF: main+1E↑p
+.text:0000000000400E60
+.text:0000000000400E60 dest            = byte ptr -448h
+.text:0000000000400E60 var_48          = qword ptr -48h
+.text:0000000000400E60 var_40          = qword ptr -40h
+.text:0000000000400E60 var_38          = qword ptr -38h
+.text:0000000000400E60 var_30          = qword ptr -30h
+.text:0000000000400E60 var_28          = qword ptr -28h
+.text:0000000000400E60 s               = qword ptr -20h
+.text:0000000000400E60
+.text:0000000000400E60 ; __unwind {
+.text:0000000000400E60                 push    r12
+.text:0000000000400E62                 push    r13
+.text:0000000000400E64                 push    r14
+.text:0000000000400E66                 sub     rsp, 430h
+.text:0000000000400E6D                 mov     r14, rsi
+.text:0000000000400E70                 mov     rax, cs:__intel_cpu_feature_indicator_ptr
+.text:0000000000400E77                 mov     r13d, edi
+.text:0000000000400E7A                 mov     r12, [rax]
+.text:0000000000400E7D                 test    r12, r12
+.text:0000000000400E80                 jz      loc_4011BD
+.text:0000000000400E86
+.text:0000000000400E86 loc_400E86:                             ; CODE XREF: __intel_new_feature_proc_init+371↓j
+.text:0000000000400E86                 mov     rax, r12
+.text:0000000000400E89                 and     rax, r14
+.text:0000000000400E8C                 cmp     r14, rax
+.text:0000000000400E8F                 jnz     short loc_400EAC
+.text:0000000000400E91                 test    r12, 6
+.text:0000000000400E98                 jnz     loc_40112D
+.text:0000000000400E9E
+.text:0000000000400E9E loc_400E9E:                             ; CODE XREF: __intel_new_feature_proc_init+2D7↓j
+.text:0000000000400E9E                 add     rsp, 430h
+.text:0000000000400EA5                 pop     r14
+.text:0000000000400EA7                 pop     r13
+.text:0000000000400EA9                 pop     r12
+.text:0000000000400EAB                 retn
+.text:0000000000400EAC ; ---------------------------------------------------------------------------
+.text:0000000000400EAC
+.text:0000000000400EAC loc_400EAC:                             ; CODE XREF: __intel_new_feature_proc_init+2F↑j
+.text:0000000000400EAC                 test    r14, 1
+.text:0000000000400EB3                 jnz     loc_4011A8
+.text:0000000000400EB9                 not     r12
+.text:0000000000400EBC                 mov     edi, 39h ; '9'  ; number
+.text:0000000000400EC1                 and     r12, r14
+.text:0000000000400EC4                 xor     r14d, r14d
+.text:0000000000400EC7                 xor     esi, esi
+.text:0000000000400EC9                 xor     eax, eax
+.text:0000000000400ECB                 call    __libirc_get_msg
+.text:0000000000400ED0                 xor     edx, edx
+.text:0000000000400ED2                 mov     r8b, 1
+.text:0000000000400ED5                 mov     [rsp+448h+dest], 0
+.text:0000000000400ED9                 xor     r13d, r13d
+.text:0000000000400EDC                 mov     [rsp+448h+s], rax
+.text:0000000000400EE4                 mov     [rsp+448h+var_28], r15
+.text:0000000000400EEC                 mov     r15, r12
+.text:0000000000400EEF                 mov     [rsp+448h+var_30], rbx
+.text:0000000000400EF7                 mov     r12b, r8b
+.text:0000000000400EFA                 mov     [rsp+448h+var_38], rbp
+.text:0000000000400F02                 mov     rbp, r14
+.text:0000000000400F05                 mov     r14, rdx
+.text:0000000000400F08
+.text:0000000000400F08 loc_400F08:                             ; CODE XREF: __intel_new_feature_proc_init+1CE↓j
+.text:0000000000400F08                 mov     ecx, r13d
+.text:0000000000400F0B                 mov     eax, 1
+.text:0000000000400F10                 shl     rax, cl
+.text:0000000000400F13                 test    rax, r15
+.text:0000000000400F16                 jz      loc_401024
+.text:0000000000400F1C                 cmp     r12b, 26h ; '&'
+.text:0000000000400F20                 jnb     loc_401103
+.text:0000000000400F26                 movzx   ebx, r12b
+.text:0000000000400F2A                 lea     rax, c_feature_names
+.text:0000000000400F31                 mov     rbx, [rax+rbx*8]
+.text:0000000000400F35                 test    rbx, rbx
+.text:0000000000400F38                 jz      loc_401103
+.text:0000000000400F3E                 cmp     byte ptr [rbx], 0
+.text:0000000000400F41                 jz      loc_401103
+.text:0000000000400F47                 cmp     [rsp+448h+dest], 0
+.text:0000000000400F4B                 jz      loc_400FFF
+.text:0000000000400F51                 test    rbp, rbp
+.text:0000000000400F54                 jz      loc_400FFA
+.text:0000000000400F5A                 mov     rdi, rbp        ; s
+.text:0000000000400F5D                 call    _strlen
+.text:0000000000400F62                 mov     [rsp+448h+var_40], rax
+.text:0000000000400F6A                 mov     rdi, [rsp+448h+s] ; s
+.text:0000000000400F72                 call    _strlen
+.text:0000000000400F77                 mov     [rsp+448h+var_48], rax
+.text:0000000000400F7F                 mov     rdi, rbx        ; s
+.text:0000000000400F82                 call    _strlen
+.text:0000000000400F87                 mov     r9, rax
+.text:0000000000400F8A                 mov     rax, [rsp+448h+var_40]
+.text:0000000000400F92                 add     rax, r14
+.text:0000000000400F95                 add     rax, [rsp+448h+var_48]
+.text:0000000000400F9D                 lea     r9, [rax+r9+2]
+.text:0000000000400FA2                 cmp     r9, 400h
+.text:0000000000400FA9                 jnb     loc_40113C
+.text:0000000000400FAF                 neg     r14
+.text:0000000000400FB2                 lea     rdi, [rsp+448h+dest] ; dest
+.text:0000000000400FB6                 add     r14, 3FFh
+.text:0000000000400FBD                 lea     rsi, src        ; ", "
+.text:0000000000400FC4                 mov     rdx, r14        ; n
+.text:0000000000400FC7                 call    _strncat
+.text:0000000000400FCC                 lea     rdi, [rsp+448h+dest] ; s
+.text:0000000000400FD0                 call    _strlen
+.text:0000000000400FD5                 movsxd  rdx, eax
+.text:0000000000400FD8                 lea     rdi, [rsp+448h+dest] ; dest
+.text:0000000000400FDC                 neg     rdx
+.text:0000000000400FDF                 mov     rsi, rbp        ; src
+.text:0000000000400FE2                 add     rdx, 3FFh       ; n
+.text:0000000000400FE9                 call    _strncat
+.text:0000000000400FEE                 lea     rdi, [rsp+448h+dest] ; s
+.text:0000000000400FF2                 call    _strlen
+.text:0000000000400FF7                 movsxd  r14, eax
+.text:0000000000400FFA
+.text:0000000000400FFA loc_400FFA:                             ; CODE XREF: __intel_new_feature_proc_init+F4↑j
+.text:0000000000400FFA                 mov     rbp, rbx
+.text:0000000000400FFD                 jmp     short loc_401024
+.text:0000000000400FFF ; ---------------------------------------------------------------------------
+.text:0000000000400FFF
+.text:0000000000400FFF loc_400FFF:                             ; CODE XREF: __intel_new_feature_proc_init+EB↑j
+.text:0000000000400FFF                 neg     r14
+.text:0000000000401002                 lea     rdi, [rsp+448h+dest] ; dest
+.text:0000000000401006                 add     r14, 3FFh
+.text:000000000040100D                 mov     rsi, rbx        ; src
+.text:0000000000401010                 mov     rdx, r14        ; n
+.text:0000000000401013                 call    _strncat
+.text:0000000000401018                 lea     rdi, [rsp+448h+dest] ; s
+.text:000000000040101C                 call    _strlen
+.text:0000000000401021                 movsxd  r14, eax
+.text:0000000000401024
+.text:0000000000401024 loc_401024:                             ; CODE XREF: __intel_new_feature_proc_init+B6↑j
+.text:0000000000401024                                         ; __intel_new_feature_proc_init+19D↑j
+.text:0000000000401024                 inc     r12b
+.text:0000000000401027                 inc     r13d
+.text:000000000040102A                 cmp     r12b, 25h ; '%'
+.text:000000000040102E                 jle     loc_400F08
+.text:0000000000401034                 mov     rdx, r14
+.text:0000000000401037                 mov     r14, rbp
+.text:000000000040103A                 mov     rax, [rsp+448h+s]
+.text:0000000000401042                 test    r14, r14
+.text:0000000000401045                 mov     r15, [rsp+448h+var_28]
+.text:000000000040104D                 mov     rbx, [rsp+448h+var_30]
+.text:0000000000401055                 mov     rbp, [rsp+448h+var_38]
+.text:000000000040105D                 jz      short loc_401097
+.text:000000000040105F                 neg     rdx
+.text:0000000000401062                 lea     rdi, [rsp+448h+dest] ; dest
+.text:0000000000401066                 add     rdx, 3FFh       ; n
+.text:000000000040106D                 mov     rsi, rax        ; src
+.text:0000000000401070                 call    _strncat
+.text:0000000000401075                 lea     rdi, [rsp+448h+dest] ; s
+.text:0000000000401079                 call    _strlen
+.text:000000000040107E                 movsxd  rdx, eax
+.text:0000000000401081                 lea     rdi, [rsp+448h+dest] ; dest
+.text:0000000000401085                 neg     rdx
+.text:0000000000401088                 mov     rsi, r14        ; src
+.text:000000000040108B                 add     rdx, 3FFh       ; n
+.text:0000000000401092                 call    _strncat
+.text:0000000000401097
+.text:0000000000401097 loc_401097:                             ; CODE XREF: __intel_new_feature_proc_init+1FD↑j
+.text:0000000000401097                                         ; __intel_new_feature_proc_init+343↓j
+.text:0000000000401097                 cmp     [rsp+448h+dest], 0
+.text:000000000040109B                 jnz     short loc_4010DA
+.text:000000000040109D                 xor     esi, esi
+.text:000000000040109F                 mov     edi, 1
+.text:00000000004010A4                 xor     edx, edx
+.text:00000000004010A6                 xor     eax, eax
+.text:00000000004010A8                 call    __libirc_print
+.text:00000000004010AD
+.text:00000000004010AD loc_4010AD:                             ; CODE XREF: __intel_new_feature_proc_init+2CB↓j
+.text:00000000004010AD                                         ; __intel_new_feature_proc_init+358↓j
+.text:00000000004010AD                 mov     edi, 1
+.text:00000000004010B2                 mov     esi, 3Ah ; ':'
+.text:00000000004010B7                 xor     edx, edx
+.text:00000000004010B9                 xor     eax, eax
+.text:00000000004010BB                 call    __libirc_print
+.text:00000000004010C0
+.text:00000000004010C0 loc_4010C0:                             ; CODE XREF: __intel_new_feature_proc_init+2A1↓j
+.text:00000000004010C0                                         ; __intel_new_feature_proc_init+39A↓j
+.text:00000000004010C0                 xor     esi, esi
+.text:00000000004010C2                 mov     edi, 1
+.text:00000000004010C7                 xor     edx, edx
+.text:00000000004010C9                 xor     eax, eax
+.text:00000000004010CB                 call    __libirc_print
+.text:00000000004010D0                 mov     edi, 1          ; status
+.text:00000000004010D5                 call    _exit
+.text:00000000004010DA ; ---------------------------------------------------------------------------
+.text:00000000004010DA
+.text:00000000004010DA loc_4010DA:                             ; CODE XREF: __intel_new_feature_proc_init+23B↑j
+.text:00000000004010DA                 xor     esi, esi
+.text:00000000004010DC                 mov     edi, 1
+.text:00000000004010E1                 xor     edx, edx
+.text:00000000004010E3                 xor     eax, eax
+.text:00000000004010E5                 call    __libirc_print
+.text:00000000004010EA                 mov     edi, 1
+.text:00000000004010EF                 mov     esi, 38h ; '8'
+.text:00000000004010F4                 mov     edx, edi
+.text:00000000004010F6                 lea     rcx, [rsp+448h+dest]
+.text:00000000004010FA                 xor     eax, eax
+.text:00000000004010FC                 call    __libirc_print
+.text:0000000000401101                 jmp     short loc_4010C0
+.text:0000000000401103 ; ---------------------------------------------------------------------------
+.text:0000000000401103
+.text:0000000000401103 loc_401103:                             ; CODE XREF: __intel_new_feature_proc_init+C0↑j
+.text:0000000000401103                                         ; __intel_new_feature_proc_init+D8↑j ...
+.text:0000000000401103                 mov     r15, [rsp+448h+var_28]
+.text:000000000040110B                 mov     rbx, [rsp+448h+var_30]
+.text:0000000000401113                 mov     rbp, [rsp+448h+var_38]
+.text:000000000040111B                 xor     esi, esi
+.text:000000000040111D                 mov     edi, 1
+.text:0000000000401122                 xor     edx, edx
+.text:0000000000401124                 xor     eax, eax
+.text:0000000000401126                 call    __libirc_print
+.text:000000000040112B                 jmp     short loc_4010AD
+.text:000000000040112D ; ---------------------------------------------------------------------------
+.text:000000000040112D
+.text:000000000040112D loc_40112D:                             ; CODE XREF: __intel_new_feature_proc_init+38↑j
+.text:000000000040112D                 xor     edi, edi
+.text:000000000040112F                 mov     esi, r13d
+.text:0000000000401132                 call    __intel_proc_init_ftzdazule
+.text:0000000000401137                 jmp     loc_400E9E
+.text:000000000040113C ; ---------------------------------------------------------------------------
+.text:000000000040113C
+.text:000000000040113C loc_40113C:                             ; CODE XREF: __intel_new_feature_proc_init+149↑j
+.text:000000000040113C                 mov     rdx, r14
+.text:000000000040113F                 lea     rdi, [rsp+448h+dest] ; dest
+.text:0000000000401143                 neg     rdx
+.text:0000000000401146                 mov     r14, rbp
+.text:0000000000401149                 mov     rax, [rsp+448h+s]
+.text:0000000000401151                 add     rdx, 3FFh       ; n
+.text:0000000000401158                 mov     rsi, rax        ; src
+.text:000000000040115B                 mov     r15, [rsp+448h+var_28]
+.text:0000000000401163                 mov     rbx, [rsp+448h+var_30]
+.text:000000000040116B                 mov     rbp, [rsp+448h+var_38]
+.text:0000000000401173                 call    _strncat
+.text:0000000000401178                 lea     rdi, [rsp+448h+dest] ; s
+.text:000000000040117C                 call    _strlen
+.text:0000000000401181                 movsxd  rdx, eax
+.text:0000000000401184                 lea     rdi, [rsp+448h+dest] ; dest
+.text:0000000000401188                 neg     rdx
+.text:000000000040118B                 mov     rsi, r14        ; src
+.text:000000000040118E                 add     rdx, 3FFh       ; n
+.text:0000000000401195                 call    _strncat
+.text:000000000040119A                 lea     rdi, [rsp+448h+dest] ; s
+.text:000000000040119E                 call    _strlen
+.text:00000000004011A3                 jmp     loc_401097
+.text:00000000004011A8 ; ---------------------------------------------------------------------------
+.text:00000000004011A8
+.text:00000000004011A8 loc_4011A8:                             ; CODE XREF: __intel_new_feature_proc_init+53↑j
+.text:00000000004011A8                 xor     esi, esi
+.text:00000000004011AA                 mov     edi, 1
+.text:00000000004011AF                 xor     edx, edx
+.text:00000000004011B1                 xor     eax, eax
+.text:00000000004011B3                 call    __libirc_print
+.text:00000000004011B8                 jmp     loc_4010AD
+.text:00000000004011BD ; ---------------------------------------------------------------------------
+.text:00000000004011BD
+.text:00000000004011BD loc_4011BD:                             ; CODE XREF: __intel_new_feature_proc_init+20↑j
+.text:00000000004011BD                 xor     eax, eax
+.text:00000000004011BF                 call    __intel_cpu_features_init
+.text:00000000004011C4                 mov     rax, cs:__intel_cpu_feature_indicator_ptr
+.text:00000000004011CB                 mov     r12, [rax]
+.text:00000000004011CE                 test    r12, r12
+.text:00000000004011D1                 jnz     loc_400E86
+.text:00000000004011D7                 xor     esi, esi
+.text:00000000004011D9                 mov     edi, 1
+.text:00000000004011DE                 xor     edx, edx
+.text:00000000004011E0                 xor     eax, eax
+.text:00000000004011E2                 call    __libirc_print
+.text:00000000004011E7                 mov     edi, 1
+.text:00000000004011EC                 mov     esi, 3Bh ; ';'
+.text:00000000004011F1                 xor     edx, edx
+.text:00000000004011F3                 xor     eax, eax
+.text:00000000004011F5                 call    __libirc_print
+.text:00000000004011FA                 jmp     loc_4010C0
+.text:00000000004011FA __intel_new_feature_proc_init endp
+.text:00000000004011FA
+.text:00000000004011FA ; ---------------------------------------------------------------------------
+.text:00000000004011FF                 align 20h
+.text:00000000004011FF ; } // starts at 400E60
+.text:0000000000401200
+.text:0000000000401200 ; =============== S U B R O U T I N E =======================================
+.text:0000000000401200
+.text:0000000000401200
+.text:0000000000401200 ; __int64 __usercall _libirc_get_msg@<rax>(int number@<edi>, char)
+.text:0000000000401200                 public __libirc_get_msg
+.text:0000000000401200 __libirc_get_msg proc near              ; CODE XREF: __intel_new_feature_proc_init+6B↑p
+.text:0000000000401200
+.text:0000000000401200 dest            = byte ptr -168h
+.text:0000000000401200 var_E8          = byte ptr -0E8h
+.text:0000000000401200 var_D8          = qword ptr -0D8h
+.text:0000000000401200 var_D0          = qword ptr -0D0h
+.text:0000000000401200 var_C8          = qword ptr -0C8h
+.text:0000000000401200 var_C0          = qword ptr -0C0h
+.text:0000000000401200 var_39          = byte ptr -39h
+.text:0000000000401200 arg             = dword ptr -38h
+.text:0000000000401200 var_34          = dword ptr -34h
+.text:0000000000401200 var_30          = qword ptr -30h
+.text:0000000000401200 var_28          = qword ptr -28h
+.text:0000000000401200 arg_0           = byte ptr  8
+.text:0000000000401200
+.text:0000000000401200 ; __unwind {
+.text:0000000000401200                 push    r12
+.text:0000000000401202                 push    r13
+.text:0000000000401204                 push    r14
+.text:0000000000401206                 sub     rsp, 150h
+.text:000000000040120D                 mov     [rsp+168h+var_D8], rdx
+.text:0000000000401215                 mov     [rsp+168h+var_D0], rcx
+.text:000000000040121D                 mov     [rsp+168h+var_C8], r8
+.text:0000000000401225                 mov     [rsp+168h+var_C0], r9
+.text:000000000040122D                 movzx   r11d, al
+.text:0000000000401231                 lea     rax, ds:0[r11*4]
+.text:0000000000401239                 lea     r11, loc_40126E
+.text:0000000000401240                 sub     r11, rax
+.text:0000000000401243                 lea     rax, [rsp+168h+var_39]
+.text:000000000040124B                 jmp     r11
+.text:000000000040124E                 movaps  xmmword ptr [rax-0Fh], xmm7
+.text:0000000000401252                 movaps  xmmword ptr [rax-1Fh], xmm6
+.text:0000000000401256                 movaps  xmmword ptr [rax-2Fh], xmm5
+.text:000000000040125A                 movaps  xmmword ptr [rax-3Fh], xmm4
+.text:000000000040125E                 movaps  xmmword ptr [rax-4Fh], xmm3
+.text:0000000000401262                 movaps  xmmword ptr [rax-5Fh], xmm2
+.text:0000000000401266                 movaps  xmmword ptr [rax-6Fh], xmm1
+.text:000000000040126A                 movaps  xmmword ptr [rax-7Fh], xmm0
+.text:000000000040126E
+.text:000000000040126E loc_40126E:                             ; DATA XREF: __libirc_get_msg+39↑o
+.text:000000000040126E                 mov     r13d, edi
+.text:0000000000401271                 mov     r14d, esi
+.text:0000000000401274                 test    r13d, r13d
+.text:0000000000401277                 jz      loc_401307
+.text:000000000040127D                 cmp     cs:first_msg, 0
+.text:0000000000401284                 jz      short loc_4012D4
+.text:0000000000401286                 lea     rdi, cat_name   ; "irc_msg.cat"
+.text:000000000040128D                 xor     esi, esi        ; flag
+.text:000000000040128F                 mov     cs:first_msg, 0
+.text:0000000000401299                 call    _catopen
+.text:000000000040129E                 mov     cs:message_catalog, rax
+.text:00000000004012A5                 cmp     rax, 0FFFFFFFFFFFFFFFFh
+.text:00000000004012A9                 jz      loc_401386
+.text:00000000004012AF                 mov     rdi, cs:message_catalog ; catalog
+.text:00000000004012B6
+.text:00000000004012B6 loc_4012B6:                             ; CODE XREF: __libirc_get_msg+212↓j
+.text:00000000004012B6                 movsxd  rax, r13d
+.text:00000000004012B9                 lea     rcx, off_602F68 ; "\n"
+.text:00000000004012C0                 shl     rax, 4
+.text:00000000004012C4                 mov     cs:use_internal_msg, 0
+.text:00000000004012CE                 mov     rcx, [rax+rcx]  ; string
+.text:00000000004012D2                 jmp     short loc_4012F5
+.text:00000000004012D4 ; ---------------------------------------------------------------------------
+.text:00000000004012D4
+.text:00000000004012D4 loc_4012D4:                             ; CODE XREF: __libirc_get_msg+84↑j
+.text:00000000004012D4                                         ; __libirc_get_msg+218↓j
+.text:00000000004012D4                 mov     edi, cs:use_internal_msg
+.text:00000000004012DA                 movsxd  rax, r13d
+.text:00000000004012DD                 lea     rcx, off_602F68 ; "\n"
+.text:00000000004012E4                 shl     rax, 4
+.text:00000000004012E8                 test    edi, edi
+.text:00000000004012EA                 mov     rcx, [rax+rcx]
+.text:00000000004012EE                 jnz     short loc_40130E
+.text:00000000004012F0                 jmp     loc_40141D
+.text:00000000004012F5 ; ---------------------------------------------------------------------------
+.text:00000000004012F5
+.text:00000000004012F5 loc_4012F5:                             ; CODE XREF: __libirc_get_msg+D2↑j
+.text:00000000004012F5                                         ; __libirc_get_msg+224↓j
+.text:00000000004012F5                 mov     esi, 1          ; set
+.text:00000000004012FA                 mov     edx, r13d       ; number
+.text:00000000004012FD                 call    _catgets
+.text:0000000000401302                 mov     rcx, rax
+.text:0000000000401305                 jmp     short loc_40130E
+.text:0000000000401307 ; ---------------------------------------------------------------------------
+.text:0000000000401307
+.text:0000000000401307 loc_401307:                             ; CODE XREF: __libirc_get_msg+77↑j
+.text:0000000000401307                 lea     rcx, aCannotAllocate+34h ; ""
+.text:000000000040130E
+.text:000000000040130E loc_40130E:                             ; CODE XREF: __libirc_get_msg+EE↑j
+.text:000000000040130E                                         ; __libirc_get_msg+105↑j
+.text:000000000040130E                 test    r14d, r14d
+.text:0000000000401311                 jle     short loc_401375
+.text:0000000000401313                 mov     [rsp+168h+arg], 10h
+.text:000000000040131E                 lea     rdx, [rsp+168h+arg_0]
+.text:0000000000401326                 mov     [rsp+168h+var_34], 30h ; '0'
+.text:0000000000401331                 lea     rdi, [rsp+168h+var_E8]
+.text:0000000000401339                 mov     [rsp+168h+var_30], rdx
+.text:0000000000401341                 mov     [rsp+168h+var_28], rdi
+.text:0000000000401349                 lea     rdi, get_msg_buf ; s
+.text:0000000000401350                 mov     rsi, rcx        ; format
+.text:0000000000401353                 lea     rdx, [rsp+168h+arg] ; arg
+.text:000000000040135B                 call    _vsprintf
+.text:0000000000401360                 lea     rax, get_msg_buf
+.text:0000000000401367                 add     rsp, 150h
+.text:000000000040136E                 pop     r14
+.text:0000000000401370                 pop     r13
+.text:0000000000401372                 pop     r12
+.text:0000000000401374                 retn
+.text:0000000000401375 ; ---------------------------------------------------------------------------
+.text:0000000000401375
+.text:0000000000401375 loc_401375:                             ; CODE XREF: __libirc_get_msg+111↑j
+.text:0000000000401375                 mov     rax, rcx
+.text:0000000000401378                 add     rsp, 150h
+.text:000000000040137F                 pop     r14
+.text:0000000000401381                 pop     r13
+.text:0000000000401383                 pop     r12
+.text:0000000000401385                 retn
+.text:0000000000401386 ; ---------------------------------------------------------------------------
+.text:0000000000401386
+.text:0000000000401386 loc_401386:                             ; CODE XREF: __libirc_get_msg+A9↑j
+.text:0000000000401386                 lea     rdi, name       ; "LANG"
+.text:000000000040138D                 call    _getenv
+.text:0000000000401392                 test    rax, rax
+.text:0000000000401395                 jz      short loc_401407
+.text:0000000000401397                 mov     rsi, rax        ; src
+.text:000000000040139A                 lea     rdi, [rsp+168h+dest] ; dest
+.text:000000000040139E                 mov     edx, 80h        ; n
+.text:00000000004013A3                 call    _strncpy
+.text:00000000004013A8                 mov     esi, 2Eh ; '.'  ; c
+.text:00000000004013AD                 lea     rdi, [rsp+168h+dest] ; s
+.text:00000000004013B1                 call    _strchr
+.text:00000000004013B6                 mov     r12, rax
+.text:00000000004013B9                 test    r12, r12
+.text:00000000004013BC                 jz      short loc_401407
+.text:00000000004013BE                 lea     rdi, name       ; "LANG"
+.text:00000000004013C5                 lea     rsi, [rsp+168h+dest] ; value
+.text:00000000004013C9                 mov     edx, 1          ; replace
+.text:00000000004013CE                 mov     byte ptr [r12], 0
+.text:00000000004013D3                 call    _setenv
+.text:00000000004013D8                 lea     rdi, cat_name   ; "irc_msg.cat"
+.text:00000000004013DF                 xor     esi, esi        ; flag
+.text:00000000004013E1                 call    _catopen
+.text:00000000004013E6                 lea     rdi, name       ; "LANG"
+.text:00000000004013ED                 lea     rsi, [rsp+168h+dest] ; value
+.text:00000000004013F1                 mov     edx, 1          ; replace
+.text:00000000004013F6                 mov     cs:message_catalog, rax
+.text:00000000004013FD                 mov     byte ptr [r12], 2Eh ; '.'
+.text:0000000000401402                 call    _setenv
+.text:0000000000401407
+.text:0000000000401407 loc_401407:                             ; CODE XREF: __libirc_get_msg+195↑j
+.text:0000000000401407                                         ; __libirc_get_msg+1BC↑j
+.text:0000000000401407                 mov     rdi, cs:message_catalog
+.text:000000000040140E                 cmp     rdi, 0FFFFFFFFFFFFFFFFh
+.text:0000000000401412                 jnz     loc_4012B6
+.text:0000000000401418                 jmp     loc_4012D4
+.text:000000000040141D ; ---------------------------------------------------------------------------
+.text:000000000040141D
+.text:000000000040141D loc_40141D:                             ; CODE XREF: __libirc_get_msg+F0↑j
+.text:000000000040141D                 mov     rdi, cs:message_catalog
+.text:0000000000401424                 jmp     loc_4012F5
+.text:0000000000401424 __libirc_get_msg endp
+.text:0000000000401424
+.text:0000000000401424 ; ---------------------------------------------------------------------------
+.text:0000000000401429                 align 10h
+.text:0000000000401429 ; } // starts at 401200
+.text:0000000000401430
+.text:0000000000401430 ; =============== S U B R O U T I N E =======================================
+.text:0000000000401430
+.text:0000000000401430
+.text:0000000000401430                 public __libirc_print
+.text:0000000000401430 __libirc_print  proc near               ; CODE XREF: __intel_new_feature_proc_init+248↑p
+.text:0000000000401430                                         ; __intel_new_feature_proc_init+25B↑p ...
+.text:0000000000401430
+.text:0000000000401430 dest            = byte ptr -168h
+.text:0000000000401430 var_E8          = byte ptr -0E8h
+.text:0000000000401430 var_D0          = qword ptr -0D0h
+.text:0000000000401430 var_C8          = qword ptr -0C8h
+.text:0000000000401430 var_C0          = qword ptr -0C0h
+.text:0000000000401430 var_39          = byte ptr -39h
+.text:0000000000401430 arg             = dword ptr -38h
+.text:0000000000401430 var_34          = dword ptr -34h
+.text:0000000000401430 var_30          = qword ptr -30h
+.text:0000000000401430 var_28          = qword ptr -28h
+.text:0000000000401430 arg_0           = byte ptr  8
+.text:0000000000401430
+.text:0000000000401430 ; __unwind {
+.text:0000000000401430                 push    r13
+.text:0000000000401432                 push    r14
+.text:0000000000401434                 push    r15
+.text:0000000000401436                 push    rbx
+.text:0000000000401437                 sub     rsp, 148h
+.text:000000000040143E                 mov     [rsp+168h+var_D0], rcx
+.text:0000000000401446                 mov     [rsp+168h+var_C8], r8
+.text:000000000040144E                 mov     [rsp+168h+var_C0], r9
+.text:0000000000401456                 movzx   r11d, al
+.text:000000000040145A                 lea     rax, ds:0[r11*4]
+.text:0000000000401462                 lea     r11, loc_401497
+.text:0000000000401469                 sub     r11, rax
+.text:000000000040146C                 lea     rax, [rsp+168h+var_39]
+.text:0000000000401474                 jmp     r11
+.text:0000000000401477                 movaps  xmmword ptr [rax-0Fh], xmm7
+.text:000000000040147B                 movaps  xmmword ptr [rax-1Fh], xmm6
+.text:000000000040147F                 movaps  xmmword ptr [rax-2Fh], xmm5
+.text:0000000000401483                 movaps  xmmword ptr [rax-3Fh], xmm4
+.text:0000000000401487                 movaps  xmmword ptr [rax-4Fh], xmm3
+.text:000000000040148B                 movaps  xmmword ptr [rax-5Fh], xmm2
+.text:000000000040148F                 movaps  xmmword ptr [rax-6Fh], xmm1
+.text:0000000000401493                 movaps  xmmword ptr [rax-7Fh], xmm0
+.text:0000000000401497
+.text:0000000000401497 loc_401497:                             ; DATA XREF: __libirc_print+32↑o
+.text:0000000000401497                 mov     r14d, esi
+.text:000000000040149A                 mov     r15d, edx
+.text:000000000040149D                 mov     r13d, edi
+.text:00000000004014A0                 test    r14d, r14d
+.text:00000000004014A3                 jnz     short loc_4014CC
+.text:00000000004014A5                 cmp     r13d, 1
+.text:00000000004014A9                 jz      loc_4015DE
+.text:00000000004014AF                 lea     rdi, asc_401DB0 ; "\n"
+.text:00000000004014B6                 xor     eax, eax
+.text:00000000004014B8                 call    _printf
+.text:00000000004014BD                 add     rsp, 148h
+.text:00000000004014C4                 pop     rbx
+.text:00000000004014C5                 pop     r15
+.text:00000000004014C7                 pop     r14
+.text:00000000004014C9                 pop     r13
+.text:00000000004014CB                 retn
+.text:00000000004014CC ; ---------------------------------------------------------------------------
+.text:00000000004014CC
+.text:00000000004014CC loc_4014CC:                             ; CODE XREF: __libirc_print+73↑j
+.text:00000000004014CC                 cmp     cs:first_msg, 0
+.text:00000000004014D3                 jz      short loc_401523
+.text:00000000004014D5                 lea     rdi, cat_name   ; "irc_msg.cat"
+.text:00000000004014DC                 xor     esi, esi        ; flag
+.text:00000000004014DE                 mov     cs:first_msg, 0
+.text:00000000004014E8                 call    _catopen
+.text:00000000004014ED                 mov     cs:message_catalog, rax
+.text:00000000004014F4                 cmp     rax, 0FFFFFFFFFFFFFFFFh
+.text:00000000004014F8                 jz      loc_401605
+.text:00000000004014FE                 mov     rdi, cs:message_catalog ; catalog
+.text:0000000000401505
+.text:0000000000401505 loc_401505:                             ; CODE XREF: __libirc_print+25D↓j
+.text:0000000000401505                 movsxd  rax, r14d
+.text:0000000000401508                 lea     rcx, off_602F68 ; "\n"
+.text:000000000040150F                 shl     rax, 4
+.text:0000000000401513                 mov     cs:use_internal_msg, 0
+.text:000000000040151D                 mov     rcx, [rax+rcx]  ; string
+.text:0000000000401521                 jmp     short loc_401544
+.text:0000000000401523 ; ---------------------------------------------------------------------------
+.text:0000000000401523
+.text:0000000000401523 loc_401523:                             ; CODE XREF: __libirc_print+A3↑j
+.text:0000000000401523                                         ; __libirc_print+263↓j
+.text:0000000000401523                 mov     ebx, cs:use_internal_msg
+.text:0000000000401529                 movsxd  rax, r14d
+.text:000000000040152C                 lea     rcx, off_602F68 ; "\n"
+.text:0000000000401533                 shl     rax, 4
+.text:0000000000401537                 test    ebx, ebx
+.text:0000000000401539                 mov     rcx, [rax+rcx]
+.text:000000000040153D                 jnz     short loc_401554
+.text:000000000040153F                 jmp     loc_4016D3
+.text:0000000000401544 ; ---------------------------------------------------------------------------
+.text:0000000000401544
+.text:0000000000401544 loc_401544:                             ; CODE XREF: __libirc_print+F1↑j
+.text:0000000000401544                                         ; __libirc_print+2AA↓j
+.text:0000000000401544                 mov     esi, 1          ; set
+.text:0000000000401549                 mov     edx, r14d       ; number
+.text:000000000040154C                 call    _catgets
+.text:0000000000401551                 mov     rcx, rax
+.text:0000000000401554
+.text:0000000000401554 loc_401554:                             ; CODE XREF: __libirc_print+10D↑j
+.text:0000000000401554                 test    r15d, r15d
+.text:0000000000401557                 jle     short loc_4015AD
+.text:0000000000401559                 mov     [rsp+168h+arg], 18h
+.text:0000000000401564                 lea     rax, [rsp+168h+arg_0]
+.text:000000000040156C                 mov     [rsp+168h+var_34], 30h ; '0'
+.text:0000000000401577                 lea     rdx, [rsp+168h+var_E8]
+.text:000000000040157F                 mov     [rsp+168h+var_30], rax
+.text:0000000000401587                 mov     [rsp+168h+var_28], rdx
+.text:000000000040158F                 lea     rdi, print_buf  ; s
+.text:0000000000401596                 mov     rsi, rcx        ; format
+.text:0000000000401599                 lea     rdx, [rsp+168h+arg] ; arg
+.text:00000000004015A1                 call    _vsprintf
+.text:00000000004015A6                 lea     rcx, print_buf
+.text:00000000004015AD
+.text:00000000004015AD loc_4015AD:                             ; CODE XREF: __libirc_print+127↑j
+.text:00000000004015AD                 cmp     r13d, 1
+.text:00000000004015B1                 jz      loc_401698
+.text:00000000004015B7                 mov     rdi, rcx        ; format
+.text:00000000004015BA                 xor     eax, eax
+.text:00000000004015BC                 call    _printf
+.text:00000000004015C1                 lea     rdi, asc_401DB0 ; "\n"
+.text:00000000004015C8                 xor     eax, eax
+.text:00000000004015CA                 call    _printf
+.text:00000000004015CF                 add     rsp, 148h
+.text:00000000004015D6                 pop     rbx
+.text:00000000004015D7                 pop     r15
+.text:00000000004015D9                 pop     r14
+.text:00000000004015DB                 pop     r13
+.text:00000000004015DD                 retn
+.text:00000000004015DE ; ---------------------------------------------------------------------------
+.text:00000000004015DE
+.text:00000000004015DE loc_4015DE:                             ; CODE XREF: __libirc_print+79↑j
+.text:00000000004015DE                 mov     rax, cs:stderr_ptr
+.text:00000000004015E5                 lea     rsi, asc_401DB0 ; "\n"
+.text:00000000004015EC                 mov     rdi, [rax]      ; stream
+.text:00000000004015EF                 xor     eax, eax
+.text:00000000004015F1                 call    _fprintf
+.text:00000000004015F6                 add     rsp, 148h
+.text:00000000004015FD                 pop     rbx
+.text:00000000004015FE                 pop     r15
+.text:0000000000401600                 pop     r14
+.text:0000000000401602                 pop     r13
+.text:0000000000401604                 retn
+.text:0000000000401605 ; ---------------------------------------------------------------------------
+.text:0000000000401605
+.text:0000000000401605 loc_401605:                             ; CODE XREF: __libirc_print+C8↑j
+.text:0000000000401605                 lea     rdi, name       ; "LANG"
+.text:000000000040160C                 call    _getenv
+.text:0000000000401611                 test    rax, rax
+.text:0000000000401614                 jz      short loc_401682
+.text:0000000000401616                 mov     rsi, rax        ; src
+.text:0000000000401619                 lea     rdi, [rsp+168h+dest] ; dest
+.text:000000000040161D                 mov     edx, 80h        ; n
+.text:0000000000401622                 call    _strncpy
+.text:0000000000401627                 mov     esi, 2Eh ; '.'  ; c
+.text:000000000040162C                 lea     rdi, [rsp+168h+dest] ; s
+.text:0000000000401630                 call    _strchr
+.text:0000000000401635                 mov     rbx, rax
+.text:0000000000401638                 test    rbx, rbx
+.text:000000000040163B                 jz      short loc_401682
+.text:000000000040163D                 lea     rdi, name       ; "LANG"
+.text:0000000000401644                 lea     rsi, [rsp+168h+dest] ; value
+.text:0000000000401648                 mov     edx, 1          ; replace
+.text:000000000040164D                 mov     byte ptr [rbx], 0
+.text:0000000000401650                 call    _setenv
+.text:0000000000401655                 lea     rdi, cat_name   ; "irc_msg.cat"
+.text:000000000040165C                 xor     esi, esi        ; flag
+.text:000000000040165E                 call    _catopen
+.text:0000000000401663                 lea     rdi, name       ; "LANG"
+.text:000000000040166A                 lea     rsi, [rsp+168h+dest] ; value
+.text:000000000040166E                 mov     edx, 1          ; replace
+.text:0000000000401673                 mov     cs:message_catalog, rax
+.text:000000000040167A                 mov     byte ptr [rbx], 2Eh ; '.'
+.text:000000000040167D                 call    _setenv
+.text:0000000000401682
+.text:0000000000401682 loc_401682:                             ; CODE XREF: __libirc_print+1E4↑j
+.text:0000000000401682                                         ; __libirc_print+20B↑j
+.text:0000000000401682                 mov     rdi, cs:message_catalog
+.text:0000000000401689                 cmp     rdi, 0FFFFFFFFFFFFFFFFh
+.text:000000000040168D                 jnz     loc_401505
+.text:0000000000401693                 jmp     loc_401523
+.text:0000000000401698 ; ---------------------------------------------------------------------------
+.text:0000000000401698
+.text:0000000000401698 loc_401698:                             ; CODE XREF: __libirc_print+181↑j
+.text:0000000000401698                 mov     rax, cs:stderr_ptr
+.text:000000000040169F                 mov     rsi, rcx        ; format
+.text:00000000004016A2                 mov     rdi, [rax]      ; stream
+.text:00000000004016A5                 xor     eax, eax
+.text:00000000004016A7                 call    _fprintf
+.text:00000000004016AC                 mov     rax, cs:stderr_ptr
+.text:00000000004016B3                 lea     rsi, asc_401DB0 ; "\n"
+.text:00000000004016BA                 mov     rdi, [rax]      ; stream
+.text:00000000004016BD                 xor     eax, eax
+.text:00000000004016BF                 call    _fprintf
+.text:00000000004016C4                 add     rsp, 148h
+.text:00000000004016CB                 pop     rbx
+.text:00000000004016CC                 pop     r15
+.text:00000000004016CE                 pop     r14
+.text:00000000004016D0                 pop     r13
+.text:00000000004016D2                 retn
+.text:00000000004016D3 ; ---------------------------------------------------------------------------
+.text:00000000004016D3
+.text:00000000004016D3 loc_4016D3:                             ; CODE XREF: __libirc_print+10F↑j
+.text:00000000004016D3                 mov     rdi, cs:message_catalog
+.text:00000000004016DA                 jmp     loc_401544
+.text:00000000004016DA __libirc_print  endp
+.text:00000000004016DA
+.text:00000000004016DA ; ---------------------------------------------------------------------------
+.text:00000000004016DF                 align 20h
+.text:00000000004016DF ; } // starts at 401430
+.text:00000000004016E0
+.text:00000000004016E0 ; =============== S U B R O U T I N E =======================================
+.text:00000000004016E0
+.text:00000000004016E0
+.text:00000000004016E0                 public __intel_cpu_features_init_x
+.text:00000000004016E0 __intel_cpu_features_init_x proc near
+.text:00000000004016E0 ; __unwind {
+.text:00000000004016E0                 push    rax
+.text:00000000004016E1                 push    rdx
+.text:00000000004016E2                 push    rcx
+.text:00000000004016E3                 push    rsi
+.text:00000000004016E4                 push    rdi
+.text:00000000004016E5                 push    r8
+.text:00000000004016E7                 push    r9
+.text:00000000004016E9                 xor     edi, edi
+.text:00000000004016EB                 call    __intel_cpu_features_init_body
+.text:00000000004016F0                 pop     r9
+.text:00000000004016F2                 pop     r8
+.text:00000000004016F4                 pop     rdi
+.text:00000000004016F5                 pop     rsi
+.text:00000000004016F6                 pop     rcx
+.text:00000000004016F7                 pop     rdx
+.text:00000000004016F8                 pop     rax
+.text:00000000004016F9                 retn
+.text:00000000004016F9 __intel_cpu_features_init_x endp
+.text:00000000004016F9
+.text:00000000004016F9 ; ---------------------------------------------------------------------------
+.text:00000000004016FA                 align 20h
+.text:00000000004016FA ; } // starts at 4016E0
+.text:0000000000401700
+.text:0000000000401700 ; =============== S U B R O U T I N E =======================================
+.text:0000000000401700
+.text:0000000000401700
+.text:0000000000401700                 public __intel_cpu_features_init
+.text:0000000000401700 __intel_cpu_features_init proc near     ; CODE XREF: __intel_new_feature_proc_init+35F↑p
+.text:0000000000401700 ; __unwind {
+.text:0000000000401700                 push    rax
+.text:0000000000401701                 push    rdx
+.text:0000000000401702                 push    rcx
+.text:0000000000401703                 push    rsi
+.text:0000000000401704                 push    rdi
+.text:0000000000401705                 push    r8
+.text:0000000000401707                 push    r9
+.text:0000000000401709                 mov     edi, 1
+.text:000000000040170E                 call    __intel_cpu_features_init_body
+.text:0000000000401713                 pop     r9
+.text:0000000000401715                 pop     r8
+.text:0000000000401717                 pop     rdi
+.text:0000000000401718                 pop     rsi
+.text:0000000000401719                 pop     rcx
+.text:000000000040171A                 pop     rdx
+.text:000000000040171B                 pop     rax
+.text:000000000040171C                 retn
+.text:000000000040171C __intel_cpu_features_init endp
+.text:000000000040171C
+.text:000000000040171C ; ---------------------------------------------------------------------------
+.text:000000000040171D                 align 20h
+.text:000000000040171D ; } // starts at 401700
+.text:0000000000401720
+.text:0000000000401720 ; =============== S U B R O U T I N E =======================================
+.text:0000000000401720
+.text:0000000000401720
+.text:0000000000401720 __intel_cpu_features_init_body proc near
+.text:0000000000401720                                         ; CODE XREF: __intel_cpu_features_init_x+B↑p
+.text:0000000000401720                                         ; __intel_cpu_features_init+E↑p
+.text:0000000000401720
+.text:0000000000401720 var_18          = dword ptr -18h
+.text:0000000000401720 var_14          = dword ptr -14h
+.text:0000000000401720 var_10          = dword ptr -10h
+.text:0000000000401720 var_C           = dword ptr -0Ch
+.text:0000000000401720
+.text:0000000000401720 ; __unwind {
+.text:0000000000401720                 push    rbx
+.text:0000000000401721                 mov     r11d, edi
+.text:0000000000401724                 xor     eax, eax
+.text:0000000000401726                 cpuid
+.text:0000000000401728                 mov     [rsp+8+var_18], eax
+.text:000000000040172C                 mov     [rsp+8+var_14], ebx
+.text:0000000000401730                 mov     [rsp+8+var_10], ecx
+.text:0000000000401734                 mov     [rsp+8+var_C], edx
+.text:0000000000401738                 xor     sil, sil
+.text:000000000040173B                 cmp     [rsp+8+var_18], 0
+.text:0000000000401740                 jz      loc_401A7F
+.text:0000000000401746                 cmp     r11d, 1
+.text:000000000040174A                 jz      loc_401A8C
+.text:0000000000401750
+.text:0000000000401750 loc_401750:                             ; CODE XREF: __intel_cpu_features_init_body+38A↓j
+.text:0000000000401750                 mov     eax, 1
+.text:0000000000401755                 cpuid
+.text:0000000000401757                 mov     r8d, edx
+.text:000000000040175A                 mov     r9d, eax
+.text:000000000040175D                 and     r8d, 1
+.text:0000000000401761                 mov     edi, ecx
+.text:0000000000401763                 lea     r8, ds:1[r8*2]
+.text:000000000040176B                 mov     rax, r8
+.text:000000000040176E                 or      rax, 4
+.text:0000000000401772                 test    edx, 8000h
+.text:0000000000401778                 cmovnz  r8, rax
+.text:000000000040177C                 mov     rcx, r8
+.text:000000000040177F                 or      rcx, 8
+.text:0000000000401783                 test    edx, 800000h
+.text:0000000000401789                 cmovnz  r8, rcx
+.text:000000000040178D                 test    edx, 1000000h
+.text:0000000000401793                 jz      loc_401884
+.text:0000000000401799                 or      r8, 10h
+.text:000000000040179D                 mov     r10, r8
+.text:00000000004017A0                 or      r10, 20h
+.text:00000000004017A4                 test    edx, 2000000h
+.text:00000000004017AA                 cmovnz  r8, r10
+.text:00000000004017AE                 mov     rsi, r8
+.text:00000000004017B1                 or      rsi, 40h
+.text:00000000004017B5                 test    edx, 4000000h
+.text:00000000004017BB                 cmovnz  r8, rsi
+.text:00000000004017BF                 mov     r10, r8
+.text:00000000004017C2                 or      r10, 80h
+.text:00000000004017C9                 test    edi, 1
+.text:00000000004017CF                 cmovnz  r8, r10
+.text:00000000004017D3                 mov     rax, r8
+.text:00000000004017D6                 or      rax, 100h
+.text:00000000004017DC                 test    edi, 200h
+.text:00000000004017E2                 cmovnz  r8, rax
+.text:00000000004017E6                 mov     rbx, r8
+.text:00000000004017E9                 or      rbx, 800h
+.text:00000000004017F0                 test    edi, 400000h
+.text:00000000004017F6                 cmovnz  r8, rbx
+.text:00000000004017FA                 mov     rcx, r8
+.text:00000000004017FD                 or      rcx, 200h
+.text:0000000000401804                 test    edi, 80000h
+.text:000000000040180A                 cmovnz  r8, rcx
+.text:000000000040180E                 mov     rdx, r8
+.text:0000000000401811                 or      rdx, 400h
+.text:0000000000401818                 test    edi, 100000h
+.text:000000000040181E                 cmovnz  r8, rdx
+.text:0000000000401822                 mov     r10, r8
+.text:0000000000401825                 or      r10, 1000h
+.text:000000000040182C                 test    edi, 800000h
+.text:0000000000401832                 cmovnz  r8, r10
+.text:0000000000401836                 mov     rsi, r8
+.text:0000000000401839                 or      rsi, 2000h
+.text:0000000000401840                 test    edi, 2
+.text:0000000000401846                 cmovnz  r8, rsi
+.text:000000000040184A                 mov     sil, 1
+.text:000000000040184D                 mov     rax, r8
+.text:0000000000401850                 or      rax, 4000h
+.text:0000000000401856                 test    edi, 2000000h
+.text:000000000040185C                 cmovnz  r8, rax
+.text:0000000000401860                 mov     eax, 7
+.text:0000000000401865                 xor     ecx, ecx
+.text:0000000000401867                 cpuid
+.text:0000000000401869                 mov     r10d, ebx
+.text:000000000040186C                 mov     rbx, 800000000h
+.text:0000000000401876                 or      rbx, r8
+.text:0000000000401879                 test    r10d, 20000000h
+.text:0000000000401880                 cmovnz  r8, rbx
+.text:0000000000401884
+.text:0000000000401884 loc_401884:                             ; CODE XREF: __intel_cpu_features_init_body+73↑j
+.text:0000000000401884                 mov     rax, r8
+.text:0000000000401887                 or      rax, 20000h
+.text:000000000040188D                 test    edi, 40000000h
+.text:0000000000401893                 cmovnz  r8, rax
+.text:0000000000401897                 test    sil, sil
+.text:000000000040189A                 jnz     short loc_4018A8
+.text:000000000040189C                 mov     eax, 7
+.text:00000000004018A1                 xor     ecx, ecx
+.text:00000000004018A3                 cpuid
+.text:00000000004018A5                 mov     r10d, ebx
+.text:00000000004018A8
+.text:00000000004018A8 loc_4018A8:                             ; CODE XREF: __intel_cpu_features_init_body+17A↑j
+.text:00000000004018A8                 mov     esi, r10d
+.text:00000000004018AB                 mov     rcx, r8
+.text:00000000004018AE                 and     esi, 108h
+.text:00000000004018B4                 or      rcx, 80000h
+.text:00000000004018BB                 cmp     esi, 108h
+.text:00000000004018C1                 cmovz   r8, rcx
+.text:00000000004018C5                 mov     eax, 80000001h
+.text:00000000004018CA                 cpuid
+.text:00000000004018CC                 mov     rdx, r8
+.text:00000000004018CF                 or      rdx, 100000h
+.text:00000000004018D6                 test    cl, 20h
+.text:00000000004018D9                 cmovnz  r8, rdx
+.text:00000000004018DD                 mov     rcx, r8
+.text:00000000004018E0                 or      rcx, 200000h
+.text:00000000004018E7                 test    r10d, 10h
+.text:00000000004018EE                 cmovnz  r8, rcx
+.text:00000000004018F2                 mov     rbx, r8
+.text:00000000004018F5                 or      rbx, 400000h
+.text:00000000004018FC                 test    r10d, 800h
+.text:0000000000401903                 cmovnz  r8, rbx
+.text:0000000000401907                 mov     rsi, r8
+.text:000000000040190A                 or      rsi, 10000000h
+.text:0000000000401911                 test    r10d, 80000h
+.text:0000000000401918                 cmovnz  r8, rsi
+.text:000000000040191C                 mov     rax, r8
+.text:000000000040191F                 or      rax, 20000000h
+.text:0000000000401925                 test    r10d, 40000h
+.text:000000000040192C                 cmovnz  r8, rax
+.text:0000000000401930                 test    edi, 8000000h
+.text:0000000000401936                 jz      loc_401A36
+.text:000000000040193C                 xor     ecx, ecx
+.text:000000000040193E                 xgetbv
+.text:0000000000401941                 or      r8, 1
+.text:0000000000401945                 mov     edx, eax
+.text:0000000000401947                 and     edx, 6
+.text:000000000040194A                 cmp     edx, 6
+.text:000000000040194D                 jnz     loc_401A36
+.text:0000000000401953                 mov     rdx, r8
+.text:0000000000401956                 or      rdx, 10000h
+.text:000000000040195D                 test    edi, 10000000h
+.text:0000000000401963                 cmovnz  r8, rdx
+.text:0000000000401967                 mov     rcx, r8
+.text:000000000040196A                 or      rcx, 8000h
+.text:0000000000401971                 test    edi, 20000000h
+.text:0000000000401977                 cmovnz  r8, rcx
+.text:000000000040197B                 mov     rbx, r8
+.text:000000000040197E                 or      rbx, 800000h
+.text:0000000000401985                 test    r10d, 20h
+.text:000000000040198C                 cmovnz  r8, rbx
+.text:0000000000401990                 mov     rsi, r8
+.text:0000000000401993                 or      rsi, 40000h
+.text:000000000040199A                 test    edi, 1000h
+.text:00000000004019A0                 mov     edi, eax
+.text:00000000004019A2                 cmovnz  r8, rsi
+.text:00000000004019A6                 and     edi, 18h
+.text:00000000004019A9                 cmp     edi, 18h
+.text:00000000004019AC                 jnz     short loc_4019CA
+.text:00000000004019AE                 or      r8, 1
+.text:00000000004019B2                 mov     rdx, 1000000000h
+.text:00000000004019BC                 or      rdx, r8
+.text:00000000004019BF                 test    r10d, 4000h
+.text:00000000004019C6                 cmovnz  r8, rdx
+.text:00000000004019CA
+.text:00000000004019CA loc_4019CA:                             ; CODE XREF: __intel_cpu_features_init_body+28C↑j
+.text:00000000004019CA                 and     eax, 0E0h
+.text:00000000004019CF                 cmp     eax, 0E0h
+.text:00000000004019D4                 jnz     short loc_401A36
+.text:00000000004019D6                 or      r8, 1
+.text:00000000004019DA                 mov     rdx, 400000000h
+.text:00000000004019E4                 mov     rax, r8
+.text:00000000004019E7                 mov     rcx, 100000000h
+.text:00000000004019F1                 or      rax, 8000000h
+.text:00000000004019F7                 test    r10d, 10000h
+.text:00000000004019FE                 mov     rbx, 200000000h
+.text:0000000000401A08                 cmovnz  r8, rax
+.text:0000000000401A0C                 or      rdx, r8
+.text:0000000000401A0F                 test    r10d, 10000000h
+.text:0000000000401A16                 cmovnz  r8, rdx
+.text:0000000000401A1A                 or      rcx, r8
+.text:0000000000401A1D                 test    r10d, 8000000h
+.text:0000000000401A24                 cmovnz  r8, rcx
+.text:0000000000401A28                 or      rbx, r8
+.text:0000000000401A2B                 test    r10d, 4000000h
+.text:0000000000401A32                 cmovnz  r8, rbx
+.text:0000000000401A36
+.text:0000000000401A36 loc_401A36:                             ; CODE XREF: __intel_cpu_features_init_body+216↑j
+.text:0000000000401A36                                         ; __intel_cpu_features_init_body+22D↑j ...
+.text:0000000000401A36                 mov     eax, r9d
+.text:0000000000401A39                 shr     eax, 0Ch
+.text:0000000000401A3C                 shr     r9d, 4
+.text:0000000000401A40                 and     eax, 0F0h
+.text:0000000000401A45                 and     r9d, 0Fh
+.text:0000000000401A49                 add     eax, r9d
+.text:0000000000401A4C                 cmp     eax, 1Ch
+.text:0000000000401A4F                 jz      short loc_401A5B
+.text:0000000000401A51                 cmp     eax, 26h ; '&'
+.text:0000000000401A54                 jz      short loc_401A5B
+.text:0000000000401A56                 cmp     eax, 27h ; '''
+.text:0000000000401A59                 jnz     short loc_401A60
+.text:0000000000401A5B
+.text:0000000000401A5B loc_401A5B:                             ; CODE XREF: __intel_cpu_features_init_body+32F↑j
+.text:0000000000401A5B                                         ; __intel_cpu_features_init_body+334↑j
+.text:0000000000401A5B                 bts     r8, 1Fh
+.text:0000000000401A60
+.text:0000000000401A60 loc_401A60:                             ; CODE XREF: __intel_cpu_features_init_body+339↑j
+.text:0000000000401A60                 cmp     r11d, 1
+.text:0000000000401A64                 jz      short loc_401A6F
+.text:0000000000401A66                 mov     cs:__intel_cpu_feature_indicator_x, r8
+.text:0000000000401A6D                 pop     rbx
+.text:0000000000401A6E                 retn
+.text:0000000000401A6F ; ---------------------------------------------------------------------------
+.text:0000000000401A6F
+.text:0000000000401A6F loc_401A6F:                             ; CODE XREF: __intel_cpu_features_init_body+344↑j
+.text:0000000000401A6F                 mov     cs:__intel_cpu_feature_indicator, r8
+.text:0000000000401A76                 mov     cs:__intel_cpu_feature_indicator_x, r8
+.text:0000000000401A7D                 pop     rbx
+.text:0000000000401A7E                 retn
+.text:0000000000401A7F ; ---------------------------------------------------------------------------
+.text:0000000000401A7F
+.text:0000000000401A7F loc_401A7F:                             ; CODE XREF: __intel_cpu_features_init_body+20↑j
+.text:0000000000401A7F                                         ; __intel_cpu_features_init_body+374↓j ...
+.text:0000000000401A7F                 mov     cs:__intel_cpu_feature_indicator, 1
+.text:0000000000401A8A                 pop     rbx
+.text:0000000000401A8B                 retn
+.text:0000000000401A8C ; ---------------------------------------------------------------------------
+.text:0000000000401A8C
+.text:0000000000401A8C loc_401A8C:                             ; CODE XREF: __intel_cpu_features_init_body+2A↑j
+.text:0000000000401A8C                 cmp     [rsp+8+var_14], 756E6547h
+.text:0000000000401A94                 jnz     short loc_401A7F
+.text:0000000000401A96                 cmp     [rsp+8+var_C], 49656E69h
+.text:0000000000401A9E                 jnz     short loc_401A7F
+.text:0000000000401AA0                 cmp     [rsp+8+var_10], 6C65746Eh
+.text:0000000000401AA8                 jnz     short loc_401A7F
+.text:0000000000401AAA                 jmp     loc_401750
+.text:0000000000401AAA __intel_cpu_features_init_body endp
+.text:0000000000401AAA
+.text:0000000000401AAA ; ---------------------------------------------------------------------------
+.text:0000000000401AAF                 align 10h
+.text:0000000000401AAF ; } // starts at 401720
+.text:0000000000401AB0
+.text:0000000000401AB0 ; =============== S U B R O U T I N E =======================================
+.text:0000000000401AB0
+.text:0000000000401AB0
+.text:0000000000401AB0                 public __intel_proc_init_ftzdazule
+.text:0000000000401AB0 __intel_proc_init_ftzdazule proc near   ; CODE XREF: __intel_new_feature_proc_init+2D2↑p
+.text:0000000000401AB0
+.text:0000000000401AB0 s               = dword ptr -218h
+.text:0000000000401AB0 var_1FC         = dword ptr -1FCh
+.text:0000000000401AB0
+.text:0000000000401AB0 ; __unwind {
+.text:0000000000401AB0                 push    r15
+.text:0000000000401AB2                 push    rbx
+.text:0000000000401AB3                 push    rbp
+.text:0000000000401AB4                 sub     rsp, 200h
+.text:0000000000401ABB                 mov     ebx, esi
+.text:0000000000401ABD                 mov     ebp, ebx
+.text:0000000000401ABF                 mov     r15d, ebx
+.text:0000000000401AC2                 and     ebp, 4
+.text:0000000000401AC5                 and     r15d, 2
+.text:0000000000401AC9                 jz      short loc_401AD3
+.text:0000000000401ACB                 test    edi, 2
+.text:0000000000401AD1                 jz      short loc_401ADF
+.text:0000000000401AD3
+.text:0000000000401AD3 loc_401AD3:                             ; CODE XREF: __intel_proc_init_ftzdazule+19↑j
+.text:0000000000401AD3                 test    ebp, ebp
+.text:0000000000401AD5                 jz      short loc_401B07
+.text:0000000000401AD7                 test    edi, 4
+.text:0000000000401ADD                 jnz     short loc_401B07
+.text:0000000000401ADF
+.text:0000000000401ADF loc_401ADF:                             ; CODE XREF: __intel_proc_init_ftzdazule+21↑j
+.text:0000000000401ADF                 xor     esi, esi        ; c
+.text:0000000000401AE1                 lea     rdi, [rsp+218h+s] ; s
+.text:0000000000401AE5                 mov     edx, 200h       ; n
+.text:0000000000401AEA                 call    _memset
+.text:0000000000401AEF                 fxsave  [rsp+218h+s]
+.text:0000000000401AF3                 xor     edx, edx
+.text:0000000000401AF5                 mov     eax, [rsp+218h+var_1FC]
+.text:0000000000401AF9                 test    al, 40h
+.text:0000000000401AFB                 cmovz   r15d, edx
+.text:0000000000401AFF                 test    eax, 20000h
+.text:0000000000401B04                 cmovz   ebp, edx
+.text:0000000000401B07
+.text:0000000000401B07 loc_401B07:                             ; CODE XREF: __intel_proc_init_ftzdazule+25↑j
+.text:0000000000401B07                                         ; __intel_proc_init_ftzdazule+2D↑j
+.text:0000000000401B07                 test    bl, 1
+.text:0000000000401B0A                 jnz     short loc_401B45
+.text:0000000000401B0C
+.text:0000000000401B0C loc_401B0C:                             ; CODE XREF: __intel_proc_init_ftzdazule+A8↓j
+.text:0000000000401B0C                 test    r15d, r15d
+.text:0000000000401B0F                 jz      short loc_401B22
+.text:0000000000401B11                 stmxcsr [rsp+218h+s]
+.text:0000000000401B15                 mov     eax, [rsp+218h+s]
+.text:0000000000401B18                 or      eax, 40h
+.text:0000000000401B1B                 mov     [rsp+218h+s], eax
+.text:0000000000401B1E                 ldmxcsr [rsp+218h+s]
+.text:0000000000401B22
+.text:0000000000401B22 loc_401B22:                             ; CODE XREF: __intel_proc_init_ftzdazule+5F↑j
+.text:0000000000401B22                 test    ebp, ebp
+.text:0000000000401B24                 jz      short loc_401B39
+.text:0000000000401B26                 stmxcsr [rsp+218h+s]
+.text:0000000000401B2A                 mov     eax, [rsp+218h+s]
+.text:0000000000401B2D                 or      eax, 20000h
+.text:0000000000401B32                 mov     [rsp+218h+s], eax
+.text:0000000000401B35                 ldmxcsr [rsp+218h+s]
+.text:0000000000401B39
+.text:0000000000401B39 loc_401B39:                             ; CODE XREF: __intel_proc_init_ftzdazule+74↑j
+.text:0000000000401B39                 add     rsp, 200h
+.text:0000000000401B40                 pop     rbp
+.text:0000000000401B41                 pop     rbx
+.text:0000000000401B42                 pop     r15
+.text:0000000000401B44                 retn
+.text:0000000000401B45 ; ---------------------------------------------------------------------------
+.text:0000000000401B45
+.text:0000000000401B45 loc_401B45:                             ; CODE XREF: __intel_proc_init_ftzdazule+5A↑j
+.text:0000000000401B45                 stmxcsr [rsp+218h+s]
+.text:0000000000401B49                 mov     eax, [rsp+218h+s]
+.text:0000000000401B4C                 or      eax, 8000h
+.text:0000000000401B51                 mov     [rsp+218h+s], eax
+.text:0000000000401B54                 ldmxcsr [rsp+218h+s]
+.text:0000000000401B58                 jmp     short loc_401B0C
+.text:0000000000401B58 __intel_proc_init_ftzdazule endp
+.text:0000000000401B58
+.text:0000000000401B58 ; ---------------------------------------------------------------------------
+.text:0000000000401B5A                 align 20h
+.text:0000000000401B5A ; } // starts at 401AB0
+.text:0000000000401B60
+.text:0000000000401B60 ; =============== S U B R O U T I N E =======================================
+.text:0000000000401B60
+.text:0000000000401B60
+.text:0000000000401B60 ; void _libc_csu_init(void)
+.text:0000000000401B60                 public __libc_csu_init
+.text:0000000000401B60 __libc_csu_init proc near               ; DATA XREF: _start+16↑o
+.text:0000000000401B60
+.text:0000000000401B60 var_30          = qword ptr -30h
+.text:0000000000401B60 var_28          = qword ptr -28h
+.text:0000000000401B60 var_20          = qword ptr -20h
+.text:0000000000401B60 var_18          = qword ptr -18h
+.text:0000000000401B60 var_10          = qword ptr -10h
+.text:0000000000401B60 var_8           = qword ptr -8
+.text:0000000000401B60
+.text:0000000000401B60 ; __unwind {
+.text:0000000000401B60                 mov     [rsp+var_28], rbp
+.text:0000000000401B65                 mov     [rsp+var_20], r12
+.text:0000000000401B6A                 lea     rbp, __CTOR_LIST__
+.text:0000000000401B71                 lea     r12, __init_array_start
+.text:0000000000401B78                 mov     [rsp+var_18], r13
+.text:0000000000401B7D                 mov     [rsp+var_10], r14
+.text:0000000000401B82                 mov     [rsp+var_8], r15
+.text:0000000000401B87                 mov     [rsp+var_30], rbx
+.text:0000000000401B8C                 sub     rsp, 38h
+.text:0000000000401B90                 sub     rbp, r12
+.text:0000000000401B93                 mov     r13d, edi
+.text:0000000000401B96                 mov     r14, rsi
+.text:0000000000401B99                 sar     rbp, 3
+.text:0000000000401B9D                 mov     r15, rdx
+.text:0000000000401BA0                 call    _init_proc
+.text:0000000000401BA5                 test    rbp, rbp
+.text:0000000000401BA8                 jz      short loc_401BC6
+.text:0000000000401BAA                 xor     ebx, ebx
+.text:0000000000401BAC                 nop     dword ptr [rax+00h]
+.text:0000000000401BB0
+.text:0000000000401BB0 loc_401BB0:                             ; CODE XREF: __libc_csu_init+64↓j
+.text:0000000000401BB0                 mov     rdx, r15
+.text:0000000000401BB3                 mov     rsi, r14
+.text:0000000000401BB6                 mov     edi, r13d
+.text:0000000000401BB9                 call    ds:(__init_array_start - 602F28h)[r12+rbx*8]
+.text:0000000000401BBD                 add     rbx, 1
+.text:0000000000401BC1                 cmp     rbx, rbp
+.text:0000000000401BC4                 jnz     short loc_401BB0
+.text:0000000000401BC6
+.text:0000000000401BC6 loc_401BC6:                             ; CODE XREF: __libc_csu_init+48↑j
+.text:0000000000401BC6                 mov     rbx, [rsp+38h+var_30]
+.text:0000000000401BCB                 mov     rbp, [rsp+38h+var_28]
+.text:0000000000401BD0                 mov     r12, [rsp+38h+var_20]
+.text:0000000000401BD5                 mov     r13, [rsp+38h+var_18]
+.text:0000000000401BDA                 mov     r14, [rsp+38h+var_10]
+.text:0000000000401BDF                 mov     r15, [rsp+38h+var_8]
+.text:0000000000401BE4                 add     rsp, 38h
+.text:0000000000401BE8                 retn
+.text:0000000000401BE8 ; } // starts at 401B60
+.text:0000000000401BE8 __libc_csu_init endp
+.text:0000000000401BE8
+.text:0000000000401BE8 ; ---------------------------------------------------------------------------
+.text:0000000000401BE9                 align 10h
+.text:0000000000401BF0
+.text:0000000000401BF0 ; =============== S U B R O U T I N E =======================================
+.text:0000000000401BF0
+.text:0000000000401BF0
+.text:0000000000401BF0 ; void _libc_csu_fini(void)
+.text:0000000000401BF0                 public __libc_csu_fini
+.text:0000000000401BF0 __libc_csu_fini proc near               ; DATA XREF: _start+F↑o
+.text:0000000000401BF0 ; __unwind {
+.text:0000000000401BF0                 rep retn
+.text:0000000000401BF0 ; } // starts at 401BF0
+.text:0000000000401BF0 __libc_csu_fini endp
+.text:0000000000401BF0
+.text:0000000000401BF0 ; ---------------------------------------------------------------------------
+.text:0000000000401BF2                 align 20h
+.text:0000000000401C00
+.text:0000000000401C00 ; =============== S U B R O U T I N E =======================================
+.text:0000000000401C00
+.text:0000000000401C00 ; Attributes: bp-based frame
+.text:0000000000401C00
+.text:0000000000401C00 __do_global_ctors_aux proc near         ; CODE XREF: _init_proc+E↑p
+.text:0000000000401C00                 push    rbp
+.text:0000000000401C01                 mov     rbp, rsp
+.text:0000000000401C04                 push    rbx
+.text:0000000000401C05                 sub     rsp, 8
+.text:0000000000401C09                 mov     rax, cs:__CTOR_LIST__
+.text:0000000000401C10                 cmp     rax, 0FFFFFFFFFFFFFFFFh
+.text:0000000000401C14                 jz      short loc_401C2F
+.text:0000000000401C16                 mov     ebx, offset __CTOR_LIST__
+.text:0000000000401C1B                 nop     dword ptr [rax+rax+00h]
+.text:0000000000401C20
+.text:0000000000401C20 loc_401C20:                             ; CODE XREF: __do_global_ctors_aux+2D↓j
+.text:0000000000401C20                 sub     rbx, 8
+.text:0000000000401C24                 call    rax ; __CTOR_LIST__
+.text:0000000000401C26                 mov     rax, [rbx]
+.text:0000000000401C29                 cmp     rax, 0FFFFFFFFFFFFFFFFh
+.text:0000000000401C2D                 jnz     short loc_401C20
+.text:0000000000401C2F
+.text:0000000000401C2F loc_401C2F:                             ; CODE XREF: __do_global_ctors_aux+14↑j
+.text:0000000000401C2F                 add     rsp, 8
+.text:0000000000401C33                 pop     rbx
+.text:0000000000401C34                 pop     rbp
+.text:0000000000401C35                 retn
+.text:0000000000401C35 __do_global_ctors_aux endp
+.text:0000000000401C35
+.text:0000000000401C35 ; ---------------------------------------------------------------------------
+.text:0000000000401C36                 align 8
+.text:0000000000401C36 _text           ends
+.text:0000000000401C36

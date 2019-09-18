@@ -1,0 +1,259 @@
+﻿__text:0000000100000BF0 ; =============== S U B R O U T I N E =======================================
+__text:0000000100000BF0
+__text:0000000100000BF0 ; Attributes: bp-based frame
+__text:0000000100000BF0
+__text:0000000100000BF0 ; int __cdecl main(int argc, const char **argv, const char **envp)
+__text:0000000100000BF0                 public _main
+__text:0000000100000BF0 _main           proc near
+__text:0000000100000BF0
+__text:0000000100000BF0 var_C0          = dword ptr -0C0h
+__text:0000000100000BF0 var_BC          = dword ptr -0BCh
+__text:0000000100000BF0 var_B8          = qword ptr -0B8h
+__text:0000000100000BF0 var_B0          = qword ptr -0B0h
+__text:0000000100000BF0 var_A8          = dword ptr -0A8h
+__text:0000000100000BF0 var_A4          = dword ptr -0A4h
+__text:0000000100000BF0 var_A0          = qword ptr -0A0h
+__text:0000000100000BF0 var_98          = qword ptr -98h
+__text:0000000100000BF0 var_90          = dword ptr -90h
+__text:0000000100000BF0 var_8C          = dword ptr -8Ch
+__text:0000000100000BF0 var_88          = dword ptr -88h
+__text:0000000100000BF0 var_84          = dword ptr -84h
+__text:0000000100000BF0 var_80          = qword ptr -80h
+__text:0000000100000BF0 var_78          = qword ptr -78h
+__text:0000000100000BF0 var_70          = qword ptr -70h
+__text:0000000100000BF0 var_68          = qword ptr -68h
+__text:0000000100000BF0 var_60          = qword ptr -60h
+__text:0000000100000BF0 var_58          = qword ptr -58h
+__text:0000000100000BF0 var_50          = qword ptr -50h
+__text:0000000100000BF0 var_48          = qword ptr -48h
+__text:0000000100000BF0 var_40          = qword ptr -40h
+__text:0000000100000BF0 var_38          = qword ptr -38h
+__text:0000000100000BF0 var_30          = qword ptr -30h
+__text:0000000100000BF0 var_28          = qword ptr -28h
+__text:0000000100000BF0 var_20          = qword ptr -20h
+__text:0000000100000BF0 var_18          = qword ptr -18h
+__text:0000000100000BF0 var_10          = qword ptr -10h
+__text:0000000100000BF0 var_8           = qword ptr -8
+__text:0000000100000BF0
+__text:0000000100000BF0                 push    rbp
+__text:0000000100000BF1                 mov     rbp, rsp
+__text:0000000100000BF4                 sub     rsp, 0C0h
+__text:0000000100000BFB                 lea     rdi, aD         ; "%d"
+__text:0000000100000C02                 lea     rsi, _tt
+__text:0000000100000C09                 mov     [rbp+var_84], 0
+__text:0000000100000C13                 mov     al, 0
+__text:0000000100000C15                 call    _scanf
+__text:0000000100000C1A                 lea     rdi, _s         ; char *
+__text:0000000100000C21                 mov     [rbp+var_90], eax
+__text:0000000100000C27                 call    _gets
+__text:0000000100000C2C                 mov     [rbp+var_88], 0
+__text:0000000100000C36                 mov     [rbp+var_98], rax
+__text:0000000100000C3D
+__text:0000000100000C3D loc_100000C3D:                          ; CODE XREF: _main+236↓j
+__text:0000000100000C3D                 mov     eax, [rbp+var_88]
+__text:0000000100000C43                 cmp     eax, cs:_tt
+__text:0000000100000C49                 jge     loc_100000E2B
+__text:0000000100000C4F                 lea     rdi, _s         ; char *
+__text:0000000100000C56                 call    _gets
+__text:0000000100000C5B                 lea     rdi, aCaseD     ; "Case #%d: "
+__text:0000000100000C62                 mov     ecx, [rbp+var_88]
+__text:0000000100000C68                 add     ecx, 1
+__text:0000000100000C6E                 mov     esi, ecx
+__text:0000000100000C70                 mov     [rbp+var_A0], rax
+__text:0000000100000C77                 mov     al, 0
+__text:0000000100000C79                 call    _printf
+__text:0000000100000C7E                 mov     [rbp+var_8C], 0
+__text:0000000100000C88                 mov     [rbp+var_A4], eax
+__text:0000000100000C8E
+__text:0000000100000C8E loc_100000C8E:                          ; CODE XREF: _main+20C↓j
+__text:0000000100000C8E                 lea     rax, _s
+__text:0000000100000C95                 movsxd  rcx, [rbp+var_8C]
+__text:0000000100000C9C                 cmp     byte ptr [rax+rcx], 0
+__text:0000000100000CA0                 jz      loc_100000E01
+__text:0000000100000CA6                 lea     rax, _s
+__text:0000000100000CAD                 movsxd  rcx, [rbp+var_8C]
+__text:0000000100000CB4                 movsx   edx, byte ptr [rax+rcx]
+__text:0000000100000CB8                 cmp     edx, 20h ; ' '
+__text:0000000100000CBE                 jnz     loc_100000CDD
+__text:0000000100000CC4                 lea     rdi, asc_100000F95 ; " "
+__text:0000000100000CCB                 mov     al, 0
+__text:0000000100000CCD                 call    _printf
+__text:0000000100000CD2                 mov     [rbp+var_A8], eax
+__text:0000000100000CD8                 jmp     loc_100000DE6
+__text:0000000100000CDD ; ---------------------------------------------------------------------------
+__text:0000000100000CDD
+__text:0000000100000CDD loc_100000CDD:                          ; CODE XREF: _main+CE↑j
+__text:0000000100000CDD                 lea     rax, __ZL3res   ; res
+__text:0000000100000CE4                 lea     rcx, _s
+__text:0000000100000CEB                 movsxd  rdx, [rbp+var_8C]
+__text:0000000100000CF2                 movsx   esi, byte ptr [rcx+rdx]
+__text:0000000100000CF6                 sub     esi, 61h ; 'a'
+__text:0000000100000CFC                 movsxd  rcx, esi
+__text:0000000100000CFF                 mov     [rbp+var_78], rax
+__text:0000000100000D03                 mov     [rbp+var_80], rcx
+__text:0000000100000D07                 mov     rax, [rbp+var_78]
+__text:0000000100000D0B                 mov     [rbp+var_70], rax
+__text:0000000100000D0F                 mov     rax, [rbp+var_70]
+__text:0000000100000D13                 mov     [rbp+var_68], rax
+__text:0000000100000D17                 mov     rax, [rbp+var_68]
+__text:0000000100000D1B                 mov     [rbp+var_60], rax
+__text:0000000100000D1F                 mov     rcx, [rbp+var_60]
+__text:0000000100000D23                 mov     [rbp+var_58], rcx
+__text:0000000100000D27                 mov     rcx, [rbp+var_58]
+__text:0000000100000D2B                 mov     [rbp+var_50], rcx
+__text:0000000100000D2F                 mov     rcx, [rbp+var_50]
+__text:0000000100000D33                 movzx   esi, byte ptr [rcx]
+__text:0000000100000D36                 and     esi, 1
+__text:0000000100000D3C                 cmp     esi, 0
+__text:0000000100000D42                 mov     [rbp+var_B0], rax
+__text:0000000100000D49                 jz      loc_100000D7E
+__text:0000000100000D4F                 mov     rax, [rbp+var_B0]
+__text:0000000100000D56                 mov     [rbp+var_20], rax
+__text:0000000100000D5A                 mov     rcx, [rbp+var_20]
+__text:0000000100000D5E                 mov     [rbp+var_18], rcx
+__text:0000000100000D62                 mov     rcx, [rbp+var_18]
+__text:0000000100000D66                 mov     [rbp+var_10], rcx
+__text:0000000100000D6A                 mov     rcx, [rbp+var_10]
+__text:0000000100000D6E                 mov     rcx, [rcx+10h]
+__text:0000000100000D72                 mov     [rbp+var_B8], rcx
+__text:0000000100000D79                 jmp     loc_100000DBB
+__text:0000000100000D7E ; ---------------------------------------------------------------------------
+__text:0000000100000D7E
+__text:0000000100000D7E loc_100000D7E:                          ; CODE XREF: _main+159↑j
+__text:0000000100000D7E                 mov     rax, [rbp+var_B0]
+__text:0000000100000D85                 mov     [rbp+var_48], rax
+__text:0000000100000D89                 mov     rcx, [rbp+var_48]
+__text:0000000100000D8D                 mov     [rbp+var_40], rcx
+__text:0000000100000D91                 mov     rcx, [rbp+var_40]
+__text:0000000100000D95                 mov     [rbp+var_38], rcx
+__text:0000000100000D99                 mov     rcx, [rbp+var_38]
+__text:0000000100000D9D                 add     rcx, 1
+__text:0000000100000DA4                 mov     [rbp+var_30], rcx
+__text:0000000100000DA8                 mov     rcx, [rbp+var_30]
+__text:0000000100000DAC                 mov     [rbp+var_28], rcx
+__text:0000000100000DB0                 mov     rcx, [rbp+var_28]
+__text:0000000100000DB4                 mov     [rbp+var_B8], rcx
+__text:0000000100000DBB
+__text:0000000100000DBB loc_100000DBB:                          ; CODE XREF: _main+189↑j
+__text:0000000100000DBB                 mov     rax, [rbp+var_B8]
+__text:0000000100000DC2                 lea     rdi, aC         ; "%c"
+__text:0000000100000DC9                 mov     [rbp+var_8], rax
+__text:0000000100000DCD                 mov     rax, [rbp+var_8]
+__text:0000000100000DD1                 mov     rcx, [rbp+var_80]
+__text:0000000100000DD5                 movsx   esi, byte ptr [rax+rcx]
+__text:0000000100000DD9                 mov     al, 0
+__text:0000000100000DDB                 call    _printf
+__text:0000000100000DE0                 mov     [rbp+var_BC], eax
+__text:0000000100000DE6
+__text:0000000100000DE6 loc_100000DE6:                          ; CODE XREF: _main+E8↑j
+__text:0000000100000DE6                 jmp     $+5
+__text:0000000100000DEB ; ---------------------------------------------------------------------------
+__text:0000000100000DEB
+__text:0000000100000DEB loc_100000DEB:                          ; CODE XREF: _main:loc_100000DE6↑j
+__text:0000000100000DEB                 mov     eax, [rbp+var_8C]
+__text:0000000100000DF1                 add     eax, 1
+__text:0000000100000DF6                 mov     [rbp+var_8C], eax
+__text:0000000100000DFC                 jmp     loc_100000C8E
+__text:0000000100000E01 ; ---------------------------------------------------------------------------
+__text:0000000100000E01
+__text:0000000100000E01 loc_100000E01:                          ; CODE XREF: _main+B0↑j
+__text:0000000100000E01                 lea     rdi, asc_100000F9A ; "\n"
+__text:0000000100000E08                 mov     al, 0
+__text:0000000100000E0A                 call    _printf
+__text:0000000100000E0F                 mov     [rbp+var_C0], eax
+__text:0000000100000E15                 mov     eax, [rbp+var_88]
+__text:0000000100000E1B                 add     eax, 1
+__text:0000000100000E20                 mov     [rbp+var_88], eax
+__text:0000000100000E26                 jmp     loc_100000C3D
+__text:0000000100000E2B ; ---------------------------------------------------------------------------
+__text:0000000100000E2B
+__text:0000000100000E2B loc_100000E2B:                          ; CODE XREF: _main+59↑j
+__text:0000000100000E2B                 mov     eax, 0
+__text:0000000100000E30                 add     rsp, 0C0h
+__text:0000000100000E37                 pop     rbp
+__text:0000000100000E38                 retn
+__text:0000000100000E38 _main           endp
+__text:0000000100000E38
+__text:0000000100000E38 ; ---------------------------------------------------------------------------
+__text:0000000100000E39                 align 20h
+__text:0000000100000E40
+__text:0000000100000E40 ; =============== S U B R O U T I N E =======================================
+__text:0000000100000E40
+__text:0000000100000E40 ; Attributes: bp-based frame
+__text:0000000100000E40
+__text:0000000100000E40 ___cxx_global_var_init proc near        ; CODE XREF: `global constructor keyed to'_a+4↓p
+__text:0000000100000E40
+__text:0000000100000E40 var_5C          = dword ptr -5Ch
+__text:0000000100000E40 var_58          = qword ptr -58h
+__text:0000000100000E40 var_50          = qword ptr -50h
+__text:0000000100000E40 var_48          = qword ptr -48h
+__text:0000000100000E40 var_40          = qword ptr -40h
+__text:0000000100000E40 var_38          = qword ptr -38h
+__text:0000000100000E40 var_30          = qword ptr -30h
+__text:0000000100000E40 var_28          = qword ptr -28h
+__text:0000000100000E40 var_20          = qword ptr -20h
+__text:0000000100000E40 var_18          = qword ptr -18h
+__text:0000000100000E40 var_10          = qword ptr -10h
+__text:0000000100000E40 var_8           = qword ptr -8
+__text:0000000100000E40
+__text:0000000100000E40                 push    rbp
+__text:0000000100000E41                 mov     rbp, rsp
+__text:0000000100000E44                 sub     rsp, 60h
+__text:0000000100000E48                 lea     rax, aYhesocvxduiglb ; "yhesocvxduiglbkrztnwjpfmaq"
+__text:0000000100000E4F                 lea     rcx, __ZL3res   ; res
+__text:0000000100000E56                 mov     [rbp+var_40], rcx
+__text:0000000100000E5A                 mov     [rbp+var_48], rax
+__text:0000000100000E5E                 mov     rax, [rbp+var_40]
+__text:0000000100000E62                 mov     rcx, [rbp+var_48]
+__text:0000000100000E66                 mov     [rbp+var_30], rax
+__text:0000000100000E6A                 mov     [rbp+var_38], rcx
+__text:0000000100000E6E                 mov     rax, [rbp+var_30]
+__text:0000000100000E72                 mov     [rbp+var_28], rax
+__text:0000000100000E76                 mov     rcx, [rbp+var_28]
+__text:0000000100000E7A                 mov     [rbp+var_20], rcx
+__text:0000000100000E7E                 mov     rcx, [rbp+var_20]
+__text:0000000100000E82                 mov     [rbp+var_18], rcx
+__text:0000000100000E86                 mov     rcx, [rbp+var_18]
+__text:0000000100000E8A                 mov     [rbp+var_10], rcx
+__text:0000000100000E8E                 mov     rsi, [rbp+var_38]
+__text:0000000100000E92                 mov     rcx, [rbp+var_38]
+__text:0000000100000E96                 mov     [rbp+var_8], rcx
+__text:0000000100000E9A                 mov     rdi, [rbp+var_8] ; char *
+__text:0000000100000E9E                 mov     [rbp+var_50], rax
+__text:0000000100000EA2                 mov     [rbp+var_58], rsi
+__text:0000000100000EA6                 call    _strlen
+__text:0000000100000EAB                 mov     rdi, [rbp+var_50]
+__text:0000000100000EAF                 mov     rsi, [rbp+var_58]
+__text:0000000100000EB3                 mov     rdx, rax
+__text:0000000100000EB6                 call    __ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE6__initEPKcm ; std::__1::basic_string<char,std::__1::char_traits<char>,std::__1::allocator<char>>::__init(char const*,ulong)
+__text:0000000100000EBB                 mov     rax, cs:__ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEED1Ev_ptr
+__text:0000000100000EC2                 lea     rcx, __ZL3res   ; res
+__text:0000000100000EC9                 lea     rdx, __mh_execute_header ; lpdso_handle
+__text:0000000100000ED0                 mov     rdi, rax        ; lpfunc
+__text:0000000100000ED3                 mov     rsi, rcx        ; obj
+__text:0000000100000ED6                 call    ___cxa_atexit
+__text:0000000100000EDB                 mov     [rbp+var_5C], eax
+__text:0000000100000EDE                 add     rsp, 60h
+__text:0000000100000EE2                 pop     rbp
+__text:0000000100000EE3                 retn
+__text:0000000100000EE3 ___cxx_global_var_init endp
+__text:0000000100000EE3
+__text:0000000100000EE3 ; ---------------------------------------------------------------------------
+__text:0000000100000EE4                 align 10h
+__text:0000000100000EF0
+__text:0000000100000EF0 ; =============== S U B R O U T I N E =======================================
+__text:0000000100000EF0
+__text:0000000100000EF0 ; Attributes: bp-based frame
+__text:0000000100000EF0
+__text:0000000100000EF0 ; `global constructor keyed to'_a
+__text:0000000100000EF0                 public __GLOBAL__I_a
+__text:0000000100000EF0 __GLOBAL__I_a   proc near               ; DATA XREF: __mod_init_func:0000000100001048↓o
+__text:0000000100000EF0                 push    rbp
+__text:0000000100000EF1                 mov     rbp, rsp
+__text:0000000100000EF4                 call    ___cxx_global_var_init
+__text:0000000100000EF9                 pop     rbp
+__text:0000000100000EFA                 retn
+__text:0000000100000EFA __GLOBAL__I_a   endp
+__text:0000000100000EFA
+__text:0000000100000EFA __text          ends
+__text:0000000100000EFA

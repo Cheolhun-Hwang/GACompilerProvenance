@@ -1,0 +1,154 @@
+﻿__text:0000000100000D80 ; =============== S U B R O U T I N E =======================================
+__text:0000000100000D80
+__text:0000000100000D80 ; Attributes: bp-based frame
+__text:0000000100000D80
+__text:0000000100000D80 ; int __cdecl main(int argc, const char **argv, const char **envp)
+__text:0000000100000D80                 public _main
+__text:0000000100000D80 _main           proc near
+__text:0000000100000D80
+__text:0000000100000D80 var_2C          = dword ptr -2Ch
+__text:0000000100000D80 var_28          = dword ptr -28h
+__text:0000000100000D80 var_24          = dword ptr -24h
+__text:0000000100000D80 var_20          = dword ptr -20h
+__text:0000000100000D80 var_1C          = dword ptr -1Ch
+__text:0000000100000D80 var_18          = dword ptr -18h
+__text:0000000100000D80 var_14          = dword ptr -14h
+__text:0000000100000D80 var_10          = dword ptr -10h
+__text:0000000100000D80 var_C           = dword ptr -0Ch
+__text:0000000100000D80 var_8           = dword ptr -8
+__text:0000000100000D80 var_4           = dword ptr -4
+__text:0000000100000D80
+__text:0000000100000D80                 push    rbp
+__text:0000000100000D81                 mov     rbp, rsp
+__text:0000000100000D84                 sub     rsp, 30h
+__text:0000000100000D88                 lea     rdi, aD         ; " %d "
+__text:0000000100000D8F                 lea     rsi, [rbp+var_C]
+__text:0000000100000D93                 mov     [rbp+var_4], 0
+__text:0000000100000D9A                 mov     al, 0
+__text:0000000100000D9C                 call    _scanf
+__text:0000000100000DA1                 mov     [rbp+var_8], 1
+__text:0000000100000DA8                 mov     [rbp+var_18], eax
+__text:0000000100000DAB
+__text:0000000100000DAB loc_100000DAB:                          ; CODE XREF: _main+1B6↓j
+__text:0000000100000DAB                 mov     eax, [rbp+var_8]
+__text:0000000100000DAE                 cmp     eax, [rbp+var_C]
+__text:0000000100000DB1                 jg      loc_100000F3B
+__text:0000000100000DB7                 lea     rdi, aDDD       ; " %d %d %d"
+__text:0000000100000DBE                 lea     rsi, _n
+__text:0000000100000DC5                 lea     rdx, _s
+__text:0000000100000DCC                 lea     rcx, _p
+__text:0000000100000DD3                 mov     al, 0
+__text:0000000100000DD5                 call    _scanf
+__text:0000000100000DDA                 mov     [rbp+var_10], 0
+__text:0000000100000DE1                 mov     [rbp+var_1C], eax
+__text:0000000100000DE4
+__text:0000000100000DE4 loc_100000DE4:                          ; CODE XREF: _main+A4↓j
+__text:0000000100000DE4                 mov     eax, [rbp+var_10]
+__text:0000000100000DE7                 cmp     eax, cs:_n
+__text:0000000100000DED                 jge     loc_100000E29
+__text:0000000100000DF3                 lea     rdi, aD_0       ; " %d"
+__text:0000000100000DFA                 lea     rax, _t
+__text:0000000100000E01                 movsxd  rcx, [rbp+var_10]
+__text:0000000100000E05                 shl     rcx, 2
+__text:0000000100000E09                 add     rax, rcx
+__text:0000000100000E0C                 mov     rsi, rax
+__text:0000000100000E0F                 mov     al, 0
+__text:0000000100000E11                 call    _scanf
+__text:0000000100000E16                 mov     [rbp+var_20], eax
+__text:0000000100000E19                 mov     eax, [rbp+var_10]
+__text:0000000100000E1C                 add     eax, 1
+__text:0000000100000E21                 mov     [rbp+var_10], eax
+__text:0000000100000E24                 jmp     loc_100000DE4
+__text:0000000100000E29 ; ---------------------------------------------------------------------------
+__text:0000000100000E29
+__text:0000000100000E29 loc_100000E29:                          ; CODE XREF: _main+6D↑j
+__text:0000000100000E29                 mov     [rbp+var_14], 0
+__text:0000000100000E30                 mov     [rbp+var_10], 0
+__text:0000000100000E37
+__text:0000000100000E37 loc_100000E37:                          ; CODE XREF: _main+18F↓j
+__text:0000000100000E37                 mov     eax, [rbp+var_10]
+__text:0000000100000E3A                 cmp     eax, cs:_n
+__text:0000000100000E40                 jge     loc_100000F14
+__text:0000000100000E46                 mov     eax, 3
+__text:0000000100000E4B                 lea     rcx, _t
+__text:0000000100000E52                 movsxd  rdx, [rbp+var_10]
+__text:0000000100000E56                 mov     esi, [rcx+rdx*4]
+__text:0000000100000E59                 add     esi, 2
+__text:0000000100000E5F                 mov     [rbp+var_24], eax
+__text:0000000100000E62                 mov     eax, esi
+__text:0000000100000E64                 cdq
+__text:0000000100000E65                 mov     esi, [rbp+var_24]
+__text:0000000100000E68                 idiv    esi
+__text:0000000100000E6A                 cmp     eax, cs:_p
+__text:0000000100000E70                 jl      loc_100000E86
+__text:0000000100000E76                 mov     eax, [rbp+var_14]
+__text:0000000100000E79                 add     eax, 1
+__text:0000000100000E7E                 mov     [rbp+var_14], eax
+__text:0000000100000E81                 jmp     loc_100000EFF
+__text:0000000100000E86 ; ---------------------------------------------------------------------------
+__text:0000000100000E86
+__text:0000000100000E86 loc_100000E86:                          ; CODE XREF: _main+F0↑j
+__text:0000000100000E86                 cmp     cs:_s, 0
+__text:0000000100000E90                 jle     loc_100000EFA
+__text:0000000100000E96                 lea     rax, _t
+__text:0000000100000E9D                 movsxd  rcx, [rbp+var_10]
+__text:0000000100000EA1                 cmp     dword ptr [rax+rcx*4], 2
+__text:0000000100000EA8                 jl      loc_100000EFA
+__text:0000000100000EAE                 mov     eax, 3
+__text:0000000100000EB3                 lea     rcx, _t
+__text:0000000100000EBA                 movsxd  rdx, [rbp+var_10]
+__text:0000000100000EBE                 mov     esi, [rcx+rdx*4]
+__text:0000000100000EC1                 add     esi, 4
+__text:0000000100000EC7                 mov     [rbp+var_28], eax
+__text:0000000100000ECA                 mov     eax, esi
+__text:0000000100000ECC                 cdq
+__text:0000000100000ECD                 mov     esi, [rbp+var_28]
+__text:0000000100000ED0                 idiv    esi
+__text:0000000100000ED2                 cmp     eax, cs:_p
+__text:0000000100000ED8                 jl      loc_100000EFA
+__text:0000000100000EDE                 mov     eax, [rbp+var_14]
+__text:0000000100000EE1                 add     eax, 1
+__text:0000000100000EE6                 mov     [rbp+var_14], eax
+__text:0000000100000EE9                 mov     eax, cs:_s
+__text:0000000100000EEF                 add     eax, 0FFFFFFFFh
+__text:0000000100000EF4                 mov     cs:_s, eax
+__text:0000000100000EFA
+__text:0000000100000EFA loc_100000EFA:                          ; CODE XREF: _main+110↑j
+__text:0000000100000EFA                                         ; _main+128↑j ...
+__text:0000000100000EFA                 jmp     $+5
+__text:0000000100000EFF ; ---------------------------------------------------------------------------
+__text:0000000100000EFF
+__text:0000000100000EFF loc_100000EFF:                          ; CODE XREF: _main+101↑j
+__text:0000000100000EFF                                         ; _main:loc_100000EFA↑j
+__text:0000000100000EFF                 jmp     $+5
+__text:0000000100000F04 ; ---------------------------------------------------------------------------
+__text:0000000100000F04
+__text:0000000100000F04 loc_100000F04:                          ; CODE XREF: _main:loc_100000EFF↑j
+__text:0000000100000F04                 mov     eax, [rbp+var_10]
+__text:0000000100000F07                 add     eax, 1
+__text:0000000100000F0C                 mov     [rbp+var_10], eax
+__text:0000000100000F0F                 jmp     loc_100000E37
+__text:0000000100000F14 ; ---------------------------------------------------------------------------
+__text:0000000100000F14
+__text:0000000100000F14 loc_100000F14:                          ; CODE XREF: _main+C0↑j
+__text:0000000100000F14                 lea     rdi, aCaseDD    ; "Case #%d: %d\n"
+__text:0000000100000F1B                 mov     esi, [rbp+var_8]
+__text:0000000100000F1E                 mov     edx, [rbp+var_14]
+__text:0000000100000F21                 mov     al, 0
+__text:0000000100000F23                 call    _printf
+__text:0000000100000F28                 mov     [rbp+var_2C], eax
+__text:0000000100000F2B                 mov     eax, [rbp+var_8]
+__text:0000000100000F2E                 add     eax, 1
+__text:0000000100000F33                 mov     [rbp+var_8], eax
+__text:0000000100000F36                 jmp     loc_100000DAB
+__text:0000000100000F3B ; ---------------------------------------------------------------------------
+__text:0000000100000F3B
+__text:0000000100000F3B loc_100000F3B:                          ; CODE XREF: _main+31↑j
+__text:0000000100000F3B                 mov     eax, 0
+__text:0000000100000F40                 add     rsp, 30h
+__text:0000000100000F44                 pop     rbp
+__text:0000000100000F45                 retn
+__text:0000000100000F45 _main           endp
+__text:0000000100000F45
+__text:0000000100000F45 __text          ends
+__text:0000000100000F45

@@ -1,0 +1,323 @@
+﻿.text:00401000 ; =============== S U B R O U T I N E =======================================
+.text:00401000
+.text:00401000 ; Attributes: bp-based frame
+.text:00401000
+.text:00401000 sub_401000      proc near               ; CODE XREF: _main+7B↓p
+.text:00401000
+.text:00401000 var_2C          = qword ptr -2Ch
+.text:00401000 var_10          = qword ptr -10h
+.text:00401000 var_8           = byte ptr -8
+.text:00401000 var_4           = dword ptr -4
+.text:00401000
+.text:00401000                 push    ebp
+.text:00401001                 mov     ebp, esp
+.text:00401003                 fld1
+.text:00401005                 mov     ecx, dword ptr dbl_4DA0F8+4
+.text:0040100B                 sub     esp, 14h
+.text:0040100E                 fstp    dbl_403378
+.text:00401014                 push    ebx
+.text:00401015                 push    esi
+.text:00401016                 push    edi
+.text:00401017                 mov     eax, 1
+.text:0040101C                 cmp     ecx, 4
+.text:0040101F                 jl      short loc_40106A
+.text:00401021                 lea     edx, [ecx-3]
+.text:00401024
+.text:00401024 loc_401024:                             ; CODE XREF: sub_401000+68↓j
+.text:00401024                 fld     dbl_4DA0F8[eax*8]
+.text:0040102B                 add     eax, 4
+.text:0040102E                 fmul    dbl_403350[eax*8]
+.text:00401035                 fst     dbl_403358[eax*8]
+.text:0040103C                 fmul    dbl_4DA0E0[eax*8]
+.text:00401043                 fst     dbl_403360[eax*8]
+.text:0040104A                 fmul    dbl_4DA0E8[eax*8]
+.text:00401051                 fst     dbl_403368[eax*8]
+.text:00401058                 fmul    dbl_4DA0F0[eax*8]
+.text:0040105F                 fstp    dbl_403370[eax*8]
+.text:00401066                 cmp     eax, edx
+.text:00401068                 jle     short loc_401024
+.text:0040106A
+.text:0040106A loc_40106A:                             ; CODE XREF: sub_401000+1F↑j
+.text:0040106A                 cmp     eax, ecx
+.text:0040106C                 jg      short loc_40108A
+.text:0040106E                 mov     edi, edi
+.text:00401070
+.text:00401070 loc_401070:                             ; CODE XREF: sub_401000+88↓j
+.text:00401070                 fld     dbl_4DA0F8[eax*8]
+.text:00401077                 inc     eax
+.text:00401078                 fmul    dbl_403368[eax*8]
+.text:0040107F                 fstp    dbl_403370[eax*8]
+.text:00401086                 cmp     eax, ecx
+.text:00401088                 jle     short loc_401070
+.text:0040108A
+.text:0040108A loc_40108A:                             ; CODE XREF: sub_401000+6C↑j
+.text:0040108A                 mov     edx, dword ptr dbl_4DA0F8
+.text:00401090                 lea     eax, [edx+2]
+.text:00401093                 mov     [ebp+var_4], eax
+.text:00401096                 fild    [ebp+var_4]
+.text:00401099                 xor     esi, esi
+.text:0040109B                 fst     [ebp+var_10]
+.text:0040109E                 test    ecx, ecx
+.text:004010A0                 js      loc_40113F
+.text:004010A6                 xor     edi, edi
+.text:004010A8                 jmp     short loc_4010B6
+.text:004010A8 ; ---------------------------------------------------------------------------
+.text:004010AA                 align 10h
+.text:004010B0
+.text:004010B0 loc_4010B0:                             ; CODE XREF: sub_401000+139↓j
+.text:004010B0                 mov     edx, dword ptr dbl_4DA0F8
+.text:004010B6
+.text:004010B6 loc_4010B6:                             ; CODE XREF: sub_401000+A8↑j
+.text:004010B6                 lea     ebx, [edx+edx]
+.text:004010B9                 fstp    st
+.text:004010BB                 sub     ebx, ecx
+.text:004010BD                 add     ebx, esi
+.text:004010BF                 mov     eax, ecx
+.text:004010C1                 lea     ebx, [ebx+esi+2]
+.text:004010C5                 mov     [ebp+var_4], ebx
+.text:004010C8                 fild    [ebp+var_4]
+.text:004010CB                 fld1
+.text:004010CD                 sub     eax, esi
+.text:004010CF                 fsub    dbl_403378[eax*8]
+.text:004010D6                 lea     eax, dbl_403378[eax*8]
+.text:004010DD                 mov     ebx, edi
+.text:004010DF                 sub     ebx, ecx
+.text:004010E1                 lea     ecx, [ebx+edx+1]
+.text:004010E5                 mov     edx, ds:?endl@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@1@AAV21@@Z ; std::endl(std::basic_ostream<char,std::char_traits<char>> &)
+.text:004010EB                 fmulp   st(1), st
+.text:004010ED                 mov     [ebp+var_4], ecx
+.text:004010F0                 fild    [ebp+var_4]
+.text:004010F3                 mov     ecx, ds:?cerr@std@@3V?$basic_ostream@DU?$char_traits@D@std@@@1@A ; std::basic_ostream<char,std::char_traits<char>> std::cerr
+.text:004010F9                 push    edx
+.text:004010FA                 fmul    qword ptr [eax]
+.text:004010FC                 sub     esp, 8
+.text:004010FF                 faddp   st(1), st
+.text:00401101                 fst     qword ptr [ebp-8]
+.text:00401104                 fstp    [esp+2Ch+var_2C]
+.text:00401107                 call    ds:??6?$basic_ostream@DU?$char_traits@D@std@@@std@@QAEAAV01@N@Z ; std::basic_ostream<char,std::char_traits<char>>::operator<<(double)
+.text:0040110D                 mov     ecx, eax
+.text:0040110F                 call    ds:??6?$basic_ostream@DU?$char_traits@D@std@@@std@@QAEAAV01@P6AAAV01@AAV01@@Z@Z ; std::basic_ostream<char,std::char_traits<char>>::operator<<(std::basic_ostream<char,std::char_traits<char>> & (*)(std::basic_ostream<char,std::char_traits<char>> &))
+.text:00401115                 fld     [ebp+var_10]
+.text:00401118                 fcomp   qword ptr [ebp-8]
+.text:0040111B                 fnstsw  ax
+.text:0040111D                 test    ah, 41h
+.text:00401120                 lea     eax, [ebp+var_8]
+.text:00401123                 jz      short loc_401128
+.text:00401125                 lea     eax, [ebp+var_10]
+.text:00401128
+.text:00401128 loc_401128:                             ; CODE XREF: sub_401000+123↑j
+.text:00401128                 mov     ecx, dword ptr dbl_4DA0F8+4
+.text:0040112E                 fld     qword ptr [eax]
+.text:00401130                 inc     esi
+.text:00401131                 fst     [ebp+var_10]
+.text:00401134                 add     edi, 2
+.text:00401137                 cmp     esi, ecx
+.text:00401139                 jle     loc_4010B0
+.text:0040113F
+.text:0040113F loc_40113F:                             ; CODE XREF: sub_401000+A0↑j
+.text:0040113F                 sub     esp, 8
+.text:00401142                 fstp    [esp+28h+var_2C+4]
+.text:00401145                 push    offset Format   ; "%.10lf\n"
+.text:0040114A                 call    ds:printf
+.text:00401150                 add     esp, 0Ch
+.text:00401153                 pop     edi
+.text:00401154                 pop     esi
+.text:00401155                 pop     ebx
+.text:00401156                 mov     esp, ebp
+.text:00401158                 pop     ebp
+.text:00401159                 retn
+.text:00401159 sub_401000      endp
+.text:00401159
+.text:00401159 ; ---------------------------------------------------------------------------
+.text:0040115A                 align 10h
+.text:00401160
+.text:00401160 ; =============== S U B R O U T I N E =======================================
+.text:00401160
+.text:00401160 ; Attributes: bp-based frame fuzzy-sp
+.text:00401160
+.text:00401160 ; int __cdecl main(int argc, const char **argv, const char **envp)
+.text:00401160 _main           proc near               ; CODE XREF: ___tmainCRTStartup+11D↓p
+.text:00401160
+.text:00401160 var_4           = dword ptr -4
+.text:00401160 argc            = dword ptr  8
+.text:00401160 argv            = dword ptr  0Ch
+.text:00401160 envp            = dword ptr  10h
+.text:00401160
+.text:00401160                 push    ebp
+.text:00401161                 mov     ebp, esp
+.text:00401163                 and     esp, 0FFFFFFF8h
+.text:00401166                 push    ecx
+.text:00401167                 mov     ecx, ds:?cin@std@@3V?$basic_istream@DU?$char_traits@D@std@@@1@A ; std::basic_istream<char,std::char_traits<char>> std::cin
+.text:0040116D                 push    ebx
+.text:0040116E                 push    esi
+.text:0040116F                 push    edi
+.text:00401170                 lea     eax, [esp+10h+var_4]
+.text:00401174                 push    eax
+.text:00401175                 call    ds:??5?$basic_istream@DU?$char_traits@D@std@@@std@@QAEAAV01@AAH@Z ; std::basic_istream<char,std::char_traits<char>>::operator>>(int &)
+.text:0040117B                 xor     ebx, ebx
+.text:0040117D                 cmp     [esp+10h+var_4], ebx
+.text:00401181                 jle     short loc_4011E8
+.text:00401183
+.text:00401183 loc_401183:                             ; CODE XREF: _main+86↓j
+.text:00401183                 mov     ecx, ds:?cin@std@@3V?$basic_istream@DU?$char_traits@D@std@@@1@A ; std::basic_istream<char,std::char_traits<char>> std::cin
+.text:00401189                 push    offset dbl_4DA0F8
+.text:0040118E                 push    (offset dbl_4DA0F8+4)
+.text:00401193                 call    ds:??5?$basic_istream@DU?$char_traits@D@std@@@std@@QAEAAV01@AAH@Z ; std::basic_istream<char,std::char_traits<char>>::operator>>(int &)
+.text:00401199                 mov     ecx, eax
+.text:0040119B                 call    ds:??5?$basic_istream@DU?$char_traits@D@std@@@std@@QAEAAV01@AAH@Z ; std::basic_istream<char,std::char_traits<char>>::operator>>(int &)
+.text:004011A1                 xor     esi, esi
+.text:004011A3                 cmp     dword ptr dbl_4DA0F8+4, esi
+.text:004011A9                 jle     short loc_4011C9
+.text:004011AB                 mov     edi, offset unk_4DA100
+.text:004011B0
+.text:004011B0 loc_4011B0:                             ; CODE XREF: _main+67↓j
+.text:004011B0                 mov     ecx, ds:?cin@std@@3V?$basic_istream@DU?$char_traits@D@std@@@1@A ; std::basic_istream<char,std::char_traits<char>> std::cin
+.text:004011B6                 push    edi
+.text:004011B7                 call    ds:??5?$basic_istream@DU?$char_traits@D@std@@@std@@QAEAAV01@AAN@Z ; std::basic_istream<char,std::char_traits<char>>::operator>>(double &)
+.text:004011BD                 inc     esi
+.text:004011BE                 add     edi, 8
+.text:004011C1                 cmp     esi, dword ptr dbl_4DA0F8+4
+.text:004011C7                 jl      short loc_4011B0
+.text:004011C9
+.text:004011C9 loc_4011C9:                             ; CODE XREF: _main+49↑j
+.text:004011C9                 lea     esi, [ebx+1]
+.text:004011CC                 push    esi
+.text:004011CD                 push    offset aCaseD   ; "Case #%d: "
+.text:004011D2                 call    ds:printf
+.text:004011D8                 add     esp, 8
+.text:004011DB                 call    sub_401000
+.text:004011E0                 mov     ebx, esi
+.text:004011E2                 cmp     ebx, [esp+10h+var_4]
+.text:004011E6                 jl      short loc_401183
+.text:004011E8
+.text:004011E8 loc_4011E8:                             ; CODE XREF: _main+21↑j
+.text:004011E8                 pop     edi
+.text:004011E9                 pop     esi
+.text:004011EA                 xor     eax, eax
+.text:004011EC                 pop     ebx
+.text:004011ED                 mov     esp, ebp
+.text:004011EF                 pop     ebp
+.text:004011F0                 retn
+.text:004011F0 _main           endp
+.text:004011F0
+.text:004011F1 ; [0000000F BYTES: COLLAPSED FUNCTION __security_check_cookie(x). PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:00401200 ; [0000004B BYTES: COLLAPSED FUNCTION _pre_cpp_init. PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:0040124B ; [00000189 BYTES: COLLAPSED FUNCTION ___tmainCRTStartup. PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:004013D4 ; [000000BA BYTES: COLLAPSED FUNCTION _pre_c_init. PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:0040148E ; [0000000A BYTES: COLLAPSED FUNCTION start. PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:00401498 ; [00000106 BYTES: COLLAPSED FUNCTION ___report_gsfailure. PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:0040159E ; [00000042 BYTES: COLLAPSED FUNCTION __CxxUnhandledExceptionFilter(_EXCEPTION_POINTERS *). PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:004015E0
+.text:004015E0 ; =============== S U B R O U T I N E =======================================
+.text:004015E0
+.text:004015E0
+.text:004015E0 sub_4015E0      proc near               ; DATA XREF: .rdata:004020DC↓o
+.text:004015E0                 push    offset ?__CxxUnhandledExceptionFilter@@YGJPAU_EXCEPTION_POINTERS@@@Z ; lpTopLevelExceptionFilter
+.text:004015E5                 call    ds:SetUnhandledExceptionFilter
+.text:004015EB                 xor     eax, eax
+.text:004015ED                 retn
+.text:004015ED sub_4015E0      endp
+.text:004015ED
+.text:004015EE ; [00000006 BYTES: COLLAPSED FUNCTION _amsg_exit. PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:004015F4 ; [000000A1 BYTES: COLLAPSED FUNCTION __onexit. PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:00401695 ; [00000017 BYTES: COLLAPSED FUNCTION _atexit. PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:004016AC
+.text:004016AC ; =============== S U B R O U T I N E =======================================
+.text:004016AC
+.text:004016AC
+.text:004016AC sub_4016AC      proc near               ; CODE XREF: _pre_c_init+81↑p
+.text:004016AC                 mov     edi, edi
+.text:004016AE                 push    esi
+.text:004016AF                 mov     eax, offset unk_4021F8
+.text:004016B4                 mov     esi, offset unk_4021F8
+.text:004016B9                 push    edi
+.text:004016BA                 mov     edi, eax
+.text:004016BC                 cmp     eax, esi
+.text:004016BE                 jnb     short loc_4016CF
+.text:004016C0
+.text:004016C0 loc_4016C0:                             ; CODE XREF: sub_4016AC+21↓j
+.text:004016C0                 mov     eax, [edi]
+.text:004016C2                 test    eax, eax
+.text:004016C4                 jz      short loc_4016C8
+.text:004016C6                 call    eax
+.text:004016C8
+.text:004016C8 loc_4016C8:                             ; CODE XREF: sub_4016AC+18↑j
+.text:004016C8                 add     edi, 4
+.text:004016CB                 cmp     edi, esi
+.text:004016CD                 jb      short loc_4016C0
+.text:004016CF
+.text:004016CF loc_4016CF:                             ; CODE XREF: sub_4016AC+12↑j
+.text:004016CF                 pop     edi
+.text:004016D0                 pop     esi
+.text:004016D1                 retn
+.text:004016D1 sub_4016AC      endp
+.text:004016D1
+.text:004016D2
+.text:004016D2 ; =============== S U B R O U T I N E =======================================
+.text:004016D2
+.text:004016D2
+.text:004016D2 ; void __cdecl sub_4016D2()
+.text:004016D2 sub_4016D2      proc near               ; DATA XREF: _pre_cpp_init↑o
+.text:004016D2                 mov     edi, edi
+.text:004016D4                 push    esi
+.text:004016D5                 mov     eax, offset unk_402200
+.text:004016DA                 mov     esi, offset unk_402200
+.text:004016DF                 push    edi
+.text:004016E0                 mov     edi, eax
+.text:004016E2                 cmp     eax, esi
+.text:004016E4                 jnb     short loc_4016F5
+.text:004016E6
+.text:004016E6 loc_4016E6:                             ; CODE XREF: sub_4016D2+21↓j
+.text:004016E6                 mov     eax, [edi]
+.text:004016E8                 test    eax, eax
+.text:004016EA                 jz      short loc_4016EE
+.text:004016EC                 call    eax
+.text:004016EE
+.text:004016EE loc_4016EE:                             ; CODE XREF: sub_4016D2+18↑j
+.text:004016EE                 add     edi, 4
+.text:004016F1                 cmp     edi, esi
+.text:004016F3                 jb      short loc_4016E6
+.text:004016F5
+.text:004016F5 loc_4016F5:                             ; CODE XREF: sub_4016D2+12↑j
+.text:004016F5                 pop     edi
+.text:004016F6                 pop     esi
+.text:004016F7                 retn
+.text:004016F7 sub_4016D2      endp
+.text:004016F7
+.text:004016F8 ; [00000006 BYTES: COLLAPSED FUNCTION _XcptFilter. PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:004016FE                 align 10h
+.text:00401700 ; [00000035 BYTES: COLLAPSED FUNCTION __ValidateImageBase. PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:00401735                 align 10h
+.text:00401740 ; [00000044 BYTES: COLLAPSED FUNCTION __FindPESection. PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:00401784                 align 10h
+.text:00401790 ; [000000BC BYTES: COLLAPSED FUNCTION __IsNonwritableInCurrentImage. PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:0040184C ; [00000006 BYTES: COLLAPSED FUNCTION _initterm. PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:00401852 ; [00000006 BYTES: COLLAPSED FUNCTION _initterm_e. PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:00401858                 align 10h
+.text:00401860 ; [00000045 BYTES: COLLAPSED FUNCTION __SEH_prolog4. PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:004018A5 ; [00000014 BYTES: COLLAPSED FUNCTION __SEH_epilog4. PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:004018B9 ; [00000025 BYTES: COLLAPSED FUNCTION __except_handler4. PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:004018DE ; [00000028 BYTES: COLLAPSED FUNCTION __setdefaultprecision. PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:00401906
+.text:00401906 ; =============== S U B R O U T I N E =======================================
+.text:00401906
+.text:00401906
+.text:00401906 sub_401906      proc near               ; CODE XREF: _pre_c_init+86↑p
+.text:00401906                                         ; DATA XREF: _pre_c_init+94↑o
+.text:00401906                 xor     eax, eax
+.text:00401908                 retn
+.text:00401908 sub_401906      endp
+.text:00401908
+.text:00401909 ; [0000009B BYTES: COLLAPSED FUNCTION ___security_init_cookie. PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:004019A4 ; [00000006 BYTES: COLLAPSED FUNCTION _crt_debugger_hook. PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:004019AA ; [00000006 BYTES: COLLAPSED FUNCTION terminate(void). PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:004019B0 ; [00000006 BYTES: COLLAPSED FUNCTION _unlock. PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:004019B6 ; [00000006 BYTES: COLLAPSED FUNCTION __dllonexit. PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:004019BC ; [00000006 BYTES: COLLAPSED FUNCTION _lock. PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:004019C2 ; [00000006 BYTES: COLLAPSED FUNCTION _except_handler4_common. PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:004019C8 ; [00000006 BYTES: COLLAPSED FUNCTION _invoke_watson. PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:004019CE ; [00000006 BYTES: COLLAPSED FUNCTION _controlfp_s. PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:004019D4                 align 40h
+.text:00401A00                 dd 180h dup(?)
+.text:00401A00 _text           ends
+.text:00401A00

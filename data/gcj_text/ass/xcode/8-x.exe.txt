@@ -1,0 +1,400 @@
+﻿__text:00000001000009D0 ; =============== S U B R O U T I N E =======================================
+__text:00000001000009D0
+__text:00000001000009D0 ; Attributes: bp-based frame
+__text:00000001000009D0
+__text:00000001000009D0 ; __int64 read(void)
+__text:00000001000009D0                 public __Z4readv
+__text:00000001000009D0 __Z4readv       proc near               ; CODE XREF: _main+36↓p
+__text:00000001000009D0
+__text:00000001000009D0 var_18          = qword ptr -18h
+__text:00000001000009D0 var_10          = qword ptr -10h
+__text:00000001000009D0 var_4           = dword ptr -4
+__text:00000001000009D0
+__text:00000001000009D0                 push    rbp
+__text:00000001000009D1                 mov     rbp, rsp
+__text:00000001000009D4                 sub     rsp, 20h
+__text:00000001000009D8                 mov     rdi, cs:__ZNSt3__13cinE_ptr
+__text:00000001000009DF                 lea     rsi, _a
+__text:00000001000009E6                 call    __ZNSt3__113basic_istreamIcNS_11char_traitsIcEEErsERi ; std::__1::basic_istream<char,std::__1::char_traits<char>>::operator>>(int &)
+__text:00000001000009EB                 lea     rsi, _b
+__text:00000001000009F2                 mov     rdi, rax
+__text:00000001000009F5                 call    __ZNSt3__113basic_istreamIcNS_11char_traitsIcEEErsERi ; std::__1::basic_istream<char,std::__1::char_traits<char>>::operator>>(int &)
+__text:00000001000009FA                 mov     [rbp+var_4], 0
+__text:0000000100000A01                 mov     [rbp+var_10], rax
+__text:0000000100000A05
+__text:0000000100000A05 loc_100000A05:                          ; CODE XREF: read(void)+74↓j
+__text:0000000100000A05                 mov     eax, [rbp+var_4]
+__text:0000000100000A08                 cmp     eax, cs:_a
+__text:0000000100000A0E                 jge     loc_100000A49
+__text:0000000100000A14                 mov     rdi, cs:__ZNSt3__13cinE_ptr
+__text:0000000100000A1B                 lea     rax, _p
+__text:0000000100000A22                 movsxd  rcx, [rbp+var_4]
+__text:0000000100000A26                 shl     rcx, 3
+__text:0000000100000A2A                 add     rax, rcx
+__text:0000000100000A2D                 mov     rsi, rax
+__text:0000000100000A30                 call    __ZNSt3__113basic_istreamIcNS_11char_traitsIcEEErsERd ; std::__1::basic_istream<char,std::__1::char_traits<char>>::operator>>(double &)
+__text:0000000100000A35                 mov     [rbp+var_18], rax
+__text:0000000100000A39                 mov     eax, [rbp+var_4]
+__text:0000000100000A3C                 add     eax, 1
+__text:0000000100000A41                 mov     [rbp+var_4], eax
+__text:0000000100000A44                 jmp     loc_100000A05
+__text:0000000100000A49 ; ---------------------------------------------------------------------------
+__text:0000000100000A49
+__text:0000000100000A49 loc_100000A49:                          ; CODE XREF: read(void)+3E↑j
+__text:0000000100000A49                 add     rsp, 20h
+__text:0000000100000A4D                 pop     rbp
+__text:0000000100000A4E                 retn
+__text:0000000100000A4E __Z4readv       endp
+__text:0000000100000A4E
+__text:0000000100000A4E ; ---------------------------------------------------------------------------
+__text:0000000100000A4F                 align 10h
+__text:0000000100000A50
+__text:0000000100000A50 ; =============== S U B R O U T I N E =======================================
+__text:0000000100000A50
+__text:0000000100000A50 ; Attributes: bp-based frame
+__text:0000000100000A50
+__text:0000000100000A50 ; __int64 solve(void)
+__text:0000000100000A50                 public __Z5solvev
+__text:0000000100000A50 __Z5solvev      proc near               ; CODE XREF: _main+56↓p
+__text:0000000100000A50
+__text:0000000100000A50 var_A4          = dword ptr -0A4h
+__text:0000000100000A50 var_A0          = qword ptr -0A0h
+__text:0000000100000A50 var_98          = qword ptr -98h
+__text:0000000100000A50 var_90          = qword ptr -90h
+__text:0000000100000A50 var_88          = qword ptr -88h
+__text:0000000100000A50 var_80          = qword ptr -80h
+__text:0000000100000A50 var_78          = qword ptr -78h
+__text:0000000100000A50 var_6C          = dword ptr -6Ch
+__text:0000000100000A50 var_68          = qword ptr -68h
+__text:0000000100000A50 var_5C          = dword ptr -5Ch
+__text:0000000100000A50 var_58          = qword ptr -58h
+__text:0000000100000A50 var_50          = qword ptr -50h
+__text:0000000100000A50 var_40          = qword ptr -40h
+__text:0000000100000A50 var_38          = qword ptr -38h
+__text:0000000100000A50 var_30          = byte ptr -30h
+__text:0000000100000A50 var_28          = qword ptr -28h
+__text:0000000100000A50 var_20          = qword ptr -20h
+__text:0000000100000A50 var_18          = qword ptr -18h
+__text:0000000100000A50 var_10          = qword ptr -10h
+__text:0000000100000A50 var_8           = qword ptr -8
+__text:0000000100000A50
+__text:0000000100000A50                 push    rbp
+__text:0000000100000A51                 mov     rbp, rsp
+__text:0000000100000A54                 sub     rsp, 0B0h
+__text:0000000100000A5B                 mov     rax, 1
+__text:0000000100000A65                 cvtsi2sd xmm0, rax
+__text:0000000100000A6A                 movsd   cs:_z, xmm0
+__text:0000000100000A72                 mov     [rbp+var_5C], 1
+__text:0000000100000A79
+__text:0000000100000A79 loc_100000A79:                          ; CODE XREF: solve(void)+7C↓j
+__text:0000000100000A79                 mov     eax, [rbp+var_5C]
+__text:0000000100000A7C                 cmp     eax, cs:_a
+__text:0000000100000A82                 jg      loc_100000AD1
+__text:0000000100000A88                 lea     rax, _z
+__text:0000000100000A8F                 lea     rcx, _p
+__text:0000000100000A96                 mov     edx, [rbp+var_5C]
+__text:0000000100000A99                 sub     edx, 1
+__text:0000000100000A9F                 movsxd  rsi, edx
+__text:0000000100000AA2                 movsd   xmm0, qword ptr [rax+rsi*8]
+__text:0000000100000AA7                 mov     edx, [rbp+var_5C]
+__text:0000000100000AAA                 sub     edx, 1
+__text:0000000100000AB0                 movsxd  rsi, edx
+__text:0000000100000AB3                 mulsd   xmm0, qword ptr [rcx+rsi*8]
+__text:0000000100000AB8                 movsxd  rcx, [rbp+var_5C]
+__text:0000000100000ABC                 movsd   qword ptr [rax+rcx*8], xmm0
+__text:0000000100000AC1                 mov     eax, [rbp+var_5C]
+__text:0000000100000AC4                 add     eax, 1
+__text:0000000100000AC9                 mov     [rbp+var_5C], eax
+__text:0000000100000ACC                 jmp     loc_100000A79
+__text:0000000100000AD1 ; ---------------------------------------------------------------------------
+__text:0000000100000AD1
+__text:0000000100000AD1 loc_100000AD1:                          ; CODE XREF: solve(void)+32↑j
+__text:0000000100000AD1                 mov     eax, cs:_b
+__text:0000000100000AD7                 add     eax, 2
+__text:0000000100000ADC                 cvtsi2sd xmm0, eax
+__text:0000000100000AE0                 movsd   [rbp+var_68], xmm0
+__text:0000000100000AE5                 mov     [rbp+var_6C], 0
+__text:0000000100000AEC
+__text:0000000100000AEC loc_100000AEC:                          ; CODE XREF: solve(void)+215↓j
+__text:0000000100000AEC                 mov     eax, [rbp+var_6C]
+__text:0000000100000AEF                 cmp     eax, cs:_a
+__text:0000000100000AF5                 jg      loc_100000C6A
+__text:0000000100000AFB                 mov     rdi, cs:__ZNSt3__14cerrE_ptr
+__text:0000000100000B02                 mov     rax, 1
+__text:0000000100000B0C                 cvtsi2sd xmm0, rax
+__text:0000000100000B11                 lea     rax, _z
+__text:0000000100000B18                 mov     ecx, cs:_a
+__text:0000000100000B1E                 sub     ecx, [rbp+var_6C]
+__text:0000000100000B21                 movsxd  rdx, ecx
+__text:0000000100000B24                 movsd   xmm1, qword ptr [rax+rdx*8]
+__text:0000000100000B29                 mov     ecx, [rbp+var_6C]
+__text:0000000100000B2C                 add     ecx, cs:_b
+__text:0000000100000B32                 sub     ecx, cs:_a
+__text:0000000100000B38                 add     ecx, [rbp+var_6C]
+__text:0000000100000B3B                 add     ecx, 1
+__text:0000000100000B41                 cvtsi2sd xmm2, ecx
+__text:0000000100000B45                 mulsd   xmm1, xmm2
+__text:0000000100000B49                 mov     ecx, cs:_a
+__text:0000000100000B4F                 sub     ecx, [rbp+var_6C]
+__text:0000000100000B52                 movsxd  rdx, ecx
+__text:0000000100000B55                 subsd   xmm0, qword ptr [rax+rdx*8]
+__text:0000000100000B5A                 mov     ecx, [rbp+var_6C]
+__text:0000000100000B5D                 add     ecx, cs:_b
+__text:0000000100000B63                 sub     ecx, cs:_a
+__text:0000000100000B69                 add     ecx, [rbp+var_6C]
+__text:0000000100000B6C                 add     ecx, 1
+__text:0000000100000B72                 add     ecx, cs:_b
+__text:0000000100000B78                 add     ecx, 1
+__text:0000000100000B7E                 cvtsi2sd xmm2, ecx
+__text:0000000100000B82                 mulsd   xmm0, xmm2
+__text:0000000100000B86                 addsd   xmm1, xmm0
+__text:0000000100000B8A                 movsd   [rbp+var_78], xmm1
+__text:0000000100000B8F                 movsd   xmm0, [rbp+var_78]
+__text:0000000100000B94                 call    __ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEElsEd ; std::__1::basic_ostream<char,std::__1::char_traits<char>>::operator<<(double)
+__text:0000000100000B99                 lea     rdx, [rbp+var_30]
+__text:0000000100000B9D                 lea     rdi, [rbp+var_78]
+__text:0000000100000BA1                 lea     rsi, [rbp+var_68]
+__text:0000000100000BA5                 lea     r8, __ZNSt3__14endlIcNS_11char_traitsIcEEEERNS_13basic_ostreamIT_T0_EES7_ ; std::__1::endl<char,std::__1::char_traits<char>>(std::__1::basic_ostream<char,std::__1::char_traits<char>> &)
+__text:0000000100000BAC                 mov     [rbp+var_50], rax
+__text:0000000100000BB0                 mov     [rbp+var_58], r8
+__text:0000000100000BB4                 mov     rax, [rbp+var_50]
+__text:0000000100000BB8                 mov     [rbp+var_80], rdi
+__text:0000000100000BBC                 mov     rdi, rax
+__text:0000000100000BBF                 mov     [rbp+var_88], rsi
+__text:0000000100000BC6                 mov     [rbp+var_90], rdx
+__text:0000000100000BCD                 call    [rbp+var_58]
+__text:0000000100000BD0                 mov     rdx, [rbp+var_88]
+__text:0000000100000BD7                 mov     [rbp+var_38], rdx
+__text:0000000100000BDB                 mov     rsi, [rbp+var_80]
+__text:0000000100000BDF                 mov     [rbp+var_40], rsi
+__text:0000000100000BE3                 mov     rdi, [rbp+var_38]
+__text:0000000100000BE7                 mov     r8, [rbp+var_40]
+__text:0000000100000BEB                 mov     [rbp+var_20], rdi
+__text:0000000100000BEF                 mov     [rbp+var_28], r8
+__text:0000000100000BF3                 mov     rdi, [rbp+var_28]
+__text:0000000100000BF7                 mov     r8, [rbp+var_20]
+__text:0000000100000BFB                 mov     r9, [rbp+var_90]
+__text:0000000100000C02                 mov     [rbp+var_8], r9
+__text:0000000100000C06                 mov     [rbp+var_10], rdi
+__text:0000000100000C0A                 mov     [rbp+var_18], r8
+__text:0000000100000C0E                 mov     rdi, [rbp+var_10]
+__text:0000000100000C12                 movsd   xmm0, qword ptr [rdi]
+__text:0000000100000C16                 mov     rdi, [rbp+var_18]
+__text:0000000100000C1A                 movsd   xmm1, qword ptr [rdi]
+__text:0000000100000C1E                 ucomisd xmm1, xmm0
+__text:0000000100000C22                 mov     [rbp+var_98], rax
+__text:0000000100000C29                 jbe     loc_100000C3F
+__text:0000000100000C2F                 mov     rax, [rbp+var_28]
+__text:0000000100000C33                 mov     [rbp+var_A0], rax
+__text:0000000100000C3A                 jmp     loc_100000C4A
+__text:0000000100000C3F ; ---------------------------------------------------------------------------
+__text:0000000100000C3F
+__text:0000000100000C3F loc_100000C3F:                          ; CODE XREF: solve(void)+1D9↑j
+__text:0000000100000C3F                 mov     rax, [rbp+var_20]
+__text:0000000100000C43                 mov     [rbp+var_A0], rax
+__text:0000000100000C4A
+__text:0000000100000C4A loc_100000C4A:                          ; CODE XREF: solve(void)+1EA↑j
+__text:0000000100000C4A                 mov     rax, [rbp+var_A0]
+__text:0000000100000C51                 movsd   xmm0, qword ptr [rax]
+__text:0000000100000C55                 movsd   [rbp+var_68], xmm0
+__text:0000000100000C5A                 mov     eax, [rbp+var_6C]
+__text:0000000100000C5D                 add     eax, 1
+__text:0000000100000C62                 mov     [rbp+var_6C], eax
+__text:0000000100000C65                 jmp     loc_100000AEC
+__text:0000000100000C6A ; ---------------------------------------------------------------------------
+__text:0000000100000C6A
+__text:0000000100000C6A loc_100000C6A:                          ; CODE XREF: solve(void)+A5↑j
+__text:0000000100000C6A                 lea     rdi, a10lf      ; "%.10lf\n"
+__text:0000000100000C71                 movsd   xmm0, [rbp+var_68]
+__text:0000000100000C76                 mov     al, 1
+__text:0000000100000C78                 call    _printf
+__text:0000000100000C7D                 mov     [rbp+var_A4], eax
+__text:0000000100000C83                 add     rsp, 0B0h
+__text:0000000100000C8A                 pop     rbp
+__text:0000000100000C8B                 retn
+__text:0000000100000C8B __Z5solvev      endp
+__text:0000000100000C8B
+__text:0000000100000C8B ; ---------------------------------------------------------------------------
+__text:0000000100000C8C                 align 10h
+__text:0000000100000C90
+__text:0000000100000C90 ; =============== S U B R O U T I N E =======================================
+__text:0000000100000C90
+__text:0000000100000C90 ; Attributes: bp-based frame
+__text:0000000100000C90
+__text:0000000100000C90 ; int __cdecl main(int argc, const char **argv, const char **envp)
+__text:0000000100000C90                 public _main
+__text:0000000100000C90 _main           proc near
+__text:0000000100000C90
+__text:0000000100000C90 var_1C          = dword ptr -1Ch
+__text:0000000100000C90 var_18          = qword ptr -18h
+__text:0000000100000C90 var_C           = dword ptr -0Ch
+__text:0000000100000C90 var_8           = dword ptr -8
+__text:0000000100000C90 var_4           = dword ptr -4
+__text:0000000100000C90
+__text:0000000100000C90                 push    rbp
+__text:0000000100000C91                 mov     rbp, rsp
+__text:0000000100000C94                 sub     rsp, 20h
+__text:0000000100000C98                 mov     rdi, cs:__ZNSt3__13cinE_ptr
+__text:0000000100000C9F                 lea     rsi, [rbp+var_8]
+__text:0000000100000CA3                 mov     [rbp+var_4], 0
+__text:0000000100000CAA                 call    __ZNSt3__113basic_istreamIcNS_11char_traitsIcEEErsERi ; std::__1::basic_istream<char,std::__1::char_traits<char>>::operator>>(int &)
+__text:0000000100000CAF                 mov     [rbp+var_C], 0
+__text:0000000100000CB6                 mov     [rbp+var_18], rax
+__text:0000000100000CBA
+__text:0000000100000CBA loc_100000CBA:                          ; CODE XREF: _main+66↓j
+__text:0000000100000CBA                 mov     eax, [rbp+var_C]
+__text:0000000100000CBD                 cmp     eax, [rbp+var_8]
+__text:0000000100000CC0                 jge     loc_100000CFB
+__text:0000000100000CC6                 call    __Z4readv       ; read(void)
+__text:0000000100000CCB                 lea     rdi, aCaseD     ; "Case #%d: "
+__text:0000000100000CD2                 mov     eax, [rbp+var_C]
+__text:0000000100000CD5                 add     eax, 1
+__text:0000000100000CDA                 mov     esi, eax
+__text:0000000100000CDC                 mov     al, 0
+__text:0000000100000CDE                 call    _printf
+__text:0000000100000CE3                 mov     [rbp+var_1C], eax
+__text:0000000100000CE6                 call    __Z5solvev      ; solve(void)
+__text:0000000100000CEB                 mov     eax, [rbp+var_C]
+__text:0000000100000CEE                 add     eax, 1
+__text:0000000100000CF3                 mov     [rbp+var_C], eax
+__text:0000000100000CF6                 jmp     loc_100000CBA
+__text:0000000100000CFB ; ---------------------------------------------------------------------------
+__text:0000000100000CFB
+__text:0000000100000CFB loc_100000CFB:                          ; CODE XREF: _main+30↑j
+__text:0000000100000CFB                 mov     eax, 0
+__text:0000000100000D00                 add     rsp, 20h
+__text:0000000100000D04                 pop     rbp
+__text:0000000100000D05                 retn
+__text:0000000100000D05 _main           endp
+__text:0000000100000D05
+__text:0000000100000D05 ; ---------------------------------------------------------------------------
+__text:0000000100000D06                 align 10h
+__text:0000000100000D10
+__text:0000000100000D10 ; =============== S U B R O U T I N E =======================================
+__text:0000000100000D10
+__text:0000000100000D10 ; Attributes: bp-based frame
+__text:0000000100000D10
+__text:0000000100000D10 ; std::__1::basic_ostream<char, std::__1::char_traits<char>> & std::__1::endl<char, std::__1::char_traits<char>>(std::__1::basic_ostream<char, std::__1::char_traits<char>> &)
+__text:0000000100000D10 __ZNSt3__14endlIcNS_11char_traitsIcEEEERNS_13basic_ostreamIT_T0_EES7_ proc near
+__text:0000000100000D10                                         ; DATA XREF: solve(void)+155↑o
+__text:0000000100000D10
+__text:0000000100000D10 var_88          = qword ptr -88h
+__text:0000000100000D10 var_80          = qword ptr -80h
+__text:0000000100000D10 var_78          = dword ptr -78h
+__text:0000000100000D10 var_71          = byte ptr -71h
+__text:0000000100000D10 var_70          = qword ptr -70h
+__text:0000000100000D10 var_64          = dword ptr -64h
+__text:0000000100000D10 var_60          = qword ptr -60h
+__text:0000000100000D10 var_58          = qword ptr -58h
+__text:0000000100000D10 var_50          = qword ptr -50h
+__text:0000000100000D10 var_48          = qword ptr -48h
+__text:0000000100000D10 var_3C          = dword ptr -3Ch
+__text:0000000100000D10 var_38          = qword ptr -38h
+__text:0000000100000D10 var_30          = byte ptr -30h
+__text:0000000100000D10 var_21          = byte ptr -21h
+__text:0000000100000D10 var_20          = qword ptr -20h
+__text:0000000100000D10 var_18          = qword ptr -18h
+__text:0000000100000D10 var_9           = byte ptr -9
+__text:0000000100000D10 var_8           = qword ptr -8
+__text:0000000100000D10
+__text:0000000100000D10                 push    rbp
+__text:0000000100000D11                 mov     rbp, rsp
+__text:0000000100000D14                 sub     rsp, 90h
+__text:0000000100000D1B                 mov     [rbp+var_48], rdi
+__text:0000000100000D1F                 mov     rax, rdi
+__text:0000000100000D22                 mov     rcx, [rdi]
+__text:0000000100000D25                 mov     rcx, [rcx-18h]
+__text:0000000100000D29                 add     rdi, rcx
+__text:0000000100000D2C                 mov     [rbp+var_20], rdi
+__text:0000000100000D30                 mov     [rbp+var_21], 0Ah
+__text:0000000100000D34                 mov     rsi, [rbp+var_20]
+__text:0000000100000D38                 lea     rcx, [rbp+var_30]
+__text:0000000100000D3C                 mov     rdi, rcx        ; this
+__text:0000000100000D3F                 mov     [rbp+var_50], rax
+__text:0000000100000D43                 mov     [rbp+var_58], rcx
+__text:0000000100000D47                 call    __ZNKSt3__18ios_base6getlocEv ; std::__1::ios_base::getloc(void)
+__text:0000000100000D4C                 mov     rax, [rbp+var_58]
+__text:0000000100000D50                 mov     [rbp+var_18], rax
+__text:0000000100000D54                 mov     rsi, cs:__ZNSt3__15ctypeIcE2idE_ptr
+__text:0000000100000D5B                 mov     rdi, rax
+__text:0000000100000D5E                 call    __ZNKSt3__16locale9use_facetERNS0_2idE ; std::__1::locale::use_facet(std::__1::locale::id &)
+__text:0000000100000D63                 mov     [rbp+var_60], rax
+__text:0000000100000D67                 jmp     $+5
+__text:0000000100000D6C ; ---------------------------------------------------------------------------
+__text:0000000100000D6C
+__text:0000000100000D6C loc_100000D6C:                          ; CODE XREF: std::__1::endl<char,std::__1::char_traits<char>>(std::__1::basic_ostream<char,std::__1::char_traits<char>> &)+57↑j
+__text:0000000100000D6C                 mov     al, [rbp+var_21]
+__text:0000000100000D6F                 mov     rcx, [rbp+var_60]
+__text:0000000100000D73                 mov     [rbp+var_8], rcx
+__text:0000000100000D77                 mov     [rbp+var_9], al
+__text:0000000100000D7A                 mov     rdx, [rbp+var_8]
+__text:0000000100000D7E                 mov     rsi, [rdx]
+__text:0000000100000D81                 mov     rsi, [rsi+38h]
+__text:0000000100000D85                 movsx   edi, [rbp+var_9]
+__text:0000000100000D89                 mov     [rbp+var_64], edi
+__text:0000000100000D8C                 mov     rdi, rdx
+__text:0000000100000D8F                 mov     r8d, [rbp+var_64]
+__text:0000000100000D93                 mov     [rbp+var_70], rsi
+__text:0000000100000D97                 mov     esi, r8d
+__text:0000000100000D9A                 mov     rdx, [rbp+var_70]
+__text:0000000100000D9E                 call    rdx
+__text:0000000100000DA0                 mov     [rbp+var_71], al
+__text:0000000100000DA3                 jmp     loc_100000DD5
+__text:0000000100000DA8 ; ---------------------------------------------------------------------------
+__text:0000000100000DA8                 mov     ecx, edx
+__text:0000000100000DAA                 mov     [rbp+var_38], rax
+__text:0000000100000DAE                 mov     [rbp+var_3C], ecx
+__text:0000000100000DB1                 lea     rdi, [rbp+var_30] ; this
+__text:0000000100000DB5                 call    __ZNSt3__16localeD1Ev ; std::__1::locale::~locale()
+__text:0000000100000DBA                 jmp     $+5
+__text:0000000100000DBF ; ---------------------------------------------------------------------------
+__text:0000000100000DBF
+__text:0000000100000DBF loc_100000DBF:                          ; CODE XREF: std::__1::endl<char,std::__1::char_traits<char>>(std::__1::basic_ostream<char,std::__1::char_traits<char>> &)+AA↑j
+__text:0000000100000DBF                 mov     rdi, [rbp+var_38]
+__text:0000000100000DC3                 call    __Unwind_Resume
+__text:0000000100000DC8 ; ---------------------------------------------------------------------------
+__text:0000000100000DC8                 mov     ecx, edx
+__text:0000000100000DCA                 mov     rdi, rax
+__text:0000000100000DCD                 mov     [rbp+var_78], ecx
+__text:0000000100000DD0                 call    ___clang_call_terminate
+__text:0000000100000DD5 ; ---------------------------------------------------------------------------
+__text:0000000100000DD5
+__text:0000000100000DD5 loc_100000DD5:                          ; CODE XREF: std::__1::endl<char,std::__1::char_traits<char>>(std::__1::basic_ostream<char,std::__1::char_traits<char>> &)+93↑j
+__text:0000000100000DD5                 lea     rdi, [rbp+var_30] ; this
+__text:0000000100000DD9                 call    __ZNSt3__16localeD1Ev ; std::__1::locale::~locale()
+__text:0000000100000DDE                 mov     rdi, [rbp+var_50]
+__text:0000000100000DE2                 mov     al, [rbp+var_71]
+__text:0000000100000DE5                 movsx   esi, al
+__text:0000000100000DE8                 call    __ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEE3putEc ; std::__1::basic_ostream<char,std::__1::char_traits<char>>::put(char)
+__text:0000000100000DED                 mov     rdi, [rbp+var_48]
+__text:0000000100000DF1                 mov     [rbp+var_80], rax
+__text:0000000100000DF5                 call    __ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEE5flushEv ; std::__1::basic_ostream<char,std::__1::char_traits<char>>::flush(void)
+__text:0000000100000DFA                 mov     rdi, [rbp+var_48]
+__text:0000000100000DFE                 mov     [rbp+var_88], rax
+__text:0000000100000E05                 mov     rax, rdi
+__text:0000000100000E08                 add     rsp, 90h
+__text:0000000100000E0F                 pop     rbp
+__text:0000000100000E10                 retn
+__text:0000000100000E10 __ZNSt3__14endlIcNS_11char_traitsIcEEEERNS_13basic_ostreamIT_T0_EES7_ endp
+__text:0000000100000E10
+__text:0000000100000E10 ; ---------------------------------------------------------------------------
+__text:0000000100000E11                 align 20h
+__text:0000000100000E20
+__text:0000000100000E20 ; =============== S U B R O U T I N E =======================================
+__text:0000000100000E20
+__text:0000000100000E20 ; Attributes: noreturn bp-based frame
+__text:0000000100000E20
+__text:0000000100000E20 ___clang_call_terminate proc near       ; CODE XREF: std::__1::endl<char,std::__1::char_traits<char>>(std::__1::basic_ostream<char,std::__1::char_traits<char>> &)+C0↑p
+__text:0000000100000E20
+__text:0000000100000E20 var_8           = qword ptr -8
+__text:0000000100000E20
+__text:0000000100000E20                 push    rbp
+__text:0000000100000E21                 mov     rbp, rsp
+__text:0000000100000E24                 sub     rsp, 10h
+__text:0000000100000E28                 call    ___cxa_begin_catch
+__text:0000000100000E2D                 mov     [rbp+var_8], rax
+__text:0000000100000E31                 call    __ZSt9terminatev ; std::terminate(void)
+__text:0000000100000E31 ___clang_call_terminate endp
+__text:0000000100000E31
+__text:0000000100000E31 __text          ends
+__text:0000000100000E31

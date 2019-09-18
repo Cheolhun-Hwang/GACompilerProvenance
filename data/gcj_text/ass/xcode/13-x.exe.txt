@@ -1,0 +1,1231 @@
+﻿__text:0000000100000C10 ; =============== S U B R O U T I N E =======================================
+__text:0000000100000C10
+__text:0000000100000C10 ; Attributes: bp-based frame
+__text:0000000100000C10
+__text:0000000100000C10 ; int __cdecl main(int argc, const char **argv, const char **envp)
+__text:0000000100000C10                 public _main
+__text:0000000100000C10 _main           proc near
+__text:0000000100000C10
+__text:0000000100000C10 var_110         = qword ptr -110h
+__text:0000000100000C10 var_108         = dword ptr -108h
+__text:0000000100000C10 var_104         = dword ptr -104h
+__text:0000000100000C10 var_100         = qword ptr -100h
+__text:0000000100000C10 var_F8          = qword ptr -0F8h
+__text:0000000100000C10 var_F0          = qword ptr -0F0h
+__text:0000000100000C10 var_E8          = qword ptr -0E8h
+__text:0000000100000C10 var_DC          = dword ptr -0DCh
+__text:0000000100000C10 var_D8          = dword ptr -0D8h
+__text:0000000100000C10 var_D4          = dword ptr -0D4h
+__text:0000000100000C10 var_D0          = qword ptr -0D0h
+__text:0000000100000C10 var_C4          = dword ptr -0C4h
+__text:0000000100000C10 var_C0          = dword ptr -0C0h
+__text:0000000100000C10 var_BC          = dword ptr -0BCh
+__text:0000000100000C10 var_B8          = dword ptr -0B8h
+__text:0000000100000C10 var_B4          = dword ptr -0B4h
+__text:0000000100000C10 var_B0          = dword ptr -0B0h
+__text:0000000100000C10 var_AC          = dword ptr -0ACh
+__text:0000000100000C10 var_A8          = dword ptr -0A8h
+__text:0000000100000C10 var_A4          = dword ptr -0A4h
+__text:0000000100000C10 var_98          = qword ptr -98h
+__text:0000000100000C10 var_90          = qword ptr -90h
+__text:0000000100000C10 var_88          = byte ptr -88h
+__text:0000000100000C10 var_80          = qword ptr -80h
+__text:0000000100000C10 var_78          = qword ptr -78h
+__text:0000000100000C10 var_70          = qword ptr -70h
+__text:0000000100000C10 var_68          = qword ptr -68h
+__text:0000000100000C10 var_60          = qword ptr -60h
+__text:0000000100000C10 var_58          = qword ptr -58h
+__text:0000000100000C10 var_50          = qword ptr -50h
+__text:0000000100000C10 var_40          = qword ptr -40h
+__text:0000000100000C10 var_38          = qword ptr -38h
+__text:0000000100000C10 var_30          = byte ptr -30h
+__text:0000000100000C10 var_28          = qword ptr -28h
+__text:0000000100000C10 var_20          = qword ptr -20h
+__text:0000000100000C10 var_18          = qword ptr -18h
+__text:0000000100000C10 var_10          = qword ptr -10h
+__text:0000000100000C10 var_8           = qword ptr -8
+__text:0000000100000C10
+__text:0000000100000C10                 push    rbp
+__text:0000000100000C11                 mov     rbp, rsp
+__text:0000000100000C14                 sub     rsp, 110h
+__text:0000000100000C1B                 mov     rdi, cs:__ZNSt3__13cinE_ptr
+__text:0000000100000C22                 lea     rsi, [rbp+var_A8]
+__text:0000000100000C29                 mov     [rbp+var_A4], 0
+__text:0000000100000C33                 call    __ZNSt3__113basic_istreamIcNS_11char_traitsIcEEErsERi ; std::__1::basic_istream<char,std::__1::char_traits<char>>::operator>>(int &)
+__text:0000000100000C38                 mov     [rbp+var_AC], 1
+__text:0000000100000C42                 mov     [rbp+var_D0], rax
+__text:0000000100000C49
+__text:0000000100000C49 loc_100000C49:                          ; CODE XREF: _main+3FB↓j
+__text:0000000100000C49                 mov     eax, [rbp+var_AC]
+__text:0000000100000C4F                 cmp     eax, [rbp+var_A8]
+__text:0000000100000C55                 jg      loc_100001010
+__text:0000000100000C5B                 lea     rdi, aD         ; "%d"
+__text:0000000100000C62                 lea     rsi, _n
+__text:0000000100000C69                 mov     al, 0
+__text:0000000100000C6B                 call    _scanf
+__text:0000000100000C70                 mov     [rbp+var_B0], 0
+__text:0000000100000C7A                 mov     [rbp+var_D4], eax
+__text:0000000100000C80
+__text:0000000100000C80 loc_100000C80:                          ; CODE XREF: _main+EC↓j
+__text:0000000100000C80                 mov     eax, [rbp+var_B0]
+__text:0000000100000C86                 cmp     eax, cs:_n
+__text:0000000100000C8C                 jge     loc_100000D01
+__text:0000000100000C92                 lea     rdi, aDD        ; "%d%d"
+__text:0000000100000C99                 lea     rax, _d
+__text:0000000100000CA0                 lea     rcx, _x
+__text:0000000100000CA7                 movsxd  rdx, [rbp+var_B0]
+__text:0000000100000CAE                 shl     rdx, 2
+__text:0000000100000CB2                 add     rcx, rdx
+__text:0000000100000CB5                 movsxd  rdx, [rbp+var_B0]
+__text:0000000100000CBC                 shl     rdx, 2
+__text:0000000100000CC0                 add     rax, rdx
+__text:0000000100000CC3                 mov     rsi, rcx
+__text:0000000100000CC6                 mov     rdx, rax
+__text:0000000100000CC9                 mov     al, 0
+__text:0000000100000CCB                 call    _scanf
+__text:0000000100000CD0                 lea     rcx, _res
+__text:0000000100000CD7                 movsxd  rdx, [rbp+var_B0]
+__text:0000000100000CDE                 mov     dword ptr [rcx+rdx*4], 0
+__text:0000000100000CE5                 mov     [rbp+var_D8], eax
+__text:0000000100000CEB                 mov     eax, [rbp+var_B0]
+__text:0000000100000CF1                 add     eax, 1
+__text:0000000100000CF6                 mov     [rbp+var_B0], eax
+__text:0000000100000CFC                 jmp     loc_100000C80
+__text:0000000100000D01 ; ---------------------------------------------------------------------------
+__text:0000000100000D01
+__text:0000000100000D01 loc_100000D01:                          ; CODE XREF: _main+7C↑j
+__text:0000000100000D01                 lea     rdi, aD         ; "%d"
+__text:0000000100000D08                 lea     rsi, [rbp+var_B4]
+__text:0000000100000D0F                 mov     al, 0
+__text:0000000100000D11                 call    _scanf
+__text:0000000100000D16                 mov     [rbp+var_B8], 0
+__text:0000000100000D20                 mov     ecx, cs:_x
+__text:0000000100000D26                 mov     cs:_res, ecx
+__text:0000000100000D2C                 mov     [rbp+var_BC], 0
+__text:0000000100000D36                 mov     [rbp+var_DC], eax
+__text:0000000100000D3C
+__text:0000000100000D3C loc_100000D3C:                          ; CODE XREF: _main+34D↓j
+__text:0000000100000D3C                 mov     eax, [rbp+var_BC]
+__text:0000000100000D42                 cmp     eax, cs:_n
+__text:0000000100000D48                 jge     loc_100000F62
+__text:0000000100000D4E                 lea     rax, _res
+__text:0000000100000D55                 lea     rcx, _x
+__text:0000000100000D5C                 movsxd  rdx, [rbp+var_BC]
+__text:0000000100000D63                 mov     esi, [rcx+rdx*4]
+__text:0000000100000D66                 movsxd  rcx, [rbp+var_BC]
+__text:0000000100000D6D                 add     esi, [rax+rcx*4]
+__text:0000000100000D70                 cmp     esi, [rbp+var_B4]
+__text:0000000100000D76                 jl      loc_100000D86
+__text:0000000100000D7C                 mov     [rbp+var_B8], 1
+__text:0000000100000D86
+__text:0000000100000D86 loc_100000D86:                          ; CODE XREF: _main+166↑j
+__text:0000000100000D86                 mov     eax, [rbp+var_BC]
+__text:0000000100000D8C                 add     eax, 1
+__text:0000000100000D91                 mov     [rbp+var_C0], eax
+__text:0000000100000D97
+__text:0000000100000D97 loc_100000D97:                          ; CODE XREF: _main+332↓j
+__text:0000000100000D97                 mov     eax, [rbp+var_C0]
+__text:0000000100000D9D                 cmp     eax, cs:_n
+__text:0000000100000DA3                 jge     loc_100000F47
+__text:0000000100000DA9                 lea     rax, _res
+__text:0000000100000DB0                 lea     rcx, _x
+__text:0000000100000DB7                 movsxd  rdx, [rbp+var_C0]
+__text:0000000100000DBE                 mov     esi, [rcx+rdx*4]
+__text:0000000100000DC1                 movsxd  rdx, [rbp+var_BC]
+__text:0000000100000DC8                 mov     edi, [rcx+rdx*4]
+__text:0000000100000DCB                 movsxd  rcx, [rbp+var_BC]
+__text:0000000100000DD2                 add     edi, [rax+rcx*4]
+__text:0000000100000DD5                 cmp     esi, edi
+__text:0000000100000DD7                 jg      loc_100000F2C
+__text:0000000100000DDD                 lea     rax, [rbp+var_88]
+__text:0000000100000DE4                 lea     rcx, [rbp+var_C4]
+__text:0000000100000DEB                 lea     rdx, _x
+__text:0000000100000DF2                 lea     rsi, _d
+__text:0000000100000DF9                 lea     rdi, _res
+__text:0000000100000E00                 movsxd  r8, [rbp+var_C0]
+__text:0000000100000E07                 shl     r8, 2
+__text:0000000100000E0B                 add     rdi, r8
+__text:0000000100000E0E                 movsxd  r8, [rbp+var_C0]
+__text:0000000100000E15                 shl     r8, 2
+__text:0000000100000E19                 add     rsi, r8
+__text:0000000100000E1C                 movsxd  r8, [rbp+var_C0]
+__text:0000000100000E23                 mov     r9d, [rdx+r8*4]
+__text:0000000100000E27                 movsxd  r8, [rbp+var_BC]
+__text:0000000100000E2E                 sub     r9d, [rdx+r8*4]
+__text:0000000100000E32                 mov     [rbp+var_C4], r9d
+__text:0000000100000E39                 mov     [rbp+var_90], rsi
+__text:0000000100000E40                 mov     [rbp+var_98], rcx
+__text:0000000100000E47                 mov     rcx, [rbp+var_90]
+__text:0000000100000E4E                 mov     rdx, [rbp+var_98]
+__text:0000000100000E55                 mov     [rbp+var_78], rcx
+__text:0000000100000E59                 mov     [rbp+var_80], rdx
+__text:0000000100000E5D                 mov     rcx, [rbp+var_80]
+__text:0000000100000E61                 mov     rdx, [rbp+var_78]
+__text:0000000100000E65                 mov     [rbp+var_60], rax
+__text:0000000100000E69                 mov     [rbp+var_68], rcx
+__text:0000000100000E6D                 mov     [rbp+var_70], rdx
+__text:0000000100000E71                 mov     rax, [rbp+var_68]
+__text:0000000100000E75                 mov     r9d, [rax]
+__text:0000000100000E78                 mov     rax, [rbp+var_70]
+__text:0000000100000E7C                 cmp     r9d, [rax]
+__text:0000000100000E7F                 mov     [rbp+var_E8], rdi
+__text:0000000100000E86                 jge     loc_100000E9C
+__text:0000000100000E8C                 mov     rax, [rbp+var_80]
+__text:0000000100000E90                 mov     [rbp+var_F0], rax
+__text:0000000100000E97                 jmp     loc_100000EA7
+__text:0000000100000E9C ; ---------------------------------------------------------------------------
+__text:0000000100000E9C
+__text:0000000100000E9C loc_100000E9C:                          ; CODE XREF: _main+276↑j
+__text:0000000100000E9C                 mov     rax, [rbp+var_78]
+__text:0000000100000EA0                 mov     [rbp+var_F0], rax
+__text:0000000100000EA7
+__text:0000000100000EA7 loc_100000EA7:                          ; CODE XREF: _main+287↑j
+__text:0000000100000EA7                 mov     rax, [rbp+var_F0]
+__text:0000000100000EAE                 lea     rcx, [rbp+var_30]
+__text:0000000100000EB2                 mov     rdx, [rbp+var_E8]
+__text:0000000100000EB9                 mov     [rbp+var_38], rdx
+__text:0000000100000EBD                 mov     [rbp+var_40], rax
+__text:0000000100000EC1                 mov     rax, [rbp+var_38]
+__text:0000000100000EC5                 mov     rsi, [rbp+var_40]
+__text:0000000100000EC9                 mov     [rbp+var_20], rax
+__text:0000000100000ECD                 mov     [rbp+var_28], rsi
+__text:0000000100000ED1                 mov     rax, [rbp+var_20]
+__text:0000000100000ED5                 mov     rsi, [rbp+var_28]
+__text:0000000100000ED9                 mov     [rbp+var_8], rcx
+__text:0000000100000EDD                 mov     [rbp+var_10], rax
+__text:0000000100000EE1                 mov     [rbp+var_18], rsi
+__text:0000000100000EE5                 mov     rax, [rbp+var_10]
+__text:0000000100000EE9                 mov     edi, [rax]
+__text:0000000100000EEB                 mov     rax, [rbp+var_18]
+__text:0000000100000EEF                 cmp     edi, [rax]
+__text:0000000100000EF1                 jge     loc_100000F07
+__text:0000000100000EF7                 mov     rax, [rbp+var_28]
+__text:0000000100000EFB                 mov     [rbp+var_F8], rax
+__text:0000000100000F02                 jmp     loc_100000F12
+__text:0000000100000F07 ; ---------------------------------------------------------------------------
+__text:0000000100000F07
+__text:0000000100000F07 loc_100000F07:                          ; CODE XREF: _main+2E1↑j
+__text:0000000100000F07                 mov     rax, [rbp+var_20]
+__text:0000000100000F0B                 mov     [rbp+var_F8], rax
+__text:0000000100000F12
+__text:0000000100000F12 loc_100000F12:                          ; CODE XREF: _main+2F2↑j
+__text:0000000100000F12                 mov     rax, [rbp+var_F8]
+__text:0000000100000F19                 lea     rcx, _res
+__text:0000000100000F20                 mov     edx, [rax]
+__text:0000000100000F22                 movsxd  rax, [rbp+var_C0]
+__text:0000000100000F29                 mov     [rcx+rax*4], edx
+__text:0000000100000F2C
+__text:0000000100000F2C loc_100000F2C:                          ; CODE XREF: _main+1C7↑j
+__text:0000000100000F2C                 jmp     $+5
+__text:0000000100000F31 ; ---------------------------------------------------------------------------
+__text:0000000100000F31
+__text:0000000100000F31 loc_100000F31:                          ; CODE XREF: _main:loc_100000F2C↑j
+__text:0000000100000F31                 mov     eax, [rbp+var_C0]
+__text:0000000100000F37                 add     eax, 1
+__text:0000000100000F3C                 mov     [rbp+var_C0], eax
+__text:0000000100000F42                 jmp     loc_100000D97
+__text:0000000100000F47 ; ---------------------------------------------------------------------------
+__text:0000000100000F47
+__text:0000000100000F47 loc_100000F47:                          ; CODE XREF: _main+193↑j
+__text:0000000100000F47                 jmp     $+5
+__text:0000000100000F4C ; ---------------------------------------------------------------------------
+__text:0000000100000F4C
+__text:0000000100000F4C loc_100000F4C:                          ; CODE XREF: _main:loc_100000F47↑j
+__text:0000000100000F4C                 mov     eax, [rbp+var_BC]
+__text:0000000100000F52                 add     eax, 1
+__text:0000000100000F57                 mov     [rbp+var_BC], eax
+__text:0000000100000F5D                 jmp     loc_100000D3C
+__text:0000000100000F62 ; ---------------------------------------------------------------------------
+__text:0000000100000F62
+__text:0000000100000F62 loc_100000F62:                          ; CODE XREF: _main+138↑j
+__text:0000000100000F62                 mov     rdi, cs:__ZNSt3__14coutE_ptr
+__text:0000000100000F69                 lea     rsi, aCase      ; "Case #"
+__text:0000000100000F70                 call    j___ZNSt3__1lsINS_11char_traitsIcEEEERNS_13basic_ostreamIcT_EES6_PKc ; std::__1::operator<<<std::__1::char_traits<char>>(std::__1::basic_ostream<char,std::__1::char_traits<char>> &,char const*)
+__text:0000000100000F75                 mov     esi, [rbp+var_AC]
+__text:0000000100000F7B                 mov     rdi, rax
+__text:0000000100000F7E                 call    __ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEElsEi ; std::__1::basic_ostream<char,std::__1::char_traits<char>>::operator<<(int)
+__text:0000000100000F83                 lea     rsi, asc_100001F33 ; ": "
+__text:0000000100000F8A                 mov     rdi, rax
+__text:0000000100000F8D                 call    j___ZNSt3__1lsINS_11char_traitsIcEEEERNS_13basic_ostreamIcT_EES6_PKc ; std::__1::operator<<<std::__1::char_traits<char>>(std::__1::basic_ostream<char,std::__1::char_traits<char>> &,char const*)
+__text:0000000100000F92                 cmp     [rbp+var_B8], 0
+__text:0000000100000F9C                 mov     [rbp+var_100], rax
+__text:0000000100000FA3                 jz      loc_100000FC2
+__text:0000000100000FA9                 lea     rdi, aYes       ; "YES"
+__text:0000000100000FB0                 mov     al, 0
+__text:0000000100000FB2                 call    _printf
+__text:0000000100000FB7                 mov     [rbp+var_104], eax
+__text:0000000100000FBD                 jmp     loc_100000FD6
+__text:0000000100000FC2 ; ---------------------------------------------------------------------------
+__text:0000000100000FC2
+__text:0000000100000FC2 loc_100000FC2:                          ; CODE XREF: _main+393↑j
+__text:0000000100000FC2                 lea     rdi, aNo        ; "NO"
+__text:0000000100000FC9                 mov     al, 0
+__text:0000000100000FCB                 call    _printf
+__text:0000000100000FD0                 mov     [rbp+var_108], eax
+__text:0000000100000FD6
+__text:0000000100000FD6 loc_100000FD6:                          ; CODE XREF: _main+3AD↑j
+__text:0000000100000FD6                 lea     rax, __ZNSt3__14endlIcNS_11char_traitsIcEEEERNS_13basic_ostreamIT_T0_EES7_ ; std::__1::endl<char,std::__1::char_traits<char>>(std::__1::basic_ostream<char,std::__1::char_traits<char>> &)
+__text:0000000100000FDD                 mov     rcx, cs:__ZNSt3__14coutE_ptr
+__text:0000000100000FE4                 mov     [rbp+var_50], rcx
+__text:0000000100000FE8                 mov     [rbp+var_58], rax
+__text:0000000100000FEC                 mov     rdi, [rbp+var_50]
+__text:0000000100000FF0                 call    [rbp+var_58]
+__text:0000000100000FF3                 mov     [rbp+var_110], rax
+__text:0000000100000FFA                 mov     eax, [rbp+var_AC]
+__text:0000000100001000                 add     eax, 1
+__text:0000000100001005                 mov     [rbp+var_AC], eax
+__text:000000010000100B                 jmp     loc_100000C49
+__text:0000000100001010 ; ---------------------------------------------------------------------------
+__text:0000000100001010
+__text:0000000100001010 loc_100001010:                          ; CODE XREF: _main+45↑j
+__text:0000000100001010                 mov     eax, 0
+__text:0000000100001015                 add     rsp, 110h
+__text:000000010000101C                 pop     rbp
+__text:000000010000101D                 retn
+__text:000000010000101D _main           endp
+__text:000000010000101D
+__text:000000010000101D ; ---------------------------------------------------------------------------
+__text:000000010000101E                 align 20h
+__text:0000000100001020
+__text:0000000100001020 ; =============== S U B R O U T I N E =======================================
+__text:0000000100001020
+__text:0000000100001020 ; Attributes: bp-based frame
+__text:0000000100001020
+__text:0000000100001020 ; std::__1::basic_ostream<char, std::__1::char_traits<char>> & std::__1::operator<<<std::__1::char_traits<char>>(std::__1::basic_ostream<char, std::__1::char_traits<char>> &, char const*)
+__text:0000000100001020 __ZNSt3__1lsINS_11char_traitsIcEEEERNS_13basic_ostreamIcT_EES6_PKc proc near
+__text:0000000100001020                                         ; DATA XREF: __la_symbol_ptr:__ZNSt3__1lsINS_11char_traitsIcEEEERNS_13basic_ostreamIcT_EES6_PKc_ptr↓o
+__text:0000000100001020
+__text:0000000100001020 var_1A8         = qword ptr -1A8h
+__text:0000000100001020 var_1A0         = qword ptr -1A0h
+__text:0000000100001020 var_191         = byte ptr -191h
+__text:0000000100001020 var_190         = dword ptr -190h
+__text:0000000100001020 var_18C         = dword ptr -18Ch
+__text:0000000100001020 var_188         = qword ptr -188h
+__text:0000000100001020 var_179         = byte ptr -179h
+__text:0000000100001020 var_178         = qword ptr -178h
+__text:0000000100001020 var_16C         = dword ptr -16Ch
+__text:0000000100001020 var_168         = qword ptr -168h
+__text:0000000100001020 var_160         = qword ptr -160h
+__text:0000000100001020 var_158         = qword ptr -158h
+__text:0000000100001020 var_150         = qword ptr -150h
+__text:0000000100001020 var_148         = qword ptr -148h
+__text:0000000100001020 var_140         = qword ptr -140h
+__text:0000000100001020 var_134         = dword ptr -134h
+__text:0000000100001020 var_130         = qword ptr -130h
+__text:0000000100001020 var_128         = qword ptr -128h
+__text:0000000100001020 var_119         = byte ptr -119h
+__text:0000000100001020 var_118         = qword ptr -118h
+__text:0000000100001020 var_110         = qword ptr -110h
+__text:0000000100001020 var_108         = qword ptr -108h
+__text:0000000100001020 var_FC          = dword ptr -0FCh
+__text:0000000100001020 var_F8          = qword ptr -0F8h
+__text:0000000100001020 var_F0          = byte ptr -0F0h
+__text:0000000100001020 var_E0          = qword ptr -0E0h
+__text:0000000100001020 var_D8          = qword ptr -0D8h
+__text:0000000100001020 var_D0          = qword ptr -0D0h
+__text:0000000100001020 var_C8          = qword ptr -0C8h
+__text:0000000100001020 var_C0          = qword ptr -0C0h
+__text:0000000100001020 var_B8          = qword ptr -0B8h
+__text:0000000100001020 var_A0          = qword ptr -0A0h
+__text:0000000100001020 var_98          = qword ptr -98h
+__text:0000000100001020 var_90          = qword ptr -90h
+__text:0000000100001020 var_88          = qword ptr -88h
+__text:0000000100001020 var_7C          = dword ptr -7Ch
+__text:0000000100001020 var_78          = qword ptr -78h
+__text:0000000100001020 var_6C          = dword ptr -6Ch
+__text:0000000100001020 var_68          = qword ptr -68h
+__text:0000000100001020 var_60          = qword ptr -60h
+__text:0000000100001020 var_58          = qword ptr -58h
+__text:0000000100001020 var_50          = qword ptr -50h
+__text:0000000100001020 var_44          = dword ptr -44h
+__text:0000000100001020 var_40          = qword ptr -40h
+__text:0000000100001020 var_38          = byte ptr -38h
+__text:0000000100001020 var_29          = byte ptr -29h
+__text:0000000100001020 var_28          = qword ptr -28h
+__text:0000000100001020 var_20          = qword ptr -20h
+__text:0000000100001020 var_11          = byte ptr -11h
+__text:0000000100001020 var_10          = qword ptr -10h
+__text:0000000100001020 var_8           = dword ptr -8
+__text:0000000100001020 var_4           = dword ptr -4
+__text:0000000100001020
+__text:0000000100001020                 push    rbp
+__text:0000000100001021                 mov     rbp, rsp
+__text:0000000100001024                 sub     rsp, 1B0h
+__text:000000010000102B                 mov     [rbp+var_D8], rdi
+__text:0000000100001032                 mov     [rbp+var_E0], rsi
+__text:0000000100001039                 mov     rsi, [rbp+var_D8]
+__text:0000000100001040                 lea     rdi, [rbp+var_F0]
+__text:0000000100001047                 call    __ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEE6sentryC1ERS3_ ; std::__1::basic_ostream<char,std::__1::char_traits<char>>::sentry::sentry(std::__1::basic_ostream<char,std::__1::char_traits<char>>&)
+__text:000000010000104C                 jmp     $+5
+__text:0000000100001051 ; ---------------------------------------------------------------------------
+__text:0000000100001051
+__text:0000000100001051 loc_100001051:                          ; CODE XREF: std::__1::operator<<<std::__1::char_traits<char>>(std::__1::basic_ostream<char,std::__1::char_traits<char>> &,char const*)+2C↑j
+__text:0000000100001051                 lea     rax, [rbp+var_F0]
+__text:0000000100001058                 mov     [rbp+var_D0], rax
+__text:000000010000105F                 mov     rax, [rbp+var_D0]
+__text:0000000100001066                 mov     cl, [rax]
+__text:0000000100001068                 mov     [rbp+var_119], cl
+__text:000000010000106E                 mov     al, [rbp+var_119]
+__text:0000000100001074                 test    al, 1
+__text:0000000100001076                 jnz     loc_100001081
+__text:000000010000107C                 jmp     loc_100001426
+__text:0000000100001081 ; ---------------------------------------------------------------------------
+__text:0000000100001081
+__text:0000000100001081 loc_100001081:                          ; CODE XREF: std::__1::operator<<<std::__1::char_traits<char>>(std::__1::basic_ostream<char,std::__1::char_traits<char>> &,char const*)+56↑j
+__text:0000000100001081                 mov     rax, [rbp+var_E0]
+__text:0000000100001088                 mov     [rbp+var_C8], rax
+__text:000000010000108F                 mov     rdi, rax        ; char *
+__text:0000000100001092                 call    _strlen
+__text:0000000100001097                 mov     [rbp+var_128], rax
+__text:000000010000109E                 jmp     $+5
+__text:00000001000010A3 ; ---------------------------------------------------------------------------
+__text:00000001000010A3
+__text:00000001000010A3 loc_1000010A3:                          ; CODE XREF: std::__1::operator<<<std::__1::char_traits<char>>(std::__1::basic_ostream<char,std::__1::char_traits<char>> &,char const*)+7E↑j
+__text:00000001000010A3                 jmp     $+5
+__text:00000001000010A8 ; ---------------------------------------------------------------------------
+__text:00000001000010A8
+__text:00000001000010A8 loc_1000010A8:                          ; CODE XREF: std::__1::operator<<<std::__1::char_traits<char>>(std::__1::basic_ostream<char,std::__1::char_traits<char>> &,char const*):loc_1000010A3↑j
+__text:00000001000010A8                 lea     rax, [rbp+var_110]
+__text:00000001000010AF                 mov     rcx, [rbp+var_128]
+__text:00000001000010B6                 mov     [rbp+var_108], rcx
+__text:00000001000010BD                 mov     rdx, [rbp+var_D8]
+__text:00000001000010C4                 mov     [rbp+var_B8], rax
+__text:00000001000010CB                 mov     [rbp+var_C0], rdx
+__text:00000001000010D2                 mov     rax, [rbp+var_B8]
+__text:00000001000010D9                 mov     rdx, [rbp+var_C0]
+__text:00000001000010E0                 mov     [rbp+var_98], rax
+__text:00000001000010E7                 mov     [rbp+var_A0], rdx
+__text:00000001000010EE                 mov     rax, [rbp+var_98]
+__text:00000001000010F5                 mov     rdx, [rbp+var_A0]
+__text:00000001000010FC                 mov     rsi, [rdx]
+__text:00000001000010FF                 mov     rsi, [rsi-18h]
+__text:0000000100001103                 add     rdx, rsi
+__text:0000000100001106                 mov     [rbp+var_90], rdx
+__text:000000010000110D                 mov     rdx, [rbp+var_90]
+__text:0000000100001114                 mov     [rbp+var_88], rdx
+__text:000000010000111B                 mov     rdx, [rbp+var_88]
+__text:0000000100001122                 mov     rdx, [rdx+28h]
+__text:0000000100001126                 mov     [rax], rdx
+__text:0000000100001129                 mov     rsi, [rbp+var_E0]
+__text:0000000100001130                 mov     rax, [rbp+var_D8]
+__text:0000000100001137                 mov     rdx, [rax]
+__text:000000010000113A                 mov     rdx, [rdx-18h]
+__text:000000010000113E                 add     rax, rdx
+__text:0000000100001141                 mov     [rbp+var_60], rax
+__text:0000000100001145                 mov     rax, [rbp+var_60]
+__text:0000000100001149                 mov     edi, [rax+8]
+__text:000000010000114C                 mov     [rbp+var_130], rsi
+__text:0000000100001153                 mov     [rbp+var_134], edi
+__text:0000000100001159                 mov     eax, [rbp+var_134]
+__text:000000010000115F                 and     eax, 0B0h
+__text:0000000100001164                 cmp     eax, 20h ; ' '
+__text:0000000100001169                 jnz     loc_100001189
+__text:000000010000116F                 mov     rax, [rbp+var_E0]
+__text:0000000100001176                 add     rax, [rbp+var_108]
+__text:000000010000117D                 mov     [rbp+var_140], rax
+__text:0000000100001184                 jmp     loc_100001197
+__text:0000000100001189 ; ---------------------------------------------------------------------------
+__text:0000000100001189
+__text:0000000100001189 loc_100001189:                          ; CODE XREF: std::__1::operator<<<std::__1::char_traits<char>>(std::__1::basic_ostream<char,std::__1::char_traits<char>> &,char const*)+149↑j
+__text:0000000100001189                 mov     rax, [rbp+var_E0]
+__text:0000000100001190                 mov     [rbp+var_140], rax
+__text:0000000100001197
+__text:0000000100001197 loc_100001197:                          ; CODE XREF: std::__1::operator<<<std::__1::char_traits<char>>(std::__1::basic_ostream<char,std::__1::char_traits<char>> &,char const*)+164↑j
+__text:0000000100001197                 mov     rax, [rbp+var_140]
+__text:000000010000119E                 mov     rcx, [rbp+var_E0]
+__text:00000001000011A5                 add     rcx, [rbp+var_108]
+__text:00000001000011AC                 mov     rdx, [rbp+var_D8]
+__text:00000001000011B3                 mov     rsi, [rdx]
+__text:00000001000011B6                 mov     rsi, [rsi-18h]
+__text:00000001000011BA                 add     rdx, rsi
+__text:00000001000011BD                 mov     rsi, [rbp+var_D8]
+__text:00000001000011C4                 mov     rdi, [rsi]
+__text:00000001000011C7                 mov     rdi, [rdi-18h]
+__text:00000001000011CB                 add     rsi, rdi
+__text:00000001000011CE                 mov     [rbp+var_50], rsi
+__text:00000001000011D2                 mov     rsi, [rbp+var_50]
+__text:00000001000011D6                 mov     r8d, [rsi+90h]
+__text:00000001000011DD                 mov     [rbp+var_4], 0FFFFFFFFh
+__text:00000001000011E4                 mov     [rbp+var_8], r8d
+__text:00000001000011E8                 mov     r8d, [rbp+var_4]
+__text:00000001000011EC                 cmp     r8d, [rbp+var_8]
+__text:00000001000011F0                 mov     [rbp+var_148], rax
+__text:00000001000011F7                 mov     [rbp+var_150], rcx
+__text:00000001000011FE                 mov     [rbp+var_158], rdx
+__text:0000000100001205                 mov     [rbp+var_160], rsi
+__text:000000010000120C                 jnz     loc_100001308
+__text:0000000100001212                 mov     rax, [rbp+var_160]
+__text:0000000100001219                 mov     [rbp+var_28], rax
+__text:000000010000121D                 mov     [rbp+var_29], 20h ; ' '
+__text:0000000100001221                 mov     rsi, [rbp+var_28]
+__text:0000000100001225                 lea     rdi, [rbp+var_38] ; this
+__text:0000000100001229                 call    __ZNKSt3__18ios_base6getlocEv ; std::__1::ios_base::getloc(void)
+__text:000000010000122E                 jmp     $+5
+__text:0000000100001233 ; ---------------------------------------------------------------------------
+__text:0000000100001233
+__text:0000000100001233 loc_100001233:                          ; CODE XREF: std::__1::operator<<<std::__1::char_traits<char>>(std::__1::basic_ostream<char,std::__1::char_traits<char>> &,char const*)+20E↑j
+__text:0000000100001233                 lea     rax, [rbp+var_38]
+__text:0000000100001237                 mov     [rbp+var_20], rax
+__text:000000010000123B                 mov     rsi, cs:__ZNSt3__15ctypeIcE2idE_ptr
+__text:0000000100001242                 mov     rdi, rax
+__text:0000000100001245                 call    __ZNKSt3__16locale9use_facetERNS0_2idE ; std::__1::locale::use_facet(std::__1::locale::id &)
+__text:000000010000124A                 mov     [rbp+var_168], rax
+__text:0000000100001251                 jmp     $+5
+__text:0000000100001256 ; ---------------------------------------------------------------------------
+__text:0000000100001256
+__text:0000000100001256 loc_100001256:                          ; CODE XREF: std::__1::operator<<<std::__1::char_traits<char>>(std::__1::basic_ostream<char,std::__1::char_traits<char>> &,char const*)+231↑j
+__text:0000000100001256                 mov     al, [rbp+var_29]
+__text:0000000100001259                 mov     rcx, [rbp+var_168]
+__text:0000000100001260                 mov     [rbp+var_10], rcx
+__text:0000000100001264                 mov     [rbp+var_11], al
+__text:0000000100001267                 mov     rdx, [rbp+var_10]
+__text:000000010000126B                 mov     rsi, [rdx]
+__text:000000010000126E                 mov     rsi, [rsi+38h]
+__text:0000000100001272                 movsx   edi, [rbp+var_11]
+__text:0000000100001276                 mov     [rbp+var_16C], edi
+__text:000000010000127C                 mov     rdi, rdx
+__text:000000010000127F                 mov     r8d, [rbp+var_16C]
+__text:0000000100001286                 mov     [rbp+var_178], rsi
+__text:000000010000128D                 mov     esi, r8d
+__text:0000000100001290                 mov     rdx, [rbp+var_178]
+__text:0000000100001297                 call    rdx
+__text:0000000100001299                 mov     [rbp+var_179], al
+__text:000000010000129F                 jmp     loc_1000012E4
+__text:00000001000012A4 ; ---------------------------------------------------------------------------
+__text:00000001000012A4                 mov     ecx, edx
+__text:00000001000012A6                 mov     [rbp+var_40], rax
+__text:00000001000012AA                 mov     [rbp+var_44], ecx
+__text:00000001000012AD                 lea     rdi, [rbp+var_38] ; this
+__text:00000001000012B1                 call    __ZNSt3__16localeD1Ev ; std::__1::locale::~locale()
+__text:00000001000012B6                 jmp     $+5
+__text:00000001000012BB ; ---------------------------------------------------------------------------
+__text:00000001000012BB
+__text:00000001000012BB loc_1000012BB:                          ; CODE XREF: std::__1::operator<<<std::__1::char_traits<char>>(std::__1::basic_ostream<char,std::__1::char_traits<char>> &,char const*)+296↑j
+__text:00000001000012BB                 mov     rax, [rbp+var_40]
+__text:00000001000012BF                 mov     ecx, [rbp+var_44]
+__text:00000001000012C2                 mov     [rbp+var_188], rax
+__text:00000001000012C9                 mov     [rbp+var_18C], ecx
+__text:00000001000012CF                 jmp     loc_1000013F6
+__text:00000001000012D4 ; ---------------------------------------------------------------------------
+__text:00000001000012D4                 mov     ecx, edx
+__text:00000001000012D6                 mov     rdi, rax
+__text:00000001000012D9                 mov     [rbp+var_190], ecx
+__text:00000001000012DF                 call    ___clang_call_terminate
+__text:00000001000012E4 ; ---------------------------------------------------------------------------
+__text:00000001000012E4
+__text:00000001000012E4 loc_1000012E4:                          ; CODE XREF: std::__1::operator<<<std::__1::char_traits<char>>(std::__1::basic_ostream<char,std::__1::char_traits<char>> &,char const*)+27F↑j
+__text:00000001000012E4                 lea     rdi, [rbp+var_38] ; this
+__text:00000001000012E8                 call    __ZNSt3__16localeD1Ev ; std::__1::locale::~locale()
+__text:00000001000012ED                 jmp     $+5
+__text:00000001000012F2 ; ---------------------------------------------------------------------------
+__text:00000001000012F2
+__text:00000001000012F2 loc_1000012F2:                          ; CODE XREF: std::__1::operator<<<std::__1::char_traits<char>>(std::__1::basic_ostream<char,std::__1::char_traits<char>> &,char const*)+2CD↑j
+__text:00000001000012F2                 mov     al, [rbp+var_179]
+__text:00000001000012F8                 movsx   ecx, al
+__text:00000001000012FB                 mov     rdx, [rbp+var_160]
+__text:0000000100001302                 mov     [rdx+90h], ecx
+__text:0000000100001308
+__text:0000000100001308 loc_100001308:                          ; CODE XREF: std::__1::operator<<<std::__1::char_traits<char>>(std::__1::basic_ostream<char,std::__1::char_traits<char>> &,char const*)+1EC↑j
+__text:0000000100001308                 mov     rax, [rbp+var_160]
+__text:000000010000130F                 mov     ecx, [rax+90h]
+__text:0000000100001315                 mov     dl, cl
+__text:0000000100001317                 mov     [rbp+var_191], dl
+__text:000000010000131D                 mov     rdi, [rbp+var_110]
+__text:0000000100001324                 mov     al, [rbp+var_191]
+__text:000000010000132A                 movsx   r9d, al
+__text:000000010000132E                 mov     rsi, [rbp+var_130]
+__text:0000000100001335                 mov     rdx, [rbp+var_148]
+__text:000000010000133C                 mov     rcx, [rbp+var_150]
+__text:0000000100001343                 mov     r8, [rbp+var_158]
+__text:000000010000134A                 call    __ZNSt3__116__pad_and_outputIcNS_11char_traitsIcEEEENS_19ostreambuf_iteratorIT_T0_EES6_PKS4_S8_S8_RNS_8ios_baseES4_ ; std::__1::__pad_and_output<char,std::__1::char_traits<char>>(std::__1::ostreambuf_iterator<char,std::__1::char_traits<char>>,char const*,char const*,char const*,std::__1::ios_base &,char)
+__text:000000010000134F                 mov     [rbp+var_1A0], rax
+__text:0000000100001356                 jmp     $+5
+__text:000000010000135B ; ---------------------------------------------------------------------------
+__text:000000010000135B
+__text:000000010000135B loc_10000135B:                          ; CODE XREF: std::__1::operator<<<std::__1::char_traits<char>>(std::__1::basic_ostream<char,std::__1::char_traits<char>> &,char const*)+336↑j
+__text:000000010000135B                 lea     rax, [rbp+var_118]
+__text:0000000100001362                 mov     rcx, [rbp+var_1A0]
+__text:0000000100001369                 mov     [rbp+var_118], rcx
+__text:0000000100001370                 mov     [rbp+var_58], rax
+__text:0000000100001374                 mov     rax, [rbp+var_58]
+__text:0000000100001378                 cmp     qword ptr [rax], 0
+__text:000000010000137F                 jnz     loc_100001421
+__text:0000000100001385                 mov     rax, [rbp+var_D8]
+__text:000000010000138C                 mov     rcx, [rax]
+__text:000000010000138F                 mov     rcx, [rcx-18h]
+__text:0000000100001393                 add     rax, rcx
+__text:0000000100001396                 mov     [rbp+var_78], rax
+__text:000000010000139A                 mov     [rbp+var_7C], 5
+__text:00000001000013A1                 mov     rax, [rbp+var_78]
+__text:00000001000013A5                 mov     [rbp+var_68], rax
+__text:00000001000013A9                 mov     [rbp+var_6C], 5
+__text:00000001000013B0                 mov     rax, [rbp+var_68]
+__text:00000001000013B4                 mov     edx, [rax+20h]
+__text:00000001000013B7                 or      edx, 5
+__text:00000001000013BA                 mov     rdi, rax        ; this
+__text:00000001000013BD                 mov     esi, edx        ; unsigned int
+__text:00000001000013BF                 call    __ZNSt3__18ios_base5clearEj ; std::__1::ios_base::clear(uint)
+__text:00000001000013C4                 jmp     $+5
+__text:00000001000013C9 ; ---------------------------------------------------------------------------
+__text:00000001000013C9
+__text:00000001000013C9 loc_1000013C9:                          ; CODE XREF: std::__1::operator<<<std::__1::char_traits<char>>(std::__1::basic_ostream<char,std::__1::char_traits<char>> &,char const*)+3A4↑j
+__text:00000001000013C9                 jmp     $+5
+__text:00000001000013CE ; ---------------------------------------------------------------------------
+__text:00000001000013CE
+__text:00000001000013CE loc_1000013CE:                          ; CODE XREF: std::__1::operator<<<std::__1::char_traits<char>>(std::__1::basic_ostream<char,std::__1::char_traits<char>> &,char const*):loc_1000013C9↑j
+__text:00000001000013CE                 jmp     loc_100001421
+__text:00000001000013D3 ; ---------------------------------------------------------------------------
+__text:00000001000013D3                 mov     ecx, edx
+__text:00000001000013D5                 mov     [rbp+var_F8], rax
+__text:00000001000013DC                 mov     [rbp+var_FC], ecx
+__text:00000001000013E2                 jmp     loc_100001441
+__text:00000001000013E7 ; ---------------------------------------------------------------------------
+__text:00000001000013E7                 mov     ecx, edx
+__text:00000001000013E9                 mov     [rbp+var_188], rax
+__text:00000001000013F0                 mov     [rbp+var_18C], ecx
+__text:00000001000013F6
+__text:00000001000013F6 loc_1000013F6:                          ; CODE XREF: std::__1::operator<<<std::__1::char_traits<char>>(std::__1::basic_ostream<char,std::__1::char_traits<char>> &,char const*)+2AF↑j
+__text:00000001000013F6                 mov     eax, [rbp+var_18C]
+__text:00000001000013FC                 mov     rcx, [rbp+var_188]
+__text:0000000100001403                 mov     [rbp+var_F8], rcx
+__text:000000010000140A                 mov     [rbp+var_FC], eax
+__text:0000000100001410                 lea     rdi, [rbp+var_F0]
+__text:0000000100001417                 call    __ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEE6sentryD1Ev ; std::__1::basic_ostream<char,std::__1::char_traits<char>>::sentry::~sentry()
+__text:000000010000141C                 jmp     loc_10000143C
+__text:0000000100001421 ; ---------------------------------------------------------------------------
+__text:0000000100001421
+__text:0000000100001421 loc_100001421:                          ; CODE XREF: std::__1::operator<<<std::__1::char_traits<char>>(std::__1::basic_ostream<char,std::__1::char_traits<char>> &,char const*)+35F↑j
+__text:0000000100001421                                         ; std::__1::operator<<<std::__1::char_traits<char>>(std::__1::basic_ostream<char,std::__1::char_traits<char>> &,char const*):loc_1000013CE↑j
+__text:0000000100001421                 jmp     $+5
+__text:0000000100001426 ; ---------------------------------------------------------------------------
+__text:0000000100001426
+__text:0000000100001426 loc_100001426:                          ; CODE XREF: std::__1::operator<<<std::__1::char_traits<char>>(std::__1::basic_ostream<char,std::__1::char_traits<char>> &,char const*)+5C↑j
+__text:0000000100001426                                         ; std::__1::operator<<<std::__1::char_traits<char>>(std::__1::basic_ostream<char,std::__1::char_traits<char>> &,char const*):loc_100001421↑j
+__text:0000000100001426                 lea     rdi, [rbp+var_F0]
+__text:000000010000142D                 call    __ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEE6sentryD1Ev ; std::__1::basic_ostream<char,std::__1::char_traits<char>>::sentry::~sentry()
+__text:0000000100001432                 jmp     $+5
+__text:0000000100001437 ; ---------------------------------------------------------------------------
+__text:0000000100001437
+__text:0000000100001437 loc_100001437:                          ; CODE XREF: std::__1::operator<<<std::__1::char_traits<char>>(std::__1::basic_ostream<char,std::__1::char_traits<char>> &,char const*)+412↑j
+__text:0000000100001437                 jmp     loc_100001474
+__text:000000010000143C ; ---------------------------------------------------------------------------
+__text:000000010000143C
+__text:000000010000143C loc_10000143C:                          ; CODE XREF: std::__1::operator<<<std::__1::char_traits<char>>(std::__1::basic_ostream<char,std::__1::char_traits<char>> &,char const*)+3FC↑j
+__text:000000010000143C                 jmp     $+5
+__text:0000000100001441 ; ---------------------------------------------------------------------------
+__text:0000000100001441
+__text:0000000100001441 loc_100001441:                          ; CODE XREF: std::__1::operator<<<std::__1::char_traits<char>>(std::__1::basic_ostream<char,std::__1::char_traits<char>> &,char const*)+3C2↑j
+__text:0000000100001441                                         ; std::__1::operator<<<std::__1::char_traits<char>>(std::__1::basic_ostream<char,std::__1::char_traits<char>> &,char const*):loc_10000143C↑j
+__text:0000000100001441                 mov     rdi, [rbp+var_F8] ; void *
+__text:0000000100001448                 call    ___cxa_begin_catch
+__text:000000010000144D                 mov     rdi, [rbp+var_D8]
+__text:0000000100001454                 mov     rcx, [rdi]
+__text:0000000100001457                 mov     rcx, [rcx-18h]
+__text:000000010000145B                 add     rdi, rcx        ; this
+__text:000000010000145E                 mov     [rbp+var_1A8], rax
+__text:0000000100001465                 call    __ZNSt3__18ios_base33__set_badbit_and_consider_rethrowEv ; std::__1::ios_base::__set_badbit_and_consider_rethrow(void)
+__text:000000010000146A                 jmp     $+5
+__text:000000010000146F ; ---------------------------------------------------------------------------
+__text:000000010000146F
+__text:000000010000146F loc_10000146F:                          ; CODE XREF: std::__1::operator<<<std::__1::char_traits<char>>(std::__1::basic_ostream<char,std::__1::char_traits<char>> &,char const*)+44A↑j
+__text:000000010000146F                 call    ___cxa_end_catch
+__text:0000000100001474
+__text:0000000100001474 loc_100001474:                          ; CODE XREF: std::__1::operator<<<std::__1::char_traits<char>>(std::__1::basic_ostream<char,std::__1::char_traits<char>> &,char const*):loc_100001437↑j
+__text:0000000100001474                 mov     rax, [rbp+var_D8]
+__text:000000010000147B                 add     rsp, 1B0h
+__text:0000000100001482                 pop     rbp
+__text:0000000100001483                 retn
+__text:0000000100001483 __ZNSt3__1lsINS_11char_traitsIcEEEERNS_13basic_ostreamIcT_EES6_PKc endp
+__text:0000000100001483
+__text:0000000100001484 ; ---------------------------------------------------------------------------
+__text:0000000100001484                 mov     ecx, edx
+__text:0000000100001486                 mov     [rbp-0F8h], rax
+__text:000000010000148D                 mov     [rbp-0FCh], ecx
+__text:0000000100001493                 call    ___cxa_end_catch
+__text:0000000100001498                 jmp     $+5
+__text:000000010000149D ; ---------------------------------------------------------------------------
+__text:000000010000149D
+__text:000000010000149D loc_10000149D:                          ; CODE XREF: __text:0000000100001498↑j
+__text:000000010000149D                 jmp     $+5
+__text:00000001000014A2 ; ---------------------------------------------------------------------------
+__text:00000001000014A2
+__text:00000001000014A2 loc_1000014A2:                          ; CODE XREF: __text:loc_10000149D↑j
+__text:00000001000014A2                 mov     rdi, [rbp-0F8h]
+__text:00000001000014A9                 call    __Unwind_Resume
+__text:00000001000014AE ; ---------------------------------------------------------------------------
+__text:00000001000014AE                 mov     ecx, edx
+__text:00000001000014B0                 mov     rdi, rax
+__text:00000001000014B3                 mov     [rbp-1ACh], ecx
+__text:00000001000014B9                 call    ___clang_call_terminate
+__text:00000001000014B9 ; ---------------------------------------------------------------------------
+__text:00000001000014BE                 align 20h
+__text:00000001000014C0
+__text:00000001000014C0 ; =============== S U B R O U T I N E =======================================
+__text:00000001000014C0
+__text:00000001000014C0 ; Attributes: bp-based frame
+__text:00000001000014C0
+__text:00000001000014C0 ; std::__1::basic_ostream<char, std::__1::char_traits<char>> & std::__1::endl<char, std::__1::char_traits<char>>(std::__1::basic_ostream<char, std::__1::char_traits<char>> &)
+__text:00000001000014C0 __ZNSt3__14endlIcNS_11char_traitsIcEEEERNS_13basic_ostreamIT_T0_EES7_ proc near
+__text:00000001000014C0                                         ; DATA XREF: _main:loc_100000FD6↑o
+__text:00000001000014C0
+__text:00000001000014C0 var_88          = qword ptr -88h
+__text:00000001000014C0 var_80          = qword ptr -80h
+__text:00000001000014C0 var_78          = dword ptr -78h
+__text:00000001000014C0 var_71          = byte ptr -71h
+__text:00000001000014C0 var_70          = qword ptr -70h
+__text:00000001000014C0 var_64          = dword ptr -64h
+__text:00000001000014C0 var_60          = qword ptr -60h
+__text:00000001000014C0 var_58          = qword ptr -58h
+__text:00000001000014C0 var_50          = qword ptr -50h
+__text:00000001000014C0 var_48          = qword ptr -48h
+__text:00000001000014C0 var_3C          = dword ptr -3Ch
+__text:00000001000014C0 var_38          = qword ptr -38h
+__text:00000001000014C0 var_30          = byte ptr -30h
+__text:00000001000014C0 var_21          = byte ptr -21h
+__text:00000001000014C0 var_20          = qword ptr -20h
+__text:00000001000014C0 var_18          = qword ptr -18h
+__text:00000001000014C0 var_9           = byte ptr -9
+__text:00000001000014C0 var_8           = qword ptr -8
+__text:00000001000014C0
+__text:00000001000014C0                 push    rbp
+__text:00000001000014C1                 mov     rbp, rsp
+__text:00000001000014C4                 sub     rsp, 90h
+__text:00000001000014CB                 mov     [rbp+var_48], rdi
+__text:00000001000014CF                 mov     rax, rdi
+__text:00000001000014D2                 mov     rcx, [rdi]
+__text:00000001000014D5                 mov     rcx, [rcx-18h]
+__text:00000001000014D9                 add     rdi, rcx
+__text:00000001000014DC                 mov     [rbp+var_20], rdi
+__text:00000001000014E0                 mov     [rbp+var_21], 0Ah
+__text:00000001000014E4                 mov     rsi, [rbp+var_20]
+__text:00000001000014E8                 lea     rcx, [rbp+var_30]
+__text:00000001000014EC                 mov     rdi, rcx        ; this
+__text:00000001000014EF                 mov     [rbp+var_50], rax
+__text:00000001000014F3                 mov     [rbp+var_58], rcx
+__text:00000001000014F7                 call    __ZNKSt3__18ios_base6getlocEv ; std::__1::ios_base::getloc(void)
+__text:00000001000014FC                 mov     rax, [rbp+var_58]
+__text:0000000100001500                 mov     [rbp+var_18], rax
+__text:0000000100001504                 mov     rsi, cs:__ZNSt3__15ctypeIcE2idE_ptr
+__text:000000010000150B                 mov     rdi, rax
+__text:000000010000150E                 call    __ZNKSt3__16locale9use_facetERNS0_2idE ; std::__1::locale::use_facet(std::__1::locale::id &)
+__text:0000000100001513                 mov     [rbp+var_60], rax
+__text:0000000100001517                 jmp     $+5
+__text:000000010000151C ; ---------------------------------------------------------------------------
+__text:000000010000151C
+__text:000000010000151C loc_10000151C:                          ; CODE XREF: std::__1::endl<char,std::__1::char_traits<char>>(std::__1::basic_ostream<char,std::__1::char_traits<char>> &)+57↑j
+__text:000000010000151C                 mov     al, [rbp+var_21]
+__text:000000010000151F                 mov     rcx, [rbp+var_60]
+__text:0000000100001523                 mov     [rbp+var_8], rcx
+__text:0000000100001527                 mov     [rbp+var_9], al
+__text:000000010000152A                 mov     rdx, [rbp+var_8]
+__text:000000010000152E                 mov     rsi, [rdx]
+__text:0000000100001531                 mov     rsi, [rsi+38h]
+__text:0000000100001535                 movsx   edi, [rbp+var_9]
+__text:0000000100001539                 mov     [rbp+var_64], edi
+__text:000000010000153C                 mov     rdi, rdx
+__text:000000010000153F                 mov     r8d, [rbp+var_64]
+__text:0000000100001543                 mov     [rbp+var_70], rsi
+__text:0000000100001547                 mov     esi, r8d
+__text:000000010000154A                 mov     rdx, [rbp+var_70]
+__text:000000010000154E                 call    rdx
+__text:0000000100001550                 mov     [rbp+var_71], al
+__text:0000000100001553                 jmp     loc_100001585
+__text:0000000100001558 ; ---------------------------------------------------------------------------
+__text:0000000100001558                 mov     ecx, edx
+__text:000000010000155A                 mov     [rbp+var_38], rax
+__text:000000010000155E                 mov     [rbp+var_3C], ecx
+__text:0000000100001561                 lea     rdi, [rbp+var_30] ; this
+__text:0000000100001565                 call    __ZNSt3__16localeD1Ev ; std::__1::locale::~locale()
+__text:000000010000156A                 jmp     $+5
+__text:000000010000156F ; ---------------------------------------------------------------------------
+__text:000000010000156F
+__text:000000010000156F loc_10000156F:                          ; CODE XREF: std::__1::endl<char,std::__1::char_traits<char>>(std::__1::basic_ostream<char,std::__1::char_traits<char>> &)+AA↑j
+__text:000000010000156F                 mov     rdi, [rbp+var_38]
+__text:0000000100001573                 call    __Unwind_Resume
+__text:0000000100001578 ; ---------------------------------------------------------------------------
+__text:0000000100001578                 mov     ecx, edx
+__text:000000010000157A                 mov     rdi, rax
+__text:000000010000157D                 mov     [rbp+var_78], ecx
+__text:0000000100001580                 call    ___clang_call_terminate
+__text:0000000100001585 ; ---------------------------------------------------------------------------
+__text:0000000100001585
+__text:0000000100001585 loc_100001585:                          ; CODE XREF: std::__1::endl<char,std::__1::char_traits<char>>(std::__1::basic_ostream<char,std::__1::char_traits<char>> &)+93↑j
+__text:0000000100001585                 lea     rdi, [rbp+var_30] ; this
+__text:0000000100001589                 call    __ZNSt3__16localeD1Ev ; std::__1::locale::~locale()
+__text:000000010000158E                 mov     rdi, [rbp+var_50]
+__text:0000000100001592                 mov     al, [rbp+var_71]
+__text:0000000100001595                 movsx   esi, al
+__text:0000000100001598                 call    __ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEE3putEc ; std::__1::basic_ostream<char,std::__1::char_traits<char>>::put(char)
+__text:000000010000159D                 mov     rdi, [rbp+var_48]
+__text:00000001000015A1                 mov     [rbp+var_80], rax
+__text:00000001000015A5                 call    __ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEE5flushEv ; std::__1::basic_ostream<char,std::__1::char_traits<char>>::flush(void)
+__text:00000001000015AA                 mov     rdi, [rbp+var_48]
+__text:00000001000015AE                 mov     [rbp+var_88], rax
+__text:00000001000015B5                 mov     rax, rdi
+__text:00000001000015B8                 add     rsp, 90h
+__text:00000001000015BF                 pop     rbp
+__text:00000001000015C0                 retn
+__text:00000001000015C0 __ZNSt3__14endlIcNS_11char_traitsIcEEEERNS_13basic_ostreamIT_T0_EES7_ endp
+__text:00000001000015C0
+__text:00000001000015C0 ; ---------------------------------------------------------------------------
+__text:00000001000015C1                 align 10h
+__text:00000001000015D0
+__text:00000001000015D0 ; =============== S U B R O U T I N E =======================================
+__text:00000001000015D0
+__text:00000001000015D0 ; Attributes: noreturn bp-based frame
+__text:00000001000015D0
+__text:00000001000015D0 ___clang_call_terminate proc near       ; CODE XREF: std::__1::operator<<<std::__1::char_traits<char>>(std::__1::basic_ostream<char,std::__1::char_traits<char>> &,char const*)+2BF↑p
+__text:00000001000015D0                                         ; __text:00000001000014B9↑p ...
+__text:00000001000015D0
+__text:00000001000015D0 var_8           = qword ptr -8
+__text:00000001000015D0
+__text:00000001000015D0                 push    rbp
+__text:00000001000015D1                 mov     rbp, rsp
+__text:00000001000015D4                 sub     rsp, 10h
+__text:00000001000015D8                 call    ___cxa_begin_catch
+__text:00000001000015DD                 mov     [rbp+var_8], rax
+__text:00000001000015E1                 call    __ZSt9terminatev ; std::terminate(void)
+__text:00000001000015E1 ___clang_call_terminate endp
+__text:00000001000015E1
+__text:00000001000015E1 ; ---------------------------------------------------------------------------
+__text:00000001000015E6                 align 10h
+__text:00000001000015F0
+__text:00000001000015F0 ; =============== S U B R O U T I N E =======================================
+__text:00000001000015F0
+__text:00000001000015F0 ; Attributes: bp-based frame
+__text:00000001000015F0
+__text:00000001000015F0 ; std::__1::ostreambuf_iterator<char, std::__1::char_traits<char>> std::__1::__pad_and_output<char, std::__1::char_traits<char>>(std::__1::ostreambuf_iterator<char, std::__1::char_traits<char>>, char const*, char const*, char const*, std::__1::ios_base &, char)
+__text:00000001000015F0 __ZNSt3__116__pad_and_outputIcNS_11char_traitsIcEEEENS_19ostreambuf_iteratorIT_T0_EES6_PKS4_S8_S8_RNS_8ios_baseES4_ proc near
+__text:00000001000015F0                                         ; CODE XREF: std::__1::operator<<<std::__1::char_traits<char>>(std::__1::basic_ostream<char,std::__1::char_traits<char>> &,char const*)+32A↑p
+__text:00000001000015F0
+__text:00000001000015F0 var_2C8         = dword ptr -2C8h
+__text:00000001000015F0 var_2C4         = dword ptr -2C4h
+__text:00000001000015F0 var_2C0         = qword ptr -2C0h
+__text:00000001000015F0 var_2B8         = qword ptr -2B8h
+__text:00000001000015F0 var_2B0         = qword ptr -2B0h
+__text:00000001000015F0 var_2A8         = qword ptr -2A8h
+__text:00000001000015F0 var_2A0         = qword ptr -2A0h
+__text:00000001000015F0 var_298         = qword ptr -298h
+__text:00000001000015F0 var_290         = qword ptr -290h
+__text:00000001000015F0 var_288         = qword ptr -288h
+__text:00000001000015F0 var_27C         = dword ptr -27Ch
+__text:00000001000015F0 var_278         = qword ptr -278h
+__text:00000001000015F0 var_26C         = dword ptr -26Ch
+__text:00000001000015F0 var_268         = qword ptr -268h
+__text:00000001000015F0 var_260         = byte ptr -260h
+__text:00000001000015F0 var_248         = qword ptr -248h
+__text:00000001000015F0 var_240         = qword ptr -240h
+__text:00000001000015F0 var_238         = qword ptr -238h
+__text:00000001000015F0 var_230         = qword ptr -230h
+__text:00000001000015F0 var_228         = qword ptr -228h
+__text:00000001000015F0 var_219         = byte ptr -219h
+__text:00000001000015F0 var_218         = qword ptr -218h
+__text:00000001000015F0 var_210         = qword ptr -210h
+__text:00000001000015F0 var_208         = qword ptr -208h
+__text:00000001000015F0 var_200         = qword ptr -200h
+__text:00000001000015F0 var_1F8         = qword ptr -1F8h
+__text:00000001000015F0 var_1F0         = qword ptr -1F0h
+__text:00000001000015F0 var_1E8         = qword ptr -1E8h
+__text:00000001000015F0 var_1E0         = qword ptr -1E0h
+__text:00000001000015F0 var_1D8         = qword ptr -1D8h
+__text:00000001000015F0 var_1D0         = qword ptr -1D0h
+__text:00000001000015F0 var_1C8         = qword ptr -1C8h
+__text:00000001000015F0 var_1C0         = qword ptr -1C0h
+__text:00000001000015F0 var_1B8         = qword ptr -1B8h
+__text:00000001000015F0 var_1B0         = qword ptr -1B0h
+__text:00000001000015F0 var_1A8         = qword ptr -1A8h
+__text:00000001000015F0 var_1A0         = qword ptr -1A0h
+__text:00000001000015F0 var_198         = qword ptr -198h
+__text:00000001000015F0 var_190         = qword ptr -190h
+__text:00000001000015F0 var_188         = qword ptr -188h
+__text:00000001000015F0 var_180         = qword ptr -180h
+__text:00000001000015F0 var_178         = qword ptr -178h
+__text:00000001000015F0 var_170         = qword ptr -170h
+__text:00000001000015F0 var_168         = qword ptr -168h
+__text:00000001000015F0 var_160         = qword ptr -160h
+__text:00000001000015F0 var_158         = qword ptr -158h
+__text:00000001000015F0 var_150         = qword ptr -150h
+__text:00000001000015F0 var_148         = qword ptr -148h
+__text:00000001000015F0 var_140         = qword ptr -140h
+__text:00000001000015F0 var_138         = qword ptr -138h
+__text:00000001000015F0 var_130         = qword ptr -130h
+__text:00000001000015F0 var_128         = qword ptr -128h
+__text:00000001000015F0 var_120         = qword ptr -120h
+__text:00000001000015F0 var_118         = qword ptr -118h
+__text:00000001000015F0 var_110         = qword ptr -110h
+__text:00000001000015F0 var_108         = qword ptr -108h
+__text:00000001000015F0 var_100         = qword ptr -100h
+__text:00000001000015F0 var_F8          = qword ptr -0F8h
+__text:00000001000015F0 var_F0          = qword ptr -0F0h
+__text:00000001000015F0 var_E8          = qword ptr -0E8h
+__text:00000001000015F0 var_E0          = qword ptr -0E0h
+__text:00000001000015F0 var_D8          = qword ptr -0D8h
+__text:00000001000015F0 var_D0          = qword ptr -0D0h
+__text:00000001000015F0 var_C8          = qword ptr -0C8h
+__text:00000001000015F0 var_C0          = qword ptr -0C0h
+__text:00000001000015F0 var_B8          = qword ptr -0B8h
+__text:00000001000015F0 var_B0          = qword ptr -0B0h
+__text:00000001000015F0 var_A8          = qword ptr -0A8h
+__text:00000001000015F0 var_A0          = qword ptr -0A0h
+__text:00000001000015F0 var_98          = qword ptr -98h
+__text:00000001000015F0 var_90          = qword ptr -90h
+__text:00000001000015F0 var_88          = qword ptr -88h
+__text:00000001000015F0 var_80          = qword ptr -80h
+__text:00000001000015F0 var_78          = qword ptr -78h
+__text:00000001000015F0 var_70          = qword ptr -70h
+__text:00000001000015F0 var_68          = qword ptr -68h
+__text:00000001000015F0 var_60          = qword ptr -60h
+__text:00000001000015F0 var_51          = byte ptr -51h
+__text:00000001000015F0 var_50          = qword ptr -50h
+__text:00000001000015F0 var_48          = qword ptr -48h
+__text:00000001000015F0 var_39          = byte ptr -39h
+__text:00000001000015F0 var_38          = qword ptr -38h
+__text:00000001000015F0 var_30          = qword ptr -30h
+__text:00000001000015F0 var_28          = qword ptr -28h
+__text:00000001000015F0 var_20          = qword ptr -20h
+__text:00000001000015F0 var_18          = qword ptr -18h
+__text:00000001000015F0 var_10          = qword ptr -10h
+__text:00000001000015F0 var_8           = qword ptr -8
+__text:00000001000015F0
+__text:00000001000015F0                 push    rbp
+__text:00000001000015F1                 mov     rbp, rsp
+__text:00000001000015F4                 sub     rsp, 2D0h
+__text:00000001000015FB                 mov     al, r9b
+__text:00000001000015FE                 lea     r10, [rbp+var_228]
+__text:0000000100001605                 lea     r11, [rbp+var_1E8]
+__text:000000010000160C                 mov     [rbp+var_1F8], rdi
+__text:0000000100001613                 mov     [rbp+var_200], rsi
+__text:000000010000161A                 mov     [rbp+var_208], rdx
+__text:0000000100001621                 mov     [rbp+var_210], rcx
+__text:0000000100001628                 mov     [rbp+var_218], r8
+__text:000000010000162F                 mov     [rbp+var_219], al
+__text:0000000100001635                 mov     rcx, [rbp+var_1F8]
+__text:000000010000163C                 mov     [rbp+var_1D8], r11
+__text:0000000100001643                 mov     [rbp+var_1E0], 0FFFFFFFFFFFFFFFFh
+__text:000000010000164E                 mov     rdx, [rbp+var_1D8]
+__text:0000000100001655                 mov     rsi, [rbp+var_1E0]
+__text:000000010000165C                 mov     [rbp+var_1C8], rdx
+__text:0000000100001663                 mov     [rbp+var_1D0], rsi
+__text:000000010000166A                 mov     rdx, [rbp+var_1C8]
+__text:0000000100001671                 mov     qword ptr [rdx], 0
+__text:0000000100001678                 mov     rdx, [rbp+var_1E8]
+__text:000000010000167F                 mov     [rbp+var_228], rdx
+__text:0000000100001686                 mov     [rbp+var_1C0], r10
+__text:000000010000168D                 cmp     rcx, 0
+__text:0000000100001694                 jnz     loc_1000016AD
+__text:000000010000169A                 mov     rax, [rbp+var_1F8]
+__text:00000001000016A1                 mov     [rbp+var_1F0], rax
+__text:00000001000016A8                 jmp     loc_100001C72
+__text:00000001000016AD ; ---------------------------------------------------------------------------
+__text:00000001000016AD
+__text:00000001000016AD loc_1000016AD:                          ; CODE XREF: std::__1::__pad_and_output<char,std::__1::char_traits<char>>(std::__1::ostreambuf_iterator<char,std::__1::char_traits<char>>,char const*,char const*,char const*,std::__1::ios_base &,char)+A4↑j
+__text:00000001000016AD                 mov     rax, [rbp+var_210]
+__text:00000001000016B4                 mov     rcx, [rbp+var_200]
+__text:00000001000016BB                 sub     rax, rcx
+__text:00000001000016BE                 mov     [rbp+var_230], rax
+__text:00000001000016C5                 mov     rax, [rbp+var_218]
+__text:00000001000016CC                 mov     [rbp+var_158], rax
+__text:00000001000016D3                 mov     rax, [rbp+var_158]
+__text:00000001000016DA                 mov     rax, [rax+18h]
+__text:00000001000016DE                 mov     [rbp+var_238], rax
+__text:00000001000016E5                 mov     rax, [rbp+var_238]
+__text:00000001000016EC                 cmp     rax, [rbp+var_230]
+__text:00000001000016F3                 jle     loc_100001716
+__text:00000001000016F9                 mov     rax, [rbp+var_230]
+__text:0000000100001700                 mov     rcx, [rbp+var_238]
+__text:0000000100001707                 sub     rcx, rax
+__text:000000010000170A                 mov     [rbp+var_238], rcx
+__text:0000000100001711                 jmp     loc_100001721
+__text:0000000100001716 ; ---------------------------------------------------------------------------
+__text:0000000100001716
+__text:0000000100001716 loc_100001716:                          ; CODE XREF: std::__1::__pad_and_output<char,std::__1::char_traits<char>>(std::__1::ostreambuf_iterator<char,std::__1::char_traits<char>>,char const*,char const*,char const*,std::__1::ios_base &,char)+103↑j
+__text:0000000100001716                 mov     [rbp+var_238], 0
+__text:0000000100001721
+__text:0000000100001721 loc_100001721:                          ; CODE XREF: std::__1::__pad_and_output<char,std::__1::char_traits<char>>(std::__1::ostreambuf_iterator<char,std::__1::char_traits<char>>,char const*,char const*,char const*,std::__1::ios_base &,char)+121↑j
+__text:0000000100001721                 mov     rax, [rbp+var_208]
+__text:0000000100001728                 mov     rcx, [rbp+var_200]
+__text:000000010000172F                 sub     rax, rcx
+__text:0000000100001732                 mov     [rbp+var_240], rax
+__text:0000000100001739                 cmp     [rbp+var_240], 0
+__text:0000000100001744                 jle     loc_100001821
+__text:000000010000174A                 mov     rax, [rbp+var_1F8]
+__text:0000000100001751                 mov     rcx, [rbp+var_200]
+__text:0000000100001758                 mov     rdx, [rbp+var_240]
+__text:000000010000175F                 mov     [rbp+var_F8], rax
+__text:0000000100001766                 mov     [rbp+var_100], rcx
+__text:000000010000176D                 mov     [rbp+var_108], rdx
+__text:0000000100001774                 mov     rax, [rbp+var_F8]
+__text:000000010000177B                 mov     rcx, [rax]
+__text:000000010000177E                 mov     rcx, [rcx+60h]
+__text:0000000100001782                 mov     rsi, [rbp+var_100]
+__text:0000000100001789                 mov     rdx, [rbp+var_108]
+__text:0000000100001790                 mov     rdi, rax
+__text:0000000100001793                 call    rcx
+__text:0000000100001795                 cmp     rax, [rbp+var_240]
+__text:000000010000179C                 jz      loc_10000181C
+__text:00000001000017A2                 lea     rax, [rbp+var_248]
+__text:00000001000017A9                 lea     rcx, [rbp+var_F0]
+__text:00000001000017B0                 mov     [rbp+var_E0], rcx
+__text:00000001000017B7                 mov     [rbp+var_E8], 0FFFFFFFFFFFFFFFFh
+__text:00000001000017C2                 mov     rcx, [rbp+var_E0]
+__text:00000001000017C9                 mov     rdx, [rbp+var_E8]
+__text:00000001000017D0                 mov     [rbp+var_D0], rcx
+__text:00000001000017D7                 mov     [rbp+var_D8], rdx
+__text:00000001000017DE                 mov     rcx, [rbp+var_D0]
+__text:00000001000017E5                 mov     qword ptr [rcx], 0
+__text:00000001000017EC                 mov     rcx, [rbp+var_F0]
+__text:00000001000017F3                 mov     [rbp+var_248], rcx
+__text:00000001000017FA                 mov     [rbp+var_8], rax
+__text:00000001000017FE                 mov     [rbp+var_1F8], 0
+__text:0000000100001809                 mov     rax, [rbp+var_1F8]
+__text:0000000100001810                 mov     [rbp+var_1F0], rax
+__text:0000000100001817                 jmp     loc_100001C72
+__text:000000010000181C ; ---------------------------------------------------------------------------
+__text:000000010000181C
+__text:000000010000181C loc_10000181C:                          ; CODE XREF: std::__1::__pad_and_output<char,std::__1::char_traits<char>>(std::__1::ostreambuf_iterator<char,std::__1::char_traits<char>>,char const*,char const*,char const*,std::__1::ios_base &,char)+1AC↑j
+__text:000000010000181C                 jmp     $+5
+__text:0000000100001821 ; ---------------------------------------------------------------------------
+__text:0000000100001821
+__text:0000000100001821 loc_100001821:                          ; CODE XREF: std::__1::__pad_and_output<char,std::__1::char_traits<char>>(std::__1::ostreambuf_iterator<char,std::__1::char_traits<char>>,char const*,char const*,char const*,std::__1::ios_base &,char)+154↑j
+__text:0000000100001821                                         ; std::__1::__pad_and_output<char,std::__1::char_traits<char>>(std::__1::ostreambuf_iterator<char,std::__1::char_traits<char>>,char const*,char const*,char const*,std::__1::ios_base &,char):loc_10000181C↑j
+__text:0000000100001821                 cmp     [rbp+var_238], 0
+__text:000000010000182C                 jle     loc_100001B2B
+__text:0000000100001832                 lea     rax, [rbp+var_260]
+__text:0000000100001839                 mov     rcx, [rbp+var_238]
+__text:0000000100001840                 mov     dl, [rbp+var_219]
+__text:0000000100001846                 mov     [rbp+var_48], rax
+__text:000000010000184A                 mov     [rbp+var_50], rcx
+__text:000000010000184E                 mov     [rbp+var_51], dl
+__text:0000000100001851                 mov     rax, [rbp+var_48]
+__text:0000000100001855                 mov     rcx, [rbp+var_50]
+__text:0000000100001859                 mov     dl, [rbp+var_51]
+__text:000000010000185C                 mov     [rbp+var_30], rax
+__text:0000000100001860                 mov     [rbp+var_38], rcx
+__text:0000000100001864                 mov     [rbp+var_39], dl
+__text:0000000100001867                 mov     rax, [rbp+var_30]
+__text:000000010000186B                 mov     [rbp+var_28], rax
+__text:000000010000186F                 mov     rcx, [rbp+var_28]
+__text:0000000100001873                 mov     [rbp+var_20], rcx
+__text:0000000100001877                 mov     rcx, [rbp+var_20]
+__text:000000010000187B                 mov     [rbp+var_18], rcx
+__text:000000010000187F                 mov     rcx, [rbp+var_18]
+__text:0000000100001883                 mov     [rbp+var_10], rcx
+__text:0000000100001887                 mov     rsi, [rbp+var_38]
+__text:000000010000188B                 mov     rdi, rax
+__text:000000010000188E                 movsx   edx, [rbp+var_39]
+__text:0000000100001892                 call    __ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE6__initEmc ; std::__1::basic_string<char,std::__1::char_traits<char>,std::__1::allocator<char>>::__init(ulong,char)
+__text:0000000100001897                 lea     rax, [rbp+var_260]
+__text:000000010000189E                 mov     rcx, [rbp+var_1F8]
+__text:00000001000018A5                 mov     [rbp+var_C8], rax
+__text:00000001000018AC                 mov     rax, [rbp+var_C8]
+__text:00000001000018B3                 mov     [rbp+var_C0], rax
+__text:00000001000018BA                 mov     rax, [rbp+var_C0]
+__text:00000001000018C1                 mov     [rbp+var_B8], rax
+__text:00000001000018C8                 mov     rsi, [rbp+var_B8]
+__text:00000001000018CF                 mov     [rbp+var_B0], rsi
+__text:00000001000018D6                 mov     rsi, [rbp+var_B0]
+__text:00000001000018DD                 mov     [rbp+var_A8], rsi
+__text:00000001000018E4                 mov     rsi, [rbp+var_A8]
+__text:00000001000018EB                 movzx   edx, byte ptr [rsi]
+__text:00000001000018EE                 and     edx, 1
+__text:00000001000018F4                 cmp     edx, 0
+__text:00000001000018FA                 mov     [rbp+var_290], rcx
+__text:0000000100001901                 mov     [rbp+var_298], rax
+__text:0000000100001908                 jz      loc_10000193D
+__text:000000010000190E                 mov     rax, [rbp+var_298]
+__text:0000000100001915                 mov     [rbp+var_78], rax
+__text:0000000100001919                 mov     rcx, [rbp+var_78]
+__text:000000010000191D                 mov     [rbp+var_70], rcx
+__text:0000000100001921                 mov     rcx, [rbp+var_70]
+__text:0000000100001925                 mov     [rbp+var_68], rcx
+__text:0000000100001929                 mov     rcx, [rbp+var_68]
+__text:000000010000192D                 mov     rcx, [rcx+10h]
+__text:0000000100001931                 mov     [rbp+var_2A0], rcx
+__text:0000000100001938                 jmp     loc_100001992
+__text:000000010000193D ; ---------------------------------------------------------------------------
+__text:000000010000193D
+__text:000000010000193D loc_10000193D:                          ; CODE XREF: std::__1::__pad_and_output<char,std::__1::char_traits<char>>(std::__1::ostreambuf_iterator<char,std::__1::char_traits<char>>,char const*,char const*,char const*,std::__1::ios_base &,char)+318↑j
+__text:000000010000193D                 mov     rax, [rbp+var_298]
+__text:0000000100001944                 mov     [rbp+var_A0], rax
+__text:000000010000194B                 mov     rcx, [rbp+var_A0]
+__text:0000000100001952                 mov     [rbp+var_98], rcx
+__text:0000000100001959                 mov     rcx, [rbp+var_98]
+__text:0000000100001960                 mov     [rbp+var_90], rcx
+__text:0000000100001967                 mov     rcx, [rbp+var_90]
+__text:000000010000196E                 add     rcx, 1
+__text:0000000100001975                 mov     [rbp+var_88], rcx
+__text:000000010000197C                 mov     rcx, [rbp+var_88]
+__text:0000000100001983                 mov     [rbp+var_80], rcx
+__text:0000000100001987                 mov     rcx, [rbp+var_80]
+__text:000000010000198B                 mov     [rbp+var_2A0], rcx
+__text:0000000100001992
+__text:0000000100001992 loc_100001992:                          ; CODE XREF: std::__1::__pad_and_output<char,std::__1::char_traits<char>>(std::__1::ostreambuf_iterator<char,std::__1::char_traits<char>>,char const*,char const*,char const*,std::__1::ios_base &,char)+348↑j
+__text:0000000100001992                 mov     rax, [rbp+var_2A0]
+__text:0000000100001999                 mov     [rbp+var_60], rax
+__text:000000010000199D                 mov     rcx, [rbp+var_238]
+__text:00000001000019A4                 mov     rdx, [rbp+var_290]
+__text:00000001000019AB                 mov     [rbp+var_110], rdx
+__text:00000001000019B2                 mov     [rbp+var_118], rax
+__text:00000001000019B9                 mov     [rbp+var_120], rcx
+__text:00000001000019C0                 mov     rax, [rbp+var_110]
+__text:00000001000019C7                 mov     rsi, [rax]
+__text:00000001000019CA                 mov     rsi, [rsi+60h]
+__text:00000001000019CE                 mov     rdi, [rbp+var_118]
+__text:00000001000019D5                 mov     [rbp+var_2A8], rdi
+__text:00000001000019DC                 mov     rdi, rax
+__text:00000001000019DF                 mov     rax, [rbp+var_2A8]
+__text:00000001000019E6                 mov     [rbp+var_2B0], rsi
+__text:00000001000019ED                 mov     rsi, rax
+__text:00000001000019F0                 mov     rdx, rcx
+__text:00000001000019F3                 mov     rcx, [rbp+var_2B0]
+__text:00000001000019FA                 call    rcx
+__text:00000001000019FC                 mov     [rbp+var_2B8], rax
+__text:0000000100001A03                 jmp     $+5
+__text:0000000100001A08 ; ---------------------------------------------------------------------------
+__text:0000000100001A08
+__text:0000000100001A08 loc_100001A08:                          ; CODE XREF: std::__1::__pad_and_output<char,std::__1::char_traits<char>>(std::__1::ostreambuf_iterator<char,std::__1::char_traits<char>>,char const*,char const*,char const*,std::__1::ios_base &,char)+413↑j
+__text:0000000100001A08                 jmp     $+5
+__text:0000000100001A0D ; ---------------------------------------------------------------------------
+__text:0000000100001A0D
+__text:0000000100001A0D loc_100001A0D:                          ; CODE XREF: std::__1::__pad_and_output<char,std::__1::char_traits<char>>(std::__1::ostreambuf_iterator<char,std::__1::char_traits<char>>,char const*,char const*,char const*,std::__1::ios_base &,char):loc_100001A08↑j
+__text:0000000100001A0D                 mov     rax, [rbp+var_2B8]
+__text:0000000100001A14                 cmp     rax, [rbp+var_238]
+__text:0000000100001A1B                 jz      loc_100001AD6
+__text:0000000100001A21                 lea     rax, [rbp+var_148]
+__text:0000000100001A28                 mov     [rbp+var_138], rax
+__text:0000000100001A2F                 mov     [rbp+var_140], 0FFFFFFFFFFFFFFFFh
+__text:0000000100001A3A                 mov     rax, [rbp+var_138]
+__text:0000000100001A41                 mov     rcx, [rbp+var_140]
+__text:0000000100001A48                 mov     [rbp+var_128], rax
+__text:0000000100001A4F                 mov     [rbp+var_130], rcx
+__text:0000000100001A56                 mov     rax, [rbp+var_128]
+__text:0000000100001A5D                 mov     qword ptr [rax], 0
+__text:0000000100001A64                 mov     rax, [rbp+var_148]
+__text:0000000100001A6B                 mov     [rbp+var_2C0], rax
+__text:0000000100001A72                 lea     rax, [rbp+var_278]
+__text:0000000100001A79                 mov     rcx, [rbp+var_2C0]
+__text:0000000100001A80                 mov     [rbp+var_278], rcx
+__text:0000000100001A87                 mov     [rbp+var_150], rax
+__text:0000000100001A8E                 mov     [rbp+var_1F8], 0
+__text:0000000100001A99                 mov     rax, [rbp+var_1F8]
+__text:0000000100001AA0                 mov     [rbp+var_1F0], rax
+__text:0000000100001AA7                 mov     [rbp+var_27C], 1
+__text:0000000100001AB1                 jmp     loc_100001AE0
+__text:0000000100001AB6 ; ---------------------------------------------------------------------------
+__text:0000000100001AB6                 mov     ecx, edx
+__text:0000000100001AB8                 mov     [rbp+var_268], rax
+__text:0000000100001ABF                 mov     [rbp+var_26C], ecx
+__text:0000000100001AC5                 lea     rdi, [rbp+var_260]
+__text:0000000100001ACC                 call    __ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEED1Ev ; std::__1::basic_string<char,std::__1::char_traits<char>,std::__1::allocator<char>>::~basic_string()
+__text:0000000100001AD1                 jmp     loc_100001B26
+__text:0000000100001AD6 ; ---------------------------------------------------------------------------
+__text:0000000100001AD6
+__text:0000000100001AD6 loc_100001AD6:                          ; CODE XREF: std::__1::__pad_and_output<char,std::__1::char_traits<char>>(std::__1::ostreambuf_iterator<char,std::__1::char_traits<char>>,char const*,char const*,char const*,std::__1::ios_base &,char)+42B↑j
+__text:0000000100001AD6                 mov     [rbp+var_27C], 0
+__text:0000000100001AE0
+__text:0000000100001AE0 loc_100001AE0:                          ; CODE XREF: std::__1::__pad_and_output<char,std::__1::char_traits<char>>(std::__1::ostreambuf_iterator<char,std::__1::char_traits<char>>,char const*,char const*,char const*,std::__1::ios_base &,char)+4C1↑j
+__text:0000000100001AE0                 lea     rdi, [rbp+var_260]
+__text:0000000100001AE7                 call    __ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEED1Ev ; std::__1::basic_string<char,std::__1::char_traits<char>,std::__1::allocator<char>>::~basic_string()
+__text:0000000100001AEC                 mov     eax, [rbp+var_27C]
+__text:0000000100001AF2                 mov     ecx, eax
+__text:0000000100001AF4                 sub     ecx, 1
+__text:0000000100001AF7                 mov     [rbp+var_2C4], eax
+__text:0000000100001AFD                 mov     [rbp+var_2C8], ecx
+__text:0000000100001B03                 jz      loc_100001C72
+__text:0000000100001B09                 jmp     $+5
+__text:0000000100001B0E ; ---------------------------------------------------------------------------
+__text:0000000100001B0E
+__text:0000000100001B0E loc_100001B0E:                          ; CODE XREF: std::__1::__pad_and_output<char,std::__1::char_traits<char>>(std::__1::ostreambuf_iterator<char,std::__1::char_traits<char>>,char const*,char const*,char const*,std::__1::ios_base &,char)+519↑j
+__text:0000000100001B0E                 mov     eax, [rbp+var_2C4]
+__text:0000000100001B14                 test    eax, eax
+__text:0000000100001B16                 jnz     j___ZNSt3__1lsINS_11char_traitsIcEEEERNS_13basic_ostreamIcT_EES6_PKc ; std::__1::operator<<<std::__1::char_traits<char>>(std::__1::basic_ostream<char,std::__1::char_traits<char>> &,char const*)
+__text:0000000100001B1C                 jmp     $+5
+__text:0000000100001B21 ; ---------------------------------------------------------------------------
+__text:0000000100001B21
+__text:0000000100001B21 loc_100001B21:                          ; CODE XREF: std::__1::__pad_and_output<char,std::__1::char_traits<char>>(std::__1::ostreambuf_iterator<char,std::__1::char_traits<char>>,char const*,char const*,char const*,std::__1::ios_base &,char)+52C↑j
+__text:0000000100001B21                 jmp     loc_100001B2B
+__text:0000000100001B26 ; ---------------------------------------------------------------------------
+__text:0000000100001B26
+__text:0000000100001B26 loc_100001B26:                          ; CODE XREF: std::__1::__pad_and_output<char,std::__1::char_traits<char>>(std::__1::ostreambuf_iterator<char,std::__1::char_traits<char>>,char const*,char const*,char const*,std::__1::ios_base &,char)+4E1↑j
+__text:0000000100001B26                 jmp     loc_100001C82
+__text:0000000100001B2B ; ---------------------------------------------------------------------------
+__text:0000000100001B2B
+__text:0000000100001B2B loc_100001B2B:                          ; CODE XREF: std::__1::__pad_and_output<char,std::__1::char_traits<char>>(std::__1::ostreambuf_iterator<char,std::__1::char_traits<char>>,char const*,char const*,char const*,std::__1::ios_base &,char)+23C↑j
+__text:0000000100001B2B                                         ; std::__1::__pad_and_output<char,std::__1::char_traits<char>>(std::__1::ostreambuf_iterator<char,std::__1::char_traits<char>>,char const*,char const*,char const*,std::__1::ios_base &,char):loc_100001B21↑j
+__text:0000000100001B2B                 mov     rax, [rbp+var_210]
+__text:0000000100001B32                 mov     rcx, [rbp+var_208]
+__text:0000000100001B39                 sub     rax, rcx
+__text:0000000100001B3C                 mov     [rbp+var_240], rax
+__text:0000000100001B43                 cmp     [rbp+var_240], 0
+__text:0000000100001B4E                 jle     loc_100001C2E
+__text:0000000100001B54                 mov     rax, [rbp+var_1F8]
+__text:0000000100001B5B                 mov     rcx, [rbp+var_208]
+__text:0000000100001B62                 mov     rdx, [rbp+var_240]
+__text:0000000100001B69                 mov     [rbp+var_160], rax
+__text:0000000100001B70                 mov     [rbp+var_168], rcx
+__text:0000000100001B77                 mov     [rbp+var_170], rdx
+__text:0000000100001B7E                 mov     rax, [rbp+var_160]
+__text:0000000100001B85                 mov     rcx, [rax]
+__text:0000000100001B88                 mov     rcx, [rcx+60h]
+__text:0000000100001B8C                 mov     rsi, [rbp+var_168]
+__text:0000000100001B93                 mov     rdx, [rbp+var_170]
+__text:0000000100001B9A                 mov     rdi, rax
+__text:0000000100001B9D                 call    rcx
+__text:0000000100001B9F                 cmp     rax, [rbp+var_240]
+__text:0000000100001BA6                 jz      loc_100001C29
+__text:0000000100001BAC                 lea     rax, [rbp+var_288]
+__text:0000000100001BB3                 lea     rcx, [rbp+var_198]
+__text:0000000100001BBA                 mov     [rbp+var_188], rcx
+__text:0000000100001BC1                 mov     [rbp+var_190], 0FFFFFFFFFFFFFFFFh
+__text:0000000100001BCC                 mov     rcx, [rbp+var_188]
+__text:0000000100001BD3                 mov     rdx, [rbp+var_190]
+__text:0000000100001BDA                 mov     [rbp+var_178], rcx
+__text:0000000100001BE1                 mov     [rbp+var_180], rdx
+__text:0000000100001BE8                 mov     rcx, [rbp+var_178]
+__text:0000000100001BEF                 mov     qword ptr [rcx], 0
+__text:0000000100001BF6                 mov     rcx, [rbp+var_198]
+__text:0000000100001BFD                 mov     [rbp+var_288], rcx
+__text:0000000100001C04                 mov     [rbp+var_1A0], rax
+__text:0000000100001C0B                 mov     [rbp+var_1F8], 0
+__text:0000000100001C16                 mov     rax, [rbp+var_1F8]
+__text:0000000100001C1D                 mov     [rbp+var_1F0], rax
+__text:0000000100001C24                 jmp     loc_100001C72
+__text:0000000100001C29 ; ---------------------------------------------------------------------------
+__text:0000000100001C29
+__text:0000000100001C29 loc_100001C29:                          ; CODE XREF: std::__1::__pad_and_output<char,std::__1::char_traits<char>>(std::__1::ostreambuf_iterator<char,std::__1::char_traits<char>>,char const*,char const*,char const*,std::__1::ios_base &,char)+5B6↑j
+__text:0000000100001C29                 jmp     $+5
+__text:0000000100001C2E ; ---------------------------------------------------------------------------
+__text:0000000100001C2E
+__text:0000000100001C2E loc_100001C2E:                          ; CODE XREF: std::__1::__pad_and_output<char,std::__1::char_traits<char>>(std::__1::ostreambuf_iterator<char,std::__1::char_traits<char>>,char const*,char const*,char const*,std::__1::ios_base &,char)+55E↑j
+__text:0000000100001C2E                                         ; std::__1::__pad_and_output<char,std::__1::char_traits<char>>(std::__1::ostreambuf_iterator<char,std::__1::char_traits<char>>,char const*,char const*,char const*,std::__1::ios_base &,char):loc_100001C29↑j
+__text:0000000100001C2E                 mov     rax, [rbp+var_218]
+__text:0000000100001C35                 mov     [rbp+var_1A8], rax
+__text:0000000100001C3C                 mov     [rbp+var_1B0], 0
+__text:0000000100001C47                 mov     rax, [rbp+var_1A8]
+__text:0000000100001C4E                 mov     rcx, [rax+18h]
+__text:0000000100001C52                 mov     [rbp+var_1B8], rcx
+__text:0000000100001C59                 mov     rcx, [rbp+var_1B0]
+__text:0000000100001C60                 mov     [rax+18h], rcx
+__text:0000000100001C64                 mov     rax, [rbp+var_1F8]
+__text:0000000100001C6B                 mov     [rbp+var_1F0], rax
+__text:0000000100001C72
+__text:0000000100001C72 loc_100001C72:                          ; CODE XREF: std::__1::__pad_and_output<char,std::__1::char_traits<char>>(std::__1::ostreambuf_iterator<char,std::__1::char_traits<char>>,char const*,char const*,char const*,std::__1::ios_base &,char)+B8↑j
+__text:0000000100001C72                                         ; std::__1::__pad_and_output<char,std::__1::char_traits<char>>(std::__1::ostreambuf_iterator<char,std::__1::char_traits<char>>,char const*,char const*,char const*,std::__1::ios_base &,char)+227↑j ...
+__text:0000000100001C72                 mov     rax, [rbp+var_1F0]
+__text:0000000100001C79                 add     rsp, 2D0h
+__text:0000000100001C80                 pop     rbp
+__text:0000000100001C81                 retn
+__text:0000000100001C82 ; ---------------------------------------------------------------------------
+__text:0000000100001C82
+__text:0000000100001C82 loc_100001C82:                          ; CODE XREF: std::__1::__pad_and_output<char,std::__1::char_traits<char>>(std::__1::ostreambuf_iterator<char,std::__1::char_traits<char>>,char const*,char const*,char const*,std::__1::ios_base &,char):loc_100001B26↑j
+__text:0000000100001C82                 mov     rdi, [rbp+var_268]
+__text:0000000100001C89                 call    __Unwind_Resume
+__text:0000000100001C89 __ZNSt3__116__pad_and_outputIcNS_11char_traitsIcEEEENS_19ostreambuf_iteratorIT_T0_EES6_PKS4_S8_S8_RNS_8ios_baseES4_ endp
+__text:0000000100001C89
+__text:0000000100001C8E ; ---------------------------------------------------------------------------
+__text:0000000100001C8E                 mov     ecx, edx
+__text:0000000100001C90                 mov     rdi, rax
+__text:0000000100001C93                 mov     [rbp-2CCh], ecx
+__text:0000000100001C99                 call    ___clang_call_terminate
+__text:0000000100001C99 __text          ends
+__text:0000000100001C99

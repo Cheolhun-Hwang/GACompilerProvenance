@@ -1,0 +1,1159 @@
+﻿.text:00401000 ; =============== S U B R O U T I N E =======================================
+.text:00401000
+.text:00401000 ; Attributes: bp-based frame
+.text:00401000
+.text:00401000 sub_401000      proc near               ; CODE XREF: _main+5A↓p
+.text:00401000
+.text:00401000 var_18          = dword ptr -18h
+.text:00401000 var_14          = dword ptr -14h
+.text:00401000 var_C           = dword ptr -0Ch
+.text:00401000 var_8           = dword ptr -8
+.text:00401000 var_4           = dword ptr -4
+.text:00401000
+.text:00401000                 push    ebp
+.text:00401001                 mov     ebp, esp
+.text:00401003                 sub     esp, 1Ch
+.text:00401006                 push    ebx
+.text:00401007                 push    esi
+.text:00401008                 push    edi
+.text:00401009                 mov     edi, dword_403374
+.text:0040100F                 or      esi, 0FFFFFFFFh
+.text:00401012                 xor     ebx, ebx
+.text:00401014                 mov     ecx, edi
+.text:00401016                 mov     [ebp+var_8], esi
+.text:00401019                 cmp     edi, ebx
+.text:0040101B                 jz      short loc_401037
+.text:0040101D                 lea     ecx, [ecx+0]
+.text:00401020
+.text:00401020 loc_401020:                             ; CODE XREF: sub_401000+32↓j
+.text:00401020                 mov     eax, 66666667h
+.text:00401025                 imul    ecx
+.text:00401027                 sar     edx, 2
+.text:0040102A                 mov     ecx, edx
+.text:0040102C                 shr     ecx, 1Fh
+.text:0040102F                 inc     esi
+.text:00401030                 add     ecx, edx
+.text:00401032                 jnz     short loc_401020
+.text:00401034                 mov     [ebp+var_8], esi
+.text:00401037
+.text:00401037 loc_401037:                             ; CODE XREF: sub_401000+1B↑j
+.text:00401037                 mov     ecx, 1
+.text:0040103C                 mov     [ebp+var_4], ecx
+.text:0040103F                 cmp     esi, ebx
+.text:00401041                 jle     short loc_401055
+.text:00401043                 mov     eax, esi
+.text:00401045                 jmp     short loc_40104A
+.text:00401047 ; ---------------------------------------------------------------------------
+.text:00401047
+.text:00401047 loc_401047:                             ; CODE XREF: sub_401000+53↓j
+.text:00401047                 mov     ecx, [ebp+var_4]
+.text:0040104A
+.text:0040104A loc_40104A:                             ; CODE XREF: sub_401000+45↑j
+.text:0040104A                 lea     ecx, [ecx+ecx*4]
+.text:0040104D                 add     ecx, ecx
+.text:0040104F                 dec     eax
+.text:00401050                 mov     [ebp+var_4], ecx
+.text:00401053                 jnz     short loc_401047
+.text:00401055
+.text:00401055 loc_401055:                             ; CODE XREF: sub_401000+41↑j
+.text:00401055                 push    offset unk_68E7780 ; Size
+.text:0040105A                 push    ebx             ; Val
+.text:0040105B                 push    offset byte_403530 ; Dst
+.text:00401060                 call    memset
+.text:00401065                 mov     [ebp+var_18], ebx
+.text:00401068                 mov     [ebp+var_14], ebx
+.text:0040106B                 mov     ebx, dword_403370
+.text:00401071                 mov     ecx, edi
+.text:00401073                 add     esp, 0Ch
+.text:00401076                 mov     [ebp+var_C], ecx
+.text:00401079                 cmp     ecx, ebx
+.text:0040107B                 jg      loc_40117D
+.text:00401081
+.text:00401081 loc_401081:                             ; CODE XREF: sub_401000+177↓j
+.text:00401081                 cmp     byte_403530[ecx], 0
+.text:00401088                 jnz     loc_401171
+.text:0040108E                 lea     eax, [esi+1]
+.text:00401091                 xor     edi, edi
+.text:00401093                 test    eax, eax
+.text:00401095                 jle     short loc_4010E1
+.text:00401097                 mov     esi, eax
+.text:00401099                 lea     esp, [esp+0]
+.text:004010A0
+.text:004010A0 loc_4010A0:                             ; CODE XREF: sub_401000+DF↓j
+.text:004010A0                 mov     byte_403530[ecx], 1
+.text:004010A7                 cmp     ecx, [ebp+var_4]
+.text:004010AA                 jl      short loc_4010C0
+.text:004010AC                 cmp     dword_403374, ecx
+.text:004010B2                 jg      short loc_4010C0
+.text:004010B4                 cmp     ecx, ebx
+.text:004010B6                 jg      short loc_4010C0
+.text:004010B8                 mov     dword_403378[edi*4], ecx
+.text:004010BF                 inc     edi
+.text:004010C0
+.text:004010C0 loc_4010C0:                             ; CODE XREF: sub_401000+AA↑j
+.text:004010C0                                         ; sub_401000+B2↑j ...
+.text:004010C0                 mov     eax, 66666667h
+.text:004010C5                 imul    ecx
+.text:004010C7                 sar     edx, 2
+.text:004010CA                 mov     eax, edx
+.text:004010CC                 shr     eax, 1Fh
+.text:004010CF                 add     eax, edx
+.text:004010D1                 lea     edx, [eax+eax*4]
+.text:004010D4                 add     edx, edx
+.text:004010D6                 sub     ecx, edx
+.text:004010D8                 imul    ecx, [ebp+var_4]
+.text:004010DC                 add     ecx, eax
+.text:004010DE                 dec     esi
+.text:004010DF                 jnz     short loc_4010A0
+.text:004010E1
+.text:004010E1 loc_4010E1:                             ; CODE XREF: sub_401000+95↑j
+.text:004010E1                 lea     esi, dword_403378[edi*4]
+.text:004010E8                 mov     eax, esi
+.text:004010EA                 sub     eax, offset dword_403378
+.text:004010EF                 sar     eax, 2
+.text:004010F2                 push    eax
+.text:004010F3                 push    esi
+.text:004010F4                 push    offset dword_403378
+.text:004010F9                 call    sub_401220
+.text:004010FE                 add     esp, 0Ch
+.text:00401101                 cmp     esi, offset dword_403378
+.text:00401107                 jz      short loc_401145
+.text:00401109                 mov     eax, offset unk_40337C
+.text:0040110E                 mov     ecx, offset dword_403378
+.text:00401113                 cmp     esi, eax
+.text:00401115                 jz      short loc_401145
+.text:00401117
+.text:00401117 loc_401117:                             ; CODE XREF: sub_401000+124↓j
+.text:00401117                 mov     edx, [ecx]
+.text:00401119                 cmp     edx, [eax]
+.text:0040111B                 jz      short loc_401128
+.text:0040111D                 mov     ecx, eax
+.text:0040111F                 add     eax, 4
+.text:00401122                 cmp     eax, esi
+.text:00401124                 jnz     short loc_401117
+.text:00401126                 jmp     short loc_401145
+.text:00401128 ; ---------------------------------------------------------------------------
+.text:00401128
+.text:00401128 loc_401128:                             ; CODE XREF: sub_401000+11B↑j
+.text:00401128                 add     eax, 4
+.text:0040112B                 cmp     eax, esi
+.text:0040112D                 jz      short loc_401142
+.text:0040112F                 nop
+.text:00401130
+.text:00401130 loc_401130:                             ; CODE XREF: sub_401000+140↓j
+.text:00401130                 mov     edx, [eax]
+.text:00401132                 cmp     [ecx], edx
+.text:00401134                 jz      short loc_40113B
+.text:00401136                 add     ecx, 4
+.text:00401139                 mov     [ecx], edx
+.text:0040113B
+.text:0040113B loc_40113B:                             ; CODE XREF: sub_401000+134↑j
+.text:0040113B                 add     eax, 4
+.text:0040113E                 cmp     eax, esi
+.text:00401140                 jnz     short loc_401130
+.text:00401142
+.text:00401142 loc_401142:                             ; CODE XREF: sub_401000+12D↑j
+.text:00401142                 lea     esi, [ecx+4]
+.text:00401145
+.text:00401145 loc_401145:                             ; CODE XREF: sub_401000+107↑j
+.text:00401145                                         ; sub_401000+115↑j ...
+.text:00401145                 mov     ebx, dword_403370
+.text:0040114B                 mov     ecx, [ebp+var_C]
+.text:0040114E                 sub     esi, offset dword_403378
+.text:00401154                 sar     esi, 2
+.text:00401157                 cmp     esi, 1
+.text:0040115A                 jle     short loc_40116E
+.text:0040115C                 lea     eax, [esi-1]
+.text:0040115F                 imul    eax, esi
+.text:00401162                 cdq
+.text:00401163                 sub     eax, edx
+.text:00401165                 sar     eax, 1
+.text:00401167                 cdq
+.text:00401168                 add     [ebp+var_18], eax
+.text:0040116B                 adc     [ebp+var_14], edx
+.text:0040116E
+.text:0040116E loc_40116E:                             ; CODE XREF: sub_401000+15A↑j
+.text:0040116E                 mov     esi, [ebp+var_8]
+.text:00401171
+.text:00401171 loc_401171:                             ; CODE XREF: sub_401000+88↑j
+.text:00401171                 inc     ecx
+.text:00401172                 mov     [ebp+var_C], ecx
+.text:00401175                 cmp     ecx, ebx
+.text:00401177                 jle     loc_401081
+.text:0040117D
+.text:0040117D loc_40117D:                             ; CODE XREF: sub_401000+7B↑j
+.text:0040117D                 mov     eax, ds:?endl@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@1@AAV21@@Z ; std::endl(std::basic_ostream<char,std::char_traits<char>> &)
+.text:00401182                 mov     ecx, [ebp+var_14]
+.text:00401185                 mov     edx, [ebp+var_18]
+.text:00401188                 push    eax
+.text:00401189                 push    ecx
+.text:0040118A                 mov     ecx, ds:?cout@std@@3V?$basic_ostream@DU?$char_traits@D@std@@@1@A ; std::basic_ostream<char,std::char_traits<char>> std::cout
+.text:00401190                 push    edx
+.text:00401191                 call    ds:??6?$basic_ostream@DU?$char_traits@D@std@@@std@@QAEAAV01@_J@Z ; std::basic_ostream<char,std::char_traits<char>>::operator<<(__int64)
+.text:00401197                 mov     ecx, eax
+.text:00401199                 call    ds:??6?$basic_ostream@DU?$char_traits@D@std@@@std@@QAEAAV01@P6AAAV01@AAV01@@Z@Z ; std::basic_ostream<char,std::char_traits<char>>::operator<<(std::basic_ostream<char,std::char_traits<char>> & (*)(std::basic_ostream<char,std::char_traits<char>> &))
+.text:0040119F                 pop     edi
+.text:004011A0                 pop     esi
+.text:004011A1                 pop     ebx
+.text:004011A2                 mov     esp, ebp
+.text:004011A4                 pop     ebp
+.text:004011A5                 retn
+.text:004011A5 sub_401000      endp
+.text:004011A5
+.text:004011A5 ; ---------------------------------------------------------------------------
+.text:004011A6                 align 10h
+.text:004011B0
+.text:004011B0 ; =============== S U B R O U T I N E =======================================
+.text:004011B0
+.text:004011B0 ; Attributes: bp-based frame fuzzy-sp
+.text:004011B0
+.text:004011B0 ; int __cdecl main(int argc, const char **argv, const char **envp)
+.text:004011B0 _main           proc near               ; CODE XREF: ___tmainCRTStartup+11D↓p
+.text:004011B0
+.text:004011B0 var_4           = dword ptr -4
+.text:004011B0 argc            = dword ptr  8
+.text:004011B0 argv            = dword ptr  0Ch
+.text:004011B0 envp            = dword ptr  10h
+.text:004011B0
+.text:004011B0                 push    ebp
+.text:004011B1                 mov     ebp, esp
+.text:004011B3                 and     esp, 0FFFFFFF8h
+.text:004011B6                 sub     esp, 8
+.text:004011B9                 mov     ecx, ds:?cin@std@@3V?$basic_istream@DU?$char_traits@D@std@@@1@A ; std::basic_istream<char,std::char_traits<char>> std::cin
+.text:004011BF                 push    esi
+.text:004011C0                 push    edi
+.text:004011C1                 lea     eax, [esp+10h+var_4]
+.text:004011C5                 push    eax
+.text:004011C6                 call    ds:??5?$basic_istream@DU?$char_traits@D@std@@@std@@QAEAAV01@AAH@Z ; std::basic_istream<char,std::char_traits<char>>::operator>>(int &)
+.text:004011CC                 xor     esi, esi
+.text:004011CE                 cmp     [esp+10h+var_4], esi
+.text:004011D2                 jle     short loc_401215
+.text:004011D4                 mov     edi, ds:printf
+.text:004011DA                 lea     ebx, [ebx+0]
+.text:004011E0
+.text:004011E0 loc_4011E0:                             ; CODE XREF: _main+63↓j
+.text:004011E0                 mov     ecx, ds:?cin@std@@3V?$basic_istream@DU?$char_traits@D@std@@@1@A ; std::basic_istream<char,std::char_traits<char>> std::cin
+.text:004011E6                 push    offset dword_403370
+.text:004011EB                 push    offset dword_403374
+.text:004011F0                 call    ds:??5?$basic_istream@DU?$char_traits@D@std@@@std@@QAEAAV01@AAH@Z ; std::basic_istream<char,std::char_traits<char>>::operator>>(int &)
+.text:004011F6                 mov     ecx, eax
+.text:004011F8                 call    ds:??5?$basic_istream@DU?$char_traits@D@std@@@std@@QAEAAV01@AAH@Z ; std::basic_istream<char,std::char_traits<char>>::operator>>(int &)
+.text:004011FE                 inc     esi
+.text:004011FF                 push    esi
+.text:00401200                 push    offset Format   ; "Case #%d: "
+.text:00401205                 call    edi ; printf
+.text:00401207                 add     esp, 8
+.text:0040120A                 call    sub_401000
+.text:0040120F                 cmp     esi, [esp+10h+var_4]
+.text:00401213                 jl      short loc_4011E0
+.text:00401215
+.text:00401215 loc_401215:                             ; CODE XREF: _main+22↑j
+.text:00401215                 pop     edi
+.text:00401216                 xor     eax, eax
+.text:00401218                 pop     esi
+.text:00401219                 mov     esp, ebp
+.text:0040121B                 pop     ebp
+.text:0040121C                 retn
+.text:0040121C _main           endp
+.text:0040121C
+.text:0040121C ; ---------------------------------------------------------------------------
+.text:0040121D                 align 10h
+.text:00401220
+.text:00401220 ; =============== S U B R O U T I N E =======================================
+.text:00401220
+.text:00401220 ; Attributes: bp-based frame
+.text:00401220
+.text:00401220 sub_401220      proc near               ; CODE XREF: sub_401000+F9↑p
+.text:00401220                                         ; sub_401220+5C↓p ...
+.text:00401220
+.text:00401220 var_C           = dword ptr -0Ch
+.text:00401220 var_8           = dword ptr -8
+.text:00401220 arg_0           = dword ptr  8
+.text:00401220 arg_4           = dword ptr  0Ch
+.text:00401220 arg_8           = dword ptr  10h
+.text:00401220
+.text:00401220                 push    ebp
+.text:00401221                 mov     ebp, esp
+.text:00401223                 sub     esp, 10h
+.text:00401226                 push    ebx
+.text:00401227                 mov     ebx, [ebp+arg_0]
+.text:0040122A                 push    esi
+.text:0040122B                 push    edi
+.text:0040122C                 mov     edi, [ebp+arg_4]
+.text:0040122F                 mov     eax, edi
+.text:00401231                 sub     eax, ebx
+.text:00401233                 sar     eax, 2
+.text:00401236                 cmp     eax, 20h ; ' '
+.text:00401239                 jle     short loc_40129F
+.text:0040123B                 mov     esi, [ebp+arg_8]
+.text:0040123E
+.text:0040123E loc_40123E:                             ; CODE XREF: sub_401220+7D↓j
+.text:0040123E                 test    esi, esi
+.text:00401240                 jle     short loc_4012B8
+.text:00401242                 push    edi
+.text:00401243                 lea     eax, [ebp+var_C]
+.text:00401246                 push    ebx
+.text:00401247                 push    eax
+.text:00401248                 call    sub_4012F0
+.text:0040124D                 mov     eax, esi
+.text:0040124F                 cdq
+.text:00401250                 sub     eax, edx
+.text:00401252                 sar     eax, 1
+.text:00401254                 mov     esi, eax
+.text:00401256                 cdq
+.text:00401257                 sub     eax, edx
+.text:00401259                 mov     edx, [ebp+var_C]
+.text:0040125C                 sar     eax, 1
+.text:0040125E                 add     esi, eax
+.text:00401260                 mov     eax, [ebp+var_8]
+.text:00401263                 mov     ecx, edi
+.text:00401265                 sub     ecx, eax
+.text:00401267                 sub     edx, ebx
+.text:00401269                 add     esp, 0Ch
+.text:0040126C                 and     ecx, 0FFFFFFFCh
+.text:0040126F                 and     edx, 0FFFFFFFCh
+.text:00401272                 push    esi
+.text:00401273                 cmp     edx, ecx
+.text:00401275                 jge     short loc_401286
+.text:00401277                 mov     eax, [ebp+var_C]
+.text:0040127A                 push    eax
+.text:0040127B                 push    ebx
+.text:0040127C                 call    sub_401220
+.text:00401281                 mov     ebx, [ebp+var_8]
+.text:00401284                 jmp     short loc_401290
+.text:00401286 ; ---------------------------------------------------------------------------
+.text:00401286
+.text:00401286 loc_401286:                             ; CODE XREF: sub_401220+55↑j
+.text:00401286                 push    edi
+.text:00401287                 push    eax
+.text:00401288                 call    sub_401220
+.text:0040128D                 mov     edi, [ebp+var_C]
+.text:00401290
+.text:00401290 loc_401290:                             ; CODE XREF: sub_401220+64↑j
+.text:00401290                 mov     eax, edi
+.text:00401292                 sub     eax, ebx
+.text:00401294                 sar     eax, 2
+.text:00401297                 add     esp, 0Ch
+.text:0040129A                 cmp     eax, 20h ; ' '
+.text:0040129D                 jg      short loc_40123E
+.text:0040129F
+.text:0040129F loc_40129F:                             ; CODE XREF: sub_401220+19↑j
+.text:0040129F                                         ; sub_401220+9B↓j
+.text:0040129F                 cmp     eax, 1
+.text:004012A2                 jle     short loc_4012B1
+.text:004012A4                 cmp     ebx, edi
+.text:004012A6                 jz      short loc_4012B1
+.text:004012A8                 push    edi
+.text:004012A9                 call    sub_4016A0
+.text:004012AE                 add     esp, 4
+.text:004012B1
+.text:004012B1 loc_4012B1:                             ; CODE XREF: sub_401220+82↑j
+.text:004012B1                                         ; sub_401220+86↑j
+.text:004012B1                 pop     edi
+.text:004012B2                 pop     esi
+.text:004012B3                 pop     ebx
+.text:004012B4                 mov     esp, ebp
+.text:004012B6                 pop     ebp
+.text:004012B7                 retn
+.text:004012B8 ; ---------------------------------------------------------------------------
+.text:004012B8
+.text:004012B8 loc_4012B8:                             ; CODE XREF: sub_401220+20↑j
+.text:004012B8                 cmp     eax, 20h ; ' '
+.text:004012BB                 jle     short loc_40129F
+.text:004012BD                 mov     ecx, edi
+.text:004012BF                 sub     ecx, ebx
+.text:004012C1                 and     ecx, 0FFFFFFFCh
+.text:004012C4                 cmp     ecx, 4
+.text:004012C7                 jle     short loc_4012D2
+.text:004012C9                 mov     eax, edi
+.text:004012CB                 mov     ecx, ebx
+.text:004012CD                 call    sub_401560
+.text:004012D2
+.text:004012D2 loc_4012D2:                             ; CODE XREF: sub_401220+A7↑j
+.text:004012D2                 mov     eax, edi
+.text:004012D4                 mov     ecx, ebx
+.text:004012D6                 call    sub_401600
+.text:004012DB                 pop     edi
+.text:004012DC                 pop     esi
+.text:004012DD                 pop     ebx
+.text:004012DE                 mov     esp, ebp
+.text:004012E0                 pop     ebp
+.text:004012E1                 retn
+.text:004012E1 sub_401220      endp
+.text:004012E1
+.text:004012E1 ; ---------------------------------------------------------------------------
+.text:004012E2                 align 10h
+.text:004012F0
+.text:004012F0 ; =============== S U B R O U T I N E =======================================
+.text:004012F0
+.text:004012F0 ; Attributes: bp-based frame
+.text:004012F0
+.text:004012F0 sub_4012F0      proc near               ; CODE XREF: sub_401220+28↑p
+.text:004012F0
+.text:004012F0 var_8           = dword ptr -8
+.text:004012F0 var_4           = dword ptr -4
+.text:004012F0 arg_0           = dword ptr  8
+.text:004012F0 arg_4           = dword ptr  0Ch
+.text:004012F0 arg_8           = dword ptr  10h
+.text:004012F0
+.text:004012F0                 push    ebp
+.text:004012F1                 mov     ebp, esp
+.text:004012F3                 mov     ecx, [ebp+arg_8]
+.text:004012F6                 sub     esp, 8
+.text:004012F9                 push    ebx
+.text:004012FA                 mov     ebx, [ebp+arg_4]
+.text:004012FD                 mov     eax, ecx
+.text:004012FF                 sub     eax, ebx
+.text:00401301                 sar     eax, 2
+.text:00401304                 cdq
+.text:00401305                 push    esi
+.text:00401306                 sub     eax, edx
+.text:00401308                 add     ecx, 0FFFFFFFCh
+.text:0040130B                 push    edi
+.text:0040130C                 sar     eax, 1
+.text:0040130E                 push    ecx
+.text:0040130F                 lea     esi, [ebx+eax*4]
+.text:00401312                 mov     ecx, ebx
+.text:00401314                 call    sub_401430
+.text:00401319                 add     esp, 4
+.text:0040131C                 mov     eax, esi
+.text:0040131E                 lea     edi, [esi+4]
+.text:00401321                 cmp     ebx, esi
+.text:00401323                 jnb     short loc_401337
+.text:00401325
+.text:00401325 loc_401325:                             ; CODE XREF: sub_4012F0+45↓j
+.text:00401325                 mov     ecx, [eax-4]
+.text:00401328                 mov     edx, [eax]
+.text:0040132A                 cmp     edx, ecx
+.text:0040132C                 jg      short loc_401337
+.text:0040132E                 jl      short loc_401337
+.text:00401330                 add     eax, 0FFFFFFFCh
+.text:00401333                 cmp     ebx, eax
+.text:00401335                 jb      short loc_401325
+.text:00401337
+.text:00401337 loc_401337:                             ; CODE XREF: sub_4012F0+33↑j
+.text:00401337                                         ; sub_4012F0+3C↑j ...
+.text:00401337                 mov     esi, [ebp+arg_8]
+.text:0040133A                 cmp     edi, esi
+.text:0040133C                 jnb     short loc_40134F
+.text:0040133E                 mov     edx, [eax]
+.text:00401340
+.text:00401340 loc_401340:                             ; CODE XREF: sub_4012F0+5D↓j
+.text:00401340                 mov     ecx, [edi]
+.text:00401342                 cmp     edx, ecx
+.text:00401344                 jg      short loc_40134F
+.text:00401346                 jl      short loc_40134F
+.text:00401348                 add     edi, 4
+.text:0040134B                 cmp     edi, esi
+.text:0040134D                 jb      short loc_401340
+.text:0040134F
+.text:0040134F loc_40134F:                             ; CODE XREF: sub_4012F0+4C↑j
+.text:0040134F                                         ; sub_4012F0+54↑j ...
+.text:0040134F                 mov     ecx, edi
+.text:00401351                 mov     edx, eax
+.text:00401353
+.text:00401353 loc_401353:                             ; CODE XREF: sub_4012F0+EB↓j
+.text:00401353                                         ; sub_4012F0+113↓j ...
+.text:00401353                 cmp     ecx, [ebp+arg_8]
+.text:00401356                 jnb     short loc_40137D
+.text:00401358
+.text:00401358 loc_401358:                             ; CODE XREF: sub_4012F0+8B↓j
+.text:00401358                 mov     esi, [ecx]
+.text:0040135A                 mov     ebx, [eax]
+.text:0040135C                 cmp     esi, ebx
+.text:0040135E                 jg      short loc_401375
+.text:00401360                 jl      short loc_40137D
+.text:00401362                 mov     esi, edi
+.text:00401364                 mov     ebx, [esi]
+.text:00401366                 mov     [ebp+var_4], ebx
+.text:00401369                 mov     ebx, [ecx]
+.text:0040136B                 mov     [esi], ebx
+.text:0040136D                 mov     esi, [ebp+var_4]
+.text:00401370                 add     edi, 4
+.text:00401373                 mov     [ecx], esi
+.text:00401375
+.text:00401375 loc_401375:                             ; CODE XREF: sub_4012F0+6E↑j
+.text:00401375                 add     ecx, 4
+.text:00401378                 cmp     ecx, [ebp+arg_8]
+.text:0040137B                 jb      short loc_401358
+.text:0040137D
+.text:0040137D loc_40137D:                             ; CODE XREF: sub_4012F0+66↑j
+.text:0040137D                                         ; sub_4012F0+70↑j
+.text:0040137D                 cmp     edx, [ebp+arg_4]
+.text:00401380                 jbe     short loc_4013A6
+.text:00401382
+.text:00401382 loc_401382:                             ; CODE XREF: sub_4012F0+B1↓j
+.text:00401382                 mov     esi, [edx-4]
+.text:00401385                 mov     ebx, [eax]
+.text:00401387                 cmp     ebx, esi
+.text:00401389                 jg      short loc_40139B
+.text:0040138B                 jl      short loc_4013A3
+.text:0040138D                 mov     ebx, [edx-4]
+.text:00401390                 mov     esi, [eax-4]
+.text:00401393                 sub     eax, 4
+.text:00401396                 mov     [eax], ebx
+.text:00401398                 mov     [edx-4], esi
+.text:0040139B
+.text:0040139B loc_40139B:                             ; CODE XREF: sub_4012F0+99↑j
+.text:0040139B                 add     edx, 0FFFFFFFCh
+.text:0040139E                 cmp     [ebp+arg_4], edx
+.text:004013A1                 jb      short loc_401382
+.text:004013A3
+.text:004013A3 loc_4013A3:                             ; CODE XREF: sub_4012F0+9B↑j
+.text:004013A3                 cmp     edx, [ebp+arg_4]
+.text:004013A6
+.text:004013A6 loc_4013A6:                             ; CODE XREF: sub_4012F0+90↑j
+.text:004013A6                 jnz     short loc_4013E0
+.text:004013A8                 cmp     ecx, [ebp+arg_8]
+.text:004013AB                 jz      short loc_401418
+.text:004013AD                 cmp     edi, ecx
+.text:004013AF                 jz      short loc_4013B9
+.text:004013B1                 mov     ebx, [edi]
+.text:004013B3                 mov     esi, [eax]
+.text:004013B5                 mov     [eax], ebx
+.text:004013B7                 mov     [edi], esi
+.text:004013B9
+.text:004013B9 loc_4013B9:                             ; CODE XREF: sub_4012F0+BF↑j
+.text:004013B9                 mov     esi, eax
+.text:004013BB                 mov     ebx, [esi]
+.text:004013BD                 mov     [ebp+var_4], ecx
+.text:004013C0                 mov     [ebp+var_8], ebx
+.text:004013C3                 mov     ebx, [ebp+var_4]
+.text:004013C6                 mov     ebx, [ebx]
+.text:004013C8                 mov     [esi], ebx
+.text:004013CA                 mov     esi, [ebp+var_8]
+.text:004013CD                 mov     ebx, [ebp+var_4]
+.text:004013D0                 add     edi, 4
+.text:004013D3                 add     eax, 4
+.text:004013D6                 add     ecx, 4
+.text:004013D9                 mov     [ebx], esi
+.text:004013DB                 jmp     loc_401353
+.text:004013E0 ; ---------------------------------------------------------------------------
+.text:004013E0
+.text:004013E0 loc_4013E0:                             ; CODE XREF: sub_4012F0:loc_4013A6↑j
+.text:004013E0                 sub     edx, 4
+.text:004013E3                 cmp     ecx, [ebp+arg_8]
+.text:004013E6                 jnz     short loc_401408
+.text:004013E8                 sub     eax, 4
+.text:004013EB                 cmp     edx, eax
+.text:004013ED                 jz      short loc_4013F7
+.text:004013EF                 mov     ebx, [eax]
+.text:004013F1                 mov     esi, [edx]
+.text:004013F3                 mov     [edx], ebx
+.text:004013F5                 mov     [eax], esi
+.text:004013F7
+.text:004013F7 loc_4013F7:                             ; CODE XREF: sub_4012F0+FD↑j
+.text:004013F7                 mov     ebx, [edi-4]
+.text:004013FA                 mov     esi, [eax]
+.text:004013FC                 sub     edi, 4
+.text:004013FF                 mov     [eax], ebx
+.text:00401401                 mov     [edi], esi
+.text:00401403                 jmp     loc_401353
+.text:00401408 ; ---------------------------------------------------------------------------
+.text:00401408
+.text:00401408 loc_401408:                             ; CODE XREF: sub_4012F0+F6↑j
+.text:00401408                 mov     esi, [ecx]
+.text:0040140A                 mov     ebx, [edx]
+.text:0040140C                 mov     [ecx], ebx
+.text:0040140E                 mov     [edx], esi
+.text:00401410                 add     ecx, 4
+.text:00401413                 jmp     loc_401353
+.text:00401418 ; ---------------------------------------------------------------------------
+.text:00401418
+.text:00401418 loc_401418:                             ; CODE XREF: sub_4012F0+BB↑j
+.text:00401418                 mov     ecx, [ebp+arg_0]
+.text:0040141B                 mov     [ecx+4], edi
+.text:0040141E                 pop     edi
+.text:0040141F                 pop     esi
+.text:00401420                 mov     [ecx], eax
+.text:00401422                 mov     eax, ecx
+.text:00401424                 pop     ebx
+.text:00401425                 mov     esp, ebp
+.text:00401427                 pop     ebp
+.text:00401428                 retn
+.text:00401428 sub_4012F0      endp
+.text:00401428
+.text:00401428 ; ---------------------------------------------------------------------------
+.text:00401429                 align 10h
+.text:00401430
+.text:00401430 ; =============== S U B R O U T I N E =======================================
+.text:00401430
+.text:00401430 ; Attributes: bp-based frame
+.text:00401430
+.text:00401430 sub_401430      proc near               ; CODE XREF: sub_4012F0+24↑p
+.text:00401430
+.text:00401430 var_8           = dword ptr -8
+.text:00401430 var_4           = dword ptr -4
+.text:00401430 arg_0           = dword ptr  8
+.text:00401430
+.text:00401430                 push    ebp
+.text:00401431                 mov     ebp, esp
+.text:00401433                 sub     esp, 8
+.text:00401436                 push    edi
+.text:00401437                 mov     edi, [ebp+arg_0]
+.text:0040143A                 mov     eax, edi
+.text:0040143C                 sub     eax, ecx
+.text:0040143E                 sar     eax, 2
+.text:00401441                 cmp     eax, 28h ; '('
+.text:00401444                 jle     loc_40152D
+.text:0040144A                 mov     edi, [ecx]
+.text:0040144C                 inc     eax
+.text:0040144D                 cdq
+.text:0040144E                 and     edx, 7
+.text:00401451                 add     eax, edx
+.text:00401453                 sar     eax, 3
+.text:00401456                 push    ebx
+.text:00401457                 lea     ebx, ds:0[eax*8]
+.text:0040145E                 add     eax, eax
+.text:00401460                 add     eax, eax
+.text:00401462                 mov     edx, [eax+ecx]
+.text:00401465                 mov     [ebp+var_4], ebx
+.text:00401468                 cmp     edx, edi
+.text:0040146A                 jge     short loc_401471
+.text:0040146C                 mov     [eax+ecx], edi
+.text:0040146F                 mov     [ecx], edx
+.text:00401471
+.text:00401471 loc_401471:                             ; CODE XREF: sub_401430+3A↑j
+.text:00401471                 mov     edx, [ebx+ecx]
+.text:00401474                 mov     edi, [eax+ecx]
+.text:00401477                 cmp     edx, edi
+.text:00401479                 jge     short loc_401481
+.text:0040147B                 mov     [ebx+ecx], edi
+.text:0040147E                 mov     [eax+ecx], edx
+.text:00401481
+.text:00401481 loc_401481:                             ; CODE XREF: sub_401430+49↑j
+.text:00401481                 mov     edx, [eax+ecx]
+.text:00401484                 mov     edi, [ecx]
+.text:00401486                 cmp     edx, edi
+.text:00401488                 jge     short loc_40148F
+.text:0040148A                 mov     [eax+ecx], edi
+.text:0040148D                 mov     [ecx], edx
+.text:0040148F
+.text:0040148F loc_40148F:                             ; CODE XREF: sub_401430+58↑j
+.text:0040148F                 mov     edi, [esi]
+.text:00401491                 mov     edx, esi
+.text:00401493                 sub     edx, eax
+.text:00401495                 mov     ebx, [edx]
+.text:00401497                 cmp     edi, ebx
+.text:00401499                 jge     short loc_40149F
+.text:0040149B                 mov     [esi], ebx
+.text:0040149D                 mov     [edx], edi
+.text:0040149F
+.text:0040149F loc_40149F:                             ; CODE XREF: sub_401430+69↑j
+.text:0040149F                 mov     edi, [eax+esi]
+.text:004014A2                 mov     ebx, [esi]
+.text:004014A4                 cmp     edi, ebx
+.text:004014A6                 jge     short loc_4014AD
+.text:004014A8                 mov     [eax+esi], ebx
+.text:004014AB                 mov     [esi], edi
+.text:004014AD
+.text:004014AD loc_4014AD:                             ; CODE XREF: sub_401430+76↑j
+.text:004014AD                 mov     edi, [esi]
+.text:004014AF                 mov     ebx, [edx]
+.text:004014B1                 cmp     edi, ebx
+.text:004014B3                 jge     short loc_4014B9
+.text:004014B5                 mov     [esi], ebx
+.text:004014B7                 mov     [edx], edi
+.text:004014B9
+.text:004014B9 loc_4014B9:                             ; CODE XREF: sub_401430+83↑j
+.text:004014B9                 mov     edi, [ebp+arg_0]
+.text:004014BC                 mov     edx, edi
+.text:004014BE                 sub     edi, [ebp+var_4]
+.text:004014C1                 sub     edx, eax
+.text:004014C3                 mov     ebx, [edx]
+.text:004014C5                 mov     [ebp+var_4], edi
+.text:004014C8                 mov     edi, [edi]
+.text:004014CA                 cmp     ebx, edi
+.text:004014CC                 jge     short loc_4014D5
+.text:004014CE                 mov     [edx], edi
+.text:004014D0                 mov     edi, [ebp+var_4]
+.text:004014D3                 mov     [edi], ebx
+.text:004014D5
+.text:004014D5 loc_4014D5:                             ; CODE XREF: sub_401430+9C↑j
+.text:004014D5                 mov     edi, [ebp+arg_0]
+.text:004014D8                 mov     ebx, [edi]
+.text:004014DA                 mov     edi, [edx]
+.text:004014DC                 mov     [ebp+var_8], ebx
+.text:004014DF                 cmp     ebx, edi
+.text:004014E1                 jge     short loc_4014ED
+.text:004014E3                 mov     ebx, [ebp+arg_0]
+.text:004014E6                 mov     [ebx], edi
+.text:004014E8                 mov     edi, [ebp+var_8]
+.text:004014EB                 mov     [edx], edi
+.text:004014ED
+.text:004014ED loc_4014ED:                             ; CODE XREF: sub_401430+B1↑j
+.text:004014ED                 mov     ebx, [ebp+var_4]
+.text:004014F0                 mov     edi, [edx]
+.text:004014F2                 mov     ebx, [ebx]
+.text:004014F4                 cmp     edi, ebx
+.text:004014F6                 jge     short loc_4014FF
+.text:004014F8                 mov     [edx], ebx
+.text:004014FA                 mov     ebx, [ebp+var_4]
+.text:004014FD                 mov     [ebx], edi
+.text:004014FF
+.text:004014FF loc_4014FF:                             ; CODE XREF: sub_401430+C6↑j
+.text:004014FF                 mov     edi, [esi]
+.text:00401501                 mov     ebx, [eax+ecx]
+.text:00401504                 cmp     edi, ebx
+.text:00401506                 jge     short loc_40150D
+.text:00401508                 mov     [esi], ebx
+.text:0040150A                 mov     [eax+ecx], edi
+.text:0040150D
+.text:0040150D loc_40150D:                             ; CODE XREF: sub_401430+D6↑j
+.text:0040150D                 mov     edi, [edx]
+.text:0040150F                 mov     ebx, [esi]
+.text:00401511                 cmp     edi, ebx
+.text:00401513                 jge     short loc_401519
+.text:00401515                 mov     [edx], ebx
+.text:00401517                 mov     [esi], edi
+.text:00401519
+.text:00401519 loc_401519:                             ; CODE XREF: sub_401430+E3↑j
+.text:00401519                 mov     edx, [esi]
+.text:0040151B                 mov     edi, [eax+ecx]
+.text:0040151E                 pop     ebx
+.text:0040151F                 cmp     edx, edi
+.text:00401521                 jge     short loc_401551
+.text:00401523                 mov     [esi], edi
+.text:00401525                 mov     [eax+ecx], edx
+.text:00401528                 pop     edi
+.text:00401529                 mov     esp, ebp
+.text:0040152B                 pop     ebp
+.text:0040152C                 retn
+.text:0040152D ; ---------------------------------------------------------------------------
+.text:0040152D
+.text:0040152D loc_40152D:                             ; CODE XREF: sub_401430+14↑j
+.text:0040152D                 mov     eax, [esi]
+.text:0040152F                 mov     edx, [ecx]
+.text:00401531                 cmp     eax, edx
+.text:00401533                 jge     short loc_401539
+.text:00401535                 mov     [esi], edx
+.text:00401537                 mov     [ecx], eax
+.text:00401539
+.text:00401539 loc_401539:                             ; CODE XREF: sub_401430+103↑j
+.text:00401539                 mov     eax, [edi]
+.text:0040153B                 mov     edx, [esi]
+.text:0040153D                 cmp     eax, edx
+.text:0040153F                 jge     short loc_401545
+.text:00401541                 mov     [edi], edx
+.text:00401543                 mov     [esi], eax
+.text:00401545
+.text:00401545 loc_401545:                             ; CODE XREF: sub_401430+10F↑j
+.text:00401545                 mov     eax, [esi]
+.text:00401547                 mov     edx, [ecx]
+.text:00401549                 cmp     eax, edx
+.text:0040154B                 jge     short loc_401551
+.text:0040154D                 mov     [esi], edx
+.text:0040154F                 mov     [ecx], eax
+.text:00401551
+.text:00401551 loc_401551:                             ; CODE XREF: sub_401430+F1↑j
+.text:00401551                                         ; sub_401430+11B↑j
+.text:00401551                 pop     edi
+.text:00401552                 mov     esp, ebp
+.text:00401554                 pop     ebp
+.text:00401555                 retn
+.text:00401555 sub_401430      endp
+.text:00401555
+.text:00401555 ; ---------------------------------------------------------------------------
+.text:00401556                 align 10h
+.text:00401560
+.text:00401560 ; =============== S U B R O U T I N E =======================================
+.text:00401560
+.text:00401560 ; Attributes: bp-based frame
+.text:00401560
+.text:00401560 sub_401560      proc near               ; CODE XREF: sub_401220+AD↑p
+.text:00401560
+.text:00401560 var_C           = dword ptr -0Ch
+.text:00401560 var_8           = dword ptr -8
+.text:00401560 var_4           = dword ptr -4
+.text:00401560
+.text:00401560                 push    ebp
+.text:00401561                 mov     ebp, esp
+.text:00401563                 sub     esp, 0Ch
+.text:00401566                 sub     eax, ecx
+.text:00401568                 sar     eax, 2
+.text:0040156B                 mov     [ebp+var_4], eax
+.text:0040156E                 cdq
+.text:0040156F                 sub     eax, edx
+.text:00401571                 push    esi
+.text:00401572                 mov     esi, eax
+.text:00401574                 sar     esi, 1
+.text:00401576                 test    esi, esi
+.text:00401578                 jle     short loc_4015F6
+.text:0040157A                 push    ebx
+.text:0040157B                 push    edi
+.text:0040157C                 lea     eax, [esi+esi+2]
+.text:00401580                 jmp     short loc_401585
+.text:00401582 ; ---------------------------------------------------------------------------
+.text:00401582
+.text:00401582 loc_401582:                             ; CODE XREF: sub_401560+92↓j
+.text:00401582                 mov     eax, [ebp+var_C]
+.text:00401585
+.text:00401585 loc_401585:                             ; CODE XREF: sub_401560+20↑j
+.text:00401585                 mov     edx, [ecx+esi*4-4]
+.text:00401589                 dec     esi
+.text:0040158A                 sub     eax, 2
+.text:0040158D                 mov     [ebp+var_8], edx
+.text:00401590                 mov     edx, [ebp+var_4]
+.text:00401593                 mov     [ebp+var_C], eax
+.text:00401596                 mov     edi, esi
+.text:00401598                 cmp     eax, edx
+.text:0040159A                 jge     short loc_4015BA
+.text:0040159C                 lea     esp, [esp+0]
+.text:004015A0
+.text:004015A0 loc_4015A0:                             ; CODE XREF: sub_401560+58↓j
+.text:004015A0                 mov     ebx, [ecx+eax*4]
+.text:004015A3                 cmp     ebx, [ecx+eax*4-4]
+.text:004015A7                 jge     short loc_4015AA
+.text:004015A9                 dec     eax
+.text:004015AA
+.text:004015AA loc_4015AA:                             ; CODE XREF: sub_401560+47↑j
+.text:004015AA                 mov     ebx, [ecx+eax*4]
+.text:004015AD                 mov     [ecx+edi*4], ebx
+.text:004015B0                 mov     edi, eax
+.text:004015B2                 lea     eax, [eax+eax+2]
+.text:004015B6                 cmp     eax, edx
+.text:004015B8                 jl      short loc_4015A0
+.text:004015BA
+.text:004015BA loc_4015BA:                             ; CODE XREF: sub_401560+3A↑j
+.text:004015BA                 cmp     eax, edx
+.text:004015BC                 jnz     short loc_4015C8
+.text:004015BE                 mov     eax, [ecx+edx*4-4]
+.text:004015C2                 mov     [ecx+edi*4], eax
+.text:004015C5                 lea     edi, [edx-1]
+.text:004015C8
+.text:004015C8 loc_4015C8:                             ; CODE XREF: sub_401560+5C↑j
+.text:004015C8                 mov     ebx, [ebp+var_8]
+.text:004015CB                 lea     eax, [edi-1]
+.text:004015CE                 cdq
+.text:004015CF                 sub     eax, edx
+.text:004015D1                 sar     eax, 1
+.text:004015D3                 cmp     esi, edi
+.text:004015D5                 jge     short loc_4015ED
+.text:004015D7
+.text:004015D7 loc_4015D7:                             ; CODE XREF: sub_401560+8B↓j
+.text:004015D7                 mov     edx, [ecx+eax*4]
+.text:004015DA                 cmp     edx, ebx
+.text:004015DC                 jge     short loc_4015ED
+.text:004015DE                 mov     [ecx+edi*4], edx
+.text:004015E1                 mov     edi, eax
+.text:004015E3                 dec     eax
+.text:004015E4                 cdq
+.text:004015E5                 sub     eax, edx
+.text:004015E7                 sar     eax, 1
+.text:004015E9                 cmp     esi, edi
+.text:004015EB                 jl      short loc_4015D7
+.text:004015ED
+.text:004015ED loc_4015ED:                             ; CODE XREF: sub_401560+75↑j
+.text:004015ED                                         ; sub_401560+7C↑j
+.text:004015ED                 mov     [ecx+edi*4], ebx
+.text:004015F0                 test    esi, esi
+.text:004015F2                 jg      short loc_401582
+.text:004015F4                 pop     edi
+.text:004015F5                 pop     ebx
+.text:004015F6
+.text:004015F6 loc_4015F6:                             ; CODE XREF: sub_401560+18↑j
+.text:004015F6                 pop     esi
+.text:004015F7                 mov     esp, ebp
+.text:004015F9                 pop     ebp
+.text:004015FA                 retn
+.text:004015FA sub_401560      endp
+.text:004015FA
+.text:004015FA ; ---------------------------------------------------------------------------
+.text:004015FB                 align 10h
+.text:00401600
+.text:00401600 ; =============== S U B R O U T I N E =======================================
+.text:00401600
+.text:00401600 ; Attributes: bp-based frame
+.text:00401600
+.text:00401600 sub_401600      proc near               ; CODE XREF: sub_401220+B6↑p
+.text:00401600
+.text:00401600 var_4           = dword ptr -4
+.text:00401600
+.text:00401600                 push    ebp
+.text:00401601                 mov     ebp, esp
+.text:00401603                 push    ecx
+.text:00401604                 sub     eax, ecx
+.text:00401606                 mov     edx, eax
+.text:00401608                 and     edx, 0FFFFFFFCh
+.text:0040160B                 cmp     edx, 4
+.text:0040160E                 jle     loc_401698
+.text:00401614                 push    ebx
+.text:00401615                 push    esi
+.text:00401616                 push    edi
+.text:00401617
+.text:00401617 loc_401617:                             ; CODE XREF: sub_401600+93↓j
+.text:00401617                 mov     edx, [ecx]
+.text:00401619                 mov     edi, [ecx+eax-4]
+.text:0040161D                 lea     ebx, [eax-4]
+.text:00401620                 mov     [ecx+eax-4], edx
+.text:00401624                 mov     edx, ebx
+.text:00401626                 sar     edx, 2
+.text:00401629                 mov     eax, 2
+.text:0040162E                 xor     esi, esi
+.text:00401630                 mov     [ebp+var_4], ebx
+.text:00401633                 cmp     eax, edx
+.text:00401635                 jge     short loc_401654
+.text:00401637
+.text:00401637 loc_401637:                             ; CODE XREF: sub_401600+4F↓j
+.text:00401637                 mov     ebx, [ecx+eax*4]
+.text:0040163A                 cmp     ebx, [ecx+eax*4-4]
+.text:0040163E                 jge     short loc_401641
+.text:00401640                 dec     eax
+.text:00401641
+.text:00401641 loc_401641:                             ; CODE XREF: sub_401600+3E↑j
+.text:00401641                 mov     ebx, [ecx+eax*4]
+.text:00401644                 mov     [ecx+esi*4], ebx
+.text:00401647                 mov     esi, eax
+.text:00401649                 lea     eax, [eax+eax+2]
+.text:0040164D                 cmp     eax, edx
+.text:0040164F                 jl      short loc_401637
+.text:00401651                 mov     ebx, [ebp+var_4]
+.text:00401654
+.text:00401654 loc_401654:                             ; CODE XREF: sub_401600+35↑j
+.text:00401654                 jnz     short loc_401660
+.text:00401656                 mov     eax, [ecx+edx*4-4]
+.text:0040165A                 mov     [ecx+esi*4], eax
+.text:0040165D                 lea     esi, [edx-1]
+.text:00401660
+.text:00401660 loc_401660:                             ; CODE XREF: sub_401600:loc_401654↑j
+.text:00401660                 lea     eax, [esi-1]
+.text:00401663                 cdq
+.text:00401664                 sub     eax, edx
+.text:00401666                 sar     eax, 1
+.text:00401668                 test    esi, esi
+.text:0040166A                 jle     short loc_401686
+.text:0040166C                 lea     esp, [esp+0]
+.text:00401670
+.text:00401670 loc_401670:                             ; CODE XREF: sub_401600+84↓j
+.text:00401670                 mov     edx, [ecx+eax*4]
+.text:00401673                 cmp     edx, edi
+.text:00401675                 jge     short loc_401686
+.text:00401677                 mov     [ecx+esi*4], edx
+.text:0040167A                 mov     esi, eax
+.text:0040167C                 dec     eax
+.text:0040167D                 cdq
+.text:0040167E                 sub     eax, edx
+.text:00401680                 sar     eax, 1
+.text:00401682                 test    esi, esi
+.text:00401684                 jg      short loc_401670
+.text:00401686
+.text:00401686 loc_401686:                             ; CODE XREF: sub_401600+6A↑j
+.text:00401686                                         ; sub_401600+75↑j
+.text:00401686                 mov     eax, ebx
+.text:00401688                 mov     edx, ebx
+.text:0040168A                 and     edx, 0FFFFFFFCh
+.text:0040168D                 mov     [ecx+esi*4], edi
+.text:00401690                 cmp     edx, 4
+.text:00401693                 jg      short loc_401617
+.text:00401695                 pop     edi
+.text:00401696                 pop     esi
+.text:00401697                 pop     ebx
+.text:00401698
+.text:00401698 loc_401698:                             ; CODE XREF: sub_401600+E↑j
+.text:00401698                 mov     esp, ebp
+.text:0040169A                 pop     ebp
+.text:0040169B                 retn
+.text:0040169B sub_401600      endp
+.text:0040169B
+.text:0040169B ; ---------------------------------------------------------------------------
+.text:0040169C                 align 10h
+.text:004016A0
+.text:004016A0 ; =============== S U B R O U T I N E =======================================
+.text:004016A0
+.text:004016A0 ; Attributes: bp-based frame
+.text:004016A0
+.text:004016A0 sub_4016A0      proc near               ; CODE XREF: sub_401220+89↑p
+.text:004016A0
+.text:004016A0 var_4           = dword ptr -4
+.text:004016A0 arg_0           = dword ptr  8
+.text:004016A0
+.text:004016A0                 push    ebp
+.text:004016A1                 mov     ebp, esp
+.text:004016A3                 push    ecx
+.text:004016A4                 push    edi
+.text:004016A5                 lea     edi, [ebx+4]
+.text:004016A8                 cmp     edi, [ebp+arg_0]
+.text:004016AB                 jz      short loc_401710
+.text:004016AD                 mov     eax, 4
+.text:004016B2                 sub     eax, ebx
+.text:004016B4                 push    esi
+.text:004016B5                 mov     [ebp+var_4], eax
+.text:004016B8                 jmp     short loc_4016C3
+.text:004016B8 ; ---------------------------------------------------------------------------
+.text:004016BA                 align 10h
+.text:004016C0
+.text:004016C0 loc_4016C0:                             ; CODE XREF: sub_4016A0+6D↓j
+.text:004016C0                 mov     eax, [ebp+var_4]
+.text:004016C3
+.text:004016C3 loc_4016C3:                             ; CODE XREF: sub_4016A0+18↑j
+.text:004016C3                 mov     esi, [edi]
+.text:004016C5                 mov     edx, edi
+.text:004016C7                 cmp     esi, [ebx]
+.text:004016C9                 jge     short loc_4016ED
+.text:004016CB                 lea     eax, [eax+edi-4]
+.text:004016CF                 sar     eax, 2
+.text:004016D2                 add     eax, eax
+.text:004016D4                 add     eax, eax
+.text:004016D6                 push    eax             ; Size
+.text:004016D7                 mov     ecx, edi
+.text:004016D9                 sub     ecx, eax
+.text:004016DB                 add     ecx, 4
+.text:004016DE                 push    ebx             ; Src
+.text:004016DF                 push    ecx             ; Dst
+.text:004016E0                 call    ds:memmove
+.text:004016E6                 add     esp, 0Ch
+.text:004016E9                 mov     [ebx], esi
+.text:004016EB                 jmp     short loc_401707
+.text:004016ED ; ---------------------------------------------------------------------------
+.text:004016ED
+.text:004016ED loc_4016ED:                             ; CODE XREF: sub_4016A0+29↑j
+.text:004016ED                 mov     ecx, [edi-4]
+.text:004016F0                 lea     eax, [edi-4]
+.text:004016F3                 cmp     esi, ecx
+.text:004016F5                 jge     short loc_401705
+.text:004016F7
+.text:004016F7 loc_4016F7:                             ; CODE XREF: sub_4016A0+63↓j
+.text:004016F7                 mov     [edx], ecx
+.text:004016F9                 mov     ecx, [eax-4]
+.text:004016FC                 mov     edx, eax
+.text:004016FE                 sub     eax, 4
+.text:00401701                 cmp     esi, ecx
+.text:00401703                 jl      short loc_4016F7
+.text:00401705
+.text:00401705 loc_401705:                             ; CODE XREF: sub_4016A0+55↑j
+.text:00401705                 mov     [edx], esi
+.text:00401707
+.text:00401707 loc_401707:                             ; CODE XREF: sub_4016A0+4B↑j
+.text:00401707                 add     edi, 4
+.text:0040170A                 cmp     edi, [ebp+arg_0]
+.text:0040170D                 jnz     short loc_4016C0
+.text:0040170F                 pop     esi
+.text:00401710
+.text:00401710 loc_401710:                             ; CODE XREF: sub_4016A0+B↑j
+.text:00401710                 pop     edi
+.text:00401711                 mov     esp, ebp
+.text:00401713                 pop     ebp
+.text:00401714                 retn
+.text:00401714 sub_4016A0      endp
+.text:00401714
+.text:00401715 ; [0000000F BYTES: COLLAPSED FUNCTION __security_check_cookie(x). PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:00401724 ; [0000004B BYTES: COLLAPSED FUNCTION _pre_cpp_init. PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:0040176F ; [00000189 BYTES: COLLAPSED FUNCTION ___tmainCRTStartup. PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:004018F8 ; [000000BA BYTES: COLLAPSED FUNCTION _pre_c_init. PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:004019B2 ; [0000000A BYTES: COLLAPSED FUNCTION start. PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:004019BC ; [00000106 BYTES: COLLAPSED FUNCTION ___report_gsfailure. PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:00401AC2 ; [00000042 BYTES: COLLAPSED FUNCTION __CxxUnhandledExceptionFilter(_EXCEPTION_POINTERS *). PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:00401B04
+.text:00401B04 ; =============== S U B R O U T I N E =======================================
+.text:00401B04
+.text:00401B04
+.text:00401B04 sub_401B04      proc near               ; DATA XREF: .rdata:004020E0↓o
+.text:00401B04                 push    offset ?__CxxUnhandledExceptionFilter@@YGJPAU_EXCEPTION_POINTERS@@@Z ; lpTopLevelExceptionFilter
+.text:00401B09                 call    ds:SetUnhandledExceptionFilter
+.text:00401B0F                 xor     eax, eax
+.text:00401B11                 retn
+.text:00401B11 sub_401B04      endp
+.text:00401B11
+.text:00401B12 ; [00000006 BYTES: COLLAPSED FUNCTION _amsg_exit. PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:00401B18 ; [000000A1 BYTES: COLLAPSED FUNCTION __onexit. PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:00401BB9 ; [00000017 BYTES: COLLAPSED FUNCTION _atexit. PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:00401BD0
+.text:00401BD0 ; =============== S U B R O U T I N E =======================================
+.text:00401BD0
+.text:00401BD0
+.text:00401BD0 sub_401BD0      proc near               ; CODE XREF: _pre_c_init+81↑p
+.text:00401BD0                 mov     edi, edi
+.text:00401BD2                 push    esi
+.text:00401BD3                 mov     eax, offset unk_4021F8
+.text:00401BD8                 mov     esi, offset unk_4021F8
+.text:00401BDD                 push    edi
+.text:00401BDE                 mov     edi, eax
+.text:00401BE0                 cmp     eax, esi
+.text:00401BE2                 jnb     short loc_401BF3
+.text:00401BE4
+.text:00401BE4 loc_401BE4:                             ; CODE XREF: sub_401BD0+21↓j
+.text:00401BE4                 mov     eax, [edi]
+.text:00401BE6                 test    eax, eax
+.text:00401BE8                 jz      short loc_401BEC
+.text:00401BEA                 call    eax
+.text:00401BEC
+.text:00401BEC loc_401BEC:                             ; CODE XREF: sub_401BD0+18↑j
+.text:00401BEC                 add     edi, 4
+.text:00401BEF                 cmp     edi, esi
+.text:00401BF1                 jb      short loc_401BE4
+.text:00401BF3
+.text:00401BF3 loc_401BF3:                             ; CODE XREF: sub_401BD0+12↑j
+.text:00401BF3                 pop     edi
+.text:00401BF4                 pop     esi
+.text:00401BF5                 retn
+.text:00401BF5 sub_401BD0      endp
+.text:00401BF5
+.text:00401BF6
+.text:00401BF6 ; =============== S U B R O U T I N E =======================================
+.text:00401BF6
+.text:00401BF6
+.text:00401BF6 ; void __cdecl sub_401BF6()
+.text:00401BF6 sub_401BF6      proc near               ; DATA XREF: _pre_cpp_init↑o
+.text:00401BF6                 mov     edi, edi
+.text:00401BF8                 push    esi
+.text:00401BF9                 mov     eax, offset unk_402200
+.text:00401BFE                 mov     esi, offset unk_402200
+.text:00401C03                 push    edi
+.text:00401C04                 mov     edi, eax
+.text:00401C06                 cmp     eax, esi
+.text:00401C08                 jnb     short loc_401C19
+.text:00401C0A
+.text:00401C0A loc_401C0A:                             ; CODE XREF: sub_401BF6+21↓j
+.text:00401C0A                 mov     eax, [edi]
+.text:00401C0C                 test    eax, eax
+.text:00401C0E                 jz      short loc_401C12
+.text:00401C10                 call    eax
+.text:00401C12
+.text:00401C12 loc_401C12:                             ; CODE XREF: sub_401BF6+18↑j
+.text:00401C12                 add     edi, 4
+.text:00401C15                 cmp     edi, esi
+.text:00401C17                 jb      short loc_401C0A
+.text:00401C19
+.text:00401C19 loc_401C19:                             ; CODE XREF: sub_401BF6+12↑j
+.text:00401C19                 pop     edi
+.text:00401C1A                 pop     esi
+.text:00401C1B                 retn
+.text:00401C1B sub_401BF6      endp
+.text:00401C1B
+.text:00401C1C ; [00000006 BYTES: COLLAPSED FUNCTION _XcptFilter. PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:00401C22                 align 10h
+.text:00401C30 ; [00000035 BYTES: COLLAPSED FUNCTION __ValidateImageBase. PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:00401C65                 align 10h
+.text:00401C70 ; [00000044 BYTES: COLLAPSED FUNCTION __FindPESection. PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:00401CB4                 align 10h
+.text:00401CC0 ; [000000BC BYTES: COLLAPSED FUNCTION __IsNonwritableInCurrentImage. PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:00401D7C ; [00000006 BYTES: COLLAPSED FUNCTION _initterm. PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:00401D82 ; [00000006 BYTES: COLLAPSED FUNCTION _initterm_e. PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:00401D88                 align 10h
+.text:00401D90 ; [00000045 BYTES: COLLAPSED FUNCTION __SEH_prolog4. PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:00401DD5 ; [00000014 BYTES: COLLAPSED FUNCTION __SEH_epilog4. PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:00401DE9 ; [00000025 BYTES: COLLAPSED FUNCTION __except_handler4. PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:00401E0E ; [00000028 BYTES: COLLAPSED FUNCTION __setdefaultprecision. PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:00401E36
+.text:00401E36 ; =============== S U B R O U T I N E =======================================
+.text:00401E36
+.text:00401E36
+.text:00401E36 sub_401E36      proc near               ; CODE XREF: _pre_c_init+86↑p
+.text:00401E36                                         ; DATA XREF: _pre_c_init+94↑o
+.text:00401E36                 xor     eax, eax
+.text:00401E38                 retn
+.text:00401E38 sub_401E36      endp
+.text:00401E38
+.text:00401E39 ; [0000009B BYTES: COLLAPSED FUNCTION ___security_init_cookie. PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:00401ED4 ; [00000006 BYTES: COLLAPSED FUNCTION _crt_debugger_hook. PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:00401EDA ; [00000006 BYTES: COLLAPSED FUNCTION terminate(void). PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:00401EE0 ; [00000006 BYTES: COLLAPSED FUNCTION _unlock. PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:00401EE6 ; [00000006 BYTES: COLLAPSED FUNCTION __dllonexit. PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:00401EEC ; [00000006 BYTES: COLLAPSED FUNCTION _lock. PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:00401EF2 ; [00000006 BYTES: COLLAPSED FUNCTION _except_handler4_common. PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:00401EF8 ; [00000006 BYTES: COLLAPSED FUNCTION _invoke_watson. PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:00401EFE ; [00000006 BYTES: COLLAPSED FUNCTION _controlfp_s. PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:00401F04 ; [00000006 BYTES: COLLAPSED FUNCTION memset. PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:00401F0A                 align 100h
+.text:00401F0A _text           ends
+.text:00401F0A

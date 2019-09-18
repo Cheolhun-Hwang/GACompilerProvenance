@@ -1,0 +1,213 @@
+﻿.text:00401000 ; =============== S U B R O U T I N E =======================================
+.text:00401000
+.text:00401000 ; Attributes: bp-based frame
+.text:00401000
+.text:00401000 ; int __cdecl main(int argc, const char **argv, const char **envp)
+.text:00401000 _main           proc near               ; CODE XREF: ___tmainCRTStartup+11D↓p
+.text:00401000
+.text:00401000 var_4           = dword ptr -4
+.text:00401000 argc            = dword ptr  8
+.text:00401000 argv            = dword ptr  0Ch
+.text:00401000 envp            = dword ptr  10h
+.text:00401000
+.text:00401000                 push    ebp
+.text:00401001                 mov     ebp, esp
+.text:00401003                 push    ecx
+.text:00401004                 push    esi
+.text:00401005                 lea     eax, [ebp+var_4]
+.text:00401008                 push    eax
+.text:00401009                 push    offset Format   ; " %d "
+.text:0040100E                 call    ds:scanf
+.text:00401014                 mov     esi, 1
+.text:00401019                 add     esp, 8
+.text:0040101C                 cmp     [ebp+var_4], esi
+.text:0040101F                 jl      loc_4010B0
+.text:00401025                 push    ebx
+.text:00401026                 mov     ebx, ds:__iob_func
+.text:0040102C                 push    edi
+.text:0040102D                 mov     edi, ds:fgets
+.text:00401033
+.text:00401033 loc_401033:                             ; CODE XREF: _main+AC↓j
+.text:00401033                 call    ebx ; __iob_func
+.text:00401035                 push    eax             ; File
+.text:00401036                 push    186A5h          ; MaxCount
+.text:0040103B                 push    offset Buf      ; Buf
+.text:00401040                 call    edi ; fgets
+.text:00401042                 mov     eax, offset Buf
+.text:00401047                 add     esp, 0Ch
+.text:0040104A                 lea     edx, [eax+1]
+.text:0040104D                 lea     ecx, [ecx+0]
+.text:00401050
+.text:00401050 loc_401050:                             ; CODE XREF: _main+55↓j
+.text:00401050                 mov     cl, [eax]
+.text:00401052                 inc     eax
+.text:00401053                 test    cl, cl
+.text:00401055                 jnz     short loc_401050
+.text:00401057                 sub     eax, edx
+.text:00401059                 mov     edx, eax
+.text:0040105B                 xor     eax, eax
+.text:0040105D                 mov     dword_41B370, edx
+.text:00401063                 test    edx, edx
+.text:00401065                 jle     short loc_401094
+.text:00401067                 jmp     short loc_401070
+.text:00401067 ; ---------------------------------------------------------------------------
+.text:00401069                 align 10h
+.text:00401070
+.text:00401070 loc_401070:                             ; CODE XREF: _main+67↑j
+.text:00401070                                         ; _main+92↓j
+.text:00401070                 mov     cl, Buf[eax]
+.text:00401076                 cmp     cl, 61h ; 'a'
+.text:00401079                 jl      short loc_40108F
+.text:0040107B                 cmp     cl, 7Ah ; 'z'
+.text:0040107E                 jg      short loc_40108F
+.text:00401080                 movsx   ecx, cl
+.text:00401083                 mov     cl, byte ptr ds:(__getmainargs+3)[ecx]
+.text:00401089                 mov     Buf[eax], cl
+.text:0040108F
+.text:0040108F loc_40108F:                             ; CODE XREF: _main+79↑j
+.text:0040108F                                         ; _main+7E↑j
+.text:0040108F                 inc     eax
+.text:00401090                 cmp     eax, edx
+.text:00401092                 jl      short loc_401070
+.text:00401094
+.text:00401094 loc_401094:                             ; CODE XREF: _main+65↑j
+.text:00401094                 push    offset Buf
+.text:00401099                 push    esi
+.text:0040109A                 push    offset aCaseDS  ; "Case #%d: %s"
+.text:0040109F                 call    ds:printf
+.text:004010A5                 inc     esi
+.text:004010A6                 add     esp, 0Ch
+.text:004010A9                 cmp     esi, [ebp+var_4]
+.text:004010AC                 jle     short loc_401033
+.text:004010AE                 pop     edi
+.text:004010AF                 pop     ebx
+.text:004010B0
+.text:004010B0 loc_4010B0:                             ; CODE XREF: _main+1F↑j
+.text:004010B0                 xor     eax, eax
+.text:004010B2                 pop     esi
+.text:004010B3                 mov     esp, ebp
+.text:004010B5                 pop     ebp
+.text:004010B6                 retn
+.text:004010B6 _main           endp
+.text:004010B6
+.text:004010B7 ; [0000000F BYTES: COLLAPSED FUNCTION __security_check_cookie(x). PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:004010C6 ; [0000004B BYTES: COLLAPSED FUNCTION _pre_cpp_init. PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:00401111 ; [00000189 BYTES: COLLAPSED FUNCTION ___tmainCRTStartup. PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:0040129A ; [000000BA BYTES: COLLAPSED FUNCTION _pre_c_init. PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:00401354 ; [0000000A BYTES: COLLAPSED FUNCTION start. PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:0040135E ; [00000106 BYTES: COLLAPSED FUNCTION ___report_gsfailure. PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:00401464 ; [00000042 BYTES: COLLAPSED FUNCTION __CxxUnhandledExceptionFilter(_EXCEPTION_POINTERS *). PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:004014A6
+.text:004014A6 ; =============== S U B R O U T I N E =======================================
+.text:004014A6
+.text:004014A6
+.text:004014A6 sub_4014A6      proc near               ; DATA XREF: .rdata:004020C8↓o
+.text:004014A6                 push    offset ?__CxxUnhandledExceptionFilter@@YGJPAU_EXCEPTION_POINTERS@@@Z ; lpTopLevelExceptionFilter
+.text:004014AB                 call    ds:SetUnhandledExceptionFilter
+.text:004014B1                 xor     eax, eax
+.text:004014B3                 retn
+.text:004014B3 sub_4014A6      endp
+.text:004014B3
+.text:004014B4 ; [00000006 BYTES: COLLAPSED FUNCTION _amsg_exit. PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:004014BA ; [000000A1 BYTES: COLLAPSED FUNCTION __onexit. PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:0040155B ; [00000017 BYTES: COLLAPSED FUNCTION _atexit. PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:00401572
+.text:00401572 ; =============== S U B R O U T I N E =======================================
+.text:00401572
+.text:00401572
+.text:00401572 sub_401572      proc near               ; CODE XREF: _pre_c_init+81↑p
+.text:00401572                 mov     edi, edi
+.text:00401574                 push    esi
+.text:00401575                 mov     eax, offset unk_41A888
+.text:0040157A                 mov     esi, offset unk_41A888
+.text:0040157F                 push    edi
+.text:00401580                 mov     edi, eax
+.text:00401582                 cmp     eax, esi
+.text:00401584                 jnb     short loc_401595
+.text:00401586
+.text:00401586 loc_401586:                             ; CODE XREF: sub_401572+21↓j
+.text:00401586                 mov     eax, [edi]
+.text:00401588                 test    eax, eax
+.text:0040158A                 jz      short loc_40158E
+.text:0040158C                 call    eax
+.text:0040158E
+.text:0040158E loc_40158E:                             ; CODE XREF: sub_401572+18↑j
+.text:0040158E                 add     edi, 4
+.text:00401591                 cmp     edi, esi
+.text:00401593                 jb      short loc_401586
+.text:00401595
+.text:00401595 loc_401595:                             ; CODE XREF: sub_401572+12↑j
+.text:00401595                 pop     edi
+.text:00401596                 pop     esi
+.text:00401597                 retn
+.text:00401597 sub_401572      endp
+.text:00401597
+.text:00401598
+.text:00401598 ; =============== S U B R O U T I N E =======================================
+.text:00401598
+.text:00401598
+.text:00401598 ; void __cdecl sub_401598()
+.text:00401598 sub_401598      proc near               ; DATA XREF: _pre_cpp_init↑o
+.text:00401598                 mov     edi, edi
+.text:0040159A                 push    esi
+.text:0040159B                 mov     eax, offset unk_41A890
+.text:004015A0                 mov     esi, offset unk_41A890
+.text:004015A5                 push    edi
+.text:004015A6                 mov     edi, eax
+.text:004015A8                 cmp     eax, esi
+.text:004015AA                 jnb     short loc_4015BB
+.text:004015AC
+.text:004015AC loc_4015AC:                             ; CODE XREF: sub_401598+21↓j
+.text:004015AC                 mov     eax, [edi]
+.text:004015AE                 test    eax, eax
+.text:004015B0                 jz      short loc_4015B4
+.text:004015B2                 call    eax
+.text:004015B4
+.text:004015B4 loc_4015B4:                             ; CODE XREF: sub_401598+18↑j
+.text:004015B4                 add     edi, 4
+.text:004015B7                 cmp     edi, esi
+.text:004015B9                 jb      short loc_4015AC
+.text:004015BB
+.text:004015BB loc_4015BB:                             ; CODE XREF: sub_401598+12↑j
+.text:004015BB                 pop     edi
+.text:004015BC                 pop     esi
+.text:004015BD                 retn
+.text:004015BD sub_401598      endp
+.text:004015BD
+.text:004015BE ; [00000006 BYTES: COLLAPSED FUNCTION _XcptFilter. PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:004015C4                 align 10h
+.text:004015D0 ; [00000035 BYTES: COLLAPSED FUNCTION __ValidateImageBase. PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:00401605                 align 10h
+.text:00401610 ; [00000044 BYTES: COLLAPSED FUNCTION __FindPESection. PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:00401654                 align 10h
+.text:00401660 ; [000000BC BYTES: COLLAPSED FUNCTION __IsNonwritableInCurrentImage. PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:0040171C ; [00000006 BYTES: COLLAPSED FUNCTION _initterm. PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:00401722 ; [00000006 BYTES: COLLAPSED FUNCTION _initterm_e. PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:00401728                 align 10h
+.text:00401730 ; [00000045 BYTES: COLLAPSED FUNCTION __SEH_prolog4. PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:00401775 ; [00000014 BYTES: COLLAPSED FUNCTION __SEH_epilog4. PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:00401789 ; [00000025 BYTES: COLLAPSED FUNCTION __except_handler4. PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:004017AE ; [00000028 BYTES: COLLAPSED FUNCTION __setdefaultprecision. PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:004017D6
+.text:004017D6 ; =============== S U B R O U T I N E =======================================
+.text:004017D6
+.text:004017D6
+.text:004017D6 sub_4017D6      proc near               ; CODE XREF: _pre_c_init+86↑p
+.text:004017D6                                         ; DATA XREF: _pre_c_init+94↑o
+.text:004017D6                 xor     eax, eax
+.text:004017D8                 retn
+.text:004017D8 sub_4017D6      endp
+.text:004017D8
+.text:004017D9 ; [0000009B BYTES: COLLAPSED FUNCTION ___security_init_cookie. PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:00401874 ; [00000006 BYTES: COLLAPSED FUNCTION _crt_debugger_hook. PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:0040187A ; [00000006 BYTES: COLLAPSED FUNCTION terminate(void). PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:00401880 ; [00000006 BYTES: COLLAPSED FUNCTION _unlock. PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:00401886 ; [00000006 BYTES: COLLAPSED FUNCTION __dllonexit. PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:0040188C ; [00000006 BYTES: COLLAPSED FUNCTION _lock. PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:00401892 ; [00000006 BYTES: COLLAPSED FUNCTION _except_handler4_common. PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:00401898 ; [00000006 BYTES: COLLAPSED FUNCTION _invoke_watson. PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:0040189E ; [00000006 BYTES: COLLAPSED FUNCTION _controlfp_s. PRESS CTRL-NUMPAD+ TO EXPAND]
+.text:004018A4                 align 200h
+.text:00401A00                 dd 180h dup(?)
+.text:00401A00 _text           ends
+.text:00401A00
