@@ -1,0 +1,1781 @@
+idiom,label,count
+sub_401000 proc near   | * | jmp ds:??1exception@std@@UAE@XZ  ,msvc,1
+"mov dword ptr [ecx], offset ??_7bad_alloc@std@@6B@   | * | sub_401000 endp ",msvc,1
+jmp ds:??1exception@std@@UAE@XZ   | * | align 10h ,msvc,1
+sub_401000 endp  | * | sub_401010 proc near  ,msvc,1
+sub_401010 proc near   | * | push ebp ,msvc,1
+push ebp  | * | push esi ,msvc,1
+"mov ebp, esp  | * | mov esi, ecx ",msvc,1
+"push esi  | * | mov dword ptr [esi], offset ??_7bad_alloc@std@@6B@  ",msvc,1
+"mov esi, ecx  | * | call ds:??1exception@std@@UAE@XZ  ",msvc,1
+"mov dword ptr [esi], offset ??_7bad_alloc@std@@6B@   | * | test [ebp+arg_0], 1 ",msvc,1
+call ds:??1exception@std@@UAE@XZ   | * | jz short loc_401032 ,msvc,1
+"test [ebp+arg_0], 1  | * | push esi ",msvc,1
+jz short loc_401032  | * | call ds:__imp_??3@YAXPAX@Z  ,msvc,1
+"push esi  | * | add esp, 4 ",msvc,1
+call ds:__imp_??3@YAXPAX@Z   | * | loc_401032:  ,msvc,1
+"add esp, 4  | * | mov eax, esi ",msvc,1
+loc_401032:   | * | pop esi ,msvc,1
+"mov eax, esi  | * | pop ebp ",msvc,2
+pop esi  | * | retn 4 ,msvc,2
+pop ebp  | * | sub_401010 endp ,msvc,1
+retn 4  | * | align 10h ,msvc,3
+sub_401010 endp  | * | sub_401040 proc near  ,msvc,1
+var_60 = byte ptr -60h  | * | var_50 = dword ptr -50h ,data,1
+var_58 = byte ptr -58h  | * | var_4C = dword ptr -4Ch ,data,1
+var_50 = dword ptr -50h  | * | var_48 = dword ptr -48h ,data,1
+var_4C = dword ptr -4Ch  | * | var_44 = dword ptr -44h ,data,1
+var_48 = dword ptr -48h  | * | var_40 = dword ptr -40h ,data,1
+var_44 = dword ptr -44h  | * | var_3C = dword ptr -3Ch ,data,1
+var_40 = dword ptr -40h  | * | var_38 = dword ptr -38h ,data,1
+var_3C = dword ptr -3Ch  | * | var_34 = dword ptr -34h ,data,1
+var_38 = dword ptr -38h  | * | var_2C = dword ptr -2Ch ,data,1
+var_34 = dword ptr -34h  | * | var_28 = dword ptr -28h ,data,1
+var_2C = dword ptr -2Ch  | * | var_24 = byte ptr -24h ,data,1
+var_28 = dword ptr -28h  | * | var_20 = byte ptr -20h ,data,1
+var_24 = byte ptr -24h  | * | var_1C = byte ptr -1Ch ,data,1
+var_20 = byte ptr -20h  | * | var_18 = byte ptr -18h ,data,1
+var_1C = byte ptr -1Ch  | * | var_14 = dword ptr -14h ,data,2
+var_18 = byte ptr -18h  | * | var_10 = dword ptr -10h ,data,1
+var_14 = dword ptr -14h  | * | var_C = dword ptr -0Ch ,data,2
+var_10 = dword ptr -10h  | * | var_8 = dword ptr -8 ,data,2
+var_C = dword ptr -0Ch  | * | var_4 = dword ptr -4 ,data,1
+var_8 = dword ptr -8  | * | arg_0 = dword ptr 8 ,data,2
+var_4 = dword ptr -4  | * | arg_4 = dword ptr 0Ch ,data,4
+"push ebp  | * | mov eax, dword_4043C8 ",msvc,1
+"mov ebp, esp  | * | sub esp, 64h ",msvc,1
+"mov eax, dword_4043C8  | * | push ebx ",msvc,1
+"sub esp, 64h  | * | push esi ",msvc,1
+push ebx  | * | push edi ,msvc,4
+"push esi  | * | cmp [ebp+arg_4], eax ",msvc,1
+push edi  | * | jnz short loc_40109A ,msvc,1
+"cmp [ebp+arg_4], eax  | * | xor esi, esi ",msvc,1
+"jnz short loc_40109A  | * | test eax, eax ",msvc,1
+"xor esi, esi  | * | jle short loc_401083 ",msvc,1
+"test eax, eax  | * | mov edi, ds:printf ",msvc,1
+jle short loc_401083  | * | nop ,msvc,1
+"mov edi, ds:printf  | * | loc_401060:  ",msvc,1
+"nop  | * | mov eax, dword_46FEFC[esi*8] ",msvc,1
+"loc_401060:   | * | mov ecx, dword_46FEF8[esi*8] ",msvc,1
+"mov eax, dword_46FEFC[esi*8]  | * | push eax ",msvc,1
+"mov ecx, dword_46FEF8[esi*8]  | * | push ecx ",msvc,1
+push eax  | * | push offset Format  ,msvc,1
+push ecx  | * | call edi  ,msvc,1
+push offset Format   | * | inc esi ,msvc,1
+"call edi   | * | add esp, 0Ch ",msvc,1
+"inc esi  | * | cmp esi, dword_4043C8 ",msvc,1
+"add esp, 0Ch  | * | jl short loc_401060 ",msvc,1
+"cmp esi, dword_4043C8  | * | loc_401083:  ",msvc,1
+jl short loc_401060  | * | push offset Str  ,msvc,1
+loc_401083:   | * | call ds:puts ,msvc,1
+"push offset Str   | * | add esp, 4 ",msvc,1
+call ds:puts  | * | loc_401091:  ,msvc,1
+"add esp, 4  | * | mov al, 1 ",msvc,1
+loc_401091:   | * | pop edi ,msvc,1
+"mov al, 1  | * | pop esi ",msvc,1
+pop edi  | * | pop ebx ,msvc,3
+"pop esi  | * | mov esp, ebp ",msvc,2
+pop ebx  | * | pop ebp ,msvc,5
+"mov esp, ebp  | * | retn ",msvc,9
+pop ebp  | * | loc_40109A:  ,msvc,1
+"retn  | * | cmp dword_472160, 0 ",msvc,1
+loc_40109A:   | * | jz loc_4013D7 ,msvc,1
+"cmp dword_472160, 0  | * | mov edx, dword_47215C ",msvc,1
+"jz loc_4013D7  | * | mov eax, [edx] ",msvc,1
+"mov edx, dword_47215C  | * | mov edi, [eax+0Ch] ",msvc,1
+"mov eax, [edx]  | * | mov ebx, [eax+10h] ",msvc,1
+"mov edi, [eax+0Ch]  | * | push eax ",msvc,1
+"mov ebx, [eax+10h]  | * | lea eax, [ebp+var_14] ",msvc,1
+push eax  | * | push eax ,msvc,3
+"lea eax, [ebp+var_14]  | * | mov [ebp+var_2C], edi ",msvc,1
+"push eax  | * | mov [ebp+var_28], ebx ",msvc,1
+"mov [ebp+var_2C], edi  | * | call sub_401580 ",msvc,1
+"mov [ebp+var_28], ebx  | * | mov esi, [ebp+arg_0] ",msvc,1
+"call sub_401580  | * | cmp byte_46FA98[esi], 0 ",msvc,1
+"mov esi, [ebp+arg_0]  | * | jz short loc_4010DE ",msvc,1
+"cmp byte_46FA98[esi], 0  | * | loc_4010D1:  ",msvc,1
+jz short loc_4010DE  | * | inc esi ,msvc,1
+"loc_4010D1:   | * | cmp byte_46FA98[esi], 0 ",msvc,1
+inc esi  | * | jnz short loc_4010D1 ,msvc,1
+"cmp byte_46FA98[esi], 0  | * | mov [ebp+arg_0], esi ",msvc,1
+jnz short loc_4010D1  | * | loc_4010DE:  ,msvc,1
+"mov [ebp+arg_0], esi  | * | mov eax, esi ",msvc,1
+"loc_4010DE:   | * | mov [ebp+var_4], eax ",msvc,1
+"mov eax, esi  | * | cmp esi, dword_4043C8 ",msvc,1
+"mov [ebp+var_4], eax  | * | jge loc_4013B0 ",msvc,1
+"cmp esi, dword_4043C8  | * | jmp short loc_4010F7 ",msvc,1
+jge loc_4013B0  | * | loc_4010F1:  ,msvc,1
+"jmp short loc_4010F7  | * | mov ebx, [ebp+var_28] ",msvc,1
+"loc_4010F1:   | * | mov edi, [ebp+var_2C] ",msvc,1
+"mov ebx, [ebp+var_28]  | * | loc_4010F7:  ",msvc,1
+"mov edi, [ebp+var_2C]  | * | cmp byte_46FA98[eax], 0 ",msvc,1
+loc_4010F7:   | * | jnz loc_4013A0 ,msvc,1
+"cmp byte_46FA98[eax], 0  | * | mov dword_46FEF8[eax*8], edi ",msvc,1
+"jnz loc_4013A0  | * | mov dword_46FEFC[eax*8], ebx ",msvc,1
+"mov dword_46FEF8[eax*8], edi  | * | test edi, edi ",msvc,1
+"mov dword_46FEFC[eax*8], ebx  | * | jz short loc_401124 ",msvc,1
+"test edi, edi  | * | mov ecx, dword_4043D8[eax*4] ",msvc,1
+"jz short loc_401124  | * | add dword_46FEF8[eax*8], ecx ",msvc,1
+"mov ecx, dword_4043D8[eax*4]  | * | loc_401124:  ",msvc,1
+"add dword_46FEF8[eax*8], ecx  | * | test ebx, ebx ",msvc,1
+loc_401124:   | * | jz short loc_401136 ,msvc,1
+"test ebx, ebx  | * | mov edx, dword_4043D8[eax*4] ",msvc,1
+"jz short loc_401136  | * | add dword_46FEFC[eax*8], edx ",msvc,1
+"mov edx, dword_4043D8[eax*4]  | * | loc_401136:  ",msvc,1
+"add dword_46FEFC[eax*8], edx  | * | mov edx, dword_46FEF8[eax*8] ",msvc,1
+"loc_401136:   | * | mov [ebp+var_C], edx ",msvc,1
+"mov edx, dword_46FEF8[eax*8]  | * | cmp edx, dword_4043D0 ",msvc,1
+"mov [ebp+var_C], edx  | * | jg loc_4013A0 ",msvc,1
+"cmp edx, dword_4043D0  | * | mov ecx, dword_46FEFC[eax*8] ",msvc,1
+"jg loc_4013A0  | * | mov [ebp+var_8], ecx ",msvc,1
+"mov ecx, dword_46FEFC[eax*8]  | * | cmp ecx, dword_4043CC ",msvc,1
+"mov [ebp+var_8], ecx  | * | jg loc_4013A0 ",msvc,1
+"cmp ecx, dword_4043CC  | * | mov edi, Src ",msvc,1
+"jg loc_4013A0  | * | sub edi, Dst ",msvc,1
+"mov edi, Src  | * | xor ebx, ebx ",msvc,1
+"sub edi, Dst  | * | sar edi, 2 ",msvc,1
+"xor ebx, ebx  | * | test edi, edi ",msvc,1
+"sar edi, 2  | * | jle short loc_4011E0 ",msvc,1
+"test edi, edi  | * | mov eax, dword_4043D8[eax*4] ",msvc,1
+"jle short loc_4011E0  | * | mov [ebp+var_14], eax ",msvc,1
+"mov eax, dword_4043D8[eax*4]  | * | jmp short loc_401189 ",msvc,1
+"mov [ebp+var_14], eax  | * | loc_401183:  ",msvc,1
+"jmp short loc_401189  | * | mov edx, [ebp+var_C] ",msvc,1
+"loc_401183:   | * | mov ecx, [ebp+var_8] ",msvc,1
+"mov edx, [ebp+var_C]  | * | loc_401189:  ",msvc,1
+"mov ecx, [ebp+var_8]  | * | mov eax, Dst ",msvc,1
+"loc_401189:   | * | mov esi, [eax+ebx*4] ",msvc,1
+"mov eax, Dst  | * | sub ecx, dword_46FEFC[esi*8] ",msvc,1
+"mov esi, [eax+ebx*4]  | * | sub edx, dword_46FEF8[esi*8] ",msvc,1
+"sub ecx, dword_46FEFC[esi*8]  | * | mov [ebp+var_10], ecx ",msvc,1
+"sub edx, dword_46FEF8[esi*8]  | * | fild [ebp+var_10] ",msvc,1
+"mov [ebp+var_10], ecx  | * | mov [ebp+var_10], edx ",msvc,1
+fild [ebp+var_10]  | * | fild [ebp+var_10] ,msvc,1
+"mov [ebp+var_10], edx  | * | fmul st, st ",msvc,1
+fild [ebp+var_10]  | * | fld st(1) ,msvc,1
+"fmul st, st  | * | fmulp st(2), st ",msvc,1
+"fld st(1)  | * | faddp st(1), st ",msvc,1
+"fmulp st(2), st  | * | call _CIsqrt ",msvc,1
+"faddp st(1), st  | * | mov ecx, dword_4043D8[esi*4] ",msvc,1
+"call _CIsqrt  | * | add ecx, [ebp+var_14] ",msvc,1
+"mov ecx, dword_4043D8[esi*4]  | * | mov [ebp+var_10], ecx ",msvc,1
+"add ecx, [ebp+var_14]  | * | fild [ebp+var_10] ",msvc,1
+"mov [ebp+var_10], ecx  | * | fsub ds:dbl_403180 ",msvc,1
+fild [ebp+var_10]  | * | fcompp ,msvc,1
+fsub ds:dbl_403180  | * | fnstsw ax ,msvc,1
+"fcompp  | * | test ah, 41h ",msvc,1
+fnstsw ax  | * | jz loc_40139A ,msvc,1
+"test ah, 41h  | * | inc ebx ",msvc,1
+"jz loc_40139A  | * | cmp ebx, edi ",msvc,1
+inc ebx  | * | jl short loc_401183 ,msvc,1
+"cmp ebx, edi  | * | loc_4011E0:  ",msvc,1
+"jl short loc_401183  | * | lea eax, [ebp+var_4] ",msvc,1
+loc_4011E0:   | * | call sub_401860 ,msvc,1
+"lea eax, [ebp+var_4]  | * | mov esi, [ebp+var_4] ",msvc,1
+"call sub_401860  | * | mov edx, dword_4043D8[esi*4] ",msvc,1
+"mov esi, [ebp+var_4]  | * | mov eax, dword_46FEFC[esi*8] ",msvc,1
+"mov edx, dword_4043D8[esi*4]  | * | mov ecx, dword_46FEF8[esi*8] ",msvc,1
+"mov eax, dword_46FEFC[esi*8]  | * | lea edi, dword_46FEFC[esi*8] ",msvc,1
+"mov ecx, dword_46FEF8[esi*8]  | * | lea ebx, dword_46FEF8[esi*8] ",msvc,1
+"lea edi, dword_46FEFC[esi*8]  | * | sub eax, edx ",msvc,1
+"lea ebx, dword_46FEF8[esi*8]  | * | add ecx, edx ",msvc,1
+"sub eax, edx  | * | mov [ebp+var_14], eax ",msvc,4
+"add ecx, edx  | * | test eax, eax ",msvc,4
+"mov [ebp+var_14], eax  | * | mov byte_46FA98[esi], 1 ",msvc,1
+"test eax, eax  | * | mov [ebp+var_C], edi ",msvc,1
+"mov byte_46FA98[esi], 1  | * | mov [ebp+var_10], 0 ",msvc,1
+"mov [ebp+var_C], edi  | * | mov [ebp+var_8], ebx ",msvc,1
+"mov [ebp+var_10], 0  | * | lea eax, [ebp+var_14] ",msvc,1
+"mov [ebp+var_8], ebx  | * | jg short loc_401233 ",msvc,1
+"lea eax, [ebp+var_14]  | * | lea eax, [ebp+var_10] ",msvc,4
+jg short loc_401233  | * | loc_401233:  ,msvc,1
+"lea eax, [ebp+var_10]  | * | mov eax, [eax] ",msvc,4
+"loc_401233:   | * | mov [ebp+var_38], ecx ",msvc,1
+"mov eax, [eax]  | * | mov [ebp+var_34], eax ",msvc,1
+"mov [ebp+var_38], ecx  | * | cmp ecx, dword_4043D0 ",msvc,1
+"mov [ebp+var_34], eax  | * | jg short loc_401266 ",msvc,1
+"cmp ecx, dword_4043D0  | * | cmp eax, dword_4043CC ",msvc,2
+jg short loc_401266  | * | jg short loc_401266 ,msvc,1
+"cmp eax, dword_4043CC  | * | lea esi, [ebp+var_38] ",msvc,1
+jg short loc_401266  | * | call sub_402220 ,msvc,1
+"lea esi, [ebp+var_38]  | * | mov ebx, eax ",msvc,1
+"call sub_402220  | * | lea edi, [ebp+var_58] ",msvc,1
+"mov ebx, eax  | * | call sub_401F80 ",msvc,3
+"lea edi, [ebp+var_58]  | * | mov edi, [ebp+var_C] ",msvc,1
+"call sub_401F80  | * | mov esi, [ebp+var_4] ",msvc,2
+"mov edi, [ebp+var_C]  | * | mov ebx, [ebp+var_8] ",msvc,2
+"mov esi, [ebp+var_4]  | * | loc_401266:  ",msvc,1
+"mov ebx, [ebp+var_8]  | * | mov edx, dword_4043D8[esi*4] ",msvc,2
+"loc_401266:   | * | mov eax, [ebx] ",msvc,1
+"mov edx, dword_4043D8[esi*4]  | * | mov ecx, [edi] ",msvc,2
+"mov eax, [ebx]  | * | sub eax, edx ",msvc,2
+"mov ecx, [edi]  | * | add ecx, edx ",msvc,2
+"mov [ebp+var_14], eax  | * | mov [ebp+var_10], 0 ",msvc,3
+"test eax, eax  | * | lea eax, [ebp+var_14] ",msvc,3
+"mov [ebp+var_10], 0  | * | jg short loc_401289 ",msvc,1
+jg short loc_401289  | * | loc_401289:  ,msvc,1
+"loc_401289:   | * | mov [ebp+var_40], eax ",msvc,1
+"mov eax, [eax]  | * | mov [ebp+var_3C], ecx ",msvc,1
+"mov [ebp+var_40], eax  | * | cmp eax, dword_4043D0 ",msvc,1
+"mov [ebp+var_3C], ecx  | * | jg short loc_4012BC ",msvc,1
+"cmp eax, dword_4043D0  | * | cmp ecx, dword_4043CC ",msvc,2
+jg short loc_4012BC  | * | jg short loc_4012BC ,msvc,1
+"cmp ecx, dword_4043CC  | * | lea esi, [ebp+var_40] ",msvc,1
+jg short loc_4012BC  | * | call sub_402220 ,msvc,1
+"lea esi, [ebp+var_40]  | * | mov ebx, eax ",msvc,1
+"call sub_402220  | * | lea edi, [ebp+var_60] ",msvc,2
+"lea edi, [ebp+var_60]  | * | mov edi, [ebp+var_C] ",msvc,1
+"mov esi, [ebp+var_4]  | * | loc_4012BC:  ",msvc,1
+"mov ebx, [ebp+var_8]  | * | mov edx, [ebp+arg_4] ",msvc,1
+"loc_4012BC:   | * | mov eax, [ebp+arg_0] ",msvc,1
+"mov edx, [ebp+arg_4]  | * | inc edx ",msvc,1
+"mov eax, [ebp+arg_0]  | * | push edx ",msvc,1
+inc edx  | * | push eax ,msvc,1
+push edx  | * | call sub_401040 ,msvc,2
+"push eax  | * | add esp, 8 ",msvc,1
+"call sub_401040  | * | test al, al ",msvc,2
+"add esp, 8  | * | jnz loc_401091 ",msvc,2
+"test al, al  | * | mov edx, dword_4043D8[esi*4] ",msvc,1
+"jnz loc_401091  | * | mov eax, [edi] ",msvc,1
+"mov edx, dword_4043D8[esi*4]  | * | mov ecx, [ebx] ",msvc,1
+"mov eax, [edi]  | * | sub eax, edx ",msvc,1
+"mov ecx, [ebx]  | * | add ecx, edx ",msvc,1
+"mov [ebp+var_10], 0  | * | jg short loc_4012F8 ",msvc,1
+jg short loc_4012F8  | * | loc_4012F8:  ,msvc,1
+"loc_4012F8:   | * | mov [ebp+var_48], ecx ",msvc,1
+"mov eax, [eax]  | * | mov [ebp+var_44], eax ",msvc,1
+"mov [ebp+var_48], ecx  | * | cmp ecx, dword_4043D0 ",msvc,1
+"mov [ebp+var_44], eax  | * | jg short loc_40132B ",msvc,1
+jg short loc_40132B  | * | jg short loc_40132B ,msvc,1
+"cmp eax, dword_4043CC  | * | lea ecx, [ebp+var_18] ",msvc,1
+jg short loc_40132B  | * | push ecx ,msvc,1
+"lea ecx, [ebp+var_18]  | * | lea ebx, [ebp+var_48] ",msvc,1
+push ecx  | * | call sub_4017E0 ,msvc,2
+"lea ebx, [ebp+var_48]  | * | mov edx, [eax] ",msvc,1
+call sub_4017E0  | * | push edx ,msvc,2
+"mov edx, [eax]  | * | lea eax, [ebp+var_1C] ",msvc,1
+push edx  | * | push eax ,msvc,3
+"lea eax, [ebp+var_1C]  | * | call sub_401580 ",msvc,1
+"push eax  | * | mov ebx, [ebp+var_8] ",msvc,1
+call sub_401580  | * | loc_40132B:  ,msvc,1
+"loc_40132B:   | * | mov eax, [ebx] ",msvc,1
+"mov [ebp+var_10], 0  | * | jg short loc_40134E ",msvc,1
+jg short loc_40134E  | * | loc_40134E:  ,msvc,1
+"loc_40134E:   | * | mov [ebp+var_50], eax ",msvc,1
+"mov eax, [eax]  | * | mov [ebp+var_4C], ecx ",msvc,1
+"mov [ebp+var_50], eax  | * | cmp eax, dword_4043D0 ",msvc,1
+"mov [ebp+var_4C], ecx  | * | jg short loc_40137E ",msvc,1
+jg short loc_40137E  | * | jg short loc_40137E ,msvc,1
+"cmp ecx, dword_4043CC  | * | lea ecx, [ebp+var_20] ",msvc,1
+jg short loc_40137E  | * | push ecx ,msvc,1
+"lea ecx, [ebp+var_20]  | * | lea ebx, [ebp+var_50] ",msvc,1
+"lea ebx, [ebp+var_50]  | * | mov edx, [eax] ",msvc,1
+"mov edx, [eax]  | * | lea eax, [ebp+var_24] ",msvc,1
+"lea eax, [ebp+var_24]  | * | call sub_401580 ",msvc,1
+push eax  | * | loc_40137E:  ,msvc,1
+"call sub_401580  | * | mov ecx, Dst ",msvc,1
+"loc_40137E:   | * | cmp ecx, Src ",msvc,1
+"mov ecx, Dst  | * | jz short loc_401393 ",msvc,1
+"cmp ecx, Src  | * | sub Src, 4 ",msvc,1
+jz short loc_401393  | * | loc_401393:  ,msvc,1
+"sub Src, 4  | * | mov byte_46FA98[esi], 0 ",msvc,1
+loc_401393:   | * | loc_40139A:  ,msvc,1
+"mov byte_46FA98[esi], 0  | * | mov esi, [ebp+arg_0] ",msvc,1
+"loc_40139A:   | * | mov eax, [ebp+var_4] ",msvc,1
+"mov esi, [ebp+arg_0]  | * | loc_4013A0:  ",msvc,1
+"mov eax, [ebp+var_4]  | * | inc eax ",msvc,1
+"loc_4013A0:   | * | mov [ebp+var_4], eax ",msvc,1
+"inc eax  | * | cmp eax, dword_4043C8 ",msvc,1
+"mov [ebp+var_4], eax  | * | jl loc_4010F1 ",msvc,1
+"cmp eax, dword_4043C8  | * | loc_4013B0:  ",msvc,1
+"jl loc_4010F1  | * | mov edx, [ebp+arg_4] ",msvc,1
+loc_4013B0:   | * | push edx ,msvc,1
+"mov edx, [ebp+arg_4]  | * | push esi ",msvc,1
+"push esi  | * | add esp, 8 ",msvc,1
+"test al, al  | * | lea esi, [ebp+var_2C] ",msvc,1
+jnz loc_401091  | * | call sub_402220 ,msvc,1
+"lea esi, [ebp+var_2C]  | * | mov ebx, eax ",msvc,1
+"lea edi, [ebp+var_60]  | * | loc_4013D7:  ",msvc,1
+call sub_401F80  | * | pop edi ,msvc,1
+loc_4013D7:   | * | pop esi ,msvc,1
+"pop edi  | * | xor al, al ",msvc,1
+pop esi  | * | pop ebx ,msvc,3
+"xor al, al  | * | mov esp, ebp ",msvc,1
+pop ebp  | * | sub_401040 endp ,msvc,1
+retn  | * | _main proc near  ,msvc,1
+var_14 = dword ptr -14h  | * | var_C = byte ptr -0Ch ,data,1
+var_C = byte ptr -0Ch  | * | var_4 = dword ptr -4 ,data,1
+var_8 = dword ptr -8  | * | argc = dword ptr 8 ,data,1
+var_4 = dword ptr -4  | * | argv = dword ptr 0Ch ,data,1
+argc = dword ptr 8  | * | envp = dword ptr 10h ,data,1
+"push ebp  | * | and esp, 0FFFFFFF8h ",msvc,1
+"mov ebp, esp  | * | sub esp, 14h ",msvc,1
+"and esp, 0FFFFFFF8h  | * | mov ecx, ds:?cin@std@@3V?$basic_istream@DU?$char_traits@D@std@@@1@A  ",msvc,1
+"sub esp, 14h  | * | push ebx ",msvc,1
+"mov ecx, ds:?cin@std@@3V?$basic_istream@DU?$char_traits@D@std@@@1@A   | * | push esi ",msvc,1
+"push esi  | * | lea eax, [esp+20h+var_10] ",msvc,1
+push edi  | * | push eax ,msvc,1
+"lea eax, [esp+20h+var_10]  | * | call ds:??5?$basic_istream@DU?$char_traits@D@std@@@std@@QAEAAV01@AAH@Z  ",msvc,1
+"push eax  | * | mov eax, [esp+20h+var_10] ",msvc,1
+"call ds:??5?$basic_istream@DU?$char_traits@D@std@@@std@@QAEAAV01@AAH@Z   | * | xor ebx, ebx ",msvc,1
+"mov eax, [esp+20h+var_10]  | * | test eax, eax ",msvc,1
+"xor ebx, ebx  | * | jle loc_401569 ",msvc,1
+"test eax, eax  | * | mov [esp+20h+var_8], ebx ",msvc,1
+"jle loc_401569  | * | mov [esp+20h+var_4], ebx ",msvc,1
+"mov [esp+20h+var_8], ebx  | * | loc_401413:  ",msvc,1
+"mov [esp+20h+var_4], ebx  | * | mov ecx, ds:?endl@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@1@AAV21@@Z  ",msvc,1
+loc_401413:   | * | push ecx ,msvc,1
+"mov ecx, ds:?endl@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@1@AAV21@@Z   | * | mov ecx, ds:?cerr@std@@3V?$basic_ostream@DU?$char_traits@D@std@@@1@A  ",msvc,1
+push ecx  | * | push eax ,msvc,1
+"mov ecx, ds:?cerr@std@@3V?$basic_ostream@DU?$char_traits@D@std@@@1@A   | * | push ebx ",msvc,1
+push eax  | * | call ds:??6?$basic_ostream@DU?$char_traits@D@std@@@std@@QAEAAV01@H@Z  ,msvc,1
+push ebx  | * | push eax ,msvc,1
+call ds:??6?$basic_ostream@DU?$char_traits@D@std@@@std@@QAEAAV01@H@Z   | * | call sub_401D30 ,msvc,1
+"push eax  | * | add esp, 4 ",msvc,6
+"call sub_401D30  | * | mov ecx, eax ",msvc,1
+"add esp, 4  | * | call ds:??6?$basic_ostream@DU?$char_traits@D@std@@@std@@QAEAAV01@H@Z  ",msvc,1
+"mov ecx, eax  | * | mov ecx, eax ",msvc,2
+call ds:??6?$basic_ostream@DU?$char_traits@D@std@@@std@@QAEAAV01@H@Z   | * | call ds:??6?$basic_ostream@DU?$char_traits@D@std@@@std@@QAEAAV01@P6AAAV01@AAV01@@Z@Z  ,msvc,1
+"mov ecx, eax  | * | mov ecx, ds:?cin@std@@3V?$basic_istream@DU?$char_traits@D@std@@@1@A  ",msvc,1
+call ds:??6?$basic_ostream@DU?$char_traits@D@std@@@std@@QAEAAV01@P6AAAV01@AAV01@@Z@Z   | * | push offset dword_4043CC ,msvc,1
+"mov ecx, ds:?cin@std@@3V?$basic_istream@DU?$char_traits@D@std@@@1@A   | * | push offset dword_4043D0 ",msvc,1
+push offset dword_4043CC  | * | push offset dword_4043C8 ,msvc,1
+push offset dword_4043D0  | * | call ds:??5?$basic_istream@DU?$char_traits@D@std@@@std@@QAEAAV01@AAH@Z  ,msvc,1
+"push offset dword_4043C8  | * | mov ecx, eax ",msvc,1
+call ds:??5?$basic_istream@DU?$char_traits@D@std@@@std@@QAEAAV01@AAH@Z   | * | call ds:??5?$basic_istream@DU?$char_traits@D@std@@@std@@QAEAAV01@AAH@Z  ,msvc,2
+"mov ecx, eax  | * | xor esi, esi ",msvc,1
+"call ds:??5?$basic_istream@DU?$char_traits@D@std@@@std@@QAEAAV01@AAH@Z   | * | cmp dword_4043C8, esi ",msvc,1
+"xor esi, esi  | * | jle short loc_40149B ",msvc,1
+"cmp dword_4043C8, esi  | * | mov edi, offset dword_4043D8 ",msvc,1
+jle short loc_40149B  | * | jmp short loc_401480 ,msvc,1
+"mov edi, offset dword_4043D8  | * | align 10h ",msvc,1
+jmp short loc_401480  | * | loc_401480:  ,msvc,1
+align 10h  | * | push edi ,msvc,1
+loc_401480:   | * | push offset aD  ,msvc,1
+push edi  | * | call ds:scanf ,msvc,1
+push offset aD   | * | inc esi ,msvc,1
+"call ds:scanf  | * | add esp, 8 ",msvc,1
+"inc esi  | * | add edi, 4 ",msvc,1
+"add esp, 8  | * | cmp esi, dword_4043C8 ",msvc,1
+"add edi, 4  | * | jl short loc_401480 ",msvc,1
+"cmp esi, dword_4043C8  | * | loc_40149B:  ",msvc,1
+jl short loc_401480  | * | inc ebx ,msvc,1
+loc_40149B:   | * | push ebx ,msvc,1
+inc ebx  | * | push offset aCaseD  ,msvc,1
+push ebx  | * | call ds:printf ,msvc,1
+"push offset aCaseD   | * | add esp, 8 ",msvc,1
+"call ds:printf  | * | lea esi, [esp+20h+var_8] ",msvc,1
+"add esp, 8  | * | call sub_402220 ",msvc,1
+"lea esi, [esp+20h+var_8]  | * | mov ecx, dword_47215C ",msvc,1
+"call sub_402220  | * | mov edx, [ecx+4] ",msvc,1
+"mov ecx, dword_47215C  | * | cmp byte ptr [edx+15h], 0 ",msvc,1
+"mov edx, [ecx+4]  | * | mov byte ptr [esp+20h+var_14], 1 ",msvc,1
+"cmp byte ptr [edx+15h], 0  | * | jnz short loc_4014F9 ",msvc,1
+"mov byte ptr [esp+20h+var_14], 1  | * | mov edi, [eax+0Ch] ",msvc,1
+jnz short loc_4014F9  | * | jmp short loc_4014D0 ,msvc,1
+"mov edi, [eax+0Ch]  | * | align 10h ",msvc,1
+jmp short loc_4014D0  | * | loc_4014D0:  ,msvc,1
+"align 10h  | * | mov esi, [edx+0Ch] ",msvc,1
+"loc_4014D0:   | * | mov ecx, edx ",msvc,1
+"mov esi, [edx+0Ch]  | * | cmp esi, edi ",msvc,1
+"mov ecx, edx  | * | jg loc_401572 ",msvc,1
+"cmp esi, edi  | * | jl short loc_4014EB ",msvc,1
+"jg loc_401572  | * | mov esi, [eax+10h] ",msvc,1
+"jl short loc_4014EB  | * | cmp esi, [edx+10h] ",msvc,1
+"mov esi, [eax+10h]  | * | jl loc_401572 ",msvc,1
+"cmp esi, [edx+10h]  | * | loc_4014EB:  ",msvc,1
+"jl loc_401572  | * | mov edx, [edx+8] ",msvc,1
+"loc_4014EB:   | * | mov byte ptr [esp+20h+var_14], 0 ",msvc,1
+"mov edx, [edx+8]  | * | loc_4014F3:  ",msvc,1
+"mov byte ptr [esp+20h+var_14], 0  | * | cmp byte ptr [edx+15h], 0 ",msvc,1
+loc_4014F3:   | * | jz short loc_4014D0 ,msvc,1
+"cmp byte ptr [edx+15h], 0  | * | loc_4014F9:  ",msvc,1
+"jz short loc_4014D0  | * | mov edx, [esp+20h+var_14] ",msvc,1
+loc_4014F9:   | * | push eax ,msvc,1
+"mov edx, [esp+20h+var_14]  | * | push edx ",msvc,1
+"push eax  | * | lea eax, [esp+28h+var_C] ",msvc,1
+"lea eax, [esp+28h+var_C]  | * | call sub_401FF0 ",msvc,1
+push eax  | * | push 44Ch  ,msvc,1
+call sub_401FF0  | * | push 0  ,msvc,1
+push 44Ch   | * | push offset byte_46FA98  ,msvc,1
+push 0   | * | call memset ,msvc,1
+"push offset byte_46FA98   | * | mov ecx, Src ",msvc,1
+"call memset  | * | mov edx, Dst ",msvc,1
+"mov ecx, Src  | * | add esp, 0Ch ",msvc,1
+"mov edx, Dst  | * | cmp edx, ecx ",msvc,1
+"add esp, 0Ch  | * | jz short loc_401551 ",msvc,1
+"cmp edx, ecx  | * | mov eax, ecx ",msvc,1
+"jz short loc_401551  | * | sub eax, ecx ",msvc,1
+"mov eax, ecx  | * | sar eax, 2 ",msvc,1
+"sub eax, ecx  | * | lea esi, ds:0[eax*4] ",msvc,1
+"sar eax, 2  | * | push esi  ",msvc,1
+"lea esi, ds:0[eax*4]  | * | push ecx  ",msvc,1
+push esi   | * | push edx  ,msvc,1
+"push ecx   | * | mov edi, edx ",msvc,1
+push edx   | * | call ds:memmove ,msvc,1
+"mov edi, edx  | * | add esp, 0Ch ",msvc,1
+"call ds:memmove  | * | add esi, edi ",msvc,1
+"add esp, 0Ch  | * | mov Src, esi ",msvc,1
+"add esi, edi  | * | loc_401551:  ",msvc,1
+"mov Src, esi  | * | push 0 ",msvc,1
+loc_401551:   | * | push 0 ,msvc,1
+push 0  | * | call sub_401040 ,msvc,1
+"push 0  | * | mov eax, [esp+28h+var_10] ",msvc,1
+"call sub_401040  | * | add esp, 8 ",msvc,1
+"mov eax, [esp+28h+var_10]  | * | cmp ebx, eax ",msvc,1
+"add esp, 8  | * | jl loc_401413 ",msvc,1
+"cmp ebx, eax  | * | loc_401569:  ",msvc,1
+jl loc_401413  | * | pop edi ,msvc,1
+loc_401569:   | * | pop esi ,msvc,1
+"pop edi  | * | xor eax, eax ",msvc,1
+"xor eax, eax  | * | mov esp, ebp ",msvc,1
+pop ebp  | * | loc_401572:  ,msvc,1
+"retn  | * | mov edx, [edx] ",msvc,1
+"loc_401572:   | * | mov byte ptr [esp+20h+var_14], 1 ",msvc,1
+"mov edx, [edx]  | * | jmp loc_4014F3 ",msvc,1
+"mov byte ptr [esp+20h+var_14], 1  | * | _main endp ",msvc,1
+jmp loc_4014F3  | * | align 10h ,msvc,1
+_main endp  | * | sub_401580 proc near  ,msvc,1
+push ebp  | * | push ecx ,msvc,3
+"mov ebp, esp  | * | mov eax, [ebp+arg_4] ",msvc,1
+"push ecx  | * | cmp byte ptr [eax+15h], 0 ",msvc,1
+"mov eax, [ebp+arg_4]  | * | jz short loc_401598 ",msvc,1
+"cmp byte ptr [eax+15h], 0  | * | push offset aInvalidMapSetT  ",msvc,1
+jz short loc_401598  | * | call ds:?_Xout_of_range@std@@YAXPBD@Z  ,msvc,1
+push offset aInvalidMapSetT   | * | loc_401598:  ,msvc,1
+call ds:?_Xout_of_range@std@@YAXPBD@Z   | * | push ebx ,msvc,1
+loc_401598:   | * | push esi ,msvc,1
+"push ebx  | * | mov ebx, eax ",msvc,1
+push esi  | * | push edi ,msvc,1
+"mov ebx, eax  | * | lea eax, [ebp+arg_4] ",msvc,1
+"push edi  | * | mov [ebp+var_4], ebx ",msvc,1
+"lea eax, [ebp+arg_4]  | * | call sub_401A10 ",msvc,1
+"mov [ebp+var_4], ebx  | * | mov ecx, [ebx] ",msvc,1
+"call sub_401A10  | * | cmp byte ptr [ecx+15h], 0 ",msvc,1
+"mov ecx, [ebx]  | * | jz short loc_4015B5 ",msvc,1
+"cmp byte ptr [ecx+15h], 0  | * | mov edi, [ebx+8] ",msvc,1
+jz short loc_4015B5  | * | jmp short loc_4015CC ,msvc,1
+"mov edi, [ebx+8]  | * | loc_4015B5:  ",msvc,1
+"jmp short loc_4015CC  | * | mov eax, [ebx+8] ",msvc,1
+"loc_4015B5:   | * | cmp byte ptr [eax+15h], 0 ",msvc,1
+"mov eax, [ebx+8]  | * | jz short loc_4015C2 ",msvc,1
+"cmp byte ptr [eax+15h], 0  | * | mov edi, ecx ",msvc,1
+jz short loc_4015C2  | * | jmp short loc_4015CC ,msvc,1
+"mov edi, ecx  | * | loc_4015C2:  ",msvc,1
+"jmp short loc_4015CC  | * | mov eax, [ebp+arg_4] ",msvc,1
+"loc_4015C2:   | * | mov edi, [eax+8] ",msvc,1
+"mov eax, [ebp+arg_4]  | * | cmp eax, ebx ",msvc,1
+"mov edi, [eax+8]  | * | jnz short loc_401648 ",msvc,1
+"cmp eax, ebx  | * | loc_4015CC:  ",msvc,1
+"jnz short loc_401648  | * | cmp byte ptr [edi+15h], 0 ",msvc,1
+"loc_4015CC:   | * | mov esi, [ebx+4] ",msvc,1
+"cmp byte ptr [edi+15h], 0  | * | jnz short loc_4015D8 ",msvc,1
+"mov esi, [ebx+4]  | * | mov [edi+4], esi ",msvc,1
+jnz short loc_4015D8  | * | loc_4015D8:  ,msvc,1
+"mov [edi+4], esi  | * | mov eax, dword_47215C ",msvc,1
+"loc_4015D8:   | * | cmp [eax+4], ebx ",msvc,1
+"mov eax, dword_47215C  | * | jnz short loc_4015E7 ",msvc,1
+"cmp [eax+4], ebx  | * | mov [eax+4], edi ",msvc,1
+jnz short loc_4015E7  | * | jmp short loc_4015F2 ,msvc,1
+"mov [eax+4], edi  | * | loc_4015E7:  ",msvc,1
+"jmp short loc_4015F2  | * | cmp [esi], ebx ",msvc,1
+loc_4015E7:   | * | jnz short loc_4015EF ,msvc,1
+"cmp [esi], ebx  | * | mov [esi], edi ",msvc,1
+jnz short loc_4015EF  | * | jmp short loc_4015F2 ,msvc,1
+"mov [esi], edi  | * | loc_4015EF:  ",msvc,1
+"jmp short loc_4015F2  | * | mov [esi+8], edi ",msvc,1
+loc_4015EF:   | * | loc_4015F2:  ,msvc,1
+"mov [esi+8], edi  | * | mov edx, dword_47215C ",msvc,1
+"loc_4015F2:   | * | cmp [edx], ebx ",msvc,1
+"mov edx, dword_47215C  | * | jnz short loc_40161C ",msvc,1
+"cmp [edx], ebx  | * | cmp byte ptr [edi+15h], 0 ",msvc,1
+jnz short loc_40161C  | * | jz short loc_401606 ,msvc,1
+"cmp byte ptr [edi+15h], 0  | * | mov ecx, esi ",msvc,1
+jz short loc_401606  | * | jmp short loc_40161A ,msvc,1
+"mov ecx, esi  | * | loc_401606:  ",msvc,1
+"jmp short loc_40161A  | * | mov eax, [edi] ",msvc,1
+"loc_401606:   | * | cmp byte ptr [eax+15h], 0 ",msvc,1
+"mov eax, [edi]  | * | mov ecx, edi ",msvc,1
+"cmp byte ptr [eax+15h], 0  | * | jnz short loc_40161A ",msvc,1
+"mov ecx, edi  | * | loc_401610:  ",msvc,1
+"jnz short loc_40161A  | * | mov ecx, eax ",msvc,1
+"loc_401610:   | * | mov eax, [ecx] ",msvc,1
+"mov ecx, eax  | * | cmp byte ptr [eax+15h], 0 ",msvc,3
+"mov eax, [ecx]  | * | jz short loc_401610 ",msvc,1
+"cmp byte ptr [eax+15h], 0  | * | loc_40161A:  ",msvc,1
+"jz short loc_401610  | * | mov [edx], ecx ",msvc,1
+loc_40161A:   | * | loc_40161C:  ,msvc,1
+"mov [edx], ecx  | * | mov ecx, dword_47215C ",msvc,1
+"loc_40161C:   | * | cmp [ecx+8], ebx ",msvc,1
+"mov ecx, dword_47215C  | * | jnz short loc_4016A2 ",msvc,1
+"cmp [ecx+8], ebx  | * | cmp byte ptr [edi+15h], 0 ",msvc,1
+jnz short loc_4016A2  | * | jz short loc_401636 ,msvc,1
+"cmp byte ptr [edi+15h], 0  | * | mov eax, esi ",msvc,1
+"jz short loc_401636  | * | mov edx, ecx ",msvc,1
+"mov eax, esi  | * | mov [edx+8], eax ",msvc,1
+"mov edx, ecx  | * | jmp short loc_4016A2 ",msvc,1
+"mov [edx+8], eax  | * | loc_401636:  ",msvc,1
+"jmp short loc_4016A2  | * | mov eax, edi ",msvc,1
+loc_401636:   | * | call sub_401990 ,msvc,1
+"mov eax, edi  | * | mov edx, dword_47215C ",msvc,1
+"call sub_401990  | * | mov [edx+8], eax ",msvc,1
+"mov edx, dword_47215C  | * | jmp short loc_4016A2 ",msvc,1
+"mov [edx+8], eax  | * | loc_401648:  ",msvc,1
+"jmp short loc_4016A2  | * | mov [ecx+4], eax ",msvc,1
+"loc_401648:   | * | mov ecx, [ebx] ",msvc,1
+"mov [ecx+4], eax  | * | mov [eax], ecx ",msvc,1
+"mov ecx, [ebx]  | * | cmp eax, [ebx+8] ",msvc,1
+"mov [eax], ecx  | * | jnz short loc_401658 ",msvc,1
+"cmp eax, [ebx+8]  | * | mov esi, eax ",msvc,1
+jnz short loc_401658  | * | jmp short loc_401672 ,msvc,1
+"mov esi, eax  | * | loc_401658:  ",msvc,1
+"jmp short loc_401672  | * | cmp byte ptr [edi+15h], 0 ",msvc,1
+"loc_401658:   | * | mov esi, [eax+4] ",msvc,1
+"cmp byte ptr [edi+15h], 0  | * | jnz short loc_401664 ",msvc,1
+"mov esi, [eax+4]  | * | mov [edi+4], esi ",msvc,1
+jnz short loc_401664  | * | loc_401664:  ,msvc,1
+"mov [edi+4], esi  | * | mov [esi], edi ",msvc,1
+"loc_401664:   | * | mov ecx, [ebx+8] ",msvc,1
+"mov [esi], edi  | * | mov [eax+8], ecx ",msvc,1
+"mov ecx, [ebx+8]  | * | mov edx, [ebx+8] ",msvc,1
+"mov [eax+8], ecx  | * | mov [edx+4], eax ",msvc,1
+"mov edx, [ebx+8]  | * | loc_401672:  ",msvc,1
+"mov [edx+4], eax  | * | mov ecx, dword_47215C ",msvc,1
+"loc_401672:   | * | cmp [ecx+4], ebx ",msvc,1
+"mov ecx, dword_47215C  | * | jnz short loc_401682 ",msvc,1
+"cmp [ecx+4], ebx  | * | mov [ecx+4], eax ",msvc,1
+jnz short loc_401682  | * | jmp short loc_401690 ,msvc,1
+"mov [ecx+4], eax  | * | loc_401682:  ",msvc,1
+"jmp short loc_401690  | * | mov ecx, [ebx+4] ",msvc,1
+"loc_401682:   | * | cmp [ecx], ebx ",msvc,1
+"mov ecx, [ebx+4]  | * | jnz short loc_40168D ",msvc,1
+"cmp [ecx], ebx  | * | mov [ecx], eax ",msvc,1
+jnz short loc_40168D  | * | jmp short loc_401690 ,msvc,1
+"mov [ecx], eax  | * | loc_40168D:  ",msvc,1
+"jmp short loc_401690  | * | mov [ecx+8], eax ",msvc,1
+loc_40168D:   | * | loc_401690:  ,msvc,1
+"mov [ecx+8], eax  | * | mov ecx, [ebx+4] ",msvc,1
+"loc_401690:   | * | mov [eax+4], ecx ",msvc,1
+"mov ecx, [ebx+4]  | * | mov dl, [ebx+14h] ",msvc,1
+"mov [eax+4], ecx  | * | mov cl, [eax+14h] ",msvc,1
+"mov dl, [ebx+14h]  | * | mov [eax+14h], dl ",msvc,1
+"mov cl, [eax+14h]  | * | mov [ebx+14h], cl ",msvc,1
+"mov [eax+14h], dl  | * | loc_4016A2:  ",msvc,1
+"mov [ebx+14h], cl  | * | mov eax, [ebp+var_4] ",msvc,1
+"loc_4016A2:   | * | mov ebx, 1 ",msvc,1
+"mov eax, [ebp+var_4]  | * | cmp [eax+14h], bl ",msvc,1
+"mov ebx, 1  | * | jnz loc_4017A6 ",msvc,1
+"cmp [eax+14h], bl  | * | mov ecx, dword_47215C ",msvc,1
+"jnz loc_4017A6  | * | cmp edi, [ecx+4] ",msvc,1
+"mov ecx, dword_47215C  | * | jz loc_4017A3 ",msvc,1
+"cmp edi, [ecx+4]  | * | loc_4016C2:  ",msvc,1
+"jz loc_4017A3  | * | cmp [edi+14h], bl ",msvc,1
+loc_4016C2:   | * | jnz loc_4017A3 ,msvc,1
+"cmp [edi+14h], bl  | * | mov ecx, [esi] ",msvc,1
+"jnz loc_4017A3  | * | cmp edi, ecx ",msvc,1
+"mov ecx, [esi]  | * | jnz short loc_401731 ",msvc,1
+"cmp edi, ecx  | * | mov ecx, [esi+8] ",msvc,1
+"jnz short loc_401731  | * | cmp byte ptr [ecx+14h], 0 ",msvc,1
+"mov ecx, [esi+8]  | * | jnz short loc_4016EB ",msvc,1
+"cmp byte ptr [ecx+14h], 0  | * | mov [ecx+14h], bl ",msvc,2
+"jnz short loc_4016EB  | * | mov ecx, esi ",msvc,1
+"mov [ecx+14h], bl  | * | mov byte ptr [esi+14h], 0 ",msvc,2
+"mov ecx, esi  | * | call sub_4018E0 ",msvc,2
+"mov byte ptr [esi+14h], 0  | * | mov ecx, [esi+8] ",msvc,1
+call sub_4018E0  | * | loc_4016EB:  ,msvc,1
+"mov ecx, [esi+8]  | * | cmp byte ptr [ecx+15h], 0 ",msvc,1
+loc_4016EB:   | * | jnz short loc_401760 ,msvc,1
+"cmp byte ptr [ecx+15h], 0  | * | mov edx, [ecx] ",msvc,1
+"jnz short loc_401760  | * | cmp [edx+14h], bl ",msvc,2
+"mov edx, [ecx]  | * | jnz short loc_401700 ",msvc,1
+"cmp [edx+14h], bl  | * | mov eax, [ecx+8] ",msvc,2
+"jnz short loc_401700  | * | cmp [eax+14h], bl ",msvc,1
+"mov eax, [ecx+8]  | * | jz short loc_40175C ",msvc,1
+"cmp [eax+14h], bl  | * | loc_401700:  ",msvc,1
+"jz short loc_40175C  | * | mov edx, [ecx+8] ",msvc,1
+"loc_401700:   | * | cmp [edx+14h], bl ",msvc,1
+"mov edx, [ecx+8]  | * | jnz short loc_401719 ",msvc,1
+"cmp [edx+14h], bl  | * | mov eax, [ecx] ",msvc,2
+"jnz short loc_401719  | * | mov [eax+14h], bl ",msvc,1
+"mov eax, [ecx]  | * | mov byte ptr [ecx+14h], 0 ",msvc,1
+"mov [eax+14h], bl  | * | call sub_401930 ",msvc,1
+"mov byte ptr [ecx+14h], 0  | * | mov ecx, [esi+8] ",msvc,1
+call sub_401930  | * | loc_401719:  ,msvc,1
+"mov ecx, [esi+8]  | * | mov dl, [esi+14h] ",msvc,1
+"loc_401719:   | * | mov [ecx+14h], dl ",msvc,1
+"mov dl, [esi+14h]  | * | mov [esi+14h], bl ",msvc,2
+"mov [ecx+14h], dl  | * | mov eax, [ecx+8] ",msvc,1
+"mov [esi+14h], bl  | * | mov ecx, esi ",msvc,2
+"mov eax, [ecx+8]  | * | mov [eax+14h], bl ",msvc,1
+"mov [eax+14h], bl  | * | jmp short loc_4017A3 ",msvc,1
+call sub_4018E0  | * | loc_401731:  ,msvc,1
+"jmp short loc_4017A3  | * | cmp byte ptr [ecx+14h], 0 ",msvc,1
+loc_401731:   | * | jnz short loc_401747 ,msvc,1
+"jnz short loc_401747  | * | mov ecx, esi ",msvc,1
+"mov ecx, esi  | * | call sub_401930 ",msvc,2
+"mov byte ptr [esi+14h], 0  | * | mov ecx, [esi] ",msvc,1
+call sub_401930  | * | loc_401747:  ,msvc,1
+"mov ecx, [esi]  | * | cmp byte ptr [ecx+15h], 0 ",msvc,1
+loc_401747:   | * | jnz short loc_401760 ,msvc,1
+"cmp byte ptr [ecx+15h], 0  | * | mov edx, [ecx+8] ",msvc,2
+"mov edx, [ecx+8]  | * | jnz short loc_401776 ",msvc,1
+"jnz short loc_401776  | * | cmp [eax+14h], bl ",msvc,1
+"mov eax, [ecx]  | * | jnz short loc_401776 ",msvc,1
+"cmp [eax+14h], bl  | * | loc_40175C:  ",msvc,1
+"jnz short loc_401776  | * | mov byte ptr [ecx+14h], 0 ",msvc,1
+loc_40175C:   | * | loc_401760:  ,msvc,1
+"mov byte ptr [ecx+14h], 0  | * | mov ecx, dword_47215C ",msvc,1
+"loc_401760:   | * | mov edi, esi ",msvc,1
+"mov ecx, dword_47215C  | * | mov esi, [esi+4] ",msvc,1
+"mov edi, esi  | * | cmp edi, [ecx+4] ",msvc,1
+"mov esi, [esi+4]  | * | jnz loc_4016C2 ",msvc,1
+"cmp edi, [ecx+4]  | * | jmp short loc_4017A3 ",msvc,1
+jnz loc_4016C2  | * | loc_401776:  ,msvc,1
+"jmp short loc_4017A3  | * | mov edx, [ecx] ",msvc,1
+"loc_401776:   | * | cmp [edx+14h], bl ",msvc,1
+"mov edx, [ecx]  | * | jnz short loc_40178E ",msvc,1
+"jnz short loc_40178E  | * | mov [eax+14h], bl ",msvc,1
+"mov eax, [ecx+8]  | * | mov byte ptr [ecx+14h], 0 ",msvc,1
+"mov [eax+14h], bl  | * | call sub_4018E0 ",msvc,1
+"mov byte ptr [ecx+14h], 0  | * | mov ecx, [esi] ",msvc,1
+call sub_4018E0  | * | loc_40178E:  ,msvc,1
+"mov ecx, [esi]  | * | mov dl, [esi+14h] ",msvc,1
+"loc_40178E:   | * | mov [ecx+14h], dl ",msvc,1
+"mov [ecx+14h], dl  | * | mov eax, [ecx] ",msvc,1
+"mov eax, [ecx]  | * | mov [eax+14h], bl ",msvc,1
+"mov [eax+14h], bl  | * | loc_4017A3:  ",msvc,1
+"call sub_401930  | * | mov [edi+14h], bl ",msvc,1
+loc_4017A3:   | * | loc_4017A6:  ,msvc,1
+"mov [edi+14h], bl  | * | mov ecx, [ebp+var_4] ",msvc,1
+loc_4017A6:   | * | push ecx ,msvc,1
+"mov ecx, [ebp+var_4]  | * | call ds:__imp_??3@YAXPAX@Z  ",msvc,1
+"push ecx  | * | add esp, 4 ",msvc,1
+"call ds:__imp_??3@YAXPAX@Z   | * | cmp dword_472160, 0 ",msvc,1
+"add esp, 4  | * | jbe short loc_4017C2 ",msvc,1
+"cmp dword_472160, 0  | * | sub dword_472160, ebx ",msvc,1
+jbe short loc_4017C2  | * | loc_4017C2:  ,msvc,1
+"sub dword_472160, ebx  | * | mov edx, [ebp+arg_4] ",msvc,1
+"loc_4017C2:   | * | mov eax, [ebp+arg_0] ",msvc,1
+"mov edx, [ebp+arg_4]  | * | pop edi ",msvc,1
+"mov eax, [ebp+arg_0]  | * | pop esi ",msvc,1
+"pop edi  | * | mov [eax], edx ",msvc,1
+"mov [eax], edx  | * | mov esp, ebp ",msvc,3
+"mov esp, ebp  | * | retn 8 ",msvc,3
+pop ebp  | * | sub_401580 endp ,msvc,1
+retn 8  | * | align 10h ,msvc,2
+sub_401580 endp  | * | sub_4017E0 proc near  ,msvc,1
+"push ebp  | * | mov eax, dword_47215C ",msvc,1
+"mov ebp, esp  | * | mov ecx, [eax+4] ",msvc,1
+"mov eax, dword_47215C  | * | sub esp, 8 ",msvc,1
+"mov ecx, [eax+4]  | * | cmp byte ptr [ecx+15h], 0 ",msvc,1
+"sub esp, 8  | * | push esi ",msvc,1
+"cmp byte ptr [ecx+15h], 0  | * | mov esi, eax ",msvc,1
+push esi  | * | jnz short loc_401821 ,msvc,1
+"mov esi, eax  | * | push edi ",msvc,1
+"jnz short loc_401821  | * | mov edi, [ebx] ",msvc,1
+"push edi  | * | lea ebx, [ebx+0] ",msvc,1
+"mov edi, [ebx]  | * | loc_401800:  ",msvc,1
+"lea ebx, [ebx+0]  | * | mov edx, [ecx+0Ch] ",msvc,1
+"loc_401800:   | * | cmp edi, edx ",msvc,1
+"mov edx, [ecx+0Ch]  | * | jg short loc_401811 ",msvc,1
+"cmp edi, edx  | * | jl short loc_401816 ",msvc,1
+"jg short loc_401811  | * | mov edx, [ecx+10h] ",msvc,1
+"jl short loc_401816  | * | cmp edx, [ebx+4] ",msvc,1
+"mov edx, [ecx+10h]  | * | jge short loc_401816 ",msvc,1
+"cmp edx, [ebx+4]  | * | loc_401811:  ",msvc,1
+"jge short loc_401816  | * | mov ecx, [ecx+8] ",msvc,1
+loc_401811:   | * | jmp short loc_40181A ,msvc,1
+"mov ecx, [ecx+8]  | * | loc_401816:  ",msvc,1
+"jmp short loc_40181A  | * | mov esi, ecx ",msvc,1
+"loc_401816:   | * | mov ecx, [ecx] ",msvc,1
+"mov esi, ecx  | * | loc_40181A:  ",msvc,1
+"mov ecx, [ecx]  | * | cmp byte ptr [ecx+15h], 0 ",msvc,1
+loc_40181A:   | * | jz short loc_401800 ,msvc,1
+"cmp byte ptr [ecx+15h], 0  | * | pop edi ",msvc,1
+jz short loc_401800  | * | loc_401821:  ,msvc,1
+"pop edi  | * | mov [ebp+var_4], esi ",msvc,1
+"loc_401821:   | * | cmp esi, eax ",msvc,1
+"mov [ebp+var_4], esi  | * | jz short loc_40184C ",msvc,1
+"cmp esi, eax  | * | mov ecx, [ebx] ",msvc,1
+"jz short loc_40184C  | * | mov edx, [esi+0Ch] ",msvc,1
+"mov ecx, [ebx]  | * | cmp edx, ecx ",msvc,1
+"mov edx, [esi+0Ch]  | * | jg short loc_40184C ",msvc,1
+"cmp edx, ecx  | * | jl short loc_40183B ",msvc,1
+"jg short loc_40184C  | * | mov ecx, [ebx+4] ",msvc,1
+"jl short loc_40183B  | * | cmp ecx, [esi+10h] ",msvc,1
+"mov ecx, [ebx+4]  | * | jl short loc_40184C ",msvc,1
+"cmp ecx, [esi+10h]  | * | loc_40183B:  ",msvc,1
+"jl short loc_40184C  | * | mov eax, [ebp+arg_0] ",msvc,1
+"loc_40183B:   | * | lea ecx, [ebp+var_4] ",msvc,1
+"mov eax, [ebp+arg_0]  | * | mov edx, [ecx] ",msvc,2
+"lea ecx, [ebp+var_4]  | * | mov [eax], edx ",msvc,1
+"mov edx, [ecx]  | * | pop esi ",msvc,2
+pop esi  | * | pop ebp ,msvc,5
+"mov esp, ebp  | * | retn 4 ",msvc,3
+pop ebp  | * | loc_40184C:  ,msvc,1
+"retn 4  | * | mov [ebp+var_8], eax ",msvc,1
+"loc_40184C:   | * | mov eax, [ebp+arg_0] ",msvc,1
+"mov [ebp+var_8], eax  | * | lea ecx, [ebp+var_8] ",msvc,1
+"lea ecx, [ebp+var_8]  | * | mov [eax], edx ",msvc,1
+pop ebp  | * | sub_4017E0 endp ,msvc,1
+retn 4  | * | sub_401860 proc near  ,msvc,1
+sub_4017E0 endp  | * | push esi ,msvc,1
+"sub_401860 proc near   | * | mov esi, eax ",msvc,1
+"push esi  | * | mov eax, Src ",msvc,1
+"mov esi, eax  | * | cmp esi, eax ",msvc,1
+"mov eax, Src  | * | jnb short loc_4018AB ",msvc,1
+"cmp esi, eax  | * | mov ecx, Dst ",msvc,1
+"jnb short loc_4018AB  | * | cmp ecx, esi ",msvc,1
+"mov ecx, Dst  | * | ja short loc_4018AB ",msvc,1
+"cmp ecx, esi  | * | sub esi, ecx ",msvc,1
+"ja short loc_4018AB  | * | sar esi, 2 ",msvc,1
+"sub esi, ecx  | * | cmp eax, dword_46FEEC ",msvc,1
+"sar esi, 2  | * | jnz short loc_401893 ",msvc,1
+"cmp eax, dword_46FEEC  | * | call sub_4019B0 ",msvc,2
+"jnz short loc_401893  | * | mov eax, Src ",msvc,1
+"call sub_4019B0  | * | mov ecx, Dst ",msvc,1
+"mov eax, Src  | * | loc_401893:  ",msvc,1
+"mov ecx, Dst  | * | test eax, eax ",msvc,1
+loc_401893:   | * | jz short loc_4018CA ,msvc,1
+"test eax, eax  | * | mov ecx, [ecx+esi*4] ",msvc,1
+"jz short loc_4018CA  | * | mov [eax], ecx ",msvc,1
+"mov ecx, [ecx+esi*4]  | * | mov eax, Src ",msvc,1
+"mov [eax], ecx  | * | add eax, 4 ",msvc,1
+"mov eax, Src  | * | mov Src, eax ",msvc,1
+"add eax, 4  | * | pop esi ",msvc,2
+"mov Src, eax  | * | retn ",msvc,2
+pop esi  | * | loc_4018AB:  ,msvc,1
+"retn  | * | cmp eax, dword_46FEEC ",msvc,1
+loc_4018AB:   | * | jnz short loc_4018BD ,msvc,1
+"jnz short loc_4018BD  | * | mov eax, Src ",msvc,1
+call sub_4019B0  | * | loc_4018BD:  ,msvc,1
+"mov eax, Src  | * | test eax, eax ",msvc,1
+loc_4018BD:   | * | jz short loc_4018CA ,msvc,1
+"test eax, eax  | * | mov edx, [esi] ",msvc,1
+"jz short loc_4018CA  | * | mov [eax], edx ",msvc,1
+"mov edx, [esi]  | * | mov eax, Src ",msvc,1
+"mov [eax], edx  | * | loc_4018CA:  ",msvc,1
+"mov eax, Src  | * | add eax, 4 ",msvc,1
+"loc_4018CA:   | * | mov Src, eax ",msvc,1
+pop esi  | * | sub_401860 endp ,msvc,1
+retn  | * | align 10h ,msvc,15
+sub_401860 endp  | * | sub_4018E0 proc near  ,msvc,1
+"align 10h  | * | mov eax, [ecx+8] ",msvc,1
+"sub_4018E0 proc near   | * | mov edx, [eax] ",msvc,1
+"mov eax, [ecx+8]  | * | mov [ecx+8], edx ",msvc,1
+"mov edx, [eax]  | * | mov edx, [eax] ",msvc,1
+"mov [ecx+8], edx  | * | cmp byte ptr [edx+15h], 0 ",msvc,1
+"mov edx, [eax]  | * | jnz short loc_4018F3 ",msvc,1
+"cmp byte ptr [edx+15h], 0  | * | mov [edx+4], ecx ",msvc,2
+jnz short loc_4018F3  | * | loc_4018F3:  ,msvc,1
+"mov [edx+4], ecx  | * | mov edx, [ecx+4] ",msvc,2
+"loc_4018F3:   | * | mov [eax+4], edx ",msvc,1
+"mov edx, [ecx+4]  | * | mov edx, dword_47215C ",msvc,2
+"mov [eax+4], edx  | * | cmp ecx, [edx+4] ",msvc,2
+"mov edx, dword_47215C  | * | jnz short loc_40190D ",msvc,1
+"cmp ecx, [edx+4]  | * | mov [edx+4], eax ",msvc,2
+"jnz short loc_40190D  | * | mov [eax], ecx ",msvc,1
+"mov [edx+4], eax  | * | mov [ecx+4], eax ",msvc,2
+"mov [eax], ecx  | * | retn ",msvc,4
+"mov [ecx+4], eax  | * | loc_40190D:  ",msvc,1
+"retn  | * | mov edx, [ecx+4] ",msvc,2
+"loc_40190D:   | * | cmp ecx, [edx] ",msvc,1
+"mov edx, [ecx+4]  | * | jnz short loc_40191C ",msvc,1
+"cmp ecx, [edx]  | * | mov [edx], eax ",msvc,1
+"jnz short loc_40191C  | * | mov [eax], ecx ",msvc,1
+"mov [edx], eax  | * | mov [ecx+4], eax ",msvc,2
+"mov [ecx+4], eax  | * | loc_40191C:  ",msvc,1
+"retn  | * | mov [edx+8], eax ",msvc,1
+"loc_40191C:   | * | mov [eax], ecx ",msvc,1
+"mov [edx+8], eax  | * | mov [ecx+4], eax ",msvc,2
+"mov [ecx+4], eax  | * | sub_4018E0 endp ",msvc,1
+sub_4018E0 endp  | * | sub_401930 proc near  ,msvc,1
+"align 10h  | * | mov eax, [ecx] ",msvc,1
+"sub_401930 proc near   | * | mov edx, [eax+8] ",msvc,1
+"mov eax, [ecx]  | * | mov [ecx], edx ",msvc,1
+"mov edx, [eax+8]  | * | mov edx, [eax+8] ",msvc,1
+"mov [ecx], edx  | * | cmp byte ptr [edx+15h], 0 ",msvc,1
+"mov edx, [eax+8]  | * | jnz short loc_401943 ",msvc,1
+jnz short loc_401943  | * | loc_401943:  ,msvc,1
+"loc_401943:   | * | mov [eax+4], edx ",msvc,1
+"mov edx, dword_47215C  | * | jnz short loc_40195E ",msvc,1
+"jnz short loc_40195E  | * | mov [eax+8], ecx ",msvc,1
+"mov [eax+8], ecx  | * | retn ",msvc,3
+"mov [ecx+4], eax  | * | loc_40195E:  ",msvc,1
+"loc_40195E:   | * | cmp ecx, [edx+8] ",msvc,1
+"mov edx, [ecx+4]  | * | jnz short loc_401970 ",msvc,1
+"cmp ecx, [edx+8]  | * | mov [edx+8], eax ",msvc,1
+"jnz short loc_401970  | * | mov [eax+8], ecx ",msvc,1
+"mov [ecx+4], eax  | * | loc_401970:  ",msvc,1
+"retn  | * | mov [edx], eax ",msvc,1
+"loc_401970:   | * | mov [eax+8], ecx ",msvc,1
+"mov [ecx+4], eax  | * | sub_401930 endp ",msvc,1
+sub_401930 endp  | * | loc_401980:  ,msvc,1
+"align 10h  | * | mov eax, dword_47215C ",msvc,2
+loc_401980:   | * | push eax ,msvc,1
+"mov eax, dword_47215C  | * | call ds:__imp_??3@YAXPAX@Z  ",msvc,2
+push eax  | * | pop ecx ,msvc,1
+call ds:__imp_??3@YAXPAX@Z   | * | retn ,msvc,1
+pop ecx  | * | align 10h ,msvc,1
+retn  | * | sub_401990 proc near  ,msvc,1
+"align 10h  | * | mov ecx, [eax+8] ",msvc,1
+"sub_401990 proc near   | * | cmp byte ptr [ecx+15h], 0 ",msvc,1
+"mov ecx, [eax+8]  | * | jnz short locret_4019AB ",msvc,1
+"cmp byte ptr [ecx+15h], 0  | * | lea esp, [esp+0] ",msvc,2
+jnz short locret_4019AB  | * | loc_4019A0:  ,msvc,1
+"lea esp, [esp+0]  | * | mov eax, ecx ",msvc,1
+"loc_4019A0:   | * | mov ecx, [eax+8] ",msvc,1
+"mov eax, ecx  | * | cmp byte ptr [ecx+15h], 0 ",msvc,1
+"mov ecx, [eax+8]  | * | jz short loc_4019A0 ",msvc,1
+"cmp byte ptr [ecx+15h], 0  | * | locret_4019AB:  ",msvc,1
+jz short loc_4019A0  | * | retn ,msvc,1
+locret_4019AB:   | * | sub_401990 endp ,msvc,1
+sub_401990 endp  | * | sub_4019B0 proc near  ,msvc,1
+"align 10h  | * | mov ecx, Src ",msvc,1
+"sub_4019B0 proc near   | * | mov edx, Dst ",msvc,1
+"mov ecx, Src  | * | sub ecx, edx ",msvc,1
+"mov edx, Dst  | * | sar ecx, 2 ",msvc,1
+"sub ecx, edx  | * | cmp ecx, 3FFFFFFEh ",msvc,1
+"sar ecx, 2  | * | jbe short loc_4019D4 ",msvc,1
+"cmp ecx, 3FFFFFFEh  | * | push offset aVectorTTooLong  ",msvc,1
+jbe short loc_4019D4  | * | call ds:?_Xlength_error@std@@YAXPBD@Z  ,msvc,1
+push offset aVectorTTooLong   | * | loc_4019D4:  ,msvc,1
+"call ds:?_Xlength_error@std@@YAXPBD@Z   | * | mov eax, dword_46FEEC ",msvc,2
+"loc_4019D4:   | * | sub eax, edx ",msvc,1
+"mov eax, dword_46FEEC  | * | inc ecx ",msvc,1
+"sub eax, edx  | * | sar eax, 2 ",msvc,1
+"inc ecx  | * | cmp ecx, eax ",msvc,1
+"sar eax, 2  | * | jbe short locret_401A09 ",msvc,1
+"cmp ecx, eax  | * | push esi ",msvc,1
+"jbe short locret_401A09  | * | mov edx, eax ",msvc,1
+"push esi  | * | shr edx, 1 ",msvc,1
+"mov edx, eax  | * | mov esi, 3FFFFFFFh ",msvc,1
+"shr edx, 1  | * | sub esi, edx ",msvc,1
+"mov esi, 3FFFFFFFh  | * | cmp esi, eax ",msvc,1
+"sub esi, edx  | * | pop esi ",msvc,1
+"cmp esi, eax  | * | jnb short loc_4019F8 ",msvc,1
+"pop esi  | * | xor eax, eax ",msvc,1
+jnb short loc_4019F8  | * | jmp short loc_4019FA ,msvc,1
+"xor eax, eax  | * | loc_4019F8:  ",msvc,1
+"jmp short loc_4019FA  | * | add eax, edx ",msvc,1
+loc_4019F8:   | * | loc_4019FA:  ,msvc,1
+"add eax, edx  | * | cmp eax, ecx ",msvc,1
+loc_4019FA:   | * | jnb short loc_401A00 ,msvc,1
+"cmp eax, ecx  | * | mov eax, ecx ",msvc,1
+jnb short loc_401A00  | * | loc_401A00:  ,msvc,1
+"mov eax, ecx  | * | push ebx ",msvc,1
+"loc_401A00:   | * | mov ebx, eax ",msvc,1
+push ebx  | * | call sub_401B70 ,msvc,1
+"mov ebx, eax  | * | pop ebx ",msvc,1
+call sub_401B70  | * | locret_401A09:  ,msvc,1
+pop ebx  | * | retn ,msvc,1
+locret_401A09:   | * | sub_4019B0 endp ,msvc,1
+sub_4019B0 endp  | * | sub_401A10 proc near  ,msvc,1
+"align 10h  | * | mov ecx, [eax] ",msvc,1
+"sub_401A10 proc near   | * | cmp byte ptr [ecx+15h], 0 ",msvc,1
+"mov ecx, [eax]  | * | jnz short locret_401A5A ",msvc,1
+"jnz short locret_401A5A  | * | cmp byte ptr [edx+15h], 0 ",msvc,1
+"mov edx, [ecx+8]  | * | jnz short loc_401A3D ",msvc,1
+"cmp byte ptr [edx+15h], 0  | * | mov ecx, [edx] ",msvc,1
+"jnz short loc_401A3D  | * | cmp byte ptr [ecx+15h], 0 ",msvc,1
+"mov ecx, [edx]  | * | jnz short loc_401A3A ",msvc,1
+jnz short loc_401A3A  | * | loc_401A30:  ,msvc,1
+"lea esp, [esp+0]  | * | mov edx, ecx ",msvc,1
+"loc_401A30:   | * | mov ecx, [edx] ",msvc,1
+"mov edx, ecx  | * | cmp byte ptr [ecx+15h], 0 ",msvc,1
+"mov ecx, [edx]  | * | jz short loc_401A30 ",msvc,1
+"cmp byte ptr [ecx+15h], 0  | * | loc_401A3A:  ",msvc,1
+"jz short loc_401A30  | * | mov [eax], edx ",msvc,1
+loc_401A3A:   | * | retn ,msvc,1
+"mov [eax], edx  | * | loc_401A3D:  ",msvc,1
+"retn  | * | mov ecx, [ecx+4] ",msvc,1
+"loc_401A3D:   | * | cmp byte ptr [ecx+15h], 0 ",msvc,1
+"mov ecx, [ecx+4]  | * | jnz short loc_401A58 ",msvc,1
+"cmp byte ptr [ecx+15h], 0  | * | loc_401A46:  ",msvc,1
+"jnz short loc_401A58  | * | mov edx, [eax] ",msvc,1
+"loc_401A46:   | * | cmp edx, [ecx+8] ",msvc,1
+"mov edx, [eax]  | * | jnz short loc_401A58 ",msvc,1
+"cmp edx, [ecx+8]  | * | mov [eax], ecx ",msvc,1
+"jnz short loc_401A58  | * | mov ecx, [ecx+4] ",msvc,1
+"mov [eax], ecx  | * | cmp byte ptr [ecx+15h], 0 ",msvc,1
+"mov ecx, [ecx+4]  | * | jz short loc_401A46 ",msvc,1
+"cmp byte ptr [ecx+15h], 0  | * | loc_401A58:  ",msvc,1
+"jz short loc_401A46  | * | mov [eax], ecx ",msvc,1
+loc_401A58:   | * | locret_401A5A:  ,msvc,1
+locret_401A5A:   | * | sub_401A10 endp ,msvc,1
+sub_401A10 endp  | * | sub_401A60 proc near  ,msvc,1
+var_C = dword ptr -0Ch  | * | arg_0 = dword ptr 8 ,data,2
+push ebp  | * | push 0FFFFFFFFh ,msvc,3
+"mov ebp, esp  | * | push offset SEH_401A60 ",msvc,1
+"push 0FFFFFFFFh  | * | mov eax, large fs:0 ",msvc,3
+push offset SEH_401A60  | * | push eax ,msvc,1
+"mov eax, large fs:0  | * | push esi ",msvc,1
+"push eax  | * | mov eax, ___security_cookie ",msvc,1
+"push esi  | * | xor eax, ebp ",msvc,2
+"mov eax, ___security_cookie  | * | push eax ",msvc,3
+"xor eax, ebp  | * | lea eax, [ebp+var_C] ",msvc,3
+"push eax  | * | mov large fs:0, eax ",msvc,3
+"lea eax, [ebp+var_C]  | * | mov esi, [ebp+arg_0] ",msvc,1
+"mov large fs:0, eax  | * | mov [ebp+var_4], 0 ",msvc,1
+"mov esi, [ebp+arg_0]  | * | call ds:?uncaught_exception@std@@YA_NXZ  ",msvc,1
+"mov [ebp+var_4], 0  | * | test al, al ",msvc,1
+call ds:?uncaught_exception@std@@YA_NXZ   | * | jnz short loc_401A9F ,msvc,1
+"test al, al  | * | mov ecx, [esi] ",msvc,1
+jnz short loc_401A9F  | * | call ds:?_Osfx@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAEXXZ  ,msvc,1
+"mov ecx, [esi]  | * | loc_401A9F:  ",msvc,1
+"call ds:?_Osfx@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAEXXZ   | * | mov [ebp+var_4], 0FFFFFFFFh ",msvc,2
+"loc_401A9F:   | * | mov eax, [esi] ",msvc,1
+"mov [ebp+var_4], 0FFFFFFFFh  | * | mov ecx, [eax] ",msvc,1
+"mov eax, [esi]  | * | mov edx, [ecx+4] ",msvc,1
+"mov ecx, [eax]  | * | mov eax, [edx+eax+38h] ",msvc,2
+"mov edx, [ecx+4]  | * | test eax, eax ",msvc,2
+"mov eax, [edx+eax+38h]  | * | jz short loc_401ABE ",msvc,1
+"test eax, eax  | * | mov edx, [eax] ",msvc,2
+"jz short loc_401ABE  | * | mov ecx, eax ",msvc,1
+"mov edx, [eax]  | * | mov eax, [edx+8] ",msvc,2
+"mov ecx, eax  | * | call eax ",msvc,1
+"mov eax, [edx+8]  | * | loc_401ABE:  ",msvc,1
+"call eax  | * | mov ecx, [ebp+var_C] ",msvc,1
+"loc_401ABE:   | * | mov large fs:0, ecx ",msvc,1
+"mov ecx, [ebp+var_C]  | * | pop ecx ",msvc,3
+"mov large fs:0, ecx  | * | pop esi ",msvc,2
+"pop ecx  | * | mov esp, ebp ",msvc,2
+pop ebp  | * | sub_401A60 endp ,msvc,1
+retn 4  | * | sub_401AD0 proc near  ,msvc,1
+var_4 = byte ptr -4  | * | arg_4 = dword ptr 0Ch ,data,1
+"mov ebp, esp  | * | mov ecx, [ebp+arg_0] ",msvc,1
+"push ecx  | * | mov eax, dword_47215C ",msvc,1
+"mov ecx, [ebp+arg_0]  | * | mov edx, [ebp+arg_4] ",msvc,1
+"mov eax, dword_47215C  | * | cmp ecx, [eax] ",msvc,1
+"mov edx, [ebp+arg_4]  | * | jnz short loc_401AFD ",msvc,1
+"cmp ecx, [eax]  | * | cmp edx, eax ",msvc,1
+jnz short loc_401AFD  | * | jnz short loc_401AFD ,msvc,1
+"cmp edx, eax  | * | call sub_401C20 ",msvc,1
+"jnz short loc_401AFD  | * | mov eax, dword_47215C ",msvc,1
+"call sub_401C20  | * | mov ecx, [eax] ",msvc,1
+"mov eax, dword_47215C  | * | mov eax, esi ",msvc,1
+"mov ecx, [eax]  | * | mov [esi], ecx ",msvc,1
+"mov eax, esi  | * | mov esp, ebp ",msvc,2
+"mov [esi], ecx  | * | pop ebp ",msvc,2
+pop ebp  | * | loc_401AFD:  ,msvc,1
+"retn 8  | * | cmp ecx, edx ",msvc,1
+loc_401AFD:   | * | jz short loc_401B60 ,msvc,1
+"cmp ecx, edx  | * | loc_401B01:  ",msvc,1
+"jz short loc_401B60  | * | cmp byte ptr [ecx+15h], 0 ",msvc,1
+"loc_401B01:   | * | mov edx, ecx ",msvc,1
+"cmp byte ptr [ecx+15h], 0  | * | jnz short loc_401B4E ",msvc,1
+"mov edx, ecx  | * | mov eax, [ecx+8] ",msvc,1
+"jnz short loc_401B4E  | * | cmp byte ptr [eax+15h], 0 ",msvc,1
+"mov eax, [ecx+8]  | * | jnz short loc_401B2F ",msvc,1
+"cmp byte ptr [eax+15h], 0  | * | mov ecx, eax ",msvc,1
+"jnz short loc_401B2F  | * | mov eax, [ecx] ",msvc,1
+"mov eax, [ecx]  | * | jnz short loc_401B2A ",msvc,1
+"cmp byte ptr [eax+15h], 0  | * | lea esp, [esp+0] ",msvc,1
+jnz short loc_401B2A  | * | loc_401B20:  ,msvc,1
+"lea esp, [esp+0]  | * | mov ecx, eax ",msvc,1
+"loc_401B20:   | * | mov eax, [ecx] ",msvc,1
+"mov eax, [ecx]  | * | jz short loc_401B20 ",msvc,1
+"cmp byte ptr [eax+15h], 0  | * | loc_401B2A:  ",msvc,1
+"jz short loc_401B20  | * | mov [ebp+arg_0], ecx ",msvc,1
+loc_401B2A:   | * | jmp short loc_401B4E ,msvc,1
+"mov [ebp+arg_0], ecx  | * | loc_401B2F:  ",msvc,1
+"jmp short loc_401B4E  | * | mov eax, [ecx+4] ",msvc,1
+"loc_401B2F:   | * | cmp byte ptr [eax+15h], 0 ",msvc,1
+"mov eax, [ecx+4]  | * | jnz short loc_401B4B ",msvc,1
+"cmp byte ptr [eax+15h], 0  | * | loc_401B38:  ",msvc,1
+"jnz short loc_401B4B  | * | cmp ecx, [eax+8] ",msvc,1
+loc_401B38:   | * | jnz short loc_401B4B ,msvc,1
+"cmp ecx, [eax+8]  | * | mov ecx, eax ",msvc,1
+"jnz short loc_401B4B  | * | mov [ebp+arg_0], ecx ",msvc,1
+"mov ecx, eax  | * | mov eax, [eax+4] ",msvc,1
+"mov [ebp+arg_0], ecx  | * | cmp byte ptr [eax+15h], 0 ",msvc,1
+"mov eax, [eax+4]  | * | jz short loc_401B38 ",msvc,1
+"cmp byte ptr [eax+15h], 0  | * | loc_401B4B:  ",msvc,1
+"jz short loc_401B38  | * | mov [ebp+arg_0], eax ",msvc,1
+loc_401B4B:   | * | loc_401B4E:  ,msvc,1
+"mov [ebp+arg_0], eax  | * | push edx ",msvc,1
+"loc_401B4E:   | * | lea edx, [ebp+var_4] ",msvc,1
+push edx  | * | push edx ,msvc,1
+"lea edx, [ebp+var_4]  | * | call sub_401580 ",msvc,1
+"push edx  | * | mov ecx, [ebp+arg_0] ",msvc,1
+"call sub_401580  | * | cmp ecx, [ebp+arg_4] ",msvc,1
+"mov ecx, [ebp+arg_0]  | * | jnz short loc_401B01 ",msvc,1
+"cmp ecx, [ebp+arg_4]  | * | loc_401B60:  ",msvc,1
+"jnz short loc_401B01  | * | mov eax, esi ",msvc,1
+"loc_401B60:   | * | mov [esi], ecx ",msvc,1
+pop ebp  | * | sub_401AD0 endp ,msvc,1
+sub_401AD0 endp  | * | sub_401B70 proc near  ,msvc,1
+"align 10h  | * | cmp ebx, 3FFFFFFFh ",msvc,1
+sub_401B70 proc near   | * | jbe short loc_401B83 ,msvc,1
+"cmp ebx, 3FFFFFFFh  | * | push offset aVectorTTooLong  ",msvc,1
+jbe short loc_401B83  | * | call ds:?_Xlength_error@std@@YAXPBD@Z  ,msvc,1
+push offset aVectorTTooLong   | * | loc_401B83:  ,msvc,1
+"loc_401B83:   | * | sub eax, Dst ",msvc,1
+"mov eax, dword_46FEEC  | * | sar eax, 2 ",msvc,1
+"sub eax, Dst  | * | cmp eax, ebx ",msvc,1
+"sar eax, 2  | * | jnb short locret_401BF7 ",msvc,1
+"cmp eax, ebx  | * | push esi ",msvc,1
+jnb short locret_401BF7  | * | push edi ,msvc,1
+"push esi  | * | mov ecx, ebx ",msvc,1
+push edi  | * | call sub_401C90 ,msvc,1
+"mov ecx, ebx  | * | mov ecx, Src ",msvc,1
+"call sub_401C90  | * | mov edi, eax ",msvc,1
+"mov ecx, Src  | * | mov eax, Dst ",msvc,1
+"mov edi, eax  | * | sub ecx, eax ",msvc,1
+"mov eax, Dst  | * | sar ecx, 2 ",msvc,1
+"sub ecx, eax  | * | add ecx, ecx ",msvc,1
+"sar ecx, 2  | * | add ecx, ecx ",msvc,1
+"add ecx, ecx  | * | push ecx  ",msvc,1
+"add ecx, ecx  | * | push eax  ",msvc,1
+push ecx   | * | push edi  ,msvc,1
+push eax   | * | call ds:memmove ,msvc,1
+"push edi   | * | mov eax, Dst ",msvc,1
+"call ds:memmove  | * | mov esi, Src ",msvc,1
+"mov eax, Dst  | * | sub esi, eax ",msvc,1
+"mov esi, Src  | * | add esp, 0Ch ",msvc,1
+"sub esi, eax  | * | sar esi, 2 ",msvc,1
+"add esp, 0Ch  | * | test eax, eax ",msvc,1
+"sar esi, 2  | * | jz short loc_401BDE ",msvc,1
+"test eax, eax  | * | push eax ",msvc,2
+jz short loc_401BDE  | * | call ds:__imp_??3@YAXPAX@Z  ,msvc,1
+call ds:__imp_??3@YAXPAX@Z   | * | loc_401BDE:  ,msvc,1
+"add esp, 4  | * | lea eax, [edi+esi*4] ",msvc,1
+"loc_401BDE:   | * | lea edx, [edi+ebx*4] ",msvc,1
+"lea eax, [edi+esi*4]  | * | mov Dst, edi ",msvc,1
+"lea edx, [edi+ebx*4]  | * | pop edi ",msvc,1
+"mov Dst, edi  | * | mov dword_46FEEC, edx ",msvc,1
+"pop edi  | * | mov Src, eax ",msvc,1
+"mov dword_46FEEC, edx  | * | pop esi ",msvc,1
+"mov Src, eax  | * | locret_401BF7:  ",msvc,1
+pop esi  | * | retn ,msvc,1
+locret_401BF7:   | * | sub_401B70 endp ,msvc,1
+sub_401B70 endp  | * | loc_401C00:  ,msvc,1
+"align 10h  | * | mov eax, [eax] ",msvc,1
+"loc_401C00:   | * | mov ecx, [eax] ",msvc,1
+"mov eax, [eax]  | * | mov edx, [ecx+4] ",msvc,1
+"mov eax, [edx+eax+38h]  | * | jz short locret_401C18 ",msvc,1
+"jz short locret_401C18  | * | mov ecx, eax ",msvc,1
+"mov ecx, eax  | * | jmp eax ",msvc,1
+"mov eax, [edx+8]  | * | locret_401C18:  ",msvc,1
+jmp eax  | * | retn ,msvc,1
+locret_401C18:   | * | align 10h ,msvc,1
+retn  | * | sub_401C20 proc near  ,msvc,1
+sub_401C20 proc near   | * | push esi ,msvc,1
+"mov eax, dword_47215C  | * | push edi ",msvc,1
+"push esi  | * | mov edi, [eax+4] ",msvc,1
+"push edi  | * | cmp byte ptr [edi+15h], 0 ",msvc,2
+"mov edi, [eax+4]  | * | mov esi, edi ",msvc,1
+"cmp byte ptr [edi+15h], 0  | * | jnz short loc_401C64 ",msvc,1
+"mov esi, edi  | * | push ebx ",msvc,1
+"jnz short loc_401C64  | * | mov ebx, ds:__imp_??3@YAXPAX@Z  ",msvc,1
+"push ebx  | * | lea esp, [esp+0] ",msvc,1
+"mov ebx, ds:__imp_??3@YAXPAX@Z   | * | loc_401C40:  ",msvc,1
+"lea esp, [esp+0]  | * | mov eax, [esi+8] ",msvc,1
+loc_401C40:   | * | push eax ,msvc,1
+"mov eax, [esi+8]  | * | mov ecx, offset unk_472158 ",msvc,1
+push eax  | * | call sub_401CF0 ,msvc,2
+"mov ecx, offset unk_472158  | * | mov esi, [esi] ",msvc,1
+call sub_401CF0  | * | push edi ,msvc,2
+"mov esi, [esi]  | * | call ebx  ",msvc,1
+"push edi  | * | add esp, 4 ",msvc,2
+"call ebx   | * | cmp byte ptr [esi+15h], 0 ",msvc,1
+"add esp, 4  | * | mov edi, esi ",msvc,2
+"cmp byte ptr [esi+15h], 0  | * | jz short loc_401C40 ",msvc,1
+"mov edi, esi  | * | mov eax, dword_47215C ",msvc,1
+jz short loc_401C40  | * | pop ebx ,msvc,1
+"mov eax, dword_47215C  | * | loc_401C64:  ",msvc,1
+"pop ebx  | * | mov [eax+4], eax ",msvc,1
+"loc_401C64:   | * | mov eax, dword_47215C ",msvc,1
+"mov [eax+4], eax  | * | mov [eax], eax ",msvc,1
+"mov eax, dword_47215C  | * | mov eax, dword_47215C ",msvc,2
+"mov [eax], eax  | * | pop edi ",msvc,1
+"mov eax, dword_47215C  | * | mov [eax+8], eax ",msvc,1
+"pop edi  | * | mov dword_472160, 0 ",msvc,1
+"mov [eax+8], eax  | * | pop esi ",msvc,1
+"mov dword_472160, 0  | * | retn ",msvc,1
+pop esi  | * | sub_401C20 endp ,msvc,1
+sub_401C20 endp  | * | sub_401C90 proc near  ,msvc,1
+"push ebp  | * | sub esp, 10h ",msvc,3
+"mov ebp, esp  | * | xor eax, eax ",msvc,1
+"sub esp, 10h  | * | test ecx, ecx ",msvc,1
+"xor eax, eax  | * | jz short loc_401CE2 ",msvc,1
+"test ecx, ecx  | * | cmp ecx, 3FFFFFFFh ",msvc,1
+jz short loc_401CE2  | * | ja short loc_401CB9 ,msvc,1
+"cmp ecx, 3FFFFFFFh  | * | lea eax, ds:0[ecx*4] ",msvc,1
+ja short loc_401CB9  | * | push eax ,msvc,1
+"lea eax, ds:0[ecx*4]  | * | call ds:??2@YAPAXI@Z  ",msvc,1
+"call ds:??2@YAPAXI@Z   | * | test eax, eax ",msvc,2
+"add esp, 4  | * | jnz short loc_401CE2 ",msvc,1
+"test eax, eax  | * | loc_401CB9:  ",msvc,1
+"jnz short loc_401CE2  | * | lea ecx, [ebp+var_4] ",msvc,1
+loc_401CB9:   | * | push ecx ,msvc,1
+"lea ecx, [ebp+var_4]  | * | lea ecx, [ebp+var_10] ",msvc,1
+"push ecx  | * | mov [ebp+var_4], 0 ",msvc,1
+"lea ecx, [ebp+var_10]  | * | call ds:??0exception@std@@QAE@ABQBD@Z  ",msvc,3
+"mov [ebp+var_4], 0  | * | push offset __TI2?AVbad_alloc@std@@  ",msvc,2
+"call ds:??0exception@std@@QAE@ABQBD@Z   | * | lea edx, [ebp+var_10] ",msvc,1
+push offset __TI2?AVbad_alloc@std@@   | * | push edx ,msvc,1
+"lea edx, [ebp+var_10]  | * | mov [ebp+var_10], offset ??_7bad_alloc@std@@6B@  ",msvc,1
+push edx  | * | call _CxxThrowException ,msvc,1
+"mov [ebp+var_10], offset ??_7bad_alloc@std@@6B@   | * | loc_401CE2:  ",msvc,1
+"call _CxxThrowException  | * | mov esp, ebp ",msvc,1
+loc_401CE2:   | * | pop ebp ,msvc,1
+pop ebp  | * | sub_401C90 endp ,msvc,1
+sub_401C90 endp  | * | sub_401CF0 proc near  ,msvc,1
+sub_401CF0 proc near   | * | push ebp ,msvc,1
+push ebp  | * | push ebx ,msvc,1
+"mov ebp, esp  | * | push esi ",msvc,2
+"push esi  | * | mov edi, [ebp+arg_0] ",msvc,1
+"mov edi, [ebp+arg_0]  | * | mov ebx, ecx ",msvc,1
+"cmp byte ptr [edi+15h], 0  | * | mov esi, edi ",msvc,1
+"mov ebx, ecx  | * | jnz short loc_401D22 ",msvc,1
+"mov esi, edi  | * | loc_401D03:  ",msvc,1
+"jnz short loc_401D22  | * | mov eax, [esi+8] ",msvc,1
+loc_401D03:   | * | push eax ,msvc,1
+"mov eax, [esi+8]  | * | mov ecx, ebx ",msvc,1
+"mov ecx, ebx  | * | mov esi, [esi] ",msvc,1
+"mov esi, [esi]  | * | call ds:__imp_??3@YAXPAX@Z  ",msvc,1
+"call ds:__imp_??3@YAXPAX@Z   | * | cmp byte ptr [esi+15h], 0 ",msvc,1
+"cmp byte ptr [esi+15h], 0  | * | jz short loc_401D03 ",msvc,1
+"mov edi, esi  | * | loc_401D22:  ",msvc,1
+jz short loc_401D03  | * | pop edi ,msvc,1
+loc_401D22:   | * | pop esi ,msvc,1
+pop ebx  | * | retn 4 ,msvc,1
+pop ebp  | * | sub_401CF0 endp ,msvc,1
+sub_401CF0 endp  | * | sub_401D30 proc near  ,msvc,1
+var_20 = dword ptr -20h  | * | var_18 = dword ptr -18h ,data,1
+var_18 = dword ptr -18h  | * | var_10 = dword ptr -10h ,data,1
+var_10 = dword ptr -10h  | * | var_4 = dword ptr -4 ,data,1
+"mov ebp, esp  | * | push offset SEH_401D30 ",msvc,1
+push offset SEH_401D30  | * | push eax ,msvc,1
+"mov eax, large fs:0  | * | sub esp, 14h ",msvc,1
+push eax  | * | push ebx ,msvc,1
+"sub esp, 14h  | * | push esi ",msvc,1
+"push esi  | * | mov eax, ___security_cookie ",msvc,1
+"push edi  | * | xor eax, ebp ",msvc,1
+"lea eax, [ebp+var_C]  | * | mov [ebp+var_10], esp ",msvc,1
+"mov large fs:0, eax  | * | mov esi, [ebp+arg_0] ",msvc,1
+"mov [ebp+var_10], esp  | * | mov eax, [esi] ",msvc,1
+"mov esi, [ebp+arg_0]  | * | mov edx, [eax+4] ",msvc,1
+"mov eax, [esi]  | * | mov ecx, [edx+esi+24h] ",msvc,1
+"mov edx, [eax+4]  | * | mov eax, [edx+esi+20h] ",msvc,1
+"mov ecx, [edx+esi+24h]  | * | xor ebx, ebx ",msvc,1
+"mov eax, [edx+esi+20h]  | * | mov [ebp+var_14], ebx ",msvc,1
+"xor ebx, ebx  | * | cmp ecx, ebx ",msvc,1
+"mov [ebp+var_14], ebx  | * | jl short loc_401D90 ",msvc,1
+"cmp ecx, ebx  | * | jg short loc_401D85 ",msvc,2
+"jl short loc_401D90  | * | cmp eax, ebx ",msvc,1
+jg short loc_401D85  | * | jbe short loc_401D90 ,msvc,2
+"cmp eax, ebx  | * | cmp ecx, ebx ",msvc,1
+jbe short loc_401D90  | * | jl short loc_401D90 ,msvc,1
+"jl short loc_401D90  | * | cmp eax, 1 ",msvc,1
+"cmp eax, 1  | * | loc_401D85:  ",msvc,1
+"jbe short loc_401D90  | * | sub eax, 1 ",msvc,1
+"loc_401D85:   | * | sbb ecx, ebx ",msvc,1
+"sub eax, 1  | * | mov edi, eax ",msvc,1
+"sbb ecx, ebx  | * | mov ebx, ecx ",msvc,1
+"mov edi, eax  | * | jmp short loc_401D92 ",msvc,1
+"mov ebx, ecx  | * | loc_401D90:  ",msvc,1
+"jmp short loc_401D92  | * | xor edi, edi ",msvc,1
+loc_401D90:   | * | loc_401D92:  ,msvc,1
+"xor edi, edi  | * | mov ecx, [edx+esi+38h] ",msvc,1
+"loc_401D92:   | * | mov [ebp+var_20], esi ",msvc,1
+"mov ecx, [edx+esi+38h]  | * | test ecx, ecx ",msvc,1
+"mov [ebp+var_20], esi  | * | jz short loc_401DA4 ",msvc,1
+"test ecx, ecx  | * | mov edx, [ecx] ",msvc,2
+"jz short loc_401DA4  | * | mov eax, [edx+4] ",msvc,1
+"mov edx, [ecx]  | * | call eax ",msvc,2
+"mov eax, [edx+4]  | * | loc_401DA4:  ",msvc,1
+"call eax  | * | mov [ebp+var_4], 0 ",msvc,1
+"loc_401DA4:   | * | mov ecx, [esi] ",msvc,1
+"mov [ebp+var_4], 0  | * | mov eax, [ecx+4] ",msvc,1
+"mov ecx, [esi]  | * | cmp dword ptr [eax+esi+0Ch], 0 ",msvc,1
+"mov eax, [ecx+4]  | * | jnz short loc_401DC7 ",msvc,1
+"cmp dword ptr [eax+esi+0Ch], 0  | * | mov eax, [eax+esi+3Ch] ",msvc,1
+"jnz short loc_401DC7  | * | test eax, eax ",msvc,1
+"mov eax, [eax+esi+3Ch]  | * | jz short loc_401DC7 ",msvc,1
+"test eax, eax  | * | mov ecx, eax ",msvc,1
+jz short loc_401DC7  | * | call ds:?flush@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAEAAV12@XZ  ,msvc,1
+"mov ecx, eax  | * | loc_401DC7:  ",msvc,1
+"call ds:?flush@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAEAAV12@XZ   | * | mov eax, [esi] ",msvc,1
+"loc_401DC7:   | * | mov eax, [eax+4] ",msvc,1
+"mov eax, [esi]  | * | cmp dword ptr [eax+esi+0Ch], 0 ",msvc,1
+"mov eax, [eax+4]  | * | setz cl ",msvc,1
+"cmp dword ptr [eax+esi+0Ch], 0  | * | mov [ebp+var_1C], cl ",msvc,1
+"setz cl  | * | mov [ebp+var_4], 1 ",msvc,1
+"mov [ebp+var_1C], cl  | * | test cl, cl ",msvc,1
+"mov [ebp+var_4], 1  | * | jnz short loc_401DEE ",msvc,1
+"test cl, cl  | * | mov [ebp+var_14], 4 ",msvc,1
+jnz short loc_401DEE  | * | jmp loc_401E85 ,msvc,1
+"mov [ebp+var_14], 4  | * | loc_401DEE:  ",msvc,1
+"jmp loc_401E85  | * | mov byte ptr [ebp+var_4], 2 ",msvc,1
+"loc_401DEE:   | * | mov eax, [eax+esi+14h] ",msvc,1
+"mov byte ptr [ebp+var_4], 2  | * | and eax, 1C0h ",msvc,1
+"mov eax, [eax+esi+14h]  | * | cmp eax, 40h  ",msvc,1
+"and eax, 1C0h  | * | jz short loc_401E37 ",msvc,1
+"cmp eax, 40h   | * | loc_401E00:  ",msvc,1
+"jz short loc_401E37  | * | test ebx, ebx ",msvc,1
+loc_401E00:   | * | jl short loc_401E31 ,msvc,1
+"test ebx, ebx  | * | jg short loc_401E0A ",msvc,1
+"jl short loc_401E31  | * | test edi, edi ",msvc,1
+jg short loc_401E0A  | * | jz short loc_401E31 ,msvc,1
+"test edi, edi  | * | loc_401E0A:  ",msvc,1
+"jz short loc_401E31  | * | mov edx, [esi] ",msvc,1
+"loc_401E0A:   | * | mov eax, [edx+4] ",msvc,1
+"mov edx, [esi]  | * | mov cl, [eax+esi+40h] ",msvc,2
+"mov eax, [edx+4]  | * | mov byte ptr [ebp+var_18], cl ",msvc,2
+"mov cl, [eax+esi+40h]  | * | mov edx, [ebp+var_18] ",msvc,2
+"mov byte ptr [ebp+var_18], cl  | * | mov ecx, [eax+esi+38h] ",msvc,2
+"mov edx, [ebp+var_18]  | * | push edx ",msvc,2
+"mov ecx, [eax+esi+38h]  | * | call ds:?sputc@?$basic_streambuf@DU?$char_traits@D@std@@@std@@QAEHD@Z  ",msvc,2
+"push edx  | * | cmp eax, 0FFFFFFFFh ",msvc,2
+call ds:?sputc@?$basic_streambuf@DU?$char_traits@D@std@@@std@@QAEHD@Z   | * | jnz loc_401EE3 ,msvc,1
+"cmp eax, 0FFFFFFFFh  | * | or [ebp+var_14], 4 ",msvc,2
+jnz loc_401EE3  | * | loc_401E31:  ,msvc,1
+"or [ebp+var_14], 4  | * | cmp [ebp+var_14], 0 ",msvc,1
+loc_401E31:   | * | jnz short loc_401E6F ,msvc,1
+"cmp [ebp+var_14], 0  | * | loc_401E37:  ",msvc,1
+"jnz short loc_401E6F  | * | mov eax, [esi] ",msvc,1
+"loc_401E37:   | * | mov ecx, [eax+4] ",msvc,1
+"mov eax, [esi]  | * | mov ecx, [ecx+esi+38h] ",msvc,1
+"mov ecx, [eax+4]  | * | xor eax, eax ",msvc,1
+"mov ecx, [ecx+esi+38h]  | * | push eax ",msvc,1
+"xor eax, eax  | * | mov eax, 1 ",msvc,1
+"mov eax, 1  | * | mov eax, offset asc_403194  ",msvc,1
+"mov eax, offset asc_403194   | * | call ds:?sputn@?$basic_streambuf@DU?$char_traits@D@std@@@std@@QAE_JPBD_J@Z  ",msvc,1
+"push eax  | * | mov ecx, 1 ",msvc,1
+"call ds:?sputn@?$basic_streambuf@DU?$char_traits@D@std@@@std@@QAE_JPBD_J@Z   | * | cmp eax, ecx ",msvc,1
+"mov ecx, 1  | * | jnz short loc_401E68 ",msvc,1
+"cmp eax, ecx  | * | xor eax, eax ",msvc,1
+"jnz short loc_401E68  | * | cmp edx, eax ",msvc,1
+"xor eax, eax  | * | jz loc_401EF0 ",msvc,1
+"cmp edx, eax  | * | loc_401E68:  ",msvc,1
+"jz loc_401EF0  | * | mov [ebp+var_14], 4 ",msvc,1
+loc_401E68:   | * | loc_401E6F:  ,msvc,1
+"mov [ebp+var_14], 4  | * | mov edx, [esi] ",msvc,1
+"loc_401E6F:   | * | mov eax, [edx+4] ",msvc,1
+"mov edx, [esi]  | * | xor ecx, ecx ",msvc,1
+"mov eax, [edx+4]  | * | mov [eax+esi+20h], ecx ",msvc,1
+"xor ecx, ecx  | * | mov [eax+esi+24h], ecx ",msvc,1
+"mov [eax+esi+20h], ecx  | * | mov [ebp+var_4], 1 ",msvc,1
+"mov [eax+esi+24h], ecx  | * | loc_401E85:  ",msvc,1
+"mov [ebp+var_4], 1  | * | mov ecx, [esi] ",msvc,1
+"loc_401E85:   | * | mov eax, [ebp+var_14] ",msvc,1
+"mov ecx, [esi]  | * | mov ecx, [ecx+4] ",msvc,1
+"mov eax, [ebp+var_14]  | * | push 0 ",msvc,1
+"mov ecx, [ecx+4]  | * | push eax ",msvc,1
+"push 0  | * | add ecx, esi ",msvc,1
+push eax  | * | call ds:?setstate@?$basic_ios@DU?$char_traits@D@std@@@std@@QAEXH_N@Z  ,msvc,1
+"add ecx, esi  | * | mov [ebp+var_4], 4 ",msvc,1
+call ds:?setstate@?$basic_ios@DU?$char_traits@D@std@@@std@@QAEXH_N@Z   | * | call ds:?uncaught_exception@std@@YA_NXZ  ,msvc,1
+"mov [ebp+var_4], 4  | * | mov edi, [ebp+var_20] ",msvc,1
+"call ds:?uncaught_exception@std@@YA_NXZ   | * | test al, al ",msvc,1
+"mov edi, [ebp+var_20]  | * | jnz short loc_401EB4 ",msvc,1
+"test al, al  | * | mov ecx, edi ",msvc,1
+jnz short loc_401EB4  | * | call ds:?_Osfx@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAEXXZ  ,msvc,1
+"mov ecx, edi  | * | loc_401EB4:  ",msvc,1
+"loc_401EB4:   | * | mov edx, [edi] ",msvc,1
+"mov [ebp+var_4], 0FFFFFFFFh  | * | mov eax, [edx+4] ",msvc,1
+"mov edx, [edi]  | * | mov ecx, [eax+edi+38h] ",msvc,1
+"mov eax, [edx+4]  | * | test ecx, ecx ",msvc,1
+"mov ecx, [eax+edi+38h]  | * | jz short loc_401ECF ",msvc,1
+"jz short loc_401ECF  | * | mov eax, [edx+8] ",msvc,1
+"mov eax, [edx+8]  | * | loc_401ECF:  ",msvc,1
+"call eax  | * | mov eax, esi ",msvc,1
+"loc_401ECF:   | * | mov ecx, [ebp+var_C] ",msvc,1
+"mov eax, esi  | * | mov large fs:0, ecx ",msvc,1
+"mov large fs:0, ecx  | * | pop edi ",msvc,1
+pop ecx  | * | pop esi ,msvc,1
+pop ebp  | * | loc_401EE3:  ,msvc,1
+"retn  | * | add edi, 0FFFFFFFFh ",msvc,1
+"loc_401EE3:   | * | adc ebx, 0FFFFFFFFh ",msvc,1
+"add edi, 0FFFFFFFFh  | * | jmp loc_401E00 ",msvc,1
+"adc ebx, 0FFFFFFFFh  | * | align 10h ",msvc,1
+jmp loc_401E00  | * | loc_401EF0:  ,msvc,1
+"align 10h  | * | test ebx, ebx ",msvc,1
+loc_401EF0:   | * | jl loc_401E6F ,msvc,1
+"test ebx, ebx  | * | jg short loc_401F02 ",msvc,1
+"jl loc_401E6F  | * | test edi, edi ",msvc,1
+jg short loc_401F02  | * | jz loc_401E6F ,msvc,1
+"test edi, edi  | * | loc_401F02:  ",msvc,1
+"jz loc_401E6F  | * | mov edx, [esi] ",msvc,1
+"loc_401F02:   | * | mov eax, [edx+4] ",msvc,1
+call ds:?sputc@?$basic_streambuf@DU?$char_traits@D@std@@@std@@QAEHD@Z   | * | jnz short loc_401F2A ,msvc,1
+jnz short loc_401F2A  | * | jmp loc_401E6F ,msvc,1
+"or [ebp+var_14], 4  | * | loc_401F2A:  ",msvc,1
+"jmp loc_401E6F  | * | add edi, 0FFFFFFFFh ",msvc,1
+"loc_401F2A:   | * | adc ebx, 0FFFFFFFFh ",msvc,1
+"add edi, 0FFFFFFFFh  | * | jmp short loc_401EF0 ",msvc,1
+"adc ebx, 0FFFFFFFFh  | * | loc_401F32:  ",msvc,1
+"jmp short loc_401EF0  | * | mov eax, [ebp+arg_0] ",msvc,1
+"loc_401F32:   | * | mov ecx, [eax] ",msvc,1
+"mov eax, [ebp+arg_0]  | * | mov ecx, [ecx+4] ",msvc,1
+"mov ecx, [eax]  | * | push 1 ",msvc,1
+"mov ecx, [ecx+4]  | * | push 4 ",msvc,1
+"push 1  | * | add ecx, eax ",msvc,1
+push 4  | * | call ds:?setstate@?$basic_ios@DU?$char_traits@D@std@@@std@@QAEXH_N@Z  ,msvc,1
+"add ecx, eax  | * | mov [ebp+var_4], 1 ",msvc,1
+"call ds:?setstate@?$basic_ios@DU?$char_traits@D@std@@@std@@QAEXH_N@Z   | * | mov eax, offset loc_401F53 ",msvc,1
+"mov [ebp+var_4], 1  | * | retn ",msvc,1
+"mov eax, offset loc_401F53  | * | loc_401F53:  ",msvc,1
+"retn  | * | mov esi, [ebp+arg_0] ",msvc,1
+loc_401F53:   | * | jmp loc_401E85 ,msvc,1
+"mov esi, [ebp+arg_0]  | * | sub_401D30 endp ",msvc,1
+jmp loc_401E85  | * | align 10h ,msvc,1
+sub_401D30 endp  | * | sub_401F60 proc near  ,msvc,1
+sub_401F60 proc near   | * | push ebp ,msvc,1
+"push ebp  | * | mov eax, [ebp+arg_0] ",msvc,1
+"mov eax, [ebp+arg_0]  | * | push eax ",msvc,1
+"push esi  | * | mov esi, ecx ",msvc,1
+push eax  | * | call ds:__imp_??0exception@std@@QAE@ABV01@@Z  ,msvc,1
+"mov esi, ecx  | * | mov dword ptr [esi], offset ??_7bad_alloc@std@@6B@  ",msvc,1
+"call ds:__imp_??0exception@std@@QAE@ABV01@@Z   | * | mov eax, esi ",msvc,1
+"mov dword ptr [esi], offset ??_7bad_alloc@std@@6B@   | * | pop esi ",msvc,1
+pop ebp  | * | sub_401F60 endp ,msvc,1
+sub_401F60 endp  | * | sub_401F80 proc near  ,msvc,1
+sub_401F80 proc near   | * | push ebp ,msvc,1
+"mov ebp, esp  | * | mov ecx, dword_47215C ",msvc,1
+"push ecx  | * | mov eax, [ecx+4] ",msvc,1
+"mov ecx, dword_47215C  | * | cmp byte ptr [eax+15h], 0 ",msvc,1
+"mov eax, [ecx+4]  | * | mov byte ptr [ebp+var_4], 1 ",msvc,1
+"cmp byte ptr [eax+15h], 0  | * | jnz short loc_401FC1 ",msvc,1
+"mov byte ptr [ebp+var_4], 1  | * | push esi ",msvc,1
+"jnz short loc_401FC1  | * | mov esi, [ebx+0Ch] ",msvc,1
+push esi  | * | jmp short loc_401FA0 ,msvc,1
+"mov esi, [ebx+0Ch]  | * | align 10h ",msvc,1
+jmp short loc_401FA0  | * | loc_401FA0:  ,msvc,1
+"align 10h  | * | mov edx, [eax+0Ch] ",msvc,1
+"loc_401FA0:   | * | mov ecx, eax ",msvc,1
+"mov edx, [eax+0Ch]  | * | cmp edx, esi ",msvc,1
+"mov ecx, eax  | * | jg short loc_401FDD ",msvc,1
+"cmp edx, esi  | * | jl short loc_401FB3 ",msvc,1
+"jg short loc_401FDD  | * | mov edx, [ebx+10h] ",msvc,1
+"jl short loc_401FB3  | * | cmp edx, [eax+10h] ",msvc,1
+"mov edx, [ebx+10h]  | * | jl short loc_401FDD ",msvc,1
+"cmp edx, [eax+10h]  | * | loc_401FB3:  ",msvc,1
+"jl short loc_401FDD  | * | mov eax, [eax+8] ",msvc,1
+"loc_401FB3:   | * | mov byte ptr [ebp+var_4], 0 ",msvc,1
+"mov eax, [eax+8]  | * | loc_401FBA:  ",msvc,1
+"mov byte ptr [ebp+var_4], 0  | * | cmp byte ptr [eax+15h], 0 ",msvc,1
+loc_401FBA:   | * | jz short loc_401FA0 ,msvc,1
+"cmp byte ptr [eax+15h], 0  | * | pop esi ",msvc,1
+jz short loc_401FA0  | * | loc_401FC1:  ,msvc,1
+"pop esi  | * | mov eax, [ebp+var_4] ",msvc,1
+loc_401FC1:   | * | push ebx ,msvc,1
+"mov eax, [ebp+var_4]  | * | push eax ",msvc,1
+"push ebx  | * | lea edx, [ebp+var_4] ",msvc,1
+push eax  | * | push edx ,msvc,1
+"lea edx, [ebp+var_4]  | * | call sub_401FF0 ",msvc,1
+"push edx  | * | mov eax, [eax] ",msvc,1
+"call sub_401FF0  | * | mov [edi], eax ",msvc,1
+"mov eax, [eax]  | * | mov byte ptr [edi+4], 1 ",msvc,1
+"mov [edi], eax  | * | mov eax, edi ",msvc,1
+"mov byte ptr [edi+4], 1  | * | mov esp, ebp ",msvc,1
+"mov eax, edi  | * | pop ebp ",msvc,1
+pop ebp  | * | loc_401FDD:  ,msvc,1
+"retn  | * | mov eax, [eax] ",msvc,1
+"loc_401FDD:   | * | mov byte ptr [ebp+var_4], 1 ",msvc,1
+"mov eax, [eax]  | * | jmp short loc_401FBA ",msvc,1
+"mov byte ptr [ebp+var_4], 1  | * | sub_401F80 endp ",msvc,1
+jmp short loc_401FBA  | * | align 10h ,msvc,1
+sub_401F80 endp  | * | sub_401FF0 proc near  ,msvc,1
+arg_0 = dword ptr 8  | * | arg_8 = dword ptr 10h ,data,1
+"push ebp  | * | cmp dword_472160, 1FFFFFFEh ",msvc,1
+"mov ebp, esp  | * | jb short loc_402017 ",msvc,1
+"cmp dword_472160, 1FFFFFFEh  | * | mov eax, [ebp+arg_8] ",msvc,1
+jb short loc_402017  | * | push eax ,msvc,1
+"mov eax, [ebp+arg_8]  | * | call ds:__imp_??3@YAXPAX@Z  ",msvc,1
+call ds:__imp_??3@YAXPAX@Z   | * | push offset aMapSetTTooLong  ,msvc,1
+"add esp, 4  | * | call ds:?_Xlength_error@std@@YAXPBD@Z  ",msvc,1
+push offset aMapSetTTooLong   | * | loc_402017:  ,msvc,1
+call ds:?_Xlength_error@std@@YAXPBD@Z   | * | push ebx ,msvc,1
+loc_402017:   | * | push edi ,msvc,1
+"push ebx  | * | mov edi, [ebp+arg_8] ",msvc,1
+"push edi  | * | mov eax, 1 ",msvc,1
+"mov edi, [ebp+arg_8]  | * | add dword_472160, eax ",msvc,1
+"mov eax, 1  | * | mov [edi+4], ecx ",msvc,1
+"add dword_472160, eax  | * | mov edx, dword_47215C ",msvc,1
+"mov [edi+4], ecx  | * | xor bl, bl ",msvc,1
+"mov edx, dword_47215C  | * | cmp ecx, edx ",msvc,1
+"xor bl, bl  | * | jnz short loc_402049 ",msvc,1
+"cmp ecx, edx  | * | mov [edx+4], edi ",msvc,1
+"jnz short loc_402049  | * | mov ecx, dword_47215C ",msvc,1
+"mov [edx+4], edi  | * | mov [ecx], edi ",msvc,1
+"mov ecx, dword_47215C  | * | mov edx, dword_47215C ",msvc,1
+"mov [ecx], edi  | * | jmp short loc_40206C ",msvc,1
+"mov edx, dword_47215C  | * | loc_402049:  ",msvc,1
+"jmp short loc_40206C  | * | cmp [ebp+arg_4], bl ",msvc,1
+loc_402049:   | * | jz short loc_40205E ,msvc,1
+"cmp [ebp+arg_4], bl  | * | mov [ecx], edi ",msvc,1
+"jz short loc_40205E  | * | mov edx, dword_47215C ",msvc,1
+"mov [ecx], edi  | * | cmp ecx, [edx] ",msvc,1
+"mov edx, dword_47215C  | * | jnz short loc_40206F ",msvc,2
+"cmp ecx, [edx]  | * | mov [edx], edi ",msvc,1
+jnz short loc_40206F  | * | jmp short loc_40206F ,msvc,1
+"mov [edx], edi  | * | loc_40205E:  ",msvc,1
+"jmp short loc_40206F  | * | mov [ecx+8], edi ",msvc,1
+"loc_40205E:   | * | mov edx, dword_47215C ",msvc,1
+"mov [ecx+8], edi  | * | cmp ecx, [edx+8] ",msvc,1
+"cmp ecx, [edx+8]  | * | loc_40206C:  ",msvc,1
+"jnz short loc_40206F  | * | mov [edx+8], edi ",msvc,1
+loc_40206C:   | * | loc_40206F:  ,msvc,1
+"mov [edx+8], edi  | * | mov edx, [edi+4] ",msvc,1
+"loc_40206F:   | * | mov ecx, edi ",msvc,1
+"mov edx, [edi+4]  | * | cmp [edx+14h], bl ",msvc,1
+"mov ecx, edi  | * | jnz loc_402200 ",msvc,1
+"cmp [edx+14h], bl  | * | push esi ",msvc,1
+"jnz loc_402200  | * | mov edi, edi ",msvc,1
+push esi  | * | loc_402080:  ,msvc,1
+"mov edi, edi  | * | mov edx, [ecx+4] ",msvc,1
+"loc_402080:   | * | mov esi, [edx+4] ",msvc,1
+"mov edx, [ecx+4]  | * | cmp edx, [esi] ",msvc,1
+"mov esi, [edx+4]  | * | jnz loc_40213C ",msvc,1
+"cmp edx, [esi]  | * | mov esi, [esi+8] ",msvc,1
+"jnz loc_40213C  | * | cmp [esi+14h], bl ",msvc,1
+"mov esi, [esi+8]  | * | jz loc_402143 ",msvc,1
+"cmp [esi+14h], bl  | * | cmp ecx, [edx+8] ",msvc,1
+jz loc_402143  | * | jnz short loc_4020DC ,msvc,1
+"cmp ecx, [edx+8]  | * | mov ecx, edx ",msvc,1
+"jnz short loc_4020DC  | * | mov edx, [ecx+8] ",msvc,1
+"mov ecx, edx  | * | mov esi, [edx] ",msvc,1
+"mov edx, [ecx+8]  | * | mov [ecx+8], esi ",msvc,1
+"mov esi, [edx]  | * | mov esi, [edx] ",msvc,1
+"mov [ecx+8], esi  | * | cmp [esi+15h], bl ",msvc,1
+"mov esi, [edx]  | * | jnz short loc_4020B3 ",msvc,1
+"cmp [esi+15h], bl  | * | mov [esi+4], ecx ",msvc,2
+jnz short loc_4020B3  | * | loc_4020B3:  ,msvc,1
+"mov [esi+4], ecx  | * | mov esi, [ecx+4] ",msvc,2
+"loc_4020B3:   | * | mov [edx+4], esi ",msvc,1
+"mov esi, [ecx+4]  | * | mov esi, dword_47215C ",msvc,2
+"mov [edx+4], esi  | * | cmp ecx, [esi+4] ",msvc,2
+"mov esi, dword_47215C  | * | jnz short loc_4020C9 ",msvc,1
+"cmp ecx, [esi+4]  | * | mov [esi+4], edx ",msvc,2
+jnz short loc_4020C9  | * | jmp short loc_4020D7 ,msvc,1
+"mov [esi+4], edx  | * | loc_4020C9:  ",msvc,1
+"jmp short loc_4020D7  | * | mov esi, [ecx+4] ",msvc,1
+"loc_4020C9:   | * | cmp ecx, [esi] ",msvc,1
+"mov esi, [ecx+4]  | * | jnz short loc_4020D4 ",msvc,1
+"cmp ecx, [esi]  | * | mov [esi], edx ",msvc,1
+jnz short loc_4020D4  | * | jmp short loc_4020D7 ,msvc,1
+"mov [esi], edx  | * | loc_4020D4:  ",msvc,1
+"jmp short loc_4020D7  | * | mov [esi+8], edx ",msvc,1
+loc_4020D4:   | * | loc_4020D7:  ,msvc,1
+"mov [esi+8], edx  | * | mov [edx], ecx ",msvc,1
+"loc_4020D7:   | * | mov [ecx+4], edx ",msvc,1
+"mov [edx], ecx  | * | loc_4020DC:  ",msvc,1
+"mov [ecx+4], edx  | * | mov edx, [ecx+4] ",msvc,2
+"loc_4020DC:   | * | mov [edx+14h], al ",msvc,1
+"mov edx, [ecx+4]  | * | mov edx, [ecx+4] ",msvc,2
+"mov [edx+14h], al  | * | mov edx, [edx+4] ",msvc,2
+"mov edx, [ecx+4]  | * | mov [edx+14h], bl ",msvc,3
+"mov edx, [edx+4]  | * | mov edx, [ecx+4] ",msvc,2
+"mov [edx+14h], bl  | * | mov edx, [edx+4] ",msvc,2
+"mov edx, [ecx+4]  | * | mov esi, [edx] ",msvc,1
+"mov edx, [edx+4]  | * | mov edi, [esi+8] ",msvc,1
+"mov esi, [edx]  | * | mov [edx], edi ",msvc,1
+"mov edi, [esi+8]  | * | mov edi, [esi+8] ",msvc,1
+"mov [edx], edi  | * | cmp [edi+15h], bl ",msvc,1
+"mov edi, [esi+8]  | * | jnz short loc_402103 ",msvc,1
+"cmp [edi+15h], bl  | * | mov [edi+4], edx ",msvc,2
+jnz short loc_402103  | * | loc_402103:  ,msvc,1
+"mov [edi+4], edx  | * | mov edi, [edx+4] ",msvc,2
+"loc_402103:   | * | mov [esi+4], edi ",msvc,1
+"mov edi, [edx+4]  | * | mov edi, dword_47215C ",msvc,2
+"mov [esi+4], edi  | * | cmp edx, [edi+4] ",msvc,2
+"mov edi, dword_47215C  | * | jnz short loc_40211F ",msvc,1
+"cmp edx, [edi+4]  | * | mov [edi+4], esi ",msvc,2
+"jnz short loc_40211F  | * | mov [esi+8], edx ",msvc,1
+"mov [edi+4], esi  | * | jmp loc_4021ED ",msvc,1
+"mov [esi+8], edx  | * | loc_40211F:  ",msvc,1
+"jmp loc_4021ED  | * | mov edi, [edx+4] ",msvc,1
+"loc_40211F:   | * | cmp edx, [edi+8] ",msvc,1
+"mov edi, [edx+4]  | * | jnz short loc_402132 ",msvc,1
+"cmp edx, [edi+8]  | * | mov [edi+8], esi ",msvc,1
+"jnz short loc_402132  | * | mov [esi+8], edx ",msvc,1
+"mov [edi+8], esi  | * | jmp loc_4021ED ",msvc,1
+"mov [esi+8], edx  | * | loc_402132:  ",msvc,1
+"jmp loc_4021ED  | * | mov [edi], esi ",msvc,1
+"loc_402132:   | * | mov [esi+8], edx ",msvc,1
+"mov [edi], esi  | * | jmp loc_4021ED ",msvc,1
+"mov [esi+8], edx  | * | loc_40213C:  ",msvc,1
+"jmp loc_4021ED  | * | mov esi, [esi] ",msvc,1
+"loc_40213C:   | * | cmp [esi+14h], bl ",msvc,1
+"mov esi, [esi]  | * | jnz short loc_40215D ",msvc,1
+"cmp [esi+14h], bl  | * | loc_402143:  ",msvc,1
+"jnz short loc_40215D  | * | mov [edx+14h], al ",msvc,1
+"loc_402143:   | * | mov [esi+14h], al ",msvc,1
+"mov [edx+14h], al  | * | mov edx, [ecx+4] ",msvc,1
+"mov [esi+14h], al  | * | mov edx, [edx+4] ",msvc,1
+"mov edx, [edx+4]  | * | mov ecx, [ecx+4] ",msvc,1
+"mov [edx+14h], bl  | * | mov ecx, [ecx+4] ",msvc,1
+"mov ecx, [ecx+4]  | * | jmp loc_4021F3 ",msvc,1
+"mov ecx, [ecx+4]  | * | loc_40215D:  ",msvc,1
+"jmp loc_4021F3  | * | cmp ecx, [edx] ",msvc,1
+loc_40215D:   | * | jnz short loc_4021A0 ,msvc,1
+"cmp ecx, [edx]  | * | mov ecx, edx ",msvc,1
+"jnz short loc_4021A0  | * | mov edx, [ecx] ",msvc,1
+"mov ecx, edx  | * | mov esi, [edx+8] ",msvc,1
+"mov edx, [ecx]  | * | mov [ecx], esi ",msvc,1
+"mov esi, [edx+8]  | * | mov esi, [edx+8] ",msvc,1
+"mov [ecx], esi  | * | cmp [esi+15h], bl ",msvc,1
+"mov esi, [edx+8]  | * | jnz short loc_402175 ",msvc,1
+jnz short loc_402175  | * | loc_402175:  ,msvc,1
+"loc_402175:   | * | mov [edx+4], esi ",msvc,1
+"mov esi, dword_47215C  | * | jnz short loc_40218B ",msvc,1
+jnz short loc_40218B  | * | jmp short loc_40219A ,msvc,1
+"mov [esi+4], edx  | * | loc_40218B:  ",msvc,1
+"jmp short loc_40219A  | * | mov esi, [ecx+4] ",msvc,1
+"loc_40218B:   | * | cmp ecx, [esi+8] ",msvc,1
+"mov esi, [ecx+4]  | * | jnz short loc_402198 ",msvc,1
+"cmp ecx, [esi+8]  | * | mov [esi+8], edx ",msvc,1
+jnz short loc_402198  | * | jmp short loc_40219A ,msvc,1
+"mov [esi+8], edx  | * | loc_402198:  ",msvc,1
+"jmp short loc_40219A  | * | mov [esi], edx ",msvc,1
+loc_402198:   | * | loc_40219A:  ,msvc,1
+"mov [esi], edx  | * | mov [edx+8], ecx ",msvc,1
+"loc_40219A:   | * | mov [ecx+4], edx ",msvc,1
+"mov [edx+8], ecx  | * | loc_4021A0:  ",msvc,1
+"loc_4021A0:   | * | mov [edx+14h], al ",msvc,1
+"mov edx, [ecx+4]  | * | mov esi, [edx+8] ",msvc,1
+"mov edx, [edx+4]  | * | mov edi, [esi] ",msvc,1
+"mov esi, [edx+8]  | * | mov [edx+8], edi ",msvc,1
+"mov edi, [esi]  | * | mov edi, [esi] ",msvc,1
+"mov [edx+8], edi  | * | cmp [edi+15h], bl ",msvc,1
+"mov edi, [esi]  | * | jnz short loc_4021C7 ",msvc,1
+jnz short loc_4021C7  | * | loc_4021C7:  ,msvc,1
+"loc_4021C7:   | * | mov [esi+4], edi ",msvc,1
+"mov edi, dword_47215C  | * | jnz short loc_4021DD ",msvc,1
+jnz short loc_4021DD  | * | jmp short loc_4021EB ,msvc,1
+"mov [edi+4], esi  | * | loc_4021DD:  ",msvc,1
+"jmp short loc_4021EB  | * | mov edi, [edx+4] ",msvc,1
+"loc_4021DD:   | * | cmp edx, [edi] ",msvc,1
+"mov edi, [edx+4]  | * | jnz short loc_4021E8 ",msvc,1
+"cmp edx, [edi]  | * | mov [edi], esi ",msvc,1
+jnz short loc_4021E8  | * | jmp short loc_4021EB ,msvc,1
+"mov [edi], esi  | * | loc_4021E8:  ",msvc,1
+"jmp short loc_4021EB  | * | mov [edi+8], esi ",msvc,1
+loc_4021E8:   | * | loc_4021EB:  ,msvc,1
+"mov [edi+8], esi  | * | mov [esi], edx ",msvc,1
+loc_4021EB:   | * | loc_4021ED:  ,msvc,1
+"mov [esi], edx  | * | mov edi, [ebp+arg_8] ",msvc,1
+"loc_4021ED:   | * | mov [edx+4], esi ",msvc,1
+"mov edi, [ebp+arg_8]  | * | loc_4021F3:  ",msvc,1
+"mov [edx+4], esi  | * | mov edx, [ecx+4] ",msvc,1
+"loc_4021F3:   | * | cmp [edx+14h], bl ",msvc,1
+"mov edx, [ecx+4]  | * | jz loc_402080 ",msvc,1
+"cmp [edx+14h], bl  | * | pop esi ",msvc,1
+jz loc_402080  | * | loc_402200:  ,msvc,1
+"pop esi  | * | mov ecx, dword_47215C ",msvc,1
+"loc_402200:   | * | mov edx, [ecx+4] ",msvc,1
+"mov ecx, dword_47215C  | * | mov [edx+14h], al ",msvc,1
+"mov edx, [ecx+4]  | * | mov eax, [ebp+arg_0] ",msvc,1
+"mov [edx+14h], al  | * | mov [eax], edi ",msvc,1
+"mov eax, [ebp+arg_0]  | * | pop edi ",msvc,1
+"mov [eax], edi  | * | pop ebx ",msvc,1
+pop edi  | * | pop ebp ,msvc,1
+pop ebx  | * | retn 0Ch ,msvc,1
+pop ebp  | * | sub_401FF0 endp ,msvc,1
+retn 0Ch  | * | align 10h ,msvc,1
+sub_401FF0 endp  | * | sub_402220 proc near  ,msvc,1
+"mov ebp, esp  | * | push 18h ",msvc,2
+"sub esp, 10h  | * | call ds:??2@YAPAXI@Z  ",msvc,2
+"push 18h  | * | xor edx, edx ",msvc,1
+"call ds:??2@YAPAXI@Z   | * | add esp, 4 ",msvc,1
+"xor edx, edx  | * | cmp eax, edx ",msvc,1
+"add esp, 4  | * | jz short loc_40226A ",msvc,1
+"cmp eax, edx  | * | mov ecx, dword_47215C ",msvc,1
+"jz short loc_40226A  | * | mov [eax], ecx ",msvc,1
+"mov ecx, dword_47215C  | * | mov ecx, dword_47215C ",msvc,2
+"mov [eax], ecx  | * | mov [eax+4], ecx ",msvc,1
+"mov [eax+4], ecx  | * | mov [eax+8], ecx ",msvc,1
+"mov ecx, dword_47215C  | * | lea ecx, [eax+0Ch] ",msvc,1
+"mov [eax+8], ecx  | * | mov [eax+14h], dx ",msvc,1
+"lea ecx, [eax+0Ch]  | * | cmp ecx, edx ",msvc,1
+"mov [eax+14h], dx  | * | jz short loc_402266 ",msvc,1
+"cmp ecx, edx  | * | mov edx, [esi] ",msvc,1
+"jz short loc_402266  | * | mov [ecx], edx ",msvc,1
+"mov edx, [esi]  | * | mov edx, [esi+4] ",msvc,1
+"mov [ecx], edx  | * | mov [ecx+4], edx ",msvc,1
+"mov edx, [esi+4]  | * | loc_402266:  ",msvc,1
+"mov [ecx+4], edx  | * | mov esp, ebp ",msvc,1
+loc_402266:   | * | pop ebp ,msvc,1
+pop ebp  | * | loc_40226A:  ,msvc,1
+"retn  | * | lea eax, [ebp+var_4] ",msvc,2
+loc_40226A:   | * | push eax ,msvc,1
+"lea eax, [ebp+var_4]  | * | lea ecx, [ebp+var_10] ",msvc,2
+"push eax  | * | mov [ebp+var_4], edx ",msvc,1
+"mov [ebp+var_4], edx  | * | push offset __TI2?AVbad_alloc@std@@  ",msvc,1
+"call ds:??0exception@std@@QAE@ABQBD@Z   | * | lea ecx, [ebp+var_10] ",msvc,2
+push offset __TI2?AVbad_alloc@std@@   | * | push ecx ,msvc,2
+"lea ecx, [ebp+var_10]  | * | mov [ebp+var_10], offset ??_7bad_alloc@std@@6B@  ",msvc,2
+push ecx  | * | call _CxxThrowException ,msvc,2
+"mov [ebp+var_10], offset ??_7bad_alloc@std@@6B@   | * | sub_402220 endp ",msvc,1
+call _CxxThrowException  | * | align 10h ,msvc,2
+sub_402220 endp  | * | align 10h ,msvc,1
+align 10h  | * | align 10h ,msvc,2
+align 10h  | * | sub_4028F1 proc near  ,msvc,1
+align 10h  | * | push offset ?__CxxUnhandledExceptionFilter@@YGJPAU_EXCEPTION_POINTERS@@@Z  ,msvc,1
+sub_4028F1 proc near   | * | call ds:SetUnhandledExceptionFilter ,msvc,1
+"push offset ?__CxxUnhandledExceptionFilter@@YGJPAU_EXCEPTION_POINTERS@@@Z   | * | xor eax, eax ",msvc,1
+call ds:SetUnhandledExceptionFilter  | * | retn ,msvc,1
+"xor eax, eax  | * | sub_4028F1 endp ",msvc,1
+sub_4028F1 endp  | * | sub_402906 proc near  ,msvc,1
+"align 10h  | * | mov edi, edi ",msvc,1
+sub_402906 proc near   | * | push esi ,msvc,1
+"mov edi, edi  | * | mov eax, offset unk_4033A4 ",msvc,1
+"push esi  | * | mov esi, offset unk_4033A4 ",msvc,1
+"mov eax, offset unk_4033A4  | * | push edi ",msvc,1
+"mov esi, offset unk_4033A4  | * | mov edi, eax ",msvc,1
+"push edi  | * | cmp eax, esi ",msvc,2
+"mov edi, eax  | * | jnb short loc_402929 ",msvc,1
+"cmp eax, esi  | * | loc_40291A:  ",msvc,1
+"jnb short loc_402929  | * | mov eax, [edi] ",msvc,1
+"loc_40291A:   | * | test eax, eax ",msvc,1
+"mov eax, [edi]  | * | jz short loc_402922 ",msvc,1
+"test eax, eax  | * | call eax ",msvc,2
+jz short loc_402922  | * | loc_402922:  ,msvc,1
+"call eax  | * | add edi, 4 ",msvc,2
+"loc_402922:   | * | cmp edi, esi ",msvc,1
+"add edi, 4  | * | jb short loc_40291A ",msvc,1
+"cmp edi, esi  | * | loc_402929:  ",msvc,1
+jb short loc_40291A  | * | pop edi ,msvc,1
+loc_402929:   | * | pop esi ,msvc,1
+pop edi  | * | retn ,msvc,2
+pop esi  | * | sub_402906 endp ,msvc,1
+retn  | * | sub_40292C proc near  ,msvc,1
+"sub_402906 endp  | * | mov edi, edi ",msvc,1
+sub_40292C proc near   | * | push esi ,msvc,1
+"mov edi, edi  | * | mov eax, offset unk_4033AC ",msvc,1
+"push esi  | * | mov esi, offset unk_4033AC ",msvc,1
+"mov eax, offset unk_4033AC  | * | push edi ",msvc,1
+"mov esi, offset unk_4033AC  | * | mov edi, eax ",msvc,1
+"mov edi, eax  | * | jnb short loc_40294F ",msvc,1
+"cmp eax, esi  | * | loc_402940:  ",msvc,1
+"jnb short loc_40294F  | * | mov eax, [edi] ",msvc,1
+"loc_402940:   | * | test eax, eax ",msvc,1
+"mov eax, [edi]  | * | jz short loc_402948 ",msvc,1
+jz short loc_402948  | * | loc_402948:  ,msvc,1
+"loc_402948:   | * | cmp edi, esi ",msvc,1
+"add edi, 4  | * | jb short loc_402940 ",msvc,1
+"cmp edi, esi  | * | loc_40294F:  ",msvc,1
+jb short loc_402940  | * | pop edi ,msvc,1
+loc_40294F:   | * | pop esi ,msvc,1
+pop esi  | * | sub_40292C endp ,msvc,1
+sub_40292C endp  | * | align 10h ,msvc,1
+align 10h  | * | sub_402AE0 proc near  ,msvc,1
+"align 10h  | * | xor eax, eax ",msvc,1
+sub_402AE0 proc near   | * | retn ,msvc,1
+"xor eax, eax  | * | sub_402AE0 endp ",msvc,1
+sub_402AE0 endp  | * | align 10h ,msvc,1
+align 10h  | * | loc_402BC0:  ,msvc,1
+"align 10h  | * | mov eax, [ebp+arg_0] ",msvc,1
+loc_402BC0:   | * | jmp loc_401C00 ,msvc,1
+"mov eax, [ebp+arg_0]  | * | SEH_401A60:  ",msvc,1
+"jmp loc_401C00  | * | mov edx, [esp-4+arg_4] ",msvc,2
+"SEH_401A60:   | * | lea eax, [edx+0Ch] ",msvc,1
+"mov edx, [esp-4+arg_4]  | * | mov ecx, [edx-8] ",msvc,1
+"lea eax, [edx+0Ch]  | * | xor ecx, eax ",msvc,3
+"mov ecx, [edx-8]  | * | call @__security_check_cookie@4  ",msvc,1
+"xor ecx, eax  | * | mov eax, offset stru_4034A8 ",msvc,1
+call @__security_check_cookie@4   | * | jmp __CxxFrameHandler3 ,msvc,3
+"mov eax, offset stru_4034A8  | * | align 10h ",msvc,1
+jmp __CxxFrameHandler3  | * | loc_402BF0:  ,msvc,1
+"align 10h  | * | lea eax, [ebp+var_20] ",msvc,1
+loc_402BF0:   | * | jmp loc_401C00 ,msvc,1
+"lea eax, [ebp+var_20]  | * | loc_402BF8:  ",msvc,1
+"jmp loc_401C00  | * | lea eax, [ebp+var_20] ",msvc,1
+loc_402BF8:   | * | push eax ,msvc,1
+"lea eax, [ebp+var_20]  | * | call sub_401A60 ",msvc,1
+push eax  | * | retn ,msvc,1
+call sub_401A60  | * | loc_402C02:  ,msvc,1
+"retn  | * | lea eax, [ebp+var_20] ",msvc,1
+loc_402C02:   | * | jmp loc_401C00 ,msvc,1
+"lea eax, [ebp+var_20]  | * | SEH_401D30:  ",msvc,1
+"SEH_401D30:   | * | lea eax, [edx+0Ch] ",msvc,1
+"mov edx, [esp-4+arg_4]  | * | mov ecx, [edx-24h] ",msvc,1
+"mov ecx, [edx-24h]  | * | call @__security_check_cookie@4  ",msvc,1
+"xor ecx, eax  | * | mov eax, offset stru_403518 ",msvc,1
+"mov eax, offset stru_403518  | * | align 10h ",msvc,1
+jmp __CxxFrameHandler3  | * | loc_402C30:  ,msvc,1
+align 10h  | * | jmp loc_401980 ,msvc,1
+loc_402C30:   | * | SEH_402D00:  ,msvc,1
+"jmp loc_401980  | * | mov edx, [esp-4+arg_4] ",msvc,1
+"SEH_402D00:   | * | lea eax, [edx+0Ch] ",msvc,1
+"mov edx, [esp-4+arg_4]  | * | mov ecx, [edx-0Ch] ",msvc,1
+"mov ecx, [edx-0Ch]  | * | call @__security_check_cookie@4  ",msvc,1
+"xor ecx, eax  | * | mov eax, offset stru_403544 ",msvc,1
+"mov eax, offset stru_403544  | * | sub_402C50 proc near  ",msvc,1
+"push 18h  | * | add esp, 4 ",msvc,1
+"add esp, 4  | * | jz short loc_402CA1 ",msvc,1
+"test eax, eax  | * | mov dword_47215C, eax ",msvc,1
+"jz short loc_402CA1  | * | mov [eax], eax ",msvc,1
+"mov dword_47215C, eax  | * | mov eax, dword_47215C ",msvc,1
+"mov [eax], eax  | * | mov [eax+4], eax ",msvc,1
+"mov [eax+4], eax  | * | mov [eax+8], eax ",msvc,1
+"mov eax, dword_47215C  | * | mov ecx, dword_47215C ",msvc,1
+"mov [eax+8], eax  | * | mov al, 1 ",msvc,1
+"mov ecx, dword_47215C  | * | mov [ecx+14h], al ",msvc,1
+"mov al, 1  | * | mov edx, dword_47215C ",msvc,1
+"mov [ecx+14h], al  | * | push offset sub_402D00  ",msvc,1
+"mov edx, dword_47215C  | * | mov [edx+15h], al ",msvc,1
+push offset sub_402D00   | * | call _atexit ,msvc,1
+"mov [edx+15h], al  | * | add esp, 4 ",msvc,1
+"call _atexit  | * | mov esp, ebp ",msvc,1
+"add esp, 4  | * | pop ebp ",msvc,1
+pop ebp  | * | loc_402CA1:  ,msvc,1
+loc_402CA1:   | * | push eax ,msvc,1
+"push eax  | * | mov [ebp+var_4], 0 ",msvc,1
+"mov [ebp+var_10], offset ??_7bad_alloc@std@@6B@   | * | sub_402C50 endp ",msvc,1
+sub_402C50 endp  | * | sub_402CD0 proc near  ,msvc,1
+"align 10h  | * | mov eax, offset dword_46FEF8 ",msvc,1
+"sub_402CD0 proc near   | * | mov ecx, 44Bh ",msvc,1
+"mov eax, offset dword_46FEF8  | * | xor edx, edx ",msvc,1
+"mov ecx, 44Bh  | * | lea esp, [esp+0] ",msvc,1
+"xor edx, edx  | * | loc_402CE0:  ",msvc,1
+"lea esp, [esp+0]  | * | mov [eax], edx ",msvc,1
+"loc_402CE0:   | * | mov [eax+4], edx ",msvc,1
+"mov [eax], edx  | * | add eax, 8 ",msvc,1
+"mov [eax+4], edx  | * | dec ecx ",msvc,1
+"add eax, 8  | * | jns short loc_402CE0 ",msvc,1
+dec ecx  | * | retn ,msvc,1
+jns short loc_402CE0  | * | sub_402CD0 endp ,msvc,1
+sub_402CD0 endp  | * | sub_402CF0 proc near  ,msvc,1
+align 10h  | * | push offset sub_402D60  ,msvc,1
+sub_402CF0 proc near   | * | call _atexit ,msvc,1
+push offset sub_402D60   | * | pop ecx ,msvc,1
+call _atexit  | * | retn ,msvc,1
+pop ecx  | * | sub_402CF0 endp ,msvc,1
+sub_402CF0 endp  | * | sub_402D00 proc near  ,msvc,1
+var_10 = byte ptr -10h  | * | var_4 = dword ptr -4 ,data,1
+var_C = dword ptr -0Ch  | * | arg_4 = dword ptr 0Ch ,data,1
+"mov ebp, esp  | * | push offset SEH_402D00 ",msvc,1
+push offset SEH_402D00  | * | push eax ,msvc,1
+"mov eax, large fs:0  | * | push ecx ",msvc,1
+push eax  | * | push esi ,msvc,1
+"push ecx  | * | mov eax, ___security_cookie ",msvc,1
+"lea eax, [ebp+var_C]  | * | mov [ebp+var_4], 0 ",msvc,1
+"mov large fs:0, eax  | * | mov eax, dword_47215C ",msvc,1
+"mov [ebp+var_4], 0  | * | mov ecx, [eax] ",msvc,1
+"mov eax, dword_47215C  | * | push eax ",msvc,1
+"mov ecx, [eax]  | * | push ecx ",msvc,1
+"push eax  | * | lea esi, [ebp+var_10] ",msvc,1
+push ecx  | * | call sub_401AD0 ,msvc,1
+"lea esi, [ebp+var_10]  | * | mov eax, dword_47215C ",msvc,1
+call sub_401AD0  | * | push eax ,msvc,1
+"call ds:__imp_??3@YAXPAX@Z   | * | mov ecx, [ebp+var_C] ",msvc,1
+"add esp, 4  | * | mov large fs:0, ecx ",msvc,1
+pop ebp  | * | sub_402D00 endp ,msvc,1
+sub_402D00 endp  | * | sub_402D60 proc near  ,msvc,1
+"align 10h  | * | mov eax, Dst ",msvc,1
+"sub_402D60 proc near   | * | test eax, eax ",msvc,1
+"mov eax, Dst  | * | jz short loc_402D73 ",msvc,1
+jz short loc_402D73  | * | call ds:__imp_??3@YAXPAX@Z  ,msvc,1
+call ds:__imp_??3@YAXPAX@Z   | * | loc_402D73:  ,msvc,1
+"add esp, 4  | * | mov Dst, 0 ",msvc,1
+"loc_402D73:   | * | mov Src, 0 ",msvc,1
+"mov Dst, 0  | * | mov dword_46FEEC, 0 ",msvc,1
+"mov Src, 0  | * | retn ",msvc,1
+"mov dword_46FEEC, 0  | * | sub_402D60 endp ",msvc,1
+retn  | * | align 80h ,msvc,1
+sub_402D60 endp  | * | dd 80h dup(?) ,msvc,1
+align 80h  | * | _text ends ,msvc,1

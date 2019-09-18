@@ -1,0 +1,296 @@
+idiom,label,count
+var_18 = qword ptr -18h  | * | var_4 = dword ptr -4 ,data,1
+"push rbp  | * | sub rsp, 20h ",xcode,2
+"mov rbp, rsp  | * | mov rdi, cs:__ZNSt3__13cinE_ptr ",xcode,2
+"sub rsp, 20h  | * | lea rsi, _a ",xcode,1
+"mov rdi, cs:__ZNSt3__13cinE_ptr  | * | call __ZNSt3__113basic_istreamIcNS_11char_traitsIcEEErsERi  ",xcode,1
+"lea rsi, _a  | * | lea rsi, _b ",xcode,1
+"call __ZNSt3__113basic_istreamIcNS_11char_traitsIcEEErsERi   | * | mov rdi, rax ",xcode,1
+"lea rsi, _b  | * | call __ZNSt3__113basic_istreamIcNS_11char_traitsIcEEErsERi  ",xcode,1
+"mov rdi, rax  | * | mov [rbp+var_4], 0 ",xcode,1
+"call __ZNSt3__113basic_istreamIcNS_11char_traitsIcEEErsERi   | * | mov [rbp+var_10], rax ",xcode,1
+"mov [rbp+var_4], 0  | * | loc_100000A05:  ",xcode,1
+"mov [rbp+var_10], rax  | * | mov eax, [rbp+var_4] ",xcode,1
+"loc_100000A05:   | * | cmp eax, cs:_a ",xcode,1
+"mov eax, [rbp+var_4]  | * | jge loc_100000A49 ",xcode,1
+"cmp eax, cs:_a  | * | mov rdi, cs:__ZNSt3__13cinE_ptr ",xcode,1
+"jge loc_100000A49  | * | lea rax, _p ",xcode,1
+"mov rdi, cs:__ZNSt3__13cinE_ptr  | * | movsxd rcx, [rbp+var_4] ",xcode,1
+"lea rax, _p  | * | shl rcx, 3 ",xcode,1
+"movsxd rcx, [rbp+var_4]  | * | add rax, rcx ",xcode,1
+"shl rcx, 3  | * | mov rsi, rax ",xcode,1
+"add rax, rcx  | * | call __ZNSt3__113basic_istreamIcNS_11char_traitsIcEEErsERd  ",xcode,1
+"mov rsi, rax  | * | mov [rbp+var_18], rax ",xcode,1
+"call __ZNSt3__113basic_istreamIcNS_11char_traitsIcEEErsERd   | * | mov eax, [rbp+var_4] ",xcode,1
+"mov [rbp+var_18], rax  | * | add eax, 1 ",xcode,1
+"mov eax, [rbp+var_4]  | * | mov [rbp+var_4], eax ",xcode,1
+"add eax, 1  | * | jmp loc_100000A05 ",xcode,1
+"mov [rbp+var_4], eax  | * | loc_100000A49:  ",xcode,1
+"jmp loc_100000A05  | * | add rsp, 20h ",xcode,1
+loc_100000A49:   | * | pop rbp ,xcode,1
+"add rsp, 20h  | * | retn ",xcode,2
+pop rbp  | * | __Z4readv endp ,xcode,1
+retn  | * | align 10h ,xcode,3
+__Z4readv endp  | * | public __Z5solvev ,xcode,1
+align 10h  | * | __Z5solvev proc near  ,xcode,1
+var_A4 = dword ptr -0A4h  | * | var_98 = qword ptr -98h ,data,1
+var_A0 = qword ptr -0A0h  | * | var_90 = qword ptr -90h ,data,1
+var_98 = qword ptr -98h  | * | var_88 = qword ptr -88h ,data,1
+var_90 = qword ptr -90h  | * | var_80 = qword ptr -80h ,data,1
+var_88 = qword ptr -88h  | * | var_78 = qword ptr -78h ,data,1
+var_80 = qword ptr -80h  | * | var_6C = dword ptr -6Ch ,data,1
+var_78 = qword ptr -78h  | * | var_68 = qword ptr -68h ,data,1
+var_6C = dword ptr -6Ch  | * | var_5C = dword ptr -5Ch ,data,1
+var_68 = qword ptr -68h  | * | var_58 = qword ptr -58h ,data,1
+var_5C = dword ptr -5Ch  | * | var_50 = qword ptr -50h ,data,1
+var_58 = qword ptr -58h  | * | var_40 = qword ptr -40h ,data,1
+var_50 = qword ptr -50h  | * | var_38 = qword ptr -38h ,data,1
+var_40 = qword ptr -40h  | * | var_30 = byte ptr -30h ,data,1
+var_38 = qword ptr -38h  | * | var_28 = qword ptr -28h ,data,1
+var_30 = byte ptr -30h  | * | var_20 = qword ptr -20h ,data,2
+var_28 = qword ptr -28h  | * | var_18 = qword ptr -18h ,data,1
+var_20 = qword ptr -20h  | * | var_10 = qword ptr -10h ,data,1
+var_18 = qword ptr -18h  | * | var_8 = qword ptr -8 ,data,2
+"push rbp  | * | sub rsp, 0B0h ",xcode,1
+"mov rbp, rsp  | * | mov rax, 1 ",xcode,1
+"sub rsp, 0B0h  | * | cvtsi2sd xmm0, rax ",xcode,1
+"mov rax, 1  | * | movsd cs:_z, xmm0 ",xcode,1
+"cvtsi2sd xmm0, rax  | * | mov [rbp+var_5C], 1 ",xcode,1
+"movsd cs:_z, xmm0  | * | loc_100000A79:  ",xcode,1
+"mov [rbp+var_5C], 1  | * | mov eax, [rbp+var_5C] ",xcode,1
+"loc_100000A79:   | * | cmp eax, cs:_a ",xcode,1
+"mov eax, [rbp+var_5C]  | * | jg loc_100000AD1 ",xcode,1
+"cmp eax, cs:_a  | * | lea rax, _z ",xcode,1
+"jg loc_100000AD1  | * | lea rcx, _p ",xcode,1
+"lea rax, _z  | * | mov edx, [rbp+var_5C] ",xcode,1
+"lea rcx, _p  | * | sub edx, 1 ",xcode,1
+"mov edx, [rbp+var_5C]  | * | movsxd rsi, edx ",xcode,2
+"sub edx, 1  | * | movsd xmm0, qword ptr [rax+rsi*8] ",xcode,1
+"movsxd rsi, edx  | * | mov edx, [rbp+var_5C] ",xcode,1
+"movsd xmm0, qword ptr [rax+rsi*8]  | * | sub edx, 1 ",xcode,1
+"sub edx, 1  | * | mulsd xmm0, qword ptr [rcx+rsi*8] ",xcode,1
+"movsxd rsi, edx  | * | movsxd rcx, [rbp+var_5C] ",xcode,1
+"mulsd xmm0, qword ptr [rcx+rsi*8]  | * | movsd qword ptr [rax+rcx*8], xmm0 ",xcode,1
+"movsxd rcx, [rbp+var_5C]  | * | mov eax, [rbp+var_5C] ",xcode,1
+"movsd qword ptr [rax+rcx*8], xmm0  | * | add eax, 1 ",xcode,1
+"mov eax, [rbp+var_5C]  | * | mov [rbp+var_5C], eax ",xcode,1
+"add eax, 1  | * | jmp loc_100000A79 ",xcode,1
+"mov [rbp+var_5C], eax  | * | loc_100000AD1:  ",xcode,1
+"jmp loc_100000A79  | * | mov eax, cs:_b ",xcode,1
+"loc_100000AD1:   | * | add eax, 2 ",xcode,1
+"mov eax, cs:_b  | * | cvtsi2sd xmm0, eax ",xcode,1
+"add eax, 2  | * | movsd [rbp+var_68], xmm0 ",xcode,1
+"cvtsi2sd xmm0, eax  | * | mov [rbp+var_6C], 0 ",xcode,1
+"movsd [rbp+var_68], xmm0  | * | loc_100000AEC:  ",xcode,1
+"mov [rbp+var_6C], 0  | * | mov eax, [rbp+var_6C] ",xcode,1
+"loc_100000AEC:   | * | cmp eax, cs:_a ",xcode,1
+"mov eax, [rbp+var_6C]  | * | jg loc_100000C6A ",xcode,1
+"cmp eax, cs:_a  | * | mov rdi, cs:__ZNSt3__14cerrE_ptr ",xcode,1
+"jg loc_100000C6A  | * | mov rax, 1 ",xcode,1
+"mov rdi, cs:__ZNSt3__14cerrE_ptr  | * | cvtsi2sd xmm0, rax ",xcode,1
+"mov rax, 1  | * | lea rax, _z ",xcode,1
+"cvtsi2sd xmm0, rax  | * | mov ecx, cs:_a ",xcode,1
+"lea rax, _z  | * | sub ecx, [rbp+var_6C] ",xcode,1
+"mov ecx, cs:_a  | * | movsxd rdx, ecx ",xcode,2
+"sub ecx, [rbp+var_6C]  | * | movsd xmm1, qword ptr [rax+rdx*8] ",xcode,1
+"movsxd rdx, ecx  | * | mov ecx, [rbp+var_6C] ",xcode,2
+"movsd xmm1, qword ptr [rax+rdx*8]  | * | add ecx, cs:_b ",xcode,1
+"mov ecx, [rbp+var_6C]  | * | sub ecx, cs:_a ",xcode,2
+"add ecx, cs:_b  | * | add ecx, [rbp+var_6C] ",xcode,2
+"sub ecx, cs:_a  | * | add ecx, 1 ",xcode,2
+"add ecx, [rbp+var_6C]  | * | cvtsi2sd xmm2, ecx ",xcode,1
+"add ecx, 1  | * | mulsd xmm1, xmm2 ",xcode,1
+"cvtsi2sd xmm2, ecx  | * | mov ecx, cs:_a ",xcode,1
+"mulsd xmm1, xmm2  | * | sub ecx, [rbp+var_6C] ",xcode,1
+"sub ecx, [rbp+var_6C]  | * | subsd xmm0, qword ptr [rax+rdx*8] ",xcode,1
+"subsd xmm0, qword ptr [rax+rdx*8]  | * | add ecx, cs:_b ",xcode,1
+"add ecx, [rbp+var_6C]  | * | add ecx, cs:_b ",xcode,1
+"add ecx, 1  | * | add ecx, 1 ",xcode,1
+"add ecx, cs:_b  | * | cvtsi2sd xmm2, ecx ",xcode,1
+"add ecx, 1  | * | mulsd xmm0, xmm2 ",xcode,1
+"cvtsi2sd xmm2, ecx  | * | addsd xmm1, xmm0 ",xcode,1
+"mulsd xmm0, xmm2  | * | movsd [rbp+var_78], xmm1 ",xcode,1
+"addsd xmm1, xmm0  | * | movsd xmm0, [rbp+var_78] ",xcode,1
+"movsd [rbp+var_78], xmm1  | * | call __ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEElsEd  ",xcode,1
+"movsd xmm0, [rbp+var_78]  | * | lea rdx, [rbp+var_30] ",xcode,1
+"call __ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEElsEd   | * | lea rdi, [rbp+var_78] ",xcode,1
+"lea rdx, [rbp+var_30]  | * | lea rsi, [rbp+var_68] ",xcode,1
+"lea rdi, [rbp+var_78]  | * | lea r8, __ZNSt3__14endlIcNS_11char_traitsIcEEEERNS_13basic_ostreamIT_T0_EES7_  ",xcode,1
+"lea rsi, [rbp+var_68]  | * | mov [rbp+var_50], rax ",xcode,1
+"lea r8, __ZNSt3__14endlIcNS_11char_traitsIcEEEERNS_13basic_ostreamIT_T0_EES7_   | * | mov [rbp+var_58], r8 ",xcode,1
+"mov [rbp+var_50], rax  | * | mov rax, [rbp+var_50] ",xcode,1
+"mov [rbp+var_58], r8  | * | mov [rbp+var_80], rdi ",xcode,1
+"mov rax, [rbp+var_50]  | * | mov rdi, rax ",xcode,1
+"mov [rbp+var_80], rdi  | * | mov [rbp+var_88], rsi ",xcode,1
+"mov rdi, rax  | * | mov [rbp+var_90], rdx ",xcode,1
+"mov [rbp+var_88], rsi  | * | call [rbp+var_58] ",xcode,1
+"mov [rbp+var_90], rdx  | * | mov rdx, [rbp+var_88] ",xcode,1
+"call [rbp+var_58]  | * | mov [rbp+var_38], rdx ",xcode,1
+"mov rdx, [rbp+var_88]  | * | mov rsi, [rbp+var_80] ",xcode,1
+"mov [rbp+var_38], rdx  | * | mov [rbp+var_40], rsi ",xcode,1
+"mov rsi, [rbp+var_80]  | * | mov rdi, [rbp+var_38] ",xcode,1
+"mov [rbp+var_40], rsi  | * | mov r8, [rbp+var_40] ",xcode,1
+"mov rdi, [rbp+var_38]  | * | mov [rbp+var_20], rdi ",xcode,1
+"mov r8, [rbp+var_40]  | * | mov [rbp+var_28], r8 ",xcode,1
+"mov [rbp+var_20], rdi  | * | mov rdi, [rbp+var_28] ",xcode,1
+"mov [rbp+var_28], r8  | * | mov r8, [rbp+var_20] ",xcode,1
+"mov rdi, [rbp+var_28]  | * | mov r9, [rbp+var_90] ",xcode,1
+"mov r8, [rbp+var_20]  | * | mov [rbp+var_8], r9 ",xcode,1
+"mov r9, [rbp+var_90]  | * | mov [rbp+var_10], rdi ",xcode,1
+"mov [rbp+var_8], r9  | * | mov [rbp+var_18], r8 ",xcode,1
+"mov [rbp+var_10], rdi  | * | mov rdi, [rbp+var_10] ",xcode,1
+"mov [rbp+var_18], r8  | * | movsd xmm0, qword ptr [rdi] ",xcode,1
+"mov rdi, [rbp+var_10]  | * | mov rdi, [rbp+var_18] ",xcode,1
+"movsd xmm0, qword ptr [rdi]  | * | movsd xmm1, qword ptr [rdi] ",xcode,1
+"mov rdi, [rbp+var_18]  | * | ucomisd xmm1, xmm0 ",xcode,1
+"movsd xmm1, qword ptr [rdi]  | * | mov [rbp+var_98], rax ",xcode,1
+"ucomisd xmm1, xmm0  | * | jbe loc_100000C3F ",xcode,1
+"mov [rbp+var_98], rax  | * | mov rax, [rbp+var_28] ",xcode,1
+"jbe loc_100000C3F  | * | mov [rbp+var_A0], rax ",xcode,1
+"mov rax, [rbp+var_28]  | * | jmp loc_100000C4A ",xcode,1
+"mov [rbp+var_A0], rax  | * | loc_100000C3F:  ",xcode,1
+"jmp loc_100000C4A  | * | mov rax, [rbp+var_20] ",xcode,1
+"loc_100000C3F:   | * | mov [rbp+var_A0], rax ",xcode,1
+"mov rax, [rbp+var_20]  | * | loc_100000C4A:  ",xcode,1
+"mov [rbp+var_A0], rax  | * | mov rax, [rbp+var_A0] ",xcode,1
+"loc_100000C4A:   | * | movsd xmm0, qword ptr [rax] ",xcode,1
+"mov rax, [rbp+var_A0]  | * | movsd [rbp+var_68], xmm0 ",xcode,1
+"movsd xmm0, qword ptr [rax]  | * | mov eax, [rbp+var_6C] ",xcode,1
+"movsd [rbp+var_68], xmm0  | * | add eax, 1 ",xcode,1
+"mov eax, [rbp+var_6C]  | * | mov [rbp+var_6C], eax ",xcode,1
+"add eax, 1  | * | jmp loc_100000AEC ",xcode,1
+"mov [rbp+var_6C], eax  | * | loc_100000C6A:  ",xcode,1
+"jmp loc_100000AEC  | * | lea rdi, a10lf  ",xcode,1
+"loc_100000C6A:   | * | movsd xmm0, [rbp+var_68] ",xcode,1
+"lea rdi, a10lf   | * | mov al, 1 ",xcode,1
+"movsd xmm0, [rbp+var_68]  | * | call _printf ",xcode,1
+"mov al, 1  | * | mov [rbp+var_A4], eax ",xcode,1
+"call _printf  | * | add rsp, 0B0h ",xcode,1
+"mov [rbp+var_A4], eax  | * | pop rbp ",xcode,1
+"add rsp, 0B0h  | * | retn ",xcode,1
+pop rbp  | * | __Z5solvev endp ,xcode,1
+__Z5solvev endp  | * | public _main ,xcode,1
+align 10h  | * | _main proc near ,xcode,1
+var_1C = dword ptr -1Ch  | * | var_C = dword ptr -0Ch ,data,1
+var_18 = qword ptr -18h  | * | var_8 = dword ptr -8 ,data,1
+var_C = dword ptr -0Ch  | * | var_4 = dword ptr -4 ,data,1
+"sub rsp, 20h  | * | lea rsi, [rbp+var_8] ",xcode,1
+"mov rdi, cs:__ZNSt3__13cinE_ptr  | * | mov [rbp+var_4], 0 ",xcode,1
+"lea rsi, [rbp+var_8]  | * | call __ZNSt3__113basic_istreamIcNS_11char_traitsIcEEErsERi  ",xcode,1
+"mov [rbp+var_4], 0  | * | mov [rbp+var_C], 0 ",xcode,1
+"call __ZNSt3__113basic_istreamIcNS_11char_traitsIcEEErsERi   | * | mov [rbp+var_18], rax ",xcode,1
+"mov [rbp+var_C], 0  | * | loc_100000CBA:  ",xcode,1
+"mov [rbp+var_18], rax  | * | mov eax, [rbp+var_C] ",xcode,1
+"loc_100000CBA:   | * | cmp eax, [rbp+var_8] ",xcode,1
+"mov eax, [rbp+var_C]  | * | jge loc_100000CFB ",xcode,1
+"cmp eax, [rbp+var_8]  | * | call __Z4readv  ",xcode,1
+"jge loc_100000CFB  | * | lea rdi, aCaseD  ",xcode,1
+"call __Z4readv   | * | mov eax, [rbp+var_C] ",xcode,1
+"lea rdi, aCaseD   | * | add eax, 1 ",xcode,1
+"mov eax, [rbp+var_C]  | * | mov esi, eax ",xcode,1
+"add eax, 1  | * | mov al, 0 ",xcode,1
+"mov esi, eax  | * | call _printf ",xcode,1
+"mov al, 0  | * | mov [rbp+var_1C], eax ",xcode,1
+call _printf  | * | call __Z5solvev  ,xcode,1
+"mov [rbp+var_1C], eax  | * | mov eax, [rbp+var_C] ",xcode,1
+"call __Z5solvev   | * | add eax, 1 ",xcode,1
+"mov eax, [rbp+var_C]  | * | mov [rbp+var_C], eax ",xcode,1
+"add eax, 1  | * | jmp loc_100000CBA ",xcode,1
+"mov [rbp+var_C], eax  | * | loc_100000CFB:  ",xcode,1
+"jmp loc_100000CBA  | * | mov eax, 0 ",xcode,1
+"loc_100000CFB:   | * | add rsp, 20h ",xcode,1
+"mov eax, 0  | * | pop rbp ",xcode,1
+pop rbp  | * | _main endp ,xcode,1
+_main endp  | * | __ZNSt3__14endlIcNS_11char_traitsIcEEEERNS_13basic_ostreamIT_T0_EES7_ proc near ,xcode,1
+var_88 = qword ptr -88h  | * | var_78 = dword ptr -78h ,data,1
+var_80 = qword ptr -80h  | * | var_71 = byte ptr -71h ,data,1
+var_78 = dword ptr -78h  | * | var_70 = qword ptr -70h ,data,1
+var_71 = byte ptr -71h  | * | var_64 = dword ptr -64h ,data,1
+var_70 = qword ptr -70h  | * | var_60 = qword ptr -60h ,data,1
+var_64 = dword ptr -64h  | * | var_58 = qword ptr -58h ,data,1
+var_60 = qword ptr -60h  | * | var_50 = qword ptr -50h ,data,1
+var_58 = qword ptr -58h  | * | var_48 = qword ptr -48h ,data,1
+var_50 = qword ptr -50h  | * | var_3C = dword ptr -3Ch ,data,1
+var_48 = qword ptr -48h  | * | var_38 = qword ptr -38h ,data,1
+var_3C = dword ptr -3Ch  | * | var_30 = byte ptr -30h ,data,1
+var_38 = qword ptr -38h  | * | var_21 = byte ptr -21h ,data,1
+var_21 = byte ptr -21h  | * | var_18 = qword ptr -18h ,data,1
+var_20 = qword ptr -20h  | * | var_9 = byte ptr -9 ,data,1
+"push rbp  | * | sub rsp, 90h ",xcode,1
+"mov rbp, rsp  | * | mov [rbp+var_48], rdi ",xcode,1
+"sub rsp, 90h  | * | mov rax, rdi ",xcode,1
+"mov [rbp+var_48], rdi  | * | mov rcx, [rdi] ",xcode,1
+"mov rax, rdi  | * | mov rcx, [rcx-18h] ",xcode,1
+"mov rcx, [rdi]  | * | add rdi, rcx ",xcode,1
+"mov rcx, [rcx-18h]  | * | mov [rbp+var_20], rdi ",xcode,1
+"add rdi, rcx  | * | mov [rbp+var_21], 0Ah ",xcode,1
+"mov [rbp+var_20], rdi  | * | mov rsi, [rbp+var_20] ",xcode,1
+"mov [rbp+var_21], 0Ah  | * | lea rcx, [rbp+var_30] ",xcode,1
+"mov rsi, [rbp+var_20]  | * | mov rdi, rcx  ",xcode,1
+"lea rcx, [rbp+var_30]  | * | mov [rbp+var_50], rax ",xcode,1
+"mov rdi, rcx   | * | mov [rbp+var_58], rcx ",xcode,1
+"mov [rbp+var_50], rax  | * | call __ZNKSt3__18ios_base6getlocEv  ",xcode,1
+"mov [rbp+var_58], rcx  | * | mov rax, [rbp+var_58] ",xcode,1
+"call __ZNKSt3__18ios_base6getlocEv   | * | mov [rbp+var_18], rax ",xcode,1
+"mov rax, [rbp+var_58]  | * | mov rsi, cs:__ZNSt3__15ctypeIcE2idE_ptr ",xcode,1
+"mov [rbp+var_18], rax  | * | mov rdi, rax ",xcode,1
+"mov rsi, cs:__ZNSt3__15ctypeIcE2idE_ptr  | * | call __ZNKSt3__16locale9use_facetERNS0_2idE  ",xcode,1
+"mov rdi, rax  | * | mov [rbp+var_60], rax ",xcode,1
+call __ZNKSt3__16locale9use_facetERNS0_2idE   | * | jmp $+5 ,xcode,1
+"mov [rbp+var_60], rax  | * | loc_100000D6C:  ",xcode,1
+"jmp $+5  | * | mov al, [rbp+var_21] ",xcode,1
+"loc_100000D6C:   | * | mov rcx, [rbp+var_60] ",xcode,1
+"mov al, [rbp+var_21]  | * | mov [rbp+var_8], rcx ",xcode,1
+"mov rcx, [rbp+var_60]  | * | mov [rbp+var_9], al ",xcode,1
+"mov [rbp+var_8], rcx  | * | mov rdx, [rbp+var_8] ",xcode,1
+"mov [rbp+var_9], al  | * | mov rsi, [rdx] ",xcode,1
+"mov rdx, [rbp+var_8]  | * | mov rsi, [rsi+38h] ",xcode,1
+"mov rsi, [rdx]  | * | movsx edi, [rbp+var_9] ",xcode,1
+"mov rsi, [rsi+38h]  | * | mov [rbp+var_64], edi ",xcode,1
+"movsx edi, [rbp+var_9]  | * | mov rdi, rdx ",xcode,1
+"mov [rbp+var_64], edi  | * | mov r8d, [rbp+var_64] ",xcode,1
+"mov rdi, rdx  | * | mov [rbp+var_70], rsi ",xcode,1
+"mov r8d, [rbp+var_64]  | * | mov esi, r8d ",xcode,1
+"mov [rbp+var_70], rsi  | * | mov rdx, [rbp+var_70] ",xcode,1
+"mov esi, r8d  | * | call rdx ",xcode,1
+"mov rdx, [rbp+var_70]  | * | mov [rbp+var_71], al ",xcode,1
+call rdx  | * | jmp loc_100000DD5 ,xcode,1
+"mov [rbp+var_71], al  | * | mov ecx, edx ",xcode,1
+"jmp loc_100000DD5  | * | mov [rbp+var_38], rax ",xcode,1
+"mov ecx, edx  | * | mov [rbp+var_3C], ecx ",xcode,1
+"mov [rbp+var_38], rax  | * | lea rdi, [rbp+var_30]  ",xcode,1
+"mov [rbp+var_3C], ecx  | * | call __ZNSt3__16localeD1Ev  ",xcode,1
+"lea rdi, [rbp+var_30]   | * | jmp $+5 ",xcode,1
+call __ZNSt3__16localeD1Ev   | * | loc_100000DBF:  ,xcode,1
+"jmp $+5  | * | mov rdi, [rbp+var_38] ",xcode,1
+loc_100000DBF:   | * | call __Unwind_Resume ,xcode,1
+"mov rdi, [rbp+var_38]  | * | mov ecx, edx ",xcode,1
+"call __Unwind_Resume  | * | mov rdi, rax ",xcode,1
+"mov ecx, edx  | * | mov [rbp+var_78], ecx ",xcode,1
+"mov rdi, rax  | * | call ___clang_call_terminate ",xcode,1
+"mov [rbp+var_78], ecx  | * | loc_100000DD5:  ",xcode,1
+"call ___clang_call_terminate  | * | lea rdi, [rbp+var_30]  ",xcode,1
+loc_100000DD5:   | * | call __ZNSt3__16localeD1Ev  ,xcode,1
+"lea rdi, [rbp+var_30]   | * | mov rdi, [rbp+var_50] ",xcode,1
+"call __ZNSt3__16localeD1Ev   | * | mov al, [rbp+var_71] ",xcode,1
+"mov rdi, [rbp+var_50]  | * | movsx esi, al ",xcode,1
+"mov al, [rbp+var_71]  | * | call __ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEE3putEc  ",xcode,1
+"movsx esi, al  | * | mov rdi, [rbp+var_48] ",xcode,1
+"call __ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEE3putEc   | * | mov [rbp+var_80], rax ",xcode,1
+"mov rdi, [rbp+var_48]  | * | call __ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEE5flushEv  ",xcode,1
+"mov [rbp+var_80], rax  | * | mov rdi, [rbp+var_48] ",xcode,1
+"call __ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEE5flushEv   | * | mov [rbp+var_88], rax ",xcode,1
+"mov rdi, [rbp+var_48]  | * | mov rax, rdi ",xcode,1
+"mov [rbp+var_88], rax  | * | add rsp, 90h ",xcode,1
+"mov rax, rdi  | * | pop rbp ",xcode,1
+"add rsp, 90h  | * | retn ",xcode,1
+pop rbp  | * | __ZNSt3__14endlIcNS_11char_traitsIcEEEERNS_13basic_ostreamIT_T0_EES7_ endp ,xcode,1
+retn  | * | align 20h ,xcode,1
+__ZNSt3__14endlIcNS_11char_traitsIcEEEERNS_13basic_ostreamIT_T0_EES7_ endp  | * | ___clang_call_terminate proc near  ,xcode,1
+___clang_call_terminate proc near   | * | push rbp ,xcode,1
+"push rbp  | * | sub rsp, 10h ",xcode,1
+"mov rbp, rsp  | * | call ___cxa_begin_catch ",xcode,1
+"sub rsp, 10h  | * | mov [rbp+var_8], rax ",xcode,1
+call ___cxa_begin_catch  | * | call __ZSt9terminatev  ,xcode,1
+"mov [rbp+var_8], rax  | * | ___clang_call_terminate endp ",xcode,1
+call __ZSt9terminatev   | * | __text ends ,xcode,1

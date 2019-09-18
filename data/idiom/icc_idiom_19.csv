@@ -1,0 +1,3093 @@
+idiom,label,count
+"public _start  | * | xor ebp, ebp ",icc,1
+"_start proc near   | * | mov r9, rdx  ",icc,1
+"xor ebp, ebp  | * | pop rsi  ",icc,1
+"mov r9, rdx   | * | mov rdx, rsp  ",icc,1
+"pop rsi   | * | and rsp, 0FFFFFFFFFFFFFFF0h ",icc,1
+"mov rdx, rsp   | * | push rax ",icc,1
+"and rsp, 0FFFFFFFFFFFFFFF0h  | * | push rsp  ",icc,1
+"push rax  | * | mov r8, offset __libc_csu_fini  ",icc,1
+"push rsp   | * | mov rcx, offset __libc_csu_init  ",icc,1
+"mov r8, offset __libc_csu_fini   | * | mov rdi, offset main  ",icc,1
+"mov rcx, offset __libc_csu_init   | * | call ___libc_start_main ",icc,1
+"mov rdi, offset main   | * | hlt ",icc,1
+call ___libc_start_main  | * | _start endp ,icc,1
+hlt  | * | align 4 ,icc,1
+_start endp  | * | call_gmon_start proc near  ,icc,1
+"align 4  | * | sub rsp, 8 ",icc,1
+"call_gmon_start proc near   | * | mov rax, cs:__gmon_start___ptr ",icc,1
+"sub rsp, 8  | * | test rax, rax ",icc,1
+"mov rax, cs:__gmon_start___ptr  | * | jz short loc_4013FE ",icc,1
+"test rax, rax  | * | call rax  ",icc,1
+jz short loc_4013FE  | * | loc_4013FE:  ,icc,1
+"call rax   | * | add rsp, 8 ",icc,1
+loc_4013FE:   | * | retn ,icc,1
+"add rsp, 8  | * | call_gmon_start endp ",icc,1
+retn  | * | align 10h ,icc,6
+call_gmon_start endp  | * | __do_global_dtors_aux proc near  ,icc,1
+align 10h  | * | push rbp ,icc,2
+"__do_global_dtors_aux proc near   | * | mov rbp, rsp ",icc,1
+push rbp  | * | push rbx ,icc,2
+"mov rbp, rsp  | * | sub rsp, 8 ",icc,2
+"push rbx  | * | cmp cs:completed_6531, 0 ",icc,1
+"sub rsp, 8  | * | jnz short loc_40146D ",icc,1
+"cmp cs:completed_6531, 0  | * | mov ebx, offset __DTOR_END__ ",icc,1
+"jnz short loc_40146D  | * | mov rax, cs:dtor_idx_6533 ",icc,1
+"mov ebx, offset __DTOR_END__  | * | sub rbx, offset __DTOR_LIST__ ",icc,1
+"mov rax, cs:dtor_idx_6533  | * | sar rbx, 3 ",icc,1
+"sub rbx, offset __DTOR_LIST__  | * | sub rbx, 1 ",icc,1
+"sar rbx, 3  | * | cmp rax, rbx ",icc,1
+"sub rbx, 1  | * | jnb short loc_401466 ",icc,1
+"cmp rax, rbx  | * | nop word ptr [rax+rax+00h] ",icc,1
+jnb short loc_401466  | * | loc_401448:  ,icc,1
+"nop word ptr [rax+rax+00h]  | * | add rax, 1 ",icc,1
+"loc_401448:   | * | mov cs:dtor_idx_6533, rax ",icc,1
+"add rax, 1  | * | call ds:__DTOR_LIST__[rax*8] ",icc,1
+"mov cs:dtor_idx_6533, rax  | * | mov rax, cs:dtor_idx_6533 ",icc,1
+"call ds:__DTOR_LIST__[rax*8]  | * | cmp rax, rbx ",icc,1
+"mov rax, cs:dtor_idx_6533  | * | jb short loc_401448 ",icc,1
+"cmp rax, rbx  | * | loc_401466:  ",icc,1
+"jb short loc_401448  | * | mov cs:completed_6531, 1 ",icc,1
+loc_401466:   | * | loc_40146D:  ,icc,1
+"mov cs:completed_6531, 1  | * | add rsp, 8 ",icc,1
+loc_40146D:   | * | pop rbx ,icc,1
+"add rsp, 8  | * | pop rbp ",icc,2
+pop rbx  | * | retn ,icc,3
+pop rbp  | * | __do_global_dtors_aux endp ,icc,1
+retn  | * | align 20h ,icc,9
+__do_global_dtors_aux endp  | * | frame_dummy proc near  ,icc,1
+"align 20h  | * | cmp cs:__JCR_LIST__, 0 ",icc,1
+frame_dummy proc near   | * | push rbp ,icc,1
+"cmp cs:__JCR_LIST__, 0  | * | mov rbp, rsp ",icc,1
+push rbp  | * | jz short loc_4014A0 ,icc,1
+"mov rbp, rsp  | * | mov eax, 0 ",icc,1
+"jz short loc_4014A0  | * | test rax, rax ",icc,1
+"mov eax, 0  | * | jz short loc_4014A0 ",icc,1
+"test rax, rax  | * | pop rbp ",icc,1
+"jz short loc_4014A0  | * | mov edi, offset __JCR_LIST__ ",icc,1
+pop rbp  | * | jmp rax ,icc,1
+"mov edi, offset __JCR_LIST__  | * | loc_4014A0:  ",icc,1
+jmp rax  | * | pop rbp ,icc,1
+loc_4014A0:   | * | retn ,icc,1
+pop rbp  | * | frame_dummy endp ,icc,1
+frame_dummy endp  | * | public main ,icc,1
+align 10h  | * | main proc near  ,icc,1
+var_80 = dword ptr -80h  | * | var_7B = byte ptr -7Bh ,data,1
+var_7C = byte ptr -7Ch  | * | var_7A = byte ptr -7Ah ,data,1
+var_7B = byte ptr -7Bh  | * | var_79 = byte ptr -79h ,data,1
+var_7A = byte ptr -7Ah  | * | var_78 = qword ptr -78h ,data,1
+var_79 = byte ptr -79h  | * | var_70 = byte ptr -70h ,data,1
+var_78 = qword ptr -78h  | * | var_6F = byte ptr -6Fh ,data,1
+var_70 = byte ptr -70h  | * | var_6E = byte ptr -6Eh ,data,1
+var_6F = byte ptr -6Fh  | * | var_6D = byte ptr -6Dh ,data,1
+var_6E = byte ptr -6Eh  | * | var_6C = byte ptr -6Ch ,data,1
+var_6D = byte ptr -6Dh  | * | var_6B = byte ptr -6Bh ,data,1
+var_6C = byte ptr -6Ch  | * | var_6A = byte ptr -6Ah ,data,1
+var_6B = byte ptr -6Bh  | * | var_69 = byte ptr -69h ,data,1
+var_6A = byte ptr -6Ah  | * | var_68 = qword ptr -68h ,data,1
+var_69 = byte ptr -69h  | * | var_60 = qword ptr -60h ,data,1
+var_68 = qword ptr -68h  | * | var_58 = qword ptr -58h ,data,1
+var_60 = qword ptr -60h  | * | var_50 = byte ptr -50h ,data,1
+var_58 = qword ptr -58h  | * | var_4F = byte ptr -4Fh ,data,1
+var_50 = byte ptr -50h  | * | arg_0 = qword ptr 10h ,data,1
+var_4F = byte ptr -4Fh  | * | arg_18 = qword ptr 28h ,data,1
+arg_0 = qword ptr 10h  | * | arg_20 = qword ptr 30h ,data,1
+"push rbp  | * | and rsp, 0FFFFFFFFFFFFFF80h ",icc,1
+"mov rbp, rsp  | * | push r12 ",icc,1
+"and rsp, 0FFFFFFFFFFFFFF80h  | * | sub rsp, 78h ",icc,1
+"push r12  | * | mov rsi, 0 ",icc,1
+"sub rsp, 78h  | * | mov edi, 3 ",icc,1
+"mov rsi, 0  | * | call __intel_new_feature_proc_init ",icc,1
+"mov edi, 3  | * | stmxcsr [rsp+80h+var_80] ",icc,1
+"call __intel_new_feature_proc_init  | * | mov esi, offset unk_404A64 ",icc,1
+"stmxcsr [rsp+80h+var_80]  | * | lea rdi, [rsp+80h+var_60] ",icc,1
+"mov esi, offset unk_404A64  | * | or [rsp+80h+var_80], 8040h ",icc,1
+"lea rdi, [rsp+80h+var_60]  | * | lea rdx, [rsp+80h+var_50] ",icc,1
+"or [rsp+80h+var_80], 8040h  | * | ldmxcsr [rsp+80h+var_80] ",icc,1
+"lea rdx, [rsp+80h+var_50]  | * | call __ZNSsC1EPKcRKSaIcE  ",icc,1
+"ldmxcsr [rsp+80h+var_80]  | * | mov esi, offset unk_404A68 ",icc,1
+"call __ZNSsC1EPKcRKSaIcE   | * | lea rdi, [rsp+80h+var_58] ",icc,1
+"mov esi, offset unk_404A68  | * | lea rdx, [rsp+80h+var_4F] ",icc,1
+"lea rdi, [rsp+80h+var_58]  | * | call __ZNSsC1EPKcRKSaIcE  ",icc,8
+"lea rdx, [rsp+80h+var_4F]  | * | lea rdi, [rsp+80h+var_60] ",icc,1
+"call __ZNSsC1EPKcRKSaIcE   | * | lea rsi, [rsp+80h+var_58] ",icc,1
+"lea rdi, [rsp+80h+var_60]  | * | call _Z3addSsSs  ",icc,1
+"lea rsi, [rsp+80h+var_58]  | * | mov rdi, [rsp+80h+var_58] ",icc,1
+"call _Z3addSsSs   | * | mov r12d, offset _ZNSs4_Rep20_S_empty_rep_storageE@@GLIBCXX_3_4 ",icc,1
+"mov rdi, [rsp+80h+var_58]  | * | lea rdx, [rdi-18h] ",icc,1
+"mov r12d, offset _ZNSs4_Rep20_S_empty_rep_storageE@@GLIBCXX_3_4  | * | cmp rdx, r12 ",icc,1
+"lea rdx, [rdi-18h]  | * | jnz loc_402051 ",icc,1
+"cmp rdx, r12  | * | loc_401530:  ",icc,1
+"jnz loc_402051  | * | mov rdi, [rsp+80h+var_60] ",icc,1
+"loc_401530:   | * | lea rdx, [rdi-18h] ",icc,1
+"mov rdi, [rsp+80h+var_60]  | * | cmp rdx, r12 ",icc,8
+"lea rdx, [rdi-18h]  | * | jnz loc_402015 ",icc,1
+"cmp rdx, r12  | * | loc_401542:  ",icc,1
+"jnz loc_402015  | * | mov esi, offset unk_404A6C ",icc,1
+"loc_401542:   | * | lea rdi, [rsp+80h+var_58] ",icc,1
+"mov esi, offset unk_404A6C  | * | lea rdx, [rsp+80h+var_4F] ",icc,1
+"lea rdx, [rsp+80h+var_4F]  | * | mov esi, offset unk_404A70 ",icc,1
+"call __ZNSsC1EPKcRKSaIcE   | * | lea rdi, [rsp+80h+var_60] ",icc,7
+"mov esi, offset unk_404A70  | * | lea rdx, [rsp+80h+var_50] ",icc,1
+"lea rdi, [rsp+80h+var_60]  | * | call __ZNSsC1EPKcRKSaIcE  ",icc,7
+"lea rdx, [rsp+80h+var_50]  | * | lea rdi, [rsp+80h+var_58] ",icc,7
+"call __ZNSsC1EPKcRKSaIcE   | * | lea rsi, [rsp+80h+var_60] ",icc,7
+"lea rdi, [rsp+80h+var_58]  | * | call _Z3addSsSs  ",icc,7
+"lea rsi, [rsp+80h+var_60]  | * | mov rdi, [rsp+80h+var_60] ",icc,7
+"call _Z3addSsSs   | * | lea rdx, [rdi-18h] ",icc,7
+"lea rdx, [rdi-18h]  | * | jnz loc_401F51 ",icc,1
+"cmp rdx, r12  | * | loc_40158B:  ",icc,1
+"jnz loc_401F51  | * | mov rdi, [rsp+80h+var_58] ",icc,1
+"loc_40158B:   | * | lea rdx, [rdi-18h] ",icc,1
+"mov rdi, [rsp+80h+var_58]  | * | cmp rdx, r12 ",icc,7
+"lea rdx, [rdi-18h]  | * | jnz loc_401F15 ",icc,1
+"cmp rdx, r12  | * | loc_40159D:  ",icc,1
+"jnz loc_401F15  | * | mov esi, (offset aConversionRunT+20h)  ",icc,1
+"loc_40159D:   | * | lea rdi, [rsp+80h+var_58] ",icc,1
+"mov esi, (offset aConversionRunT+20h)   | * | lea rdx, [rsp+80h+var_4F] ",icc,1
+"lea rdx, [rsp+80h+var_4F]  | * | mov esi, (offset aSsse3+4)  ",icc,1
+"mov esi, (offset aSsse3+4)   | * | lea rdx, [rsp+80h+var_50] ",icc,1
+"lea rdx, [rdi-18h]  | * | jnz loc_401E51 ",icc,1
+"cmp rdx, r12  | * | loc_4015E6:  ",icc,1
+"jnz loc_401E51  | * | mov rdi, [rsp+80h+var_58] ",icc,1
+"loc_4015E6:   | * | lea rdx, [rdi-18h] ",icc,1
+"lea rdx, [rdi-18h]  | * | jnz loc_401E15 ",icc,1
+"cmp rdx, r12  | * | loc_4015F8:  ",icc,1
+"jnz loc_401E15  | * | mov esi, offset unk_404A74 ",icc,1
+"loc_4015F8:   | * | lea rdi, [rsp+80h+var_58] ",icc,1
+"mov esi, offset unk_404A74  | * | lea rdx, [rsp+80h+var_4F] ",icc,1
+"lea rdx, [rsp+80h+var_4F]  | * | mov esi, offset unk_404A78 ",icc,1
+"mov esi, offset unk_404A78  | * | lea rdx, [rsp+80h+var_50] ",icc,1
+"lea rdx, [rdi-18h]  | * | jnz loc_401D51 ",icc,1
+"cmp rdx, r12  | * | loc_401641:  ",icc,1
+"jnz loc_401D51  | * | mov rdi, [rsp+80h+var_58] ",icc,1
+"loc_401641:   | * | lea rdx, [rdi-18h] ",icc,1
+"lea rdx, [rdi-18h]  | * | jnz loc_401D15 ",icc,1
+"cmp rdx, r12  | * | loc_401653:  ",icc,1
+"jnz loc_401D15  | * | mov esi, (offset aIntelRPentiumR+34h)  ",icc,1
+"loc_401653:   | * | lea rdi, [rsp+80h+var_58] ",icc,1
+"mov esi, (offset aIntelRPentiumR+34h)   | * | lea rdx, [rsp+80h+var_4F] ",icc,1
+"lea rdx, [rsp+80h+var_4F]  | * | mov esi, offset unk_404A7C ",icc,1
+"mov esi, offset unk_404A7C  | * | lea rdx, [rsp+80h+var_50] ",icc,1
+"lea rdx, [rdi-18h]  | * | jnz loc_401C51 ",icc,1
+"cmp rdx, r12  | * | loc_40169C:  ",icc,1
+"jnz loc_401C51  | * | mov rdi, [rsp+80h+var_58] ",icc,1
+"loc_40169C:   | * | lea rdx, [rdi-18h] ",icc,1
+"lea rdx, [rdi-18h]  | * | jnz loc_401C15 ",icc,1
+"cmp rdx, r12  | * | loc_4016AE:  ",icc,1
+"jnz loc_401C15  | * | mov esi, offset unk_404A80 ",icc,1
+"loc_4016AE:   | * | lea rdi, [rsp+80h+var_58] ",icc,1
+"mov esi, offset unk_404A80  | * | lea rdx, [rsp+80h+var_4F] ",icc,1
+"lea rdx, [rsp+80h+var_4F]  | * | mov esi, offset unk_404A84 ",icc,1
+"mov esi, offset unk_404A84  | * | lea rdx, [rsp+80h+var_50] ",icc,1
+"lea rdx, [rdi-18h]  | * | jnz loc_401B51 ",icc,1
+"cmp rdx, r12  | * | loc_4016F7:  ",icc,1
+"jnz loc_401B51  | * | mov rdi, [rsp+80h+var_58] ",icc,1
+"loc_4016F7:   | * | lea rdx, [rdi-18h] ",icc,1
+"lea rdx, [rdi-18h]  | * | jnz loc_401B15 ",icc,1
+"cmp rdx, r12  | * | loc_401709:  ",icc,1
+"jnz loc_401B15  | * | mov esi, offset unk_404A88 ",icc,1
+"loc_401709:   | * | lea rdi, [rsp+80h+var_58] ",icc,1
+"mov esi, offset unk_404A88  | * | lea rdx, [rsp+80h+var_4F] ",icc,1
+"lea rdx, [rsp+80h+var_4F]  | * | mov esi, offset unk_404A8C ",icc,1
+"mov esi, offset unk_404A8C  | * | lea rdx, [rsp+80h+var_50] ",icc,1
+"lea rdx, [rdi-18h]  | * | jnz loc_401A51 ",icc,1
+"cmp rdx, r12  | * | loc_401752:  ",icc,1
+"jnz loc_401A51  | * | mov rdi, [rsp+80h+var_58] ",icc,1
+"loc_401752:   | * | lea rdx, [rdi-18h] ",icc,1
+"lea rdx, [rdi-18h]  | * | jnz loc_401A15 ",icc,1
+"cmp rdx, r12  | * | loc_401764:  ",icc,1
+"jnz loc_401A15  | * | mov esi, offset unk_404A90 ",icc,1
+"loc_401764:   | * | lea rdi, [rsp+80h+var_58] ",icc,1
+"mov esi, offset unk_404A90  | * | lea rdx, [rsp+80h+var_4F] ",icc,1
+"lea rdx, [rsp+80h+var_4F]  | * | mov esi, offset unk_404A94 ",icc,1
+"mov esi, offset unk_404A94  | * | lea rdx, [rsp+80h+var_50] ",icc,1
+"lea rdx, [rdi-18h]  | * | jnz loc_401956 ",icc,1
+"cmp rdx, r12  | * | loc_4017AD:  ",icc,1
+"jnz loc_401956  | * | mov rdi, [rsp+80h+var_58] ",icc,1
+"loc_4017AD:   | * | lea rdx, [rdi-18h] ",icc,1
+"lea rdx, [rdi-18h]  | * | jnz loc_40191A ",icc,1
+"cmp rdx, r12  | * | loc_4017BF:  ",icc,1
+"jnz loc_40191A  | * | mov edi, offset _ZSt3cin@@GLIBCXX_3_4 ",icc,1
+"loc_4017BF:   | * | lea rsi, [rsp+80h+var_78] ",icc,1
+"mov edi, offset _ZSt3cin@@GLIBCXX_3_4  | * | call __ZNSirsERi  ",icc,3
+"lea rsi, [rsp+80h+var_78]  | * | mov esi, dword ptr [rsp+80h+var_78] ",icc,1
+"call __ZNSirsERi   | * | xor r12d, r12d ",icc,1
+"mov esi, dword ptr [rsp+80h+var_78]  | * | test esi, esi ",icc,1
+"xor r12d, r12d  | * | jle loc_4018BD ",icc,1
+"test esi, esi  | * | mov [rsp+80h+var_68], r13 ",icc,1
+jle loc_4018BD  | * | loc_4017E2:  ,icc,1
+"mov [rsp+80h+var_68], r13  | * | mov edi, offset _ZSt4cerr@@GLIBCXX_3_4 ",icc,1
+"loc_4017E2:   | * | mov esi, r12d ",icc,1
+"mov edi, offset _ZSt4cerr@@GLIBCXX_3_4  | * | call __ZNSolsEi  ",icc,1
+"mov esi, r12d  | * | mov rdi, rax ",icc,1
+"call __ZNSolsEi   | * | mov esi, offset unk_404A98 ",icc,2
+"mov rdi, rax  | * | call __ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc  ",icc,2
+"mov esi, offset unk_404A98  | * | mov rdi, rax ",icc,2
+"call __ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc   | * | mov esi, dword ptr [rsp+80h+var_78] ",icc,2
+"mov rdi, rax  | * | call __ZNSolsEi  ",icc,2
+"mov esi, dword ptr [rsp+80h+var_78]  | * | mov rdi, rax ",icc,2
+"call __ZNSolsEi   | * | mov esi, 20h  ",icc,2
+"mov rdi, rax  | * | call __ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_c  ",icc,2
+"mov esi, 20h   | * | mov r13, rax ",icc,1
+call __ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_c   | * | call _clock ,icc,2
+"mov r13, rax  | * | mov rdi, r13 ",icc,1
+"call _clock  | * | mov rsi, rax ",icc,2
+"mov rdi, r13  | * | call __ZNSolsEl  ",icc,1
+"mov rsi, rax  | * | mov rdi, rax ",icc,2
+"call __ZNSolsEl   | * | mov esi, offset __ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_  ",icc,2
+"mov rdi, rax  | * | call __ZNSolsEPFRSoS_E  ",icc,3
+"mov esi, offset __ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_   | * | mov edi, offset _ZSt3cin@@GLIBCXX_3_4 ",icc,1
+"call __ZNSolsEPFRSoS_E   | * | mov esi, offset k ",icc,1
+"mov esi, offset k  | * | mov edi, offset format  ",icc,2
+"call __ZNSirsERi   | * | mov esi, offset buf ",icc,2
+"mov edi, offset format   | * | xor eax, eax ",icc,2
+"mov esi, offset buf  | * | call _scanf ",icc,2
+"xor eax, eax  | * | mov edx, offset buf ",icc,2
+"call _scanf  | * | mov rcx, rdx ",icc,2
+"mov edx, offset buf  | * | and rdx, 0FFFFFFFFFFFFFFF0h ",icc,2
+"mov rcx, rdx  | * | pxor xmm0, xmm0 ",icc,3
+"and rdx, 0FFFFFFFFFFFFFFF0h  | * | pcmpeqb xmm0, xmmword ptr [rdx] ",icc,3
+"pxor xmm0, xmm0  | * | pmovmskb eax, xmm0 ",icc,3
+"pcmpeqb xmm0, xmmword ptr [rdx]  | * | and ecx, 0Fh ",icc,3
+"pmovmskb eax, xmm0  | * | shr eax, cl ",icc,3
+"and ecx, 0Fh  | * | bsf eax, eax ",icc,3
+"shr eax, cl  | * | jnz short loc_401882 ",icc,1
+"bsf eax, eax  | * | mov rax, rdx ",icc,3
+"jnz short loc_401882  | * | add rdx, rcx ",icc,1
+"mov rax, rdx  | * | call __intel_sse2_strlen ",icc,3
+"add rdx, rcx  | * | loc_401882:  ",icc,1
+"call __intel_sse2_strlen  | * | mov edi, offset s  ",icc,2
+"loc_401882:   | * | mov esi, offset buf  ",icc,1
+"mov edi, offset s   | * | mov rdx, rax  ",icc,2
+"mov esi, offset buf   | * | call __ZNSs6assignEPKcm  ",icc,1
+"mov rdx, rax   | * | inc r12d ",icc,1
+"call __ZNSs6assignEPKcm   | * | mov edi, offset aCaseD  ",icc,1
+"inc r12d  | * | mov esi, r12d ",icc,1
+"mov edi, offset aCaseD   | * | xor eax, eax ",icc,1
+"mov esi, r12d  | * | call _printf ",icc,1
+"xor eax, eax  | * | call _Z5solvev  ",icc,1
+"call _printf  | * | mov esi, dword ptr [rsp+80h+var_78] ",icc,1
+"call _Z5solvev   | * | cmp r12d, esi ",icc,1
+"mov esi, dword ptr [rsp+80h+var_78]  | * | jl loc_4017E2 ",icc,1
+"cmp r12d, esi  | * | mov r13, [rsp+80h+var_68] ",icc,1
+jl loc_4017E2  | * | loc_4018BD:  ,icc,1
+"mov r13, [rsp+80h+var_68]  | * | mov edi, offset _ZSt4cerr@@GLIBCXX_3_4 ",icc,1
+loc_4018BD:   | * | call __ZNSolsEi  ,icc,1
+"mov edi, offset _ZSt4cerr@@GLIBCXX_3_4  | * | mov rdi, rax ",icc,1
+"mov esi, 20h   | * | mov r12, rax ",icc,1
+"mov r12, rax  | * | mov rdi, r12 ",icc,1
+"mov rdi, r12  | * | call __ZNSolsEl  ",icc,1
+"mov esi, offset __ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_   | * | xor eax, eax ",icc,1
+"call __ZNSolsEPFRSoS_E   | * | add rsp, 78h ",icc,1
+"xor eax, eax  | * | pop r12 ",icc,1
+"add rsp, 78h  | * | mov rsp, rbp ",icc,1
+pop r12  | * | pop rbp ,icc,1
+"mov rsp, rbp  | * | retn ",icc,1
+pop rbp  | * | loc_40191A:  ,icc,1
+"retn  | * | mov eax, 0 ",icc,1
+"loc_40191A:   | * | test rax, rax ",icc,1
+"mov eax, 0  | * | jz short loc_401933 ",icc,1
+"test rax, rax  | * | add rdi, 0FFFFFFFFFFFFFFF8h ",icc,16
+"jz short loc_401933  | * | mov ecx, 0FFFFFFFFh ",icc,1
+"add rdi, 0FFFFFFFFFFFFFFF8h  | * | lock xadd [rdi], ecx ",icc,16
+"mov ecx, 0FFFFFFFFh  | * | jmp short loc_40193C ",icc,1
+"lock xadd [rdi], ecx  | * | loc_401933:  ",icc,1
+"jmp short loc_40193C  | * | mov ecx, [rdx+10h] ",icc,1
+"loc_401933:   | * | lea eax, [rcx-1] ",icc,1
+"mov ecx, [rdx+10h]  | * | mov [rdx+10h], eax ",icc,16
+"lea eax, [rcx-1]  | * | loc_40193C:  ",icc,1
+"mov [rdx+10h], eax  | * | test ecx, ecx ",icc,16
+loc_40193C:   | * | jg loc_4017BF ,icc,1
+"test ecx, ecx  | * | mov rdi, rdx ",icc,16
+"jg loc_4017BF  | * | lea rsi, [rsp+80h+var_80+1] ",icc,1
+"mov rdi, rdx  | * | call __ZNSs4_Rep10_M_destroyERKSaIcE  ",icc,16
+"lea rsi, [rsp+80h+var_80+1]  | * | jmp loc_4017BF ",icc,1
+call __ZNSs4_Rep10_M_destroyERKSaIcE   | * | loc_401956:  ,icc,1
+"jmp loc_4017BF  | * | mov eax, 0 ",icc,1
+"loc_401956:   | * | test rax, rax ",icc,1
+"mov eax, 0  | * | jz short loc_40196F ",icc,1
+"jz short loc_40196F  | * | mov ecx, 0FFFFFFFFh ",icc,1
+"mov ecx, 0FFFFFFFFh  | * | jmp short loc_401978 ",icc,1
+"lock xadd [rdi], ecx  | * | loc_40196F:  ",icc,1
+"jmp short loc_401978  | * | mov ecx, [rdx+10h] ",icc,1
+"loc_40196F:   | * | lea eax, [rcx-1] ",icc,1
+"lea eax, [rcx-1]  | * | loc_401978:  ",icc,1
+loc_401978:   | * | jg loc_4017AD ,icc,1
+"jg loc_4017AD  | * | lea rsi, [rsp+80h+var_80] ",icc,1
+"lea rsi, [rsp+80h+var_80]  | * | jmp loc_4017AD ",icc,1
+"call __ZNSs4_Rep10_M_destroyERKSaIcE   | * | mov [rsp-8+arg_0], rax ",icc,16
+"jmp loc_4017AD  | * | mov rdi, [rsp-8+arg_18] ",icc,1
+"mov [rsp-8+arg_0], rax  | * | mov eax, offset _ZNSs4_Rep20_S_empty_rep_storageE@@GLIBCXX_3_4 ",icc,8
+"mov rdi, [rsp-8+arg_18]  | * | lea r12, [rdi-18h] ",icc,8
+"mov eax, offset _ZNSs4_Rep20_S_empty_rep_storageE@@GLIBCXX_3_4  | * | cmp r12, rax ",icc,16
+"lea r12, [rdi-18h]  | * | jnz short loc_4019E6 ",icc,1
+"cmp r12, rax  | * | loc_4019A9:  ",icc,1
+"jnz short loc_4019E6  | * | mov rdi, [rsp-8+arg_20] ",icc,1
+"loc_4019A9:   | * | mov eax, offset _ZNSs4_Rep20_S_empty_rep_storageE@@GLIBCXX_3_4 ",icc,1
+"mov rdi, [rsp-8+arg_20]  | * | lea r12, [rdi-18h] ",icc,8
+"lea r12, [rdi-18h]  | * | jnz short loc_4019C6 ",icc,1
+"cmp r12, rax  | * | loc_4019BC:  ",icc,1
+"jnz short loc_4019C6  | * | mov rdi, [rsp-8+arg_0]  ",icc,1
+loc_4019BC:   | * | call __Unwind_Resume ,icc,1
+"mov rdi, [rsp-8+arg_0]   | * | loc_4019C6:  ",icc,1
+"call __Unwind_Resume  | * | add rdi, 0FFFFFFFFFFFFFFF8h  ",icc,1
+"loc_4019C6:   | * | mov esi, 0FFFFFFFFh  ",icc,1
+"add rdi, 0FFFFFFFFFFFFFFF8h   | * | call _ZN9__gnu_cxx27__exchange_and_add_dispatchEPii  ",icc,16
+"mov esi, 0FFFFFFFFh   | * | test eax, eax ",icc,16
+call _ZN9__gnu_cxx27__exchange_and_add_dispatchEPii   | * | jg short loc_4019BC ,icc,1
+"test eax, eax  | * | mov rdi, r12 ",icc,16
+"jg short loc_4019BC  | * | lea rsi, [rsp+0] ",icc,1
+"mov rdi, r12  | * | call __ZNSs4_Rep10_M_destroyERKSaIcE  ",icc,16
+"lea rsi, [rsp+0]  | * | jmp short loc_4019BC ",icc,1
+call __ZNSs4_Rep10_M_destroyERKSaIcE   | * | loc_4019E6:  ,icc,1
+"jmp short loc_4019BC  | * | add rdi, 0FFFFFFFFFFFFFFF8h  ",icc,1
+"loc_4019E6:   | * | mov esi, 0FFFFFFFFh  ",icc,1
+call _ZN9__gnu_cxx27__exchange_and_add_dispatchEPii   | * | jg short loc_4019A9 ,icc,1
+"jg short loc_4019A9  | * | lea rsi, [rsp+1] ",icc,1
+"lea rsi, [rsp+1]  | * | jmp short loc_4019A9 ",icc,1
+jmp short loc_4019A9  | * | jmp short loc_4019A9 ,icc,1
+"mov [rsp-8+arg_0], rax  | * | mov [rsp-8+arg_0], rax ",icc,8
+jmp short loc_4019A9  | * | jmp short loc_4019BC ,icc,1
+"mov [rsp-8+arg_0], rax  | * | loc_401A15:  ",icc,1
+"jmp short loc_4019BC  | * | mov eax, 0 ",icc,1
+"loc_401A15:   | * | test rax, rax ",icc,1
+"mov eax, 0  | * | jz short loc_401A2E ",icc,1
+"jz short loc_401A2E  | * | mov ecx, 0FFFFFFFFh ",icc,1
+"mov ecx, 0FFFFFFFFh  | * | jmp short loc_401A37 ",icc,1
+"lock xadd [rdi], ecx  | * | loc_401A2E:  ",icc,1
+"jmp short loc_401A37  | * | mov ecx, [rdx+10h] ",icc,1
+"loc_401A2E:   | * | lea eax, [rcx-1] ",icc,1
+"lea eax, [rcx-1]  | * | loc_401A37:  ",icc,1
+loc_401A37:   | * | jg loc_401764 ,icc,1
+"jg loc_401764  | * | lea rsi, [rsp+80h+var_69] ",icc,1
+"lea rsi, [rsp+80h+var_69]  | * | jmp loc_401764 ",icc,1
+call __ZNSs4_Rep10_M_destroyERKSaIcE   | * | loc_401A51:  ,icc,1
+"jmp loc_401764  | * | mov eax, 0 ",icc,1
+"loc_401A51:   | * | test rax, rax ",icc,1
+"mov eax, 0  | * | jz short loc_401A6A ",icc,1
+"jz short loc_401A6A  | * | mov ecx, 0FFFFFFFFh ",icc,1
+"mov ecx, 0FFFFFFFFh  | * | jmp short loc_401A73 ",icc,1
+"lock xadd [rdi], ecx  | * | loc_401A6A:  ",icc,1
+"jmp short loc_401A73  | * | mov ecx, [rdx+10h] ",icc,1
+"loc_401A6A:   | * | lea eax, [rcx-1] ",icc,1
+"lea eax, [rcx-1]  | * | loc_401A73:  ",icc,1
+loc_401A73:   | * | jg loc_401752 ,icc,1
+"jg loc_401752  | * | lea rsi, [rsp+80h+var_6A] ",icc,1
+"lea rsi, [rsp+80h+var_6A]  | * | jmp loc_401752 ",icc,1
+"jmp loc_401752  | * | mov rdi, [rsp-8+arg_18] ",icc,1
+"lea r12, [rdi-18h]  | * | jnz short loc_401AE3 ",icc,1
+"cmp r12, rax  | * | loc_401AA5:  ",icc,1
+"jnz short loc_401AE3  | * | mov rdi, [rsp-8+arg_20] ",icc,1
+"loc_401AA5:   | * | mov eax, offset _ZNSs4_Rep20_S_empty_rep_storageE@@GLIBCXX_3_4 ",icc,1
+"lea r12, [rdi-18h]  | * | jz loc_4019BC ",icc,7
+"cmp r12, rax  | * | add rdi, 0FFFFFFFFFFFFFFF8h  ",icc,7
+"jz loc_4019BC  | * | mov esi, 0FFFFFFFFh  ",icc,7
+call _ZN9__gnu_cxx27__exchange_and_add_dispatchEPii   | * | jg loc_4019BC ,icc,7
+"jg loc_4019BC  | * | lea rsi, [rsp+0] ",icc,7
+"lea rsi, [rsp+0]  | * | jmp loc_4019BC ",icc,7
+call __ZNSs4_Rep10_M_destroyERKSaIcE   | * | loc_401AE3:  ,icc,1
+"jmp loc_4019BC  | * | add rdi, 0FFFFFFFFFFFFFFF8h  ",icc,7
+"loc_401AE3:   | * | mov esi, 0FFFFFFFFh  ",icc,1
+call _ZN9__gnu_cxx27__exchange_and_add_dispatchEPii   | * | jg short loc_401AA5 ,icc,1
+"jg short loc_401AA5  | * | lea rsi, [rsp+1] ",icc,1
+"lea rsi, [rsp+1]  | * | jmp short loc_401AA5 ",icc,1
+jmp short loc_401AA5  | * | jmp short loc_401AA5 ,icc,1
+jmp short loc_401AA5  | * | jmp loc_4019BC ,icc,1
+"mov [rsp-8+arg_0], rax  | * | loc_401B15:  ",icc,1
+"jmp loc_4019BC  | * | mov eax, 0 ",icc,6
+"loc_401B15:   | * | test rax, rax ",icc,1
+"mov eax, 0  | * | jz short loc_401B2E ",icc,1
+"jz short loc_401B2E  | * | mov ecx, 0FFFFFFFFh ",icc,1
+"mov ecx, 0FFFFFFFFh  | * | jmp short loc_401B37 ",icc,1
+"lock xadd [rdi], ecx  | * | loc_401B2E:  ",icc,1
+"jmp short loc_401B37  | * | mov ecx, [rdx+10h] ",icc,1
+"loc_401B2E:   | * | lea eax, [rcx-1] ",icc,1
+"lea eax, [rcx-1]  | * | loc_401B37:  ",icc,1
+loc_401B37:   | * | jg loc_401709 ,icc,1
+"jg loc_401709  | * | lea rsi, [rsp+80h+var_6B] ",icc,1
+"lea rsi, [rsp+80h+var_6B]  | * | jmp loc_401709 ",icc,1
+call __ZNSs4_Rep10_M_destroyERKSaIcE   | * | loc_401B51:  ,icc,1
+"jmp loc_401709  | * | mov eax, 0 ",icc,1
+"loc_401B51:   | * | test rax, rax ",icc,1
+"mov eax, 0  | * | jz short loc_401B6A ",icc,1
+"jz short loc_401B6A  | * | mov ecx, 0FFFFFFFFh ",icc,1
+"mov ecx, 0FFFFFFFFh  | * | jmp short loc_401B73 ",icc,1
+"lock xadd [rdi], ecx  | * | loc_401B6A:  ",icc,1
+"jmp short loc_401B73  | * | mov ecx, [rdx+10h] ",icc,1
+"loc_401B6A:   | * | lea eax, [rcx-1] ",icc,1
+"lea eax, [rcx-1]  | * | loc_401B73:  ",icc,1
+loc_401B73:   | * | jg loc_4016F7 ,icc,1
+"jg loc_4016F7  | * | lea rsi, [rsp+80h+var_6C] ",icc,1
+"lea rsi, [rsp+80h+var_6C]  | * | jmp loc_4016F7 ",icc,1
+"jmp loc_4016F7  | * | mov rdi, [rsp-8+arg_18] ",icc,1
+"lea r12, [rdi-18h]  | * | jnz short loc_401BE3 ",icc,1
+"cmp r12, rax  | * | loc_401BA5:  ",icc,1
+"jnz short loc_401BE3  | * | mov rdi, [rsp-8+arg_20] ",icc,1
+"loc_401BA5:   | * | mov eax, offset _ZNSs4_Rep20_S_empty_rep_storageE@@GLIBCXX_3_4 ",icc,1
+call __ZNSs4_Rep10_M_destroyERKSaIcE   | * | loc_401BE3:  ,icc,1
+"loc_401BE3:   | * | mov esi, 0FFFFFFFFh  ",icc,1
+call _ZN9__gnu_cxx27__exchange_and_add_dispatchEPii   | * | jg short loc_401BA5 ,icc,1
+"jg short loc_401BA5  | * | lea rsi, [rsp+1] ",icc,1
+"lea rsi, [rsp+1]  | * | jmp short loc_401BA5 ",icc,1
+jmp short loc_401BA5  | * | jmp short loc_401BA5 ,icc,1
+jmp short loc_401BA5  | * | jmp loc_4019BC ,icc,1
+"mov [rsp-8+arg_0], rax  | * | loc_401C15:  ",icc,1
+"loc_401C15:   | * | test rax, rax ",icc,1
+"mov eax, 0  | * | jz short loc_401C2E ",icc,1
+"jz short loc_401C2E  | * | mov ecx, 0FFFFFFFFh ",icc,1
+"mov ecx, 0FFFFFFFFh  | * | jmp short loc_401C37 ",icc,1
+"lock xadd [rdi], ecx  | * | loc_401C2E:  ",icc,1
+"jmp short loc_401C37  | * | mov ecx, [rdx+10h] ",icc,1
+"loc_401C2E:   | * | lea eax, [rcx-1] ",icc,1
+"lea eax, [rcx-1]  | * | loc_401C37:  ",icc,1
+loc_401C37:   | * | jg loc_4016AE ,icc,1
+"jg loc_4016AE  | * | lea rsi, [rsp+80h+var_6D] ",icc,1
+"lea rsi, [rsp+80h+var_6D]  | * | jmp loc_4016AE ",icc,1
+call __ZNSs4_Rep10_M_destroyERKSaIcE   | * | loc_401C51:  ,icc,1
+"jmp loc_4016AE  | * | mov eax, 0 ",icc,1
+"loc_401C51:   | * | test rax, rax ",icc,1
+"mov eax, 0  | * | jz short loc_401C6A ",icc,1
+"jz short loc_401C6A  | * | mov ecx, 0FFFFFFFFh ",icc,1
+"mov ecx, 0FFFFFFFFh  | * | jmp short loc_401C73 ",icc,1
+"lock xadd [rdi], ecx  | * | loc_401C6A:  ",icc,1
+"jmp short loc_401C73  | * | mov ecx, [rdx+10h] ",icc,1
+"loc_401C6A:   | * | lea eax, [rcx-1] ",icc,1
+"lea eax, [rcx-1]  | * | loc_401C73:  ",icc,1
+loc_401C73:   | * | jg loc_40169C ,icc,1
+"jg loc_40169C  | * | lea rsi, [rsp+80h+var_6E] ",icc,1
+"lea rsi, [rsp+80h+var_6E]  | * | jmp loc_40169C ",icc,1
+"jmp loc_40169C  | * | mov rdi, [rsp-8+arg_18] ",icc,1
+"lea r12, [rdi-18h]  | * | jnz short loc_401CE3 ",icc,1
+"cmp r12, rax  | * | loc_401CA5:  ",icc,1
+"jnz short loc_401CE3  | * | mov rdi, [rsp-8+arg_20] ",icc,1
+"loc_401CA5:   | * | mov eax, offset _ZNSs4_Rep20_S_empty_rep_storageE@@GLIBCXX_3_4 ",icc,1
+call __ZNSs4_Rep10_M_destroyERKSaIcE   | * | loc_401CE3:  ,icc,1
+"loc_401CE3:   | * | mov esi, 0FFFFFFFFh  ",icc,1
+call _ZN9__gnu_cxx27__exchange_and_add_dispatchEPii   | * | jg short loc_401CA5 ,icc,1
+"jg short loc_401CA5  | * | lea rsi, [rsp+1] ",icc,1
+"lea rsi, [rsp+1]  | * | jmp short loc_401CA5 ",icc,1
+jmp short loc_401CA5  | * | jmp short loc_401CA5 ,icc,1
+jmp short loc_401CA5  | * | jmp loc_4019BC ,icc,1
+"mov [rsp-8+arg_0], rax  | * | loc_401D15:  ",icc,1
+"loc_401D15:   | * | test rax, rax ",icc,1
+"mov eax, 0  | * | jz short loc_401D2E ",icc,1
+"jz short loc_401D2E  | * | mov ecx, 0FFFFFFFFh ",icc,1
+"mov ecx, 0FFFFFFFFh  | * | jmp short loc_401D37 ",icc,1
+"lock xadd [rdi], ecx  | * | loc_401D2E:  ",icc,1
+"jmp short loc_401D37  | * | mov ecx, [rdx+10h] ",icc,1
+"loc_401D2E:   | * | lea eax, [rcx-1] ",icc,1
+"lea eax, [rcx-1]  | * | loc_401D37:  ",icc,1
+loc_401D37:   | * | jg loc_401653 ,icc,1
+"jg loc_401653  | * | lea rsi, [rsp+80h+var_6F] ",icc,1
+"lea rsi, [rsp+80h+var_6F]  | * | jmp loc_401653 ",icc,1
+call __ZNSs4_Rep10_M_destroyERKSaIcE   | * | loc_401D51:  ,icc,1
+"jmp loc_401653  | * | mov eax, 0 ",icc,1
+"loc_401D51:   | * | test rax, rax ",icc,1
+"mov eax, 0  | * | jz short loc_401D6A ",icc,1
+"jz short loc_401D6A  | * | mov ecx, 0FFFFFFFFh ",icc,1
+"mov ecx, 0FFFFFFFFh  | * | jmp short loc_401D73 ",icc,1
+"lock xadd [rdi], ecx  | * | loc_401D6A:  ",icc,1
+"jmp short loc_401D73  | * | mov ecx, [rdx+10h] ",icc,1
+"loc_401D6A:   | * | lea eax, [rcx-1] ",icc,1
+"lea eax, [rcx-1]  | * | loc_401D73:  ",icc,1
+loc_401D73:   | * | jg loc_401641 ,icc,1
+"jg loc_401641  | * | lea rsi, [rsp+80h+var_70] ",icc,1
+"lea rsi, [rsp+80h+var_70]  | * | jmp loc_401641 ",icc,1
+"jmp loc_401641  | * | mov rdi, [rsp-8+arg_18] ",icc,1
+"lea r12, [rdi-18h]  | * | jnz short loc_401DE3 ",icc,1
+"cmp r12, rax  | * | loc_401DA5:  ",icc,1
+"jnz short loc_401DE3  | * | mov rdi, [rsp-8+arg_20] ",icc,1
+"loc_401DA5:   | * | mov eax, offset _ZNSs4_Rep20_S_empty_rep_storageE@@GLIBCXX_3_4 ",icc,1
+call __ZNSs4_Rep10_M_destroyERKSaIcE   | * | loc_401DE3:  ,icc,1
+"loc_401DE3:   | * | mov esi, 0FFFFFFFFh  ",icc,1
+call _ZN9__gnu_cxx27__exchange_and_add_dispatchEPii   | * | jg short loc_401DA5 ,icc,1
+"jg short loc_401DA5  | * | lea rsi, [rsp+1] ",icc,1
+"lea rsi, [rsp+1]  | * | jmp short loc_401DA5 ",icc,1
+jmp short loc_401DA5  | * | jmp short loc_401DA5 ,icc,1
+jmp short loc_401DA5  | * | jmp loc_4019BC ,icc,1
+"mov [rsp-8+arg_0], rax  | * | loc_401E15:  ",icc,1
+"loc_401E15:   | * | test rax, rax ",icc,1
+"mov eax, 0  | * | jz short loc_401E2E ",icc,1
+"jz short loc_401E2E  | * | mov ecx, 0FFFFFFFFh ",icc,1
+"mov ecx, 0FFFFFFFFh  | * | jmp short loc_401E37 ",icc,1
+"lock xadd [rdi], ecx  | * | loc_401E2E:  ",icc,1
+"jmp short loc_401E37  | * | mov ecx, [rdx+10h] ",icc,1
+"loc_401E2E:   | * | lea eax, [rcx-1] ",icc,1
+"lea eax, [rcx-1]  | * | loc_401E37:  ",icc,1
+loc_401E37:   | * | jg loc_4015F8 ,icc,1
+"jg loc_4015F8  | * | lea rsi, [rsp+80h+var_79] ",icc,1
+"lea rsi, [rsp+80h+var_79]  | * | jmp loc_4015F8 ",icc,1
+call __ZNSs4_Rep10_M_destroyERKSaIcE   | * | loc_401E51:  ,icc,1
+"jmp loc_4015F8  | * | mov eax, 0 ",icc,1
+"loc_401E51:   | * | test rax, rax ",icc,1
+"mov eax, 0  | * | jz short loc_401E6A ",icc,1
+"jz short loc_401E6A  | * | mov ecx, 0FFFFFFFFh ",icc,1
+"mov ecx, 0FFFFFFFFh  | * | jmp short loc_401E73 ",icc,1
+"lock xadd [rdi], ecx  | * | loc_401E6A:  ",icc,1
+"jmp short loc_401E73  | * | mov ecx, [rdx+10h] ",icc,1
+"loc_401E6A:   | * | lea eax, [rcx-1] ",icc,1
+"lea eax, [rcx-1]  | * | loc_401E73:  ",icc,1
+loc_401E73:   | * | jg loc_4015E6 ,icc,1
+"jg loc_4015E6  | * | lea rsi, [rsp+80h+var_7A] ",icc,1
+"lea rsi, [rsp+80h+var_7A]  | * | jmp loc_4015E6 ",icc,1
+"jmp loc_4015E6  | * | mov rdi, [rsp-8+arg_18] ",icc,1
+"lea r12, [rdi-18h]  | * | jnz short loc_401EE3 ",icc,1
+"cmp r12, rax  | * | loc_401EA5:  ",icc,1
+"jnz short loc_401EE3  | * | mov rdi, [rsp-8+arg_20] ",icc,1
+"loc_401EA5:   | * | mov eax, offset _ZNSs4_Rep20_S_empty_rep_storageE@@GLIBCXX_3_4 ",icc,1
+call __ZNSs4_Rep10_M_destroyERKSaIcE   | * | loc_401EE3:  ,icc,1
+"loc_401EE3:   | * | mov esi, 0FFFFFFFFh  ",icc,1
+call _ZN9__gnu_cxx27__exchange_and_add_dispatchEPii   | * | jg short loc_401EA5 ,icc,1
+"jg short loc_401EA5  | * | lea rsi, [rsp+1] ",icc,1
+"lea rsi, [rsp+1]  | * | jmp short loc_401EA5 ",icc,1
+jmp short loc_401EA5  | * | jmp short loc_401EA5 ,icc,1
+jmp short loc_401EA5  | * | jmp loc_4019BC ,icc,1
+"mov [rsp-8+arg_0], rax  | * | loc_401F15:  ",icc,1
+"loc_401F15:   | * | test rax, rax ",icc,1
+"mov eax, 0  | * | jz short loc_401F2E ",icc,1
+"jz short loc_401F2E  | * | mov ecx, 0FFFFFFFFh ",icc,1
+"mov ecx, 0FFFFFFFFh  | * | jmp short loc_401F37 ",icc,1
+"lock xadd [rdi], ecx  | * | loc_401F2E:  ",icc,1
+"jmp short loc_401F37  | * | mov ecx, [rdx+10h] ",icc,1
+"loc_401F2E:   | * | lea eax, [rcx-1] ",icc,1
+"lea eax, [rcx-1]  | * | loc_401F37:  ",icc,1
+loc_401F37:   | * | jg loc_40159D ,icc,1
+"jg loc_40159D  | * | lea rsi, [rsp+80h+var_7B] ",icc,1
+"lea rsi, [rsp+80h+var_7B]  | * | jmp loc_40159D ",icc,1
+call __ZNSs4_Rep10_M_destroyERKSaIcE   | * | loc_401F51:  ,icc,1
+"jmp loc_40159D  | * | mov eax, 0 ",icc,1
+"loc_401F51:   | * | test rax, rax ",icc,1
+"mov eax, 0  | * | jz short loc_401F6A ",icc,1
+"jz short loc_401F6A  | * | mov ecx, 0FFFFFFFFh ",icc,1
+"mov ecx, 0FFFFFFFFh  | * | jmp short loc_401F73 ",icc,1
+"lock xadd [rdi], ecx  | * | loc_401F6A:  ",icc,1
+"jmp short loc_401F73  | * | mov ecx, [rdx+10h] ",icc,1
+"loc_401F6A:   | * | lea eax, [rcx-1] ",icc,1
+"lea eax, [rcx-1]  | * | loc_401F73:  ",icc,1
+loc_401F73:   | * | jg loc_40158B ,icc,1
+"jg loc_40158B  | * | lea rsi, [rsp+80h+var_7C] ",icc,1
+"lea rsi, [rsp+80h+var_7C]  | * | jmp loc_40158B ",icc,1
+"jmp loc_40158B  | * | mov rdi, [rsp-8+arg_18] ",icc,1
+"lea r12, [rdi-18h]  | * | jnz short loc_401FE3 ",icc,1
+"cmp r12, rax  | * | loc_401FA5:  ",icc,1
+"jnz short loc_401FE3  | * | mov rdi, [rsp-8+arg_20] ",icc,1
+"loc_401FA5:   | * | mov eax, offset _ZNSs4_Rep20_S_empty_rep_storageE@@GLIBCXX_3_4 ",icc,1
+call __ZNSs4_Rep10_M_destroyERKSaIcE   | * | loc_401FE3:  ,icc,1
+"loc_401FE3:   | * | mov esi, 0FFFFFFFFh  ",icc,1
+call _ZN9__gnu_cxx27__exchange_and_add_dispatchEPii   | * | jg short loc_401FA5 ,icc,1
+"jg short loc_401FA5  | * | lea rsi, [rsp+1] ",icc,1
+"lea rsi, [rsp+1]  | * | jmp short loc_401FA5 ",icc,1
+jmp short loc_401FA5  | * | jmp short loc_401FA5 ,icc,1
+jmp short loc_401FA5  | * | jmp loc_4019BC ,icc,1
+"mov [rsp-8+arg_0], rax  | * | loc_402015:  ",icc,1
+"loc_402015:   | * | test rax, rax ",icc,1
+"mov eax, 0  | * | jz short loc_40202E ",icc,1
+"jz short loc_40202E  | * | mov ecx, 0FFFFFFFFh ",icc,1
+"mov ecx, 0FFFFFFFFh  | * | jmp short loc_402037 ",icc,1
+"lock xadd [rdi], ecx  | * | loc_40202E:  ",icc,1
+"jmp short loc_402037  | * | mov ecx, [rdx+10h] ",icc,1
+"loc_40202E:   | * | lea eax, [rcx-1] ",icc,1
+"lea eax, [rcx-1]  | * | loc_402037:  ",icc,1
+loc_402037:   | * | jg loc_401542 ,icc,1
+"jg loc_401542  | * | lea rsi, [rsp+80h+var_80+3] ",icc,1
+"lea rsi, [rsp+80h+var_80+3]  | * | jmp loc_401542 ",icc,1
+call __ZNSs4_Rep10_M_destroyERKSaIcE   | * | loc_402051:  ,icc,1
+"jmp loc_401542  | * | mov eax, 0 ",icc,1
+"loc_402051:   | * | test rax, rax ",icc,1
+"mov eax, 0  | * | jz short loc_40206A ",icc,1
+"jz short loc_40206A  | * | mov ecx, 0FFFFFFFFh ",icc,1
+"mov ecx, 0FFFFFFFFh  | * | jmp short loc_402073 ",icc,1
+"lock xadd [rdi], ecx  | * | loc_40206A:  ",icc,1
+"jmp short loc_402073  | * | mov ecx, [rdx+10h] ",icc,1
+"loc_40206A:   | * | lea eax, [rcx-1] ",icc,1
+"lea eax, [rcx-1]  | * | loc_402073:  ",icc,1
+loc_402073:   | * | jg loc_401530 ,icc,1
+"jg loc_401530  | * | lea rsi, [rsp+80h+var_80+2] ",icc,1
+"lea rsi, [rsp+80h+var_80+2]  | * | jmp loc_401530 ",icc,1
+"jmp loc_401530  | * | mov rdi, [rsp-8+arg_20] ",icc,1
+"lea r12, [rdi-18h]  | * | jnz short loc_4020E3 ",icc,1
+"cmp r12, rax  | * | loc_4020A5:  ",icc,1
+"jnz short loc_4020E3  | * | mov rdi, [rsp-8+arg_18] ",icc,1
+"loc_4020A5:   | * | mov eax, offset _ZNSs4_Rep20_S_empty_rep_storageE@@GLIBCXX_3_4 ",icc,1
+call __ZNSs4_Rep10_M_destroyERKSaIcE   | * | loc_4020E3:  ,icc,1
+"loc_4020E3:   | * | mov esi, 0FFFFFFFFh  ",icc,1
+call _ZN9__gnu_cxx27__exchange_and_add_dispatchEPii   | * | jg short loc_4020A5 ,icc,1
+"jg short loc_4020A5  | * | lea rsi, [rsp+1] ",icc,1
+"lea rsi, [rsp+1]  | * | jmp short loc_4020A5 ",icc,1
+jmp short loc_4020A5  | * | jmp short loc_4020A5 ,icc,1
+jmp short loc_4020A5  | * | jmp loc_4019BC ,icc,1
+"mov [rsp-8+arg_0], rax  | * | main endp ",icc,1
+jmp loc_4019BC  | * | align 20h ,icc,1
+main endp  | * | public _Z5solvev ,icc,1
+align 20h  | * | _Z5solvev proc near  ,icc,1
+var_58 = dword ptr -58h  | * | var_50 = dword ptr -50h ,data,1
+var_54 = dword ptr -54h  | * | var_4C = dword ptr -4Ch ,data,1
+var_50 = dword ptr -50h  | * | var_48 = dword ptr -48h ,data,1
+var_4C = dword ptr -4Ch  | * | var_44 = dword ptr -44h ,data,1
+var_48 = dword ptr -48h  | * | var_40 = qword ptr -40h ,data,1
+var_44 = dword ptr -44h  | * | var_38 = qword ptr -38h ,data,1
+var_40 = qword ptr -40h  | * | var_30 = qword ptr -30h ,data,2
+var_38 = qword ptr -38h  | * | var_28 = qword ptr -28h ,data,2
+var_30 = qword ptr -30h  | * | var_20 = dword ptr -20h ,data,1
+var_28 = qword ptr -28h  | * | var_1C = dword ptr -1Ch ,data,1
+"push rbx  | * | sub rsp, 48h ",icc,1
+"push rbp  | * | mov rdi, qword ptr cs:xmmword_622700 ",icc,1
+"sub rsp, 48h  | * | test rdi, rdi ",icc,1
+"mov rdi, qword ptr cs:xmmword_622700  | * | jz short loc_402157 ",icc,1
+"test rdi, rdi  | * | mov rbx, rdi ",icc,1
+jz short loc_402157  | * | loc_402135:  ,icc,1
+"mov rbx, rdi  | * | mov edi, offset g ",icc,1
+"loc_402135:   | * | mov rsi, [rbx+18h] ",icc,1
+"mov edi, offset g  | * | call _ZNSt8_Rb_treeISt4pairIiiES1_St9_IdentityIS1_ESt4lessIS1_ESaIS1_EE8_M_eraseEPSt13_Rb_tree_nodeIS1_E  ",icc,1
+"mov rsi, [rbx+18h]  | * | mov rdi, rbx  ",icc,1
+"call _ZNSt8_Rb_treeISt4pairIiiES1_St9_IdentityIS1_ESt4lessIS1_ESaIS1_EE8_M_eraseEPSt13_Rb_tree_nodeIS1_E   | * | mov rbp, [rbx+10h] ",icc,1
+"mov rdi, rbx   | * | call __ZdlPv  ",icc,1
+"mov rbp, [rbx+10h]  | * | mov rbx, rbp ",icc,1
+"call __ZdlPv   | * | test rbp, rbp ",icc,1
+"mov rbx, rbp  | * | jnz short loc_402135 ",icc,1
+"test rbp, rbp  | * | loc_402157:  ",icc,1
+"jnz short loc_402135  | * | mov eax, 190h ",icc,1
+"loc_402157:   | * | xor edx, edx ",icc,1
+"mov eax, 190h  | * | pxor xmm2, xmm2 ",icc,1
+"xor edx, edx  | * | mov rcx, rax ",icc,1
+"pxor xmm2, xmm2  | * | mov qword ptr cs:xmmword_622700+8, offset qword_6226F8 ",icc,1
+"mov rcx, rax  | * | mov qword ptr cs:xmmword_622700, rdx ",icc,1
+"mov qword ptr cs:xmmword_622700+8, offset qword_6226F8  | * | mov cs:qword_622710, offset qword_6226F8 ",icc,1
+"mov qword ptr cs:xmmword_622700, rdx  | * | mov cs:qword_622718, rdx ",icc,1
+"mov cs:qword_622710, offset qword_6226F8  | * | movaps cs:xmmword_6224D0, xmm2 ",icc,1
+"mov cs:qword_622718, rdx  | * | movaps cs:xmmword_6224E0, xmm2 ",icc,1
+"movaps cs:xmmword_6224D0, xmm2  | * | movq qword ptr cs:xmmword_6224F0, xmm2 ",icc,1
+"movaps cs:xmmword_6224E0, xmm2  | * | loc_40219F:  ",icc,1
+"movq qword ptr cs:xmmword_6224F0, xmm2  | * | movaps ds:xmmword_622330[rax], xmm2 ",icc,1
+"loc_40219F:   | * | movaps ds:xmmword_622320[rax], xmm2 ",icc,1
+"movaps ds:xmmword_622330[rax], xmm2  | * | movaps ds:xmmword_622310[rax], xmm2 ",icc,1
+"movaps ds:xmmword_622320[rax], xmm2  | * | movaps ds:xmmword_622300[rax], xmm2 ",icc,1
+"movaps ds:xmmword_622310[rax], xmm2  | * | movaps ds:xmmword_6222F0[rax], xmm2 ",icc,1
+"movaps ds:xmmword_622300[rax], xmm2  | * | sub rax, 50h  ",icc,1
+"movaps ds:xmmword_6222F0[rax], xmm2  | * | jnz short loc_40219F ",icc,1
+"sub rax, 50h   | * | movaps cs:xmmword_622690, xmm2 ",icc,1
+"jnz short loc_40219F  | * | movaps cs:xmmword_6226A0, xmm2 ",icc,1
+"movaps cs:xmmword_622690, xmm2  | * | movq cs:qword_6226B0, xmm2 ",icc,1
+"movaps cs:xmmword_6226A0, xmm2  | * | loc_4021DE:  ",icc,1
+"movq cs:qword_6226B0, xmm2  | * | movaps ds:xmmword_6224F0[rcx], xmm2 ",icc,1
+"loc_4021DE:   | * | movaps ds:xmmword_6224E0[rcx], xmm2 ",icc,1
+"movaps ds:xmmword_6224F0[rcx], xmm2  | * | movaps ds:xmmword_6224D0[rcx], xmm2 ",icc,1
+"movaps ds:xmmword_6224E0[rcx], xmm2  | * | movaps ds:xmmword_6224C0[rcx], xmm2 ",icc,1
+"movaps ds:xmmword_6224D0[rcx], xmm2  | * | movaps ds:xmmword_6224B0[rcx], xmm2 ",icc,1
+"movaps ds:xmmword_6224C0[rcx], xmm2  | * | sub rcx, 50h  ",icc,1
+"movaps ds:xmmword_6224B0[rcx], xmm2  | * | jnz short loc_4021DE ",icc,1
+"sub rcx, 50h   | * | mov rax, cs:s ",icc,1
+"jnz short loc_4021DE  | * | mov r8, rdx ",icc,1
+"mov rax, cs:s  | * | mov ecx, [rax-18h] ",icc,1
+"mov r8, rdx  | * | dec ecx ",icc,1
+"mov ecx, [rax-18h]  | * | test ecx, ecx ",icc,1
+dec ecx  | * | jle loc_402657 ,icc,1
+"test ecx, ecx  | * | mov [rsp+58h+var_40], r12 ",icc,1
+"jle loc_402657  | * | mov esi, offset qword_6226F8 ",icc,1
+"mov [rsp+58h+var_40], r12  | * | mov [rsp+58h+var_38], r13 ",icc,1
+"mov esi, offset qword_6226F8  | * | mov ecx, offset qword_6226C8 ",icc,1
+"mov [rsp+58h+var_38], r13  | * | mov [rsp+58h+var_30], r14 ",icc,1
+"mov ecx, offset qword_6226C8  | * | mov r12, r8 ",icc,1
+"mov [rsp+58h+var_30], r14  | * | mov [rsp+58h+var_28], r15 ",icc,1
+"mov r12, r8  | * | loc_40223F:  ",icc,1
+"mov [rsp+58h+var_28], r15  | * | cmp dword ptr [rax-8], 0 ",icc,1
+loc_40223F:   | * | jl short loc_402256 ,icc,1
+"cmp dword ptr [rax-8], 0  | * | mov edi, offset s  ",icc,2
+jl short loc_402256  | * | call __ZNSs12_M_leak_hardEv  ,icc,1
+"mov edi, offset s   | * | mov rax, cs:s ",icc,2
+call __ZNSs12_M_leak_hardEv   | * | loc_402256:  ,icc,1
+"mov rax, cs:s  | * | movsx r13d, byte ptr [rax+r12] ",icc,1
+"loc_402256:   | * | add r13d, 0FFFFFF9Fh ",icc,1
+"movsx r13d, byte ptr [rax+r12]  | * | mov [rsp+58h+var_20], r13d ",icc,1
+"add r13d, 0FFFFFF9Fh  | * | cmp dword ptr [rax-8], 0 ",icc,1
+"mov [rsp+58h+var_20], r13d  | * | jl short loc_402280 ",icc,1
+jl short loc_402280  | * | call __ZNSs12_M_leak_hardEv  ,icc,1
+"call __ZNSs12_M_leak_hardEv   | * | mov r13d, [rsp+58h+var_20] ",icc,1
+"mov rax, cs:s  | * | loc_402280:  ",icc,1
+"mov r13d, [rsp+58h+var_20]  | * | movsx ebp, byte ptr [rax+r12+1] ",icc,1
+"loc_402280:   | * | mov edx, offset qword_6226F8 ",icc,1
+"movsx ebp, byte ptr [rax+r12+1]  | * | mov r14, qword ptr cs:xmmword_622700 ",icc,1
+"mov edx, offset qword_6226F8  | * | add ebp, 0FFFFFF9Fh ",icc,1
+"mov r14, qword ptr cs:xmmword_622700  | * | mov [rsp+58h+var_1C], ebp ",icc,1
+"add ebp, 0FFFFFF9Fh  | * | mov rax, r14 ",icc,1
+"mov [rsp+58h+var_1C], ebp  | * | test r14, r14 ",icc,1
+"mov rax, r14  | * | jz short loc_4022C5 ",icc,1
+"test r14, r14  | * | loc_4022A1:  ",icc,1
+"jz short loc_4022C5  | * | mov ecx, [rax+20h] ",icc,1
+"loc_4022A1:   | * | cmp ecx, r13d ",icc,1
+"mov ecx, [rax+20h]  | * | jl short loc_4022B3 ",icc,1
+"cmp ecx, r13d  | * | cmp r13d, ecx ",icc,2
+jl short loc_4022B3  | * | jl short loc_4022B9 ,icc,1
+"cmp r13d, ecx  | * | cmp ebp, [rax+24h] ",icc,1
+jl short loc_4022B9  | * | jle short loc_4022B9 ,icc,1
+"cmp ebp, [rax+24h]  | * | loc_4022B3:  ",icc,1
+"jle short loc_4022B9  | * | mov rax, [rax+18h] ",icc,1
+loc_4022B3:   | * | jmp short loc_4022C0 ,icc,1
+"mov rax, [rax+18h]  | * | loc_4022B9:  ",icc,1
+"jmp short loc_4022C0  | * | mov rdx, rax ",icc,1
+"loc_4022B9:   | * | mov rax, [rax+10h] ",icc,1
+"mov rdx, rax  | * | loc_4022C0:  ",icc,1
+"mov rax, [rax+10h]  | * | test rax, rax ",icc,5
+loc_4022C0:   | * | jnz short loc_4022A1 ,icc,1
+"test rax, rax  | * | loc_4022C5:  ",icc,1
+"jnz short loc_4022A1  | * | mov eax, offset qword_6226F8 ",icc,1
+"loc_4022C5:   | * | cmp rdx, rax ",icc,1
+"mov eax, offset qword_6226F8  | * | jz short loc_4022E1 ",icc,1
+"cmp rdx, rax  | * | mov eax, [rdx+20h] ",icc,5
+"jz short loc_4022E1  | * | cmp r13d, eax ",icc,1
+"mov eax, [rdx+20h]  | * | jl short loc_4022E1 ",icc,1
+"cmp r13d, eax  | * | cmp eax, r13d ",icc,8
+jl short loc_4022E1  | * | jl short loc_4022E6 ,icc,1
+"cmp eax, r13d  | * | cmp ebp, [rdx+24h] ",icc,1
+jl short loc_4022E6  | * | jge short loc_4022E6 ,icc,1
+"cmp ebp, [rdx+24h]  | * | loc_4022E1:  ",icc,1
+"jge short loc_4022E6  | * | mov edx, offset qword_6226F8 ",icc,1
+loc_4022E1:   | * | loc_4022E6:  ,icc,1
+"mov edx, offset qword_6226F8  | * | mov eax, offset qword_6226F8 ",icc,5
+"loc_4022E6:   | * | cmp rdx, rax ",icc,1
+"mov eax, offset qword_6226F8  | * | jz loc_402769 ",icc,1
+"cmp rdx, rax  | * | loc_4022F4:  ",icc,1
+"jz loc_402769  | * | mov rcx, qword ptr cs:xmmword_6226D0 ",icc,1
+"loc_4022F4:   | * | mov rax, rcx ",icc,1
+"mov rcx, qword ptr cs:xmmword_6226D0  | * | mov ebx, offset qword_6226C8 ",icc,1
+"mov rax, rcx  | * | test rcx, rcx ",icc,1
+"mov ebx, offset qword_6226C8  | * | jz short loc_402323 ",icc,1
+"test rcx, rcx  | * | mov edx, [rsp+58h+var_20] ",icc,1
+jz short loc_402323  | * | loc_40230C:  ,icc,1
+"mov edx, [rsp+58h+var_20]  | * | cmp edx, [rcx+20h] ",icc,1
+loc_40230C:   | * | jg short loc_40231A ,icc,1
+"cmp edx, [rcx+20h]  | * | mov rbx, rcx ",icc,3
+"jg short loc_40231A  | * | mov rcx, [rcx+10h] ",icc,1
+"mov rbx, rcx  | * | jmp short loc_40231E ",icc,1
+"mov rcx, [rcx+10h]  | * | loc_40231A:  ",icc,1
+"jmp short loc_40231E  | * | mov rcx, [rcx+18h] ",icc,1
+loc_40231A:   | * | loc_40231E:  ,icc,1
+"mov rcx, [rcx+18h]  | * | test rcx, rcx ",icc,3
+loc_40231E:   | * | jnz short loc_40230C ,icc,1
+"test rcx, rcx  | * | loc_402323:  ",icc,1
+"jnz short loc_40230C  | * | mov edx, offset qword_6226C8 ",icc,1
+"loc_402323:   | * | cmp rbx, rdx ",icc,1
+"mov edx, offset qword_6226C8  | * | jz short loc_402336 ",icc,1
+"cmp rbx, rdx  | * | mov edx, [rsp+58h+var_20] ",icc,1
+"jz short loc_402336  | * | cmp edx, [rbx+20h] ",icc,1
+"mov edx, [rsp+58h+var_20]  | * | jge short loc_40233B ",icc,1
+"cmp edx, [rbx+20h]  | * | loc_402336:  ",icc,1
+"jge short loc_40233B  | * | mov ebx, offset qword_6226C8 ",icc,1
+loc_402336:   | * | loc_40233B:  ,icc,1
+"mov ebx, offset qword_6226C8  | * | mov edx, offset qword_6226C8 ",icc,3
+"loc_40233B:   | * | cmp rbx, rdx ",icc,1
+"mov edx, offset qword_6226C8  | * | jz loc_4023EC ",icc,1
+"cmp rbx, rdx  | * | mov edi, offset ma ",icc,2
+"jz loc_4023EC  | * | lea rsi, [rsp+58h+var_20] ",icc,1
+"mov edi, offset ma  | * | call _ZNSt3mapIiiSt4lessIiESaISt4pairIKiiEEEixERS3_  ",icc,4
+"lea rsi, [rsp+58h+var_20]  | * | mov ebx, [rax] ",icc,1
+"call _ZNSt3mapIiiSt4lessIiESaISt4pairIKiiEEEixERS3_   | * | mov edx, offset qword_6226F8 ",icc,3
+"mov ebx, [rax]  | * | mov rax, qword ptr cs:xmmword_622700 ",icc,1
+"mov edx, offset qword_6226F8  | * | test rax, rax ",icc,3
+"mov rax, qword ptr cs:xmmword_622700  | * | mov ecx, [rsp+58h+var_1C] ",icc,1
+"test rax, rax  | * | jz short loc_402391 ",icc,1
+"mov ecx, [rsp+58h+var_1C]  | * | loc_40236F:  ",icc,1
+"jz short loc_402391  | * | mov ebp, [rax+20h] ",icc,1
+"loc_40236F:   | * | cmp ebp, ebx ",icc,1
+"mov ebp, [rax+20h]  | * | jl short loc_40237F ",icc,1
+"cmp ebp, ebx  | * | cmp ebx, ebp ",icc,3
+jl short loc_40237F  | * | jl short loc_402385 ,icc,1
+"cmp ebx, ebp  | * | cmp ecx, [rax+24h] ",icc,3
+jl short loc_402385  | * | jle short loc_402385 ,icc,1
+"cmp ecx, [rax+24h]  | * | loc_40237F:  ",icc,1
+"jle short loc_402385  | * | mov rax, [rax+18h] ",icc,1
+loc_40237F:   | * | jmp short loc_40238C ,icc,1
+"mov rax, [rax+18h]  | * | loc_402385:  ",icc,1
+"jmp short loc_40238C  | * | mov rdx, rax ",icc,1
+"loc_402385:   | * | mov rax, [rax+10h] ",icc,1
+"mov rdx, rax  | * | loc_40238C:  ",icc,1
+loc_40238C:   | * | jnz short loc_40236F ,icc,1
+"test rax, rax  | * | loc_402391:  ",icc,1
+"jnz short loc_40236F  | * | mov eax, offset qword_6226F8 ",icc,1
+"loc_402391:   | * | cmp rdx, rax ",icc,1
+"mov eax, offset qword_6226F8  | * | jz short loc_4023AB ",icc,1
+"jz short loc_4023AB  | * | cmp ebx, eax ",icc,1
+"mov eax, [rdx+20h]  | * | jl short loc_4023AB ",icc,1
+"cmp ebx, eax  | * | cmp eax, ebx ",icc,3
+jl short loc_4023AB  | * | jl short loc_4023B0 ,icc,1
+"cmp eax, ebx  | * | cmp ecx, [rdx+24h] ",icc,3
+jl short loc_4023B0  | * | jge short loc_4023B0 ,icc,1
+"cmp ecx, [rdx+24h]  | * | loc_4023AB:  ",icc,1
+"jge short loc_4023B0  | * | mov edx, offset qword_6226F8 ",icc,1
+loc_4023AB:   | * | loc_4023B0:  ,icc,1
+"loc_4023B0:   | * | cmp rdx, rax ",icc,1
+"mov eax, offset qword_6226F8  | * | jnz short loc_4023E5 ",icc,1
+"cmp rdx, rax  | * | movsxd rbx, ebx ",icc,3
+"jnz short loc_4023E5  | * | mov edi, offset g ",icc,1
+"movsxd rbx, ebx  | * | movsxd rcx, ecx ",icc,3
+"mov edi, offset g  | * | lea rsi, [rsp+58h+var_50] ",icc,1
+"movsxd rcx, ecx  | * | mov [rsp+58h+var_50], ebx ",icc,1
+"lea rsi, [rsp+58h+var_50]  | * | mov [rsp+58h+var_4C], ecx ",icc,1
+"mov [rsp+58h+var_50], ebx  | * | inc dword ptr ds:out[rbx*4] ",icc,1
+"mov [rsp+58h+var_4C], ecx  | * | inc dword ptr ds:in[rcx*4] ",icc,1
+inc dword ptr ds:out[rbx*4]  | * | call _ZNSt8_Rb_treeISt4pairIiiES1_St9_IdentityIS1_ESt4lessIS1_ESaIS1_EE16_M_insert_uniqueERKS1_  ,icc,3
+inc dword ptr ds:in[rcx*4]  | * | loc_4023E5:  ,icc,1
+"call _ZNSt8_Rb_treeISt4pairIiiES1_St9_IdentityIS1_ESt4lessIS1_ESaIS1_EE16_M_insert_uniqueERKS1_   | * | mov rax, qword ptr cs:xmmword_6226D0 ",icc,2
+loc_4023E5:   | * | loc_4023EC:  ,icc,1
+"mov rax, qword ptr cs:xmmword_6226D0  | * | mov rcx, rax ",icc,2
+"loc_4023EC:   | * | mov ebx, offset qword_6226C8 ",icc,1
+"mov rcx, rax  | * | test rax, rax ",icc,2
+"mov ebx, offset qword_6226C8  | * | jz short loc_402414 ",icc,1
+"test rax, rax  | * | mov edx, [rsp+58h+var_1C] ",icc,2
+jz short loc_402414  | * | loc_4023FD:  ,icc,1
+"mov edx, [rsp+58h+var_1C]  | * | cmp edx, [rcx+20h] ",icc,2
+loc_4023FD:   | * | jg short loc_40240B ,icc,1
+"jg short loc_40240B  | * | mov rcx, [rcx+10h] ",icc,1
+"mov rbx, rcx  | * | jmp short loc_40240F ",icc,1
+"mov rcx, [rcx+10h]  | * | loc_40240B:  ",icc,1
+"jmp short loc_40240F  | * | mov rcx, [rcx+18h] ",icc,1
+loc_40240B:   | * | loc_40240F:  ,icc,1
+loc_40240F:   | * | jnz short loc_4023FD ,icc,1
+"test rcx, rcx  | * | loc_402414:  ",icc,1
+"jnz short loc_4023FD  | * | mov edx, offset qword_6226C8 ",icc,1
+"loc_402414:   | * | cmp rbx, rdx ",icc,1
+"mov edx, offset qword_6226C8  | * | jz short loc_402427 ",icc,1
+"cmp rbx, rdx  | * | mov edx, [rsp+58h+var_1C] ",icc,2
+"jz short loc_402427  | * | cmp edx, [rbx+20h] ",icc,1
+"mov edx, [rsp+58h+var_1C]  | * | jge short loc_40242C ",icc,1
+"cmp edx, [rbx+20h]  | * | loc_402427:  ",icc,1
+"jge short loc_40242C  | * | mov ebx, offset qword_6226C8 ",icc,1
+loc_402427:   | * | loc_40242C:  ,icc,1
+"loc_40242C:   | * | cmp rbx, rdx ",icc,1
+"mov edx, offset qword_6226C8  | * | jz loc_4024DD ",icc,1
+"jz loc_4024DD  | * | lea rsi, [rsp+58h+var_1C] ",icc,1
+"lea rsi, [rsp+58h+var_1C]  | * | mov ecx, [rax] ",icc,2
+"mov ecx, [rax]  | * | mov rax, qword ptr cs:xmmword_622700 ",icc,2
+"mov rax, qword ptr cs:xmmword_622700  | * | mov ebx, [rsp+58h+var_20] ",icc,1
+"test rax, rax  | * | jz short loc_402482 ",icc,1
+"mov ebx, [rsp+58h+var_20]  | * | loc_402460:  ",icc,1
+"jz short loc_402482  | * | mov ebp, [rax+20h] ",icc,1
+"loc_402460:   | * | cmp ebp, ebx ",icc,1
+"mov ebp, [rax+20h]  | * | jl short loc_402470 ",icc,1
+jl short loc_402470  | * | jl short loc_402476 ,icc,1
+jl short loc_402476  | * | jle short loc_402476 ,icc,1
+"cmp ecx, [rax+24h]  | * | loc_402470:  ",icc,1
+"jle short loc_402476  | * | mov rax, [rax+18h] ",icc,1
+loc_402470:   | * | jmp short loc_40247D ,icc,1
+"mov rax, [rax+18h]  | * | loc_402476:  ",icc,1
+"jmp short loc_40247D  | * | mov rdx, rax ",icc,1
+"loc_402476:   | * | mov rax, [rax+10h] ",icc,1
+"mov rdx, rax  | * | loc_40247D:  ",icc,1
+loc_40247D:   | * | jnz short loc_402460 ,icc,1
+"test rax, rax  | * | loc_402482:  ",icc,1
+"jnz short loc_402460  | * | mov eax, offset qword_6226F8 ",icc,1
+"loc_402482:   | * | cmp rdx, rax ",icc,1
+"mov eax, offset qword_6226F8  | * | jz short loc_40249C ",icc,1
+"jz short loc_40249C  | * | cmp ebx, eax ",icc,1
+"mov eax, [rdx+20h]  | * | jl short loc_40249C ",icc,1
+jl short loc_40249C  | * | jl short loc_4024A1 ,icc,1
+jl short loc_4024A1  | * | jge short loc_4024A1 ,icc,1
+"cmp ecx, [rdx+24h]  | * | loc_40249C:  ",icc,1
+"jge short loc_4024A1  | * | mov edx, offset qword_6226F8 ",icc,1
+loc_40249C:   | * | loc_4024A1:  ,icc,1
+"loc_4024A1:   | * | cmp rdx, rax ",icc,1
+"mov eax, offset qword_6226F8  | * | jnz short loc_4024D6 ",icc,1
+"jnz short loc_4024D6  | * | mov edi, offset g ",icc,1
+"mov edi, offset g  | * | lea rsi, [rsp+58h+var_48] ",icc,1
+"movsxd rcx, ecx  | * | mov [rsp+58h+var_48], ebx ",icc,1
+"lea rsi, [rsp+58h+var_48]  | * | mov [rsp+58h+var_44], ecx ",icc,1
+"mov [rsp+58h+var_48], ebx  | * | inc dword ptr ds:out[rbx*4] ",icc,1
+"mov [rsp+58h+var_44], ecx  | * | inc dword ptr ds:in[rcx*4] ",icc,1
+inc dword ptr ds:in[rcx*4]  | * | loc_4024D6:  ,icc,1
+loc_4024D6:   | * | loc_4024DD:  ,icc,1
+"loc_4024DD:   | * | mov ebx, offset qword_6226C8 ",icc,1
+"mov ebx, offset qword_6226C8  | * | jz short loc_402505 ",icc,1
+jz short loc_402505  | * | loc_4024EE:  ,icc,1
+loc_4024EE:   | * | jg short loc_4024FC ,icc,1
+"jg short loc_4024FC  | * | mov rcx, [rcx+10h] ",icc,1
+"mov rbx, rcx  | * | jmp short loc_402500 ",icc,1
+"mov rcx, [rcx+10h]  | * | loc_4024FC:  ",icc,1
+"jmp short loc_402500  | * | mov rcx, [rcx+18h] ",icc,1
+loc_4024FC:   | * | loc_402500:  ,icc,1
+loc_402500:   | * | jnz short loc_4024EE ,icc,1
+"test rcx, rcx  | * | loc_402505:  ",icc,1
+"jnz short loc_4024EE  | * | mov edx, offset qword_6226C8 ",icc,1
+"loc_402505:   | * | cmp rbx, rdx ",icc,1
+"mov edx, offset qword_6226C8  | * | jz short loc_402518 ",icc,1
+"jz short loc_402518  | * | cmp edx, [rbx+20h] ",icc,1
+"mov edx, [rsp+58h+var_1C]  | * | jge short loc_40251D ",icc,1
+"cmp edx, [rbx+20h]  | * | loc_402518:  ",icc,1
+"jge short loc_40251D  | * | mov ebx, offset qword_6226C8 ",icc,1
+loc_402518:   | * | loc_40251D:  ,icc,1
+"loc_40251D:   | * | cmp rbx, rdx ",icc,1
+"mov edx, offset qword_6226C8  | * | jz loc_402620 ",icc,1
+"cmp rbx, rdx  | * | mov ecx, offset qword_6226C8 ",icc,1
+"jz loc_402620  | * | test rax, rax ",icc,1
+"mov ecx, offset qword_6226C8  | * | jz short loc_402550 ",icc,1
+"test rax, rax  | * | mov edx, [rsp+58h+var_20] ",icc,1
+jz short loc_402550  | * | loc_402539:  ,icc,1
+"mov edx, [rsp+58h+var_20]  | * | cmp edx, [rax+20h] ",icc,1
+loc_402539:   | * | jg short loc_402547 ,icc,1
+"cmp edx, [rax+20h]  | * | mov rcx, rax ",icc,1
+"jg short loc_402547  | * | mov rax, [rax+10h] ",icc,1
+"mov rcx, rax  | * | jmp short loc_40254B ",icc,1
+"mov rax, [rax+10h]  | * | loc_402547:  ",icc,1
+"jmp short loc_40254B  | * | mov rax, [rax+18h] ",icc,1
+loc_402547:   | * | loc_40254B:  ,icc,1
+"mov rax, [rax+18h]  | * | test rax, rax ",icc,2
+loc_40254B:   | * | jnz short loc_402539 ,icc,1
+"test rax, rax  | * | loc_402550:  ",icc,1
+"jnz short loc_402539  | * | mov eax, offset qword_6226C8 ",icc,1
+"loc_402550:   | * | cmp rcx, rax ",icc,1
+"mov eax, offset qword_6226C8  | * | jz short loc_402563 ",icc,1
+"cmp rcx, rax  | * | mov eax, [rsp+58h+var_20] ",icc,1
+"jz short loc_402563  | * | cmp eax, [rcx+20h] ",icc,1
+"mov eax, [rsp+58h+var_20]  | * | jge short loc_402568 ",icc,1
+"cmp eax, [rcx+20h]  | * | loc_402563:  ",icc,1
+"jge short loc_402568  | * | mov ecx, offset qword_6226C8 ",icc,1
+loc_402563:   | * | loc_402568:  ,icc,1
+"mov ecx, offset qword_6226C8  | * | mov eax, offset qword_6226C8 ",icc,1
+"loc_402568:   | * | cmp rcx, rax ",icc,1
+"mov eax, offset qword_6226C8  | * | jz loc_402620 ",icc,1
+"cmp rcx, rax  | * | mov edi, offset ma ",icc,1
+"jz loc_402620  | * | lea rsi, [rsp+58h+var_20] ",icc,1
+"lea rsi, [rsp+58h+var_20]  | * | mov rbx, rax ",icc,1
+"call _ZNSt3mapIiiSt4lessIiESaISt4pairIKiiEEEixERS3_   | * | mov edi, offset ma ",icc,1
+"mov rbx, rax  | * | lea rsi, [rsp+58h+var_1C] ",icc,1
+"mov rax, qword ptr cs:xmmword_622700  | * | mov ebx, [rbx] ",icc,1
+"test rax, rax  | * | jz short loc_4025CE ",icc,1
+"mov ebx, [rbx]  | * | loc_4025AC:  ",icc,1
+"jz short loc_4025CE  | * | mov ebp, [rax+20h] ",icc,1
+"loc_4025AC:   | * | cmp ebp, ebx ",icc,1
+"mov ebp, [rax+20h]  | * | jl short loc_4025BC ",icc,1
+jl short loc_4025BC  | * | jl short loc_4025C2 ,icc,1
+jl short loc_4025C2  | * | jle short loc_4025C2 ,icc,1
+"cmp ecx, [rax+24h]  | * | loc_4025BC:  ",icc,1
+"jle short loc_4025C2  | * | mov rax, [rax+18h] ",icc,1
+loc_4025BC:   | * | jmp short loc_4025C9 ,icc,1
+"mov rax, [rax+18h]  | * | loc_4025C2:  ",icc,1
+"jmp short loc_4025C9  | * | mov rdx, rax ",icc,1
+"loc_4025C2:   | * | mov rax, [rax+10h] ",icc,1
+"mov rdx, rax  | * | loc_4025C9:  ",icc,1
+loc_4025C9:   | * | jnz short loc_4025AC ,icc,1
+"test rax, rax  | * | loc_4025CE:  ",icc,1
+"jnz short loc_4025AC  | * | mov eax, offset qword_6226F8 ",icc,1
+"loc_4025CE:   | * | cmp rdx, rax ",icc,1
+"mov eax, offset qword_6226F8  | * | jz short loc_4025E8 ",icc,1
+"jz short loc_4025E8  | * | cmp ebx, eax ",icc,1
+"mov eax, [rdx+20h]  | * | jl short loc_4025E8 ",icc,1
+jl short loc_4025E8  | * | jl short loc_4025ED ,icc,1
+jl short loc_4025ED  | * | jge short loc_4025ED ,icc,1
+"cmp ecx, [rdx+24h]  | * | loc_4025E8:  ",icc,1
+"jge short loc_4025ED  | * | mov edx, offset qword_6226F8 ",icc,1
+loc_4025E8:   | * | loc_4025ED:  ,icc,1
+"loc_4025ED:   | * | cmp rdx, rax ",icc,1
+"mov eax, offset qword_6226F8  | * | jnz short loc_402620 ",icc,1
+"jnz short loc_402620  | * | mov edi, offset g ",icc,1
+"mov edi, offset g  | * | lea rsi, [rsp+58h+var_58] ",icc,1
+"movsxd rcx, ecx  | * | mov [rsp+58h+var_58], ebx ",icc,1
+"lea rsi, [rsp+58h+var_58]  | * | mov [rsp+58h+var_54], ecx ",icc,1
+"mov [rsp+58h+var_58], ebx  | * | inc dword ptr ds:out[rbx*4] ",icc,1
+"mov [rsp+58h+var_54], ecx  | * | inc dword ptr ds:in[rcx*4] ",icc,1
+inc dword ptr ds:in[rcx*4]  | * | loc_402620:  ,icc,1
+"call _ZNSt8_Rb_treeISt4pairIiiES1_St9_IdentityIS1_ESt4lessIS1_ESaIS1_EE16_M_insert_uniqueERKS1_   | * | mov rax, cs:s ",icc,1
+loc_402620:   | * | inc r12 ,icc,1
+"mov rax, cs:s  | * | mov rdx, [rax-18h] ",icc,1
+inc r12  | * | dec rdx ,icc,1
+"mov rdx, [rax-18h]  | * | movsxd rcx, edx ",icc,1
+"dec rdx  | * | cmp r12, rcx ",icc,1
+"movsxd rcx, edx  | * | jl loc_40223F ",icc,1
+"cmp r12, rcx  | * | mov r12, [rsp+58h+var_40] ",icc,1
+"jl loc_40223F  | * | xor edx, edx ",icc,1
+"mov r12, [rsp+58h+var_40]  | * | mov r13, [rsp+58h+var_38] ",icc,1
+"xor edx, edx  | * | pxor xmm2, xmm2 ",icc,1
+"mov r13, [rsp+58h+var_38]  | * | mov r14, [rsp+58h+var_30] ",icc,1
+"pxor xmm2, xmm2  | * | mov r15, [rsp+58h+var_28] ",icc,1
+"mov r14, [rsp+58h+var_30]  | * | loc_402657:  ",icc,1
+"mov r15, [rsp+58h+var_28]  | * | movdqa xmm1, xmm2 ",icc,1
+"loc_402657:   | * | pcmpeqd xmm0, xmm0 ",icc,1
+"movdqa xmm1, xmm2  | * | nop ",icc,1
+"pcmpeqd xmm0, xmm0  | * | loc_402660:  ",icc,1
+"nop  | * | movdqa xmm4, ds:in[rdx*4] ",icc,1
+"loc_402660:   | * | movdqa xmm6, ds:out[rdx*4] ",icc,1
+"movdqa xmm4, ds:in[rdx*4]  | * | movdqa xmm5, xmm4 ",icc,1
+"movdqa xmm6, ds:out[rdx*4]  | * | movdqa xmm3, xmm4 ",icc,1
+"movdqa xmm5, xmm4  | * | pcmpgtd xmm5, xmm6 ",icc,1
+"movdqa xmm3, xmm4  | * | psubd xmm3, xmm6 ",icc,1
+"pcmpgtd xmm5, xmm6  | * | psubd xmm6, xmm4 ",icc,1
+"psubd xmm3, xmm6  | * | pand xmm3, xmm5 ",icc,1
+"psubd xmm6, xmm4  | * | pxor xmm5, xmm0 ",icc,1
+"pand xmm3, xmm5  | * | add rdx, 4 ",icc,1
+"pxor xmm5, xmm0  | * | pand xmm6, xmm5 ",icc,1
+"add rdx, 4  | * | paddd xmm2, xmm3 ",icc,1
+"pand xmm6, xmm5  | * | paddd xmm1, xmm6 ",icc,1
+"paddd xmm2, xmm3  | * | cmp rdx, 6Ch  ",icc,1
+"paddd xmm1, xmm6  | * | jb short loc_402660 ",icc,1
+"cmp rdx, 6Ch   | * | movdqa xmm0, xmm1 ",icc,1
+"jb short loc_402660  | * | xor r10d, r10d ",icc,1
+"movdqa xmm0, xmm1  | * | psrldq xmm0, 8 ",icc,1
+"xor r10d, r10d  | * | paddd xmm1, xmm0 ",icc,1
+"psrldq xmm0, 8  | * | movdqa xmm3, xmm1 ",icc,1
+"paddd xmm1, xmm0  | * | psrlq xmm3, 20h  ",icc,1
+"movdqa xmm3, xmm1  | * | paddd xmm1, xmm3 ",icc,1
+"psrlq xmm3, 20h   | * | movd r9d, xmm1 ",icc,1
+"paddd xmm1, xmm3  | * | movdqa xmm1, xmm2 ",icc,1
+"movd r9d, xmm1  | * | psrldq xmm1, 8 ",icc,1
+"movdqa xmm1, xmm2  | * | paddd xmm2, xmm1 ",icc,1
+"psrldq xmm1, 8  | * | movdqa xmm4, xmm2 ",icc,1
+"paddd xmm2, xmm1  | * | psrlq xmm4, 20h  ",icc,1
+"movdqa xmm4, xmm2  | * | mov esi, dword ptr cs:xmmword_6224F0 ",icc,1
+"psrlq xmm4, 20h   | * | mov eax, esi ",icc,1
+"mov esi, dword ptr cs:xmmword_6224F0  | * | paddd xmm2, xmm4 ",icc,1
+"mov eax, esi  | * | mov r8d, dword ptr cs:qword_6226B0 ",icc,1
+"paddd xmm2, xmm4  | * | sub eax, r8d ",icc,1
+"mov r8d, dword ptr cs:qword_6226B0  | * | movd edx, xmm2 ",icc,1
+"sub eax, r8d  | * | cmp esi, r8d ",icc,1
+"movd edx, xmm2  | * | mov r11d, dword ptr cs:xmmword_6224F0+4 ",icc,1
+"cmp esi, r8d  | * | mov edi, dword ptr cs:qword_6226B0+4 ",icc,1
+"mov r11d, dword ptr cs:xmmword_6224F0+4  | * | lea ecx, [rdx+rax] ",icc,1
+"mov edi, dword ptr cs:qword_6226B0+4  | * | cmovg edx, ecx ",icc,1
+"lea ecx, [rdx+rax]  | * | neg eax ",icc,1
+"cmovg edx, ecx  | * | add eax, r9d ",icc,1
+"neg eax  | * | cmp esi, r8d ",icc,1
+"add eax, r9d  | * | mov ecx, r11d ",icc,1
+"cmp esi, r8d  | * | cmovg eax, r9d ",icc,1
+"mov ecx, r11d  | * | sub ecx, edi ",icc,1
+"cmovg eax, r9d  | * | cmp r11d, edi ",icc,1
+"sub ecx, edi  | * | mov esi, dword ptr cs:qword_622718 ",icc,1
+"cmp r11d, edi  | * | cmovg r10d, ecx ",icc,1
+"mov esi, dword ptr cs:qword_622718  | * | add edx, r10d ",icc,1
+"cmovg r10d, ecx  | * | xor r10d, r10d ",icc,1
+"add edx, r10d  | * | cmp r11d, edi ",icc,1
+"xor r10d, r10d  | * | mov edi, offset _ZSt4cout@@GLIBCXX_3_4 ",icc,1
+"cmp r11d, edi  | * | cmovg ecx, r10d ",icc,1
+"mov edi, offset _ZSt4cout@@GLIBCXX_3_4  | * | sub eax, ecx ",icc,1
+"cmovg ecx, r10d  | * | cmp edx, eax ",icc,1
+"sub eax, ecx  | * | cmovge eax, edx ",icc,1
+"cmp edx, eax  | * | xor edx, edx ",icc,1
+"cmovge eax, edx  | * | dec eax ",icc,1
+"xor edx, edx  | * | test eax, eax ",icc,1
+"dec eax  | * | cmovg edx, eax ",icc,1
+"test eax, eax  | * | lea esi, [rsi+rdx+1] ",icc,1
+"cmovg edx, eax  | * | call __ZNSolsEi  ",icc,1
+"lea esi, [rsi+rdx+1]  | * | mov rdi, rax ",icc,1
+"call __ZNSolsEi   | * | mov esi, offset __ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_  ",icc,1
+"mov esi, offset __ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_   | * | add rsp, 48h ",icc,1
+call __ZNSolsEPFRSoS_E   | * | pop rbp ,icc,1
+"add rsp, 48h  | * | pop rbx ",icc,1
+pop rbp  | * | retn ,icc,1
+pop rbx  | * | loc_402769:  ,icc,1
+"retn  | * | movsxd r13, r13d ",icc,1
+"loc_402769:   | * | mov ebx, offset qword_6226F8 ",icc,1
+"movsxd r13, r13d  | * | movsxd rbp, ebp ",icc,1
+"mov ebx, offset qword_6226F8  | * | inc dword ptr ds:out[r13*4] ",icc,1
+"movsxd rbp, ebp  | * | inc dword ptr ds:in[rbp*4] ",icc,1
+"inc dword ptr ds:out[r13*4]  | * | test r14, r14 ",icc,2
+inc dword ptr ds:in[rbp*4]  | * | jz loc_4028BF ,icc,1
+"test r14, r14  | * | loc_40278C:  ",icc,1
+"jz loc_4028BF  | * | mov eax, [r14+20h] ",icc,1
+"loc_40278C:   | * | mov rbx, r14 ",icc,1
+"mov eax, [r14+20h]  | * | cmp r13d, eax ",icc,2
+"mov rbx, r14  | * | jl short loc_4027A3 ",icc,1
+jl short loc_4027A3  | * | jl short loc_4027B1 ,icc,1
+"cmp eax, r13d  | * | cmp ebp, [r14+24h] ",icc,1
+jl short loc_4027B1  | * | jge short loc_4027B1 ,icc,1
+"cmp ebp, [r14+24h]  | * | loc_4027A3:  ",icc,1
+"jge short loc_4027B1  | * | mov r14, [r14+10h] ",icc,1
+"loc_4027A3:   | * | test r14, r14 ",icc,1
+"mov r14, [r14+10h]  | * | jnz short loc_40278C ",icc,1
+"test r14, r14  | * | jmp loc_40283D ",icc,1
+jnz short loc_40278C  | * | loc_4027B1:  ,icc,1
+"jmp loc_40283D  | * | mov r14, [r14+18h] ",icc,1
+"loc_4027B1:   | * | test r14, r14 ",icc,1
+"mov r14, [r14+18h]  | * | jnz short loc_40278C ",icc,1
+"test r14, r14  | * | mov rcx, rbx ",icc,1
+jnz short loc_40278C  | * | loc_4027BD:  ,icc,1
+"mov rcx, rbx  | * | mov eax, [rcx+20h] ",icc,1
+"loc_4027BD:   | * | cmp eax, r13d ",icc,1
+"mov eax, [rcx+20h]  | * | jl short loc_4027D7 ",icc,1
+"cmp eax, r13d  | * | cmp r13d, eax ",icc,2
+jl short loc_4027D7  | * | jl loc_4022F4 ,icc,1
+"cmp r13d, eax  | * | cmp ebp, [rcx+24h] ",icc,1
+jl loc_4022F4  | * | jle loc_4022F4 ,icc,1
+"cmp ebp, [rcx+24h]  | * | loc_4027D7:  ",icc,1
+"jle loc_4022F4  | * | test r14, r14 ",icc,1
+loc_4027D7:   | * | jz short loc_40281C ,icc,1
+"test r14, r14  | * | loc_4027DC:  ",icc,1
+"jz short loc_40281C  | * | mov r15d, 1 ",icc,1
+loc_4027DC:   | * | loc_4027E2:  ,icc,1
+"mov r15d, 1  | * | mov edi, 28h  ",icc,3
+loc_4027E2:   | * | call __Znwm  ,icc,1
+"mov edi, 28h   | * | mov r14, rax ",icc,10
+"call __Znwm   | * | cmp r14, 0FFFFFFFFFFFFFFE0h ",icc,10
+"mov r14, rax  | * | jz short loc_4027FD ",icc,1
+"cmp r14, 0FFFFFFFFFFFFFFE0h  | * | mov [r14+20h], r13d ",icc,4
+"jz short loc_4027FD  | * | mov [r14+24h], ebp ",icc,1
+"mov [r14+20h], r13d  | * | loc_4027FD:  ",icc,1
+"mov [r14+24h], ebp  | * | mov edi, r15d ",icc,2
+"loc_4027FD:   | * | mov rsi, r14 ",icc,1
+"mov edi, r15d  | * | mov rdx, rbx ",icc,6
+"mov rsi, r14  | * | mov ecx, offset qword_6226F8 ",icc,4
+"mov rdx, rbx  | * | call __ZSt29_Rb_tree_insert_and_rebalancebPSt18_Rb_tree_node_baseS0_RS_  ",icc,6
+"mov ecx, offset qword_6226F8  | * | inc cs:qword_622718 ",icc,2
+call __ZSt29_Rb_tree_insert_and_rebalancebPSt18_Rb_tree_node_baseS0_RS_   | * | jmp loc_4022F4 ,icc,2
+inc cs:qword_622718  | * | loc_40281C:  ,icc,1
+"jmp loc_4022F4  | * | mov eax, offset qword_6226F8 ",icc,2
+"loc_40281C:   | * | cmp rbx, rax ",icc,1
+"mov eax, offset qword_6226F8  | * | jz short loc_4027DC ",icc,1
+"cmp rbx, rax  | * | mov eax, [rbx+20h] ",icc,1
+"jz short loc_4027DC  | * | cmp r13d, eax ",icc,1
+"mov eax, [rbx+20h]  | * | jl short loc_4027DC ",icc,1
+jl short loc_4027DC  | * | jl short loc_402838 ,icc,1
+"cmp eax, r13d  | * | cmp ebp, [rbx+24h] ",icc,2
+jl short loc_402838  | * | jl short loc_4027DC ,icc,1
+"cmp ebp, [rbx+24h]  | * | loc_402838:  ",icc,1
+"jl short loc_4027DC  | * | xor r15d, r15d ",icc,1
+loc_402838:   | * | jmp short loc_4027E2 ,icc,1
+"xor r15d, r15d  | * | loc_40283D:  ",icc,1
+"jmp short loc_4027E2  | * | cmp rbx, qword ptr cs:xmmword_622700+8 ",icc,1
+loc_40283D:   | * | jz short loc_402856 ,icc,1
+"cmp rbx, qword ptr cs:xmmword_622700+8  | * | loc_402846:  ",icc,1
+"jz short loc_402856  | * | mov rdi, rbx ",icc,1
+loc_402846:   | * | call __ZSt18_Rb_tree_decrementPSt18_Rb_tree_node_base  ,icc,1
+"mov rdi, rbx  | * | mov rcx, rax ",icc,1
+call __ZSt18_Rb_tree_decrementPSt18_Rb_tree_node_base   | * | jmp loc_4027BD ,icc,1
+"mov rcx, rax  | * | loc_402856:  ",icc,1
+"jmp loc_4027BD  | * | mov eax, offset qword_6226F8 ",icc,1
+"loc_402856:   | * | cmp rbx, rax ",icc,1
+"mov eax, offset qword_6226F8  | * | jnz short loc_402868 ",icc,1
+"cmp rbx, rax  | * | mov r15d, 1 ",icc,1
+jnz short loc_402868  | * | jmp short loc_402885 ,icc,1
+"mov r15d, 1  | * | loc_402868:  ",icc,1
+"jmp short loc_402885  | * | mov eax, [rbx+20h] ",icc,1
+"loc_402868:   | * | cmp r13d, eax ",icc,1
+"mov eax, [rbx+20h]  | * | jl short loc_40287A ",icc,1
+jl short loc_40287A  | * | jl short loc_402882 ,icc,1
+jl short loc_402882  | * | jge short loc_402882 ,icc,1
+"cmp ebp, [rbx+24h]  | * | loc_40287A:  ",icc,1
+"jge short loc_402882  | * | mov r15d, 1 ",icc,1
+loc_40287A:   | * | jmp short loc_402885 ,icc,1
+"mov r15d, 1  | * | loc_402882:  ",icc,1
+"jmp short loc_402885  | * | xor r15d, r15d ",icc,1
+loc_402882:   | * | loc_402885:  ,icc,1
+"xor r15d, r15d  | * | mov edi, 28h  ",icc,3
+loc_402885:   | * | call __Znwm  ,icc,1
+"mov r14, rax  | * | jz short loc_4028A0 ",icc,1
+"jz short loc_4028A0  | * | mov [r14+24h], ebp ",icc,1
+"mov [r14+20h], r13d  | * | loc_4028A0:  ",icc,1
+"loc_4028A0:   | * | mov rsi, r14 ",icc,1
+inc cs:qword_622718  | * | loc_4028BF:  ,icc,1
+"loc_4028BF:   | * | cmp rax, qword ptr cs:xmmword_622700+8 ",icc,1
+"mov eax, offset qword_6226F8  | * | jz short loc_402856 ",icc,1
+"cmp rax, qword ptr cs:xmmword_622700+8  | * | jmp loc_402846 ",icc,1
+jz short loc_402856  | * | _Z5solvev endp ,icc,1
+jmp loc_402846  | * | align 20h ,icc,1
+_Z5solvev endp  | * | _ZN9__gnu_cxx27__exchange_and_add_dispatchEPii proc near ,icc,1
+"align 20h  | * | mov eax, 0 ",icc,1
+"_ZN9__gnu_cxx27__exchange_and_add_dispatchEPii proc near  | * | test rax, rax ",icc,1
+"mov eax, 0  | * | jz short loc_4028F6 ",icc,1
+"test rax, rax  | * | mov ecx, 0FFFFFFFFh ",icc,1
+"jz short loc_4028F6  | * | lock xadd [rdi], ecx ",icc,1
+"mov ecx, 0FFFFFFFFh  | * | mov eax, ecx ",icc,1
+"lock xadd [rdi], ecx  | * | retn ",icc,1
+"mov eax, ecx  | * | loc_4028F6:  ",icc,1
+"retn  | * | mov eax, [rdi] ",icc,1
+"loc_4028F6:   | * | lea edx, [rax-1] ",icc,1
+"mov eax, [rdi]  | * | mov [rdi], edx ",icc,1
+"lea edx, [rax-1]  | * | retn ",icc,1
+"mov [rdi], edx  | * | _ZN9__gnu_cxx27__exchange_and_add_dispatchEPii endp ",icc,1
+_ZN9__gnu_cxx27__exchange_and_add_dispatchEPii endp  | * | public _Z3addSsSs ,icc,1
+align 20h  | * | _Z3addSsSs proc near  ,icc,1
+var_58 = qword ptr -58h  | * | var_48 = qword ptr -48h ,data,2
+var_50 = qword ptr -50h  | * | var_40 = qword ptr -40h ,data,2
+var_48 = qword ptr -48h  | * | var_38 = dword ptr -38h ,data,1
+var_40 = qword ptr -40h  | * | var_34 = dword ptr -34h ,data,1
+push r13  | * | push r15 ,icc,6
+push r14  | * | push rbx ,icc,5
+push r15  | * | push rbp ,icc,5
+"push rbx  | * | sub rsp, 30h ",icc,1
+"push rbp  | * | mov rbx, rsi ",icc,1
+"sub rsp, 30h  | * | mov rbp, rdi ",icc,1
+"mov rbx, rsi  | * | mov rax, [rbx] ",icc,1
+"mov rbp, rdi  | * | cmp dword ptr [rax-8], 0 ",icc,1
+"mov rax, [rbx]  | * | jl short loc_402926 ",icc,1
+"cmp dword ptr [rax-8], 0  | * | mov rdi, rbx  ",icc,1
+jl short loc_402926  | * | call __ZNSs12_M_leak_hardEv  ,icc,1
+"mov rdi, rbx   | * | mov rax, [rbx] ",icc,1
+call __ZNSs12_M_leak_hardEv   | * | loc_402926:  ,icc,1
+"mov rax, [rbx]  | * | movsx r14d, byte ptr [rax] ",icc,1
+"loc_402926:   | * | mov rax, [rbp+0] ",icc,1
+"movsx r14d, byte ptr [rax]  | * | add r14d, 0FFFFFFEAh ",icc,1
+"mov rax, [rbp+0]  | * | cmp dword ptr [rax-8], 0 ",icc,1
+"add r14d, 0FFFFFFEAh  | * | jl short loc_402944 ",icc,1
+"cmp dword ptr [rax-8], 0  | * | mov rdi, rbp  ",icc,1
+jl short loc_402944  | * | call __ZNSs12_M_leak_hardEv  ,icc,1
+"mov rdi, rbp   | * | mov rax, [rbp+0] ",icc,1
+call __ZNSs12_M_leak_hardEv   | * | loc_402944:  ,icc,1
+"mov rax, [rbp+0]  | * | movsx ebp, byte ptr [rax] ",icc,1
+"loc_402944:   | * | mov r13d, offset qword_6226C8 ",icc,1
+"movsx ebp, byte ptr [rax]  | * | mov rbx, qword ptr cs:xmmword_6226D0 ",icc,1
+"mov r13d, offset qword_6226C8  | * | add ebp, 0FFFFFF9Fh ",icc,1
+"mov rbx, qword ptr cs:xmmword_6226D0  | * | mov rax, rbx ",icc,1
+"add ebp, 0FFFFFF9Fh  | * | test rbx, rbx ",icc,1
+"mov rax, rbx  | * | jz short loc_402976 ",icc,1
+"test rbx, rbx  | * | loc_40295F:  ",icc,1
+"jz short loc_402976  | * | cmp ebp, [rax+20h] ",icc,1
+loc_40295F:   | * | jg short loc_40296D ,icc,1
+"cmp ebp, [rax+20h]  | * | mov r13, rax ",icc,1
+"jg short loc_40296D  | * | mov rax, [rax+10h] ",icc,1
+"mov r13, rax  | * | jmp short loc_402971 ",icc,1
+"mov rax, [rax+10h]  | * | loc_40296D:  ",icc,1
+"jmp short loc_402971  | * | mov rax, [rax+18h] ",icc,1
+loc_40296D:   | * | loc_402971:  ,icc,1
+loc_402971:   | * | jnz short loc_40295F ,icc,1
+"test rax, rax  | * | loc_402976:  ",icc,1
+"jnz short loc_40295F  | * | mov eax, offset qword_6226C8 ",icc,1
+"loc_402976:   | * | cmp r13, rax ",icc,1
+"mov eax, offset qword_6226C8  | * | jz short loc_40298A ",icc,1
+"cmp r13, rax  | * | cmp ebp, [r13+20h] ",icc,1
+jz short loc_40298A  | * | jge loc_402AA9 ,icc,1
+"cmp ebp, [r13+20h]  | * | loc_40298A:  ",icc,1
+"jge loc_402AA9  | * | mov eax, offset qword_6226C8 ",icc,1
+"loc_40298A:   | * | mov [rsp+58h+var_38], ebp ",icc,1
+"mov eax, offset qword_6226C8  | * | cmp r13, rax ",icc,1
+"mov [rsp+58h+var_38], ebp  | * | mov [rsp+58h+var_34], 0 ",icc,1
+"cmp r13, rax  | * | jz loc_402C27 ",icc,1
+"mov [rsp+58h+var_34], 0  | * | mov eax, [r13+20h] ",icc,1
+"jz loc_402C27  | * | cmp ebp, eax ",icc,1
+"mov eax, [r13+20h]  | * | jge short loc_402A20 ",icc,1
+"cmp ebp, eax  | * | mov r15, qword ptr cs:xmmword_6226D0+8 ",icc,1
+"jge short loc_402A20  | * | cmp r13, r15 ",icc,1
+"mov r15, qword ptr cs:xmmword_6226D0+8  | * | jz loc_402B16 ",icc,1
+"cmp r13, r15  | * | mov rdi, r13 ",icc,2
+jz loc_402B16  | * | call __ZSt18_Rb_tree_decrementPKSt18_Rb_tree_node_base  ,icc,1
+"mov rdi, r13  | * | mov r15, rax ",icc,2
+"call __ZSt18_Rb_tree_decrementPKSt18_Rb_tree_node_base   | * | mov ecx, [r15+20h] ",icc,1
+"mov r15, rax  | * | cmp ecx, ebp ",icc,1
+"mov ecx, [r15+20h]  | * | jge loc_402A8F ",icc,1
+"cmp ecx, ebp  | * | cmp qword ptr [r15+18h], 0 ",icc,1
+jge loc_402A8F  | * | jz loc_402ABA ,icc,1
+"cmp qword ptr [r15+18h], 0  | * | mov edi, 28h  ",icc,1
+jz loc_402ABA  | * | call __Znwm  ,icc,1
+"mov edi, 28h   | * | mov rbx, rax ",icc,9
+"call __Znwm   | * | cmp rbx, 0FFFFFFFFFFFFFFE0h ",icc,9
+"mov rbx, rax  | * | jz short loc_4029FF ",icc,1
+"cmp rbx, 0FFFFFFFFFFFFFFE0h  | * | mov eax, [rsp+58h+var_38] ",icc,9
+"jz short loc_4029FF  | * | mov [rbx+20h], eax ",icc,1
+"mov eax, [rsp+58h+var_38]  | * | mov ecx, [rsp+58h+var_34] ",icc,9
+"mov [rbx+20h], eax  | * | mov [rbx+24h], ecx ",icc,9
+"mov ecx, [rsp+58h+var_34]  | * | loc_4029FF:  ",icc,1
+"mov [rbx+24h], ecx  | * | mov edi, 1 ",icc,2
+"loc_4029FF:   | * | mov rsi, rbx ",icc,1
+"mov edi, 1  | * | mov rdx, r13 ",icc,1
+"mov rsi, rbx  | * | mov ecx, offset qword_6226C8 ",icc,8
+"mov rdx, r13  | * | call __ZSt29_Rb_tree_insert_and_rebalancebPSt18_Rb_tree_node_baseS0_RS_  ",icc,7
+"mov ecx, offset qword_6226C8  | * | inc cs:qword_6226E8 ",icc,6
+call __ZSt29_Rb_tree_insert_and_rebalancebPSt18_Rb_tree_node_baseS0_RS_   | * | jmp loc_402AA6 ,icc,5
+inc cs:qword_6226E8  | * | loc_402A20:  ,icc,1
+"jmp loc_402AA6  | * | cmp eax, ebp ",icc,1
+loc_402A20:   | * | jge short loc_402AA3 ,icc,1
+"cmp eax, ebp  | * | mov r15, cs:qword_6226E0 ",icc,1
+"jge short loc_402AA3  | * | cmp r13, r15 ",icc,1
+"mov r15, cs:qword_6226E0  | * | jz loc_402BC6 ",icc,1
+jz loc_402BC6  | * | call __ZSt18_Rb_tree_incrementPKSt18_Rb_tree_node_base  ,icc,1
+"call __ZSt18_Rb_tree_incrementPKSt18_Rb_tree_node_base   | * | cmp ebp, [r15+20h] ",icc,1
+"mov r15, rax  | * | jge short loc_402A8F ",icc,1
+"cmp ebp, [r15+20h]  | * | cmp qword ptr [r13+18h], 0 ",icc,1
+jge short loc_402A8F  | * | jz loc_402B7C ,icc,1
+"cmp qword ptr [r13+18h], 0  | * | mov edi, 28h  ",icc,1
+jz loc_402B7C  | * | call __Znwm  ,icc,1
+"mov rbx, rax  | * | jz short loc_402A71 ",icc,1
+"jz short loc_402A71  | * | mov [rbx+20h], eax ",icc,1
+"mov ecx, [rsp+58h+var_34]  | * | loc_402A71:  ",icc,1
+"loc_402A71:   | * | mov rsi, rbx ",icc,1
+"mov edi, 1  | * | mov rdx, r15 ",icc,2
+"mov rdx, r15  | * | call __ZSt29_Rb_tree_insert_and_rebalancebPSt18_Rb_tree_node_baseS0_RS_  ",icc,7
+call __ZSt29_Rb_tree_insert_and_rebalancebPSt18_Rb_tree_node_baseS0_RS_   | * | jmp short loc_402AA6 ,icc,2
+inc cs:qword_6226E8  | * | loc_402A8F:  ,icc,1
+"jmp short loc_402AA6  | * | mov edi, offset ma ",icc,1
+"loc_402A8F:   | * | lea rsi, [rsp+58h+var_38] ",icc,1
+"mov edi, offset ma  | * | call _ZNSt8_Rb_treeIiSt4pairIKiiESt10_Select1stIS2_ESt4lessIiESaIS2_EE16_M_insert_uniqueERKS2_  ",icc,1
+"lea rsi, [rsp+58h+var_38]  | * | mov rbx, rax ",icc,1
+call _ZNSt8_Rb_treeIiSt4pairIKiiESt10_Select1stIS2_ESt4lessIiESaIS2_EE16_M_insert_uniqueERKS2_   | * | jmp short loc_402AA6 ,icc,1
+"mov rbx, rax  | * | loc_402AA3:  ",icc,1
+"jmp short loc_402AA6  | * | mov rbx, r13 ",icc,1
+loc_402AA3:   | * | loc_402AA6:  ,icc,1
+"mov rbx, r13  | * | mov r13, rbx ",icc,1
+loc_402AA6:   | * | loc_402AA9:  ,icc,1
+"mov r13, rbx  | * | mov [r13+24h], r14d ",icc,1
+"loc_402AA9:   | * | add rsp, 30h ",icc,1
+"mov [r13+24h], r14d  | * | pop rbp ",icc,1
+"add rsp, 30h  | * | pop rbx ",icc,1
+pop rbp  | * | pop r15 ,icc,18
+pop rbx  | * | pop r14 ,icc,21
+pop r15  | * | pop r13 ,icc,24
+pop r14  | * | retn ,icc,5
+pop r13  | * | loc_402ABA:  ,icc,1
+"retn  | * | mov eax, offset qword_6226C8 ",icc,1
+"loc_402ABA:   | * | cmp r15, rax ",icc,1
+"mov eax, offset qword_6226C8  | * | jnz short loc_402ACB ",icc,1
+"cmp r15, rax  | * | mov ebp, 1 ",icc,2
+jnz short loc_402ACB  | * | jmp short loc_402ADA ,icc,1
+"mov ebp, 1  | * | loc_402ACB:  ",icc,1
+"jmp short loc_402ADA  | * | mov eax, 1 ",icc,1
+"loc_402ACB:   | * | cmp ebp, ecx ",icc,1
+"mov eax, 1  | * | mov ebp, 0 ",icc,6
+"cmp ebp, ecx  | * | cmovl ebp, eax ",icc,2
+"mov ebp, 0  | * | loc_402ADA:  ",icc,1
+"cmovl ebp, eax  | * | mov edi, 28h  ",icc,3
+loc_402ADA:   | * | call __Znwm  ,icc,1
+"mov rbx, rax  | * | jz short loc_402AFB ",icc,1
+"jz short loc_402AFB  | * | mov [rbx+20h], eax ",icc,1
+"mov ecx, [rsp+58h+var_34]  | * | loc_402AFB:  ",icc,1
+"mov [rbx+24h], ecx  | * | mov edi, ebp ",icc,6
+"loc_402AFB:   | * | mov rsi, rbx ",icc,1
+"mov edi, ebp  | * | mov rdx, r15 ",icc,3
+inc cs:qword_6226E8  | * | loc_402B16:  ,icc,1
+"jmp short loc_402AA6  | * | test r15, r15 ",icc,1
+loc_402B16:   | * | jz short loc_402B5F ,icc,1
+"test r15, r15  | * | loc_402B1B:  ",icc,1
+"jz short loc_402B5F  | * | mov ebp, 1 ",icc,1
+loc_402B1B:   | * | loc_402B20:  ,icc,1
+"mov ebp, 1  | * | mov edi, 28h  ",icc,3
+loc_402B20:   | * | call __Znwm  ,icc,1
+"mov rbx, rax  | * | jz short loc_402B41 ",icc,1
+"jz short loc_402B41  | * | mov [rbx+20h], eax ",icc,1
+"mov ecx, [rsp+58h+var_34]  | * | loc_402B41:  ",icc,1
+"loc_402B41:   | * | mov rsi, rbx ",icc,1
+inc cs:qword_6226E8  | * | loc_402B5F:  ,icc,1
+"jmp loc_402AA6  | * | mov eax, offset qword_6226C8 ",icc,3
+"loc_402B5F:   | * | cmp r15, rax ",icc,1
+"mov eax, offset qword_6226C8  | * | jz short loc_402B1B ",icc,1
+"cmp r15, rax  | * | mov eax, 1 ",icc,1
+"jz short loc_402B1B  | * | cmp ebp, [r15+20h] ",icc,1
+"cmp ebp, [r15+20h]  | * | cmovl ebp, eax ",icc,2
+"mov ebp, 0  | * | jmp short loc_402B20 ",icc,1
+"cmovl ebp, eax  | * | loc_402B7C:  ",icc,1
+"jmp short loc_402B20  | * | mov edi, 28h  ",icc,1
+loc_402B7C:   | * | call __Znwm  ,icc,1
+"mov rbx, rax  | * | jz short loc_402B9D ",icc,1
+"jz short loc_402B9D  | * | mov [rbx+20h], eax ",icc,1
+"mov ecx, [rsp+58h+var_34]  | * | loc_402B9D:  ",icc,1
+"mov [rbx+24h], ecx  | * | mov ecx, offset qword_6226C8 ",icc,1
+"loc_402B9D:   | * | mov eax, 1 ",icc,1
+"mov ecx, offset qword_6226C8  | * | xor edi, edi ",icc,1
+"mov eax, 1  | * | cmp r13, rcx ",icc,1
+"xor edi, edi  | * | mov rsi, rbx ",icc,1
+"cmp r13, rcx  | * | mov rdx, r13 ",icc,1
+"mov rsi, rbx  | * | cmovz edi, eax ",icc,1
+"cmovz edi, eax  | * | inc cs:qword_6226E8 ",icc,1
+inc cs:qword_6226E8  | * | loc_402BC6:  ,icc,1
+"loc_402BC6:   | * | cmp r15, rax ",icc,1
+"mov eax, offset qword_6226C8  | * | jnz short loc_402BD7 ",icc,1
+jnz short loc_402BD7  | * | jmp short loc_402BE8 ,icc,1
+"mov ebp, 1  | * | loc_402BD7:  ",icc,1
+"jmp short loc_402BE8  | * | mov eax, 1 ",icc,1
+"loc_402BD7:   | * | cmp ebp, [r15+20h] ",icc,1
+"mov ebp, 0  | * | loc_402BE8:  ",icc,1
+loc_402BE8:   | * | call __Znwm  ,icc,1
+"mov rbx, rax  | * | jz short loc_402C09 ",icc,1
+"jz short loc_402C09  | * | mov [rbx+20h], eax ",icc,1
+"mov ecx, [rsp+58h+var_34]  | * | loc_402C09:  ",icc,1
+"loc_402C09:   | * | mov rsi, rbx ",icc,1
+inc cs:qword_6226E8  | * | loc_402C27:  ,icc,1
+"jmp loc_402AA6  | * | cmp cs:qword_6226E8, 0 ",icc,1
+loc_402C27:   | * | jbe short loc_402C9F ,icc,1
+"cmp cs:qword_6226E8, 0  | * | mov r13, cs:qword_6226E0 ",icc,1
+"jbe short loc_402C9F  | * | mov ecx, [r13+20h] ",icc,1
+"mov r13, cs:qword_6226E0  | * | cmp ecx, ebp ",icc,1
+"mov ecx, [r13+20h]  | * | jge short loc_402C9F ",icc,1
+"cmp ecx, ebp  | * | mov eax, offset qword_6226C8 ",icc,1
+"jge short loc_402C9F  | * | cmp r13, rax ",icc,1
+"mov eax, offset qword_6226C8  | * | jnz short loc_402C51 ",icc,1
+"cmp r13, rax  | * | mov ebp, 1 ",icc,1
+jnz short loc_402C51  | * | jmp short loc_402C60 ,icc,1
+"mov ebp, 1  | * | loc_402C51:  ",icc,1
+"jmp short loc_402C60  | * | mov eax, 1 ",icc,1
+"loc_402C51:   | * | cmp ebp, ecx ",icc,1
+"mov ebp, 0  | * | loc_402C60:  ",icc,1
+loc_402C60:   | * | call __Znwm  ,icc,1
+"mov rbx, rax  | * | jz short loc_402C81 ",icc,1
+"jz short loc_402C81  | * | mov [rbx+20h], eax ",icc,1
+"mov ecx, [rsp+58h+var_34]  | * | loc_402C81:  ",icc,1
+"loc_402C81:   | * | mov rsi, rbx ",icc,1
+"mov edi, ebp  | * | mov rdx, r13 ",icc,3
+inc cs:qword_6226E8  | * | loc_402C9F:  ,icc,1
+"jmp loc_402AA6  | * | mov r13d, offset qword_6226C8 ",icc,1
+"loc_402C9F:   | * | mov eax, 1 ",icc,1
+"mov r13d, offset qword_6226C8  | * | test rbx, rbx ",icc,1
+"mov eax, 1  | * | jz short loc_402CD2 ",icc,1
+"test rbx, rbx  | * | mov ecx, 1 ",icc,1
+jz short loc_402CD2  | * | loc_402CB4:  ,icc,1
+"mov ecx, 1  | * | xor eax, eax ",icc,1
+"loc_402CB4:   | * | cmp ebp, [rbx+20h] ",icc,1
+"xor eax, eax  | * | mov r13, rbx ",icc,1
+"cmp ebp, [rbx+20h]  | * | cmovl eax, ecx ",icc,1
+"mov r13, rbx  | * | test eax, eax ",icc,1
+"cmovl eax, ecx  | * | jz short loc_402CC9 ",icc,1
+"test eax, eax  | * | mov rbx, [rbx+10h] ",icc,1
+jz short loc_402CC9  | * | jmp short loc_402CCD ,icc,1
+"mov rbx, [rbx+10h]  | * | loc_402CC9:  ",icc,1
+"jmp short loc_402CCD  | * | mov rbx, [rbx+18h] ",icc,1
+loc_402CC9:   | * | loc_402CCD:  ,icc,1
+"mov rbx, [rbx+18h]  | * | test rbx, rbx ",icc,1
+loc_402CCD:   | * | jnz short loc_402CB4 ,icc,1
+"test rbx, rbx  | * | loc_402CD2:  ",icc,1
+"jnz short loc_402CB4  | * | mov rcx, r13 ",icc,1
+"loc_402CD2:   | * | test eax, eax ",icc,1
+"mov rcx, r13  | * | jz short loc_402CF1 ",icc,1
+"test eax, eax  | * | cmp r13, qword ptr cs:xmmword_6226D0+8 ",icc,1
+jz short loc_402CF1  | * | jz loc_402D72 ,icc,1
+"cmp r13, qword ptr cs:xmmword_6226D0+8  | * | mov rdi, r13 ",icc,1
+jz loc_402D72  | * | call __ZSt18_Rb_tree_decrementPSt18_Rb_tree_node_base  ,icc,1
+"mov rdi, r13  | * | mov rcx, rax ",icc,1
+call __ZSt18_Rb_tree_decrementPSt18_Rb_tree_node_base   | * | loc_402CF1:  ,icc,1
+"mov rcx, rax  | * | cmp ebp, [rcx+20h] ",icc,1
+loc_402CF1:   | * | jle short loc_402D58 ,icc,1
+"cmp ebp, [rcx+20h]  | * | test rbx, rbx ",icc,1
+jle short loc_402D58  | * | jz loc_402DDC ,icc,1
+"test rbx, rbx  | * | loc_402CFF:  ",icc,1
+"jz loc_402DDC  | * | mov ebp, 1 ",icc,1
+loc_402CFF:   | * | loc_402D04:  ,icc,1
+loc_402D04:   | * | call __Znwm  ,icc,1
+"mov rbx, rax  | * | jz short loc_402D25 ",icc,1
+"jz short loc_402D25  | * | mov [rbx+20h], eax ",icc,1
+"mov ecx, [rsp+58h+var_34]  | * | loc_402D25:  ",icc,1
+"loc_402D25:   | * | mov rsi, rbx ",icc,1
+"mov ecx, offset qword_6226C8  | * | mov byte ptr [rsp+58h+var_50], 1 ",icc,2
+"call __ZSt29_Rb_tree_insert_and_rebalancebPSt18_Rb_tree_node_baseS0_RS_   | * | mov rax, [rsp+58h+var_50] ",icc,4
+"mov byte ptr [rsp+58h+var_50], 1  | * | inc cs:qword_6226E8 ",icc,2
+"mov rax, [rsp+58h+var_50]  | * | mov [rsp+58h+var_58], rbx ",icc,2
+"inc cs:qword_6226E8  | * | mov [rsp+58h+var_48], rbx ",icc,2
+"mov [rsp+58h+var_58], rbx  | * | mov [rsp+58h+var_40], rax ",icc,2
+"mov [rsp+58h+var_48], rbx  | * | jmp short loc_402DD2 ",icc,1
+"mov [rsp+58h+var_40], rax  | * | loc_402D58:  ",icc,1
+"jmp short loc_402DD2  | * | mov byte ptr [rsp+58h+var_50], 0 ",icc,1
+"loc_402D58:   | * | mov rax, [rsp+58h+var_50] ",icc,1
+"mov byte ptr [rsp+58h+var_50], 0  | * | mov [rsp+58h+var_58], rcx ",icc,1
+"mov rax, [rsp+58h+var_50]  | * | mov [rsp+58h+var_48], rcx ",icc,1
+"mov [rsp+58h+var_58], rcx  | * | mov [rsp+58h+var_40], rax ",icc,1
+"mov [rsp+58h+var_48], rcx  | * | jmp short loc_402DD2 ",icc,1
+"mov [rsp+58h+var_40], rax  | * | loc_402D72:  ",icc,1
+"jmp short loc_402DD2  | * | test rbx, rbx ",icc,1
+loc_402D72:   | * | jz loc_402E00 ,icc,1
+"test rbx, rbx  | * | loc_402D7B:  ",icc,1
+"jz loc_402E00  | * | mov ebp, 1 ",icc,1
+loc_402D7B:   | * | loc_402D80:  ,icc,1
+loc_402D80:   | * | call __Znwm  ,icc,1
+"mov rbx, rax  | * | jz short loc_402DA1 ",icc,1
+"jz short loc_402DA1  | * | mov [rbx+20h], eax ",icc,1
+"mov ecx, [rsp+58h+var_34]  | * | loc_402DA1:  ",icc,1
+"loc_402DA1:   | * | mov rsi, rbx ",icc,1
+"mov [rsp+58h+var_48], rbx  | * | loc_402DD2:  ",icc,1
+"mov [rsp+58h+var_40], rax  | * | mov rbx, [rsp+58h+var_48] ",icc,1
+loc_402DD2:   | * | jmp loc_402AA6 ,icc,1
+"mov rbx, [rsp+58h+var_48]  | * | loc_402DDC:  ",icc,1
+"loc_402DDC:   | * | cmp r13, rax ",icc,1
+"mov eax, offset qword_6226C8  | * | jz loc_402CFF ",icc,1
+"cmp r13, rax  | * | mov eax, 1 ",icc,2
+"jz loc_402CFF  | * | cmp ebp, [r13+20h] ",icc,1
+"cmp ebp, [r13+20h]  | * | cmovl ebp, eax ",icc,2
+"mov ebp, 0  | * | jmp loc_402D04 ",icc,1
+"cmovl ebp, eax  | * | loc_402E00:  ",icc,1
+"jmp loc_402D04  | * | mov eax, offset qword_6226C8 ",icc,1
+"loc_402E00:   | * | cmp r13, rax ",icc,1
+"mov eax, offset qword_6226C8  | * | jz loc_402D7B ",icc,1
+"jz loc_402D7B  | * | cmp ebp, [r13+20h] ",icc,1
+"mov ebp, 0  | * | jmp loc_402D80 ",icc,1
+"cmovl ebp, eax  | * | _Z3addSsSs endp ",icc,1
+jmp loc_402D80  | * | align 10h ,icc,1
+_Z3addSsSs endp  | * | public _Z4readv ,icc,1
+align 10h  | * | _Z4readv proc near ,icc,1
+public _Z4readv  | * | push rsi ,icc,1
+"_Z4readv proc near  | * | mov edi, offset _ZSt3cin@@GLIBCXX_3_4 ",icc,1
+"push rsi  | * | mov esi, offset k ",icc,1
+"shr eax, cl  | * | jnz short loc_402E7E ",icc,1
+"jnz short loc_402E7E  | * | add rdx, rcx ",icc,1
+"add rdx, rcx  | * | loc_402E7E:  ",icc,1
+"loc_402E7E:   | * | mov esi, offset buf  ",icc,1
+"mov esi, offset buf   | * | add rsp, 8 ",icc,1
+"mov rdx, rax   | * | jmp __ZNSs6assignEPKcm  ",icc,1
+"add rsp, 8  | * | _Z4readv endp ",icc,1
+jmp __ZNSs6assignEPKcm   | * | align 20h ,icc,1
+_Z4readv endp  | * | public _Z3addii ,icc,1
+align 20h  | * | _Z3addii proc near ,icc,1
+push r12  | * | push r14 ,icc,6
+push r14  | * | push rbp ,icc,1
+"push r15  | * | sub rsp, 10h ",icc,1
+"push rbp  | * | mov r12d, esi ",icc,1
+"sub rsp, 10h  | * | mov r14, qword ptr cs:xmmword_622700 ",icc,1
+"mov r12d, esi  | * | mov r13d, edi ",icc,1
+"mov r14, qword ptr cs:xmmword_622700  | * | mov rax, r14 ",icc,1
+"mov r13d, edi  | * | mov edx, offset qword_6226F8 ",icc,1
+"mov rax, r14  | * | test r14, r14 ",icc,1
+"mov edx, offset qword_6226F8  | * | jz short loc_402EEC ",icc,1
+"test r14, r14  | * | loc_402EC7:  ",icc,1
+"jz short loc_402EEC  | * | mov ecx, [rax+20h] ",icc,1
+"loc_402EC7:   | * | cmp ecx, r13d ",icc,1
+"mov ecx, [rax+20h]  | * | jl short loc_402EDA ",icc,1
+jl short loc_402EDA  | * | jl short loc_402EE0 ,icc,1
+"cmp r13d, ecx  | * | cmp r12d, [rax+24h] ",icc,1
+jl short loc_402EE0  | * | jle short loc_402EE0 ,icc,1
+"cmp r12d, [rax+24h]  | * | loc_402EDA:  ",icc,1
+"jle short loc_402EE0  | * | mov rax, [rax+18h] ",icc,1
+loc_402EDA:   | * | jmp short loc_402EE7 ,icc,1
+"mov rax, [rax+18h]  | * | loc_402EE0:  ",icc,1
+"jmp short loc_402EE7  | * | mov rdx, rax ",icc,1
+"loc_402EE0:   | * | mov rax, [rax+10h] ",icc,1
+"mov rdx, rax  | * | loc_402EE7:  ",icc,1
+loc_402EE7:   | * | jnz short loc_402EC7 ,icc,1
+"test rax, rax  | * | loc_402EEC:  ",icc,1
+"jnz short loc_402EC7  | * | mov eax, offset qword_6226F8 ",icc,1
+"loc_402EEC:   | * | cmp rdx, rax ",icc,1
+"mov eax, offset qword_6226F8  | * | jz short loc_402F09 ",icc,1
+"jz short loc_402F09  | * | cmp r13d, eax ",icc,1
+"mov eax, [rdx+20h]  | * | jl short loc_402F09 ",icc,1
+jl short loc_402F09  | * | jl short loc_402F0E ,icc,1
+"cmp eax, r13d  | * | cmp r12d, [rdx+24h] ",icc,1
+jl short loc_402F0E  | * | jge short loc_402F0E ,icc,1
+"cmp r12d, [rdx+24h]  | * | loc_402F09:  ",icc,1
+"jge short loc_402F0E  | * | mov edx, offset qword_6226F8 ",icc,1
+loc_402F09:   | * | loc_402F0E:  ,icc,1
+"loc_402F0E:   | * | cmp rdx, rax ",icc,1
+"mov eax, offset qword_6226F8  | * | jnz loc_40305F ",icc,1
+"cmp rdx, rax  | * | movsxd r13, r13d ",icc,1
+"jnz loc_40305F  | * | mov ebp, offset qword_6226F8 ",icc,1
+"movsxd r13, r13d  | * | movsxd r12, r12d ",icc,1
+"mov ebp, offset qword_6226F8  | * | mov al, 1 ",icc,1
+"movsxd r12, r12d  | * | inc dword ptr ds:out[r13*4] ",icc,1
+"mov al, 1  | * | inc dword ptr ds:in[r12*4] ",icc,1
+inc dword ptr ds:in[r12*4]  | * | jz short loc_402F6E ,icc,1
+"test r14, r14  | * | loc_402F3E:  ",icc,1
+"jz short loc_402F6E  | * | mov eax, [r14+20h] ",icc,1
+"loc_402F3E:   | * | mov rbp, r14 ",icc,1
+"mov rbp, r14  | * | jl short loc_402F55 ",icc,1
+jl short loc_402F55  | * | jl short loc_402F59 ,icc,1
+"cmp eax, r13d  | * | cmp r12d, [r14+24h] ",icc,1
+jl short loc_402F59  | * | jge short loc_402F59 ,icc,1
+"cmp r12d, [r14+24h]  | * | loc_402F55:  ",icc,1
+"jge short loc_402F59  | * | mov al, 1 ",icc,1
+loc_402F55:   | * | jmp short loc_402F5B ,icc,1
+"mov al, 1  | * | loc_402F59:  ",icc,1
+"jmp short loc_402F5B  | * | xor al, al ",icc,1
+loc_402F59:   | * | loc_402F5B:  ,icc,1
+"xor al, al  | * | test al, al ",icc,1
+loc_402F5B:   | * | jz short loc_402F65 ,icc,1
+"test al, al  | * | mov r14, [r14+10h] ",icc,1
+jz short loc_402F65  | * | jmp short loc_402F69 ,icc,1
+"mov r14, [r14+10h]  | * | loc_402F65:  ",icc,1
+"jmp short loc_402F69  | * | mov r14, [r14+18h] ",icc,1
+loc_402F65:   | * | loc_402F69:  ,icc,1
+"mov r14, [r14+18h]  | * | test r14, r14 ",icc,1
+loc_402F69:   | * | jnz short loc_402F3E ,icc,1
+"test r14, r14  | * | loc_402F6E:  ",icc,1
+"jnz short loc_402F3E  | * | mov rcx, rbp ",icc,1
+"loc_402F6E:   | * | test al, al ",icc,1
+"mov rcx, rbp  | * | jz short loc_402F8D ",icc,1
+"test al, al  | * | cmp rbp, qword ptr cs:xmmword_622700+8 ",icc,1
+jz short loc_402F8D  | * | jz loc_403012 ,icc,1
+"cmp rbp, qword ptr cs:xmmword_622700+8  | * | mov rdi, rbp ",icc,1
+jz loc_403012  | * | call __ZSt18_Rb_tree_decrementPSt18_Rb_tree_node_base  ,icc,1
+"mov rdi, rbp  | * | mov rcx, rax ",icc,1
+call __ZSt18_Rb_tree_decrementPSt18_Rb_tree_node_base   | * | loc_402F8D:  ,icc,1
+"mov rcx, rax  | * | mov eax, [rcx+20h] ",icc,1
+"loc_402F8D:   | * | cmp eax, r13d ",icc,1
+"mov eax, [rcx+20h]  | * | jl short loc_402FA0 ",icc,1
+jl short loc_402FA0  | * | jl short loc_402FFB ,icc,1
+"cmp r13d, eax  | * | cmp r12d, [rcx+24h] ",icc,1
+jl short loc_402FFB  | * | jle short loc_402FFB ,icc,1
+"cmp r12d, [rcx+24h]  | * | loc_402FA0:  ",icc,1
+"jle short loc_402FFB  | * | test r14, r14 ",icc,1
+loc_402FA0:   | * | jz loc_40306D ,icc,1
+"test r14, r14  | * | loc_402FA9:  ",icc,1
+"jz loc_40306D  | * | mov r15d, 1 ",icc,1
+loc_402FA9:   | * | loc_402FAF:  ,icc,1
+loc_402FAF:   | * | call __Znwm  ,icc,1
+"mov r14, rax  | * | jz short loc_402FCA ",icc,1
+"jz short loc_402FCA  | * | mov [r14+24h], r12d ",icc,1
+"mov [r14+20h], r13d  | * | loc_402FCA:  ",icc,1
+"mov [r14+24h], r12d  | * | mov edi, r15d ",icc,2
+"loc_402FCA:   | * | mov rsi, r14 ",icc,1
+"mov edi, r15d  | * | mov rdx, rbp ",icc,2
+"mov rdx, rbp  | * | call __ZSt29_Rb_tree_insert_and_rebalancebPSt18_Rb_tree_node_baseS0_RS_  ",icc,2
+"mov ecx, offset qword_6226F8  | * | mov [rsp+38h+var_30], 1 ",icc,2
+call __ZSt29_Rb_tree_insert_and_rebalancebPSt18_Rb_tree_node_baseS0_RS_   | * | inc cs:qword_622718 ,icc,2
+"mov [rsp+38h+var_30], 1  | * | mov [rsp+38h+var_38], r14 ",icc,2
+"inc cs:qword_622718  | * | add rsp, 10h ",icc,1
+"mov [rsp+38h+var_38], r14  | * | pop rbp ",icc,1
+"add rsp, 10h  | * | pop r15 ",icc,3
+pop rbp  | * | pop r14 ,icc,3
+pop r14  | * | pop r12 ,icc,22
+pop r13  | * | retn ,icc,22
+pop r12  | * | loc_402FFB:  ,icc,1
+"retn  | * | mov [rsp+38h+var_30], 0 ",icc,1
+"loc_402FFB:   | * | mov [rsp+38h+var_38], rcx ",icc,1
+"mov [rsp+38h+var_30], 0  | * | add rsp, 10h ",icc,1
+"mov [rsp+38h+var_38], rcx  | * | pop rbp ",icc,1
+pop r12  | * | loc_403012:  ,icc,1
+"retn  | * | test r14, r14 ",icc,1
+loc_403012:   | * | jz loc_40309E ,icc,1
+"test r14, r14  | * | loc_40301B:  ",icc,1
+"jz loc_40309E  | * | mov r15d, 1 ",icc,1
+loc_40301B:   | * | loc_403021:  ,icc,1
+loc_403021:   | * | call __Znwm  ,icc,1
+"mov r14, rax  | * | jz short loc_40303C ",icc,1
+"jz short loc_40303C  | * | mov [r14+24h], r12d ",icc,1
+"mov [r14+20h], r13d  | * | loc_40303C:  ",icc,1
+"loc_40303C:   | * | mov rsi, r14 ",icc,1
+inc cs:qword_622718  | * | loc_40305F:  ,icc,1
+"mov [rsp+38h+var_38], r14  | * | add rsp, 10h ",icc,1
+loc_40305F:   | * | pop rbp ,icc,1
+pop r12  | * | loc_40306D:  ,icc,1
+"retn  | * | mov eax, offset qword_6226F8 ",icc,1
+"loc_40306D:   | * | cmp rbp, rax ",icc,1
+"mov eax, offset qword_6226F8  | * | jz loc_402FA9 ",icc,1
+"cmp rbp, rax  | * | mov eax, [rbp+20h] ",icc,2
+"jz loc_402FA9  | * | cmp r13d, eax ",icc,1
+"mov eax, [rbp+20h]  | * | jl loc_402FA9 ",icc,1
+jl loc_402FA9  | * | jl short loc_403096 ,icc,1
+"cmp eax, r13d  | * | cmp r12d, [rbp+24h] ",icc,2
+jl short loc_403096  | * | jl loc_402FA9 ,icc,1
+"cmp r12d, [rbp+24h]  | * | loc_403096:  ",icc,1
+"jl loc_402FA9  | * | xor r15d, r15d ",icc,1
+loc_403096:   | * | jmp loc_402FAF ,icc,1
+"xor r15d, r15d  | * | loc_40309E:  ",icc,1
+"jmp loc_402FAF  | * | mov eax, offset qword_6226F8 ",icc,1
+"loc_40309E:   | * | cmp rbp, rax ",icc,1
+"mov eax, offset qword_6226F8  | * | jz loc_40301B ",icc,1
+"jz loc_40301B  | * | cmp r13d, eax ",icc,1
+"mov eax, [rbp+20h]  | * | jl loc_40301B ",icc,1
+jl loc_40301B  | * | jl short loc_4030C7 ,icc,1
+jl short loc_4030C7  | * | jl loc_40301B ,icc,1
+"cmp r12d, [rbp+24h]  | * | loc_4030C7:  ",icc,1
+"jl loc_40301B  | * | xor r15d, r15d ",icc,1
+loc_4030C7:   | * | jmp loc_403021 ,icc,1
+"xor r15d, r15d  | * | _Z3addii endp ",icc,1
+jmp loc_403021  | * | align 10h ,icc,1
+_Z3addii endp  | * | __sti__$E proc near  ,icc,1
+"__sti__$E proc near   | * | mov edi, offset _ZSt8__ioinit  ",icc,1
+push rbp  | * | call __ZNSt8ios_base4InitC1Ev  ,icc,1
+"mov edi, offset _ZSt8__ioinit   | * | mov edi, offset __ZNSt8ios_base4InitD1Ev  ",icc,1
+"call __ZNSt8ios_base4InitC1Ev   | * | mov esi, offset _ZSt8__ioinit  ",icc,1
+"mov edi, offset __ZNSt8ios_base4InitD1Ev   | * | mov edx, offset __dso_handle  ",icc,1
+"mov esi, offset _ZSt8__ioinit   | * | call ___cxa_atexit ",icc,1
+"mov edx, offset __dso_handle   | * | pxor xmm0, xmm0 ",icc,1
+"call ___cxa_atexit  | * | movq cs:qword_6226C8, xmm0 ",icc,1
+"pxor xmm0, xmm0  | * | movaps cs:xmmword_6226D0, xmm0 ",icc,1
+"movq cs:qword_6226C8, xmm0  | * | movq cs:qword_6226E0, xmm0 ",icc,1
+"movaps cs:xmmword_6226D0, xmm0  | * | mov edi, offset _ZNSt3mapIiiSt4lessIiESaISt4pairIKiiEEED1Ev  ",icc,1
+"movq cs:qword_6226E0, xmm0  | * | mov esi, offset ma  ",icc,1
+"mov edi, offset _ZNSt3mapIiiSt4lessIiESaISt4pairIKiiEEED1Ev   | * | mov edx, offset __dso_handle  ",icc,1
+"mov esi, offset ma   | * | xor ebp, ebp ",icc,1
+"mov edx, offset __dso_handle   | * | mov cs:qword_6226E8, rbp ",icc,1
+"xor ebp, ebp  | * | mov dword ptr cs:qword_6226C8, 0 ",icc,1
+"mov cs:qword_6226E8, rbp  | * | mov qword ptr cs:xmmword_6226D0, rbp ",icc,1
+"mov dword ptr cs:qword_6226C8, 0  | * | mov qword ptr cs:xmmword_6226D0+8, offset qword_6226C8 ",icc,1
+"mov qword ptr cs:xmmword_6226D0, rbp  | * | mov cs:qword_6226E0, offset qword_6226C8 ",icc,1
+"mov qword ptr cs:xmmword_6226D0+8, offset qword_6226C8  | * | call ___cxa_atexit ",icc,1
+"mov cs:qword_6226E0, offset qword_6226C8  | * | mov edi, offset __ZNSsD1Ev  ",icc,1
+"call ___cxa_atexit  | * | mov esi, offset s  ",icc,1
+"mov edi, offset __ZNSsD1Ev   | * | mov edx, offset __dso_handle  ",icc,1
+"mov esi, offset s   | * | mov cs:s, offset unk_607558 ",icc,1
+"mov edx, offset __dso_handle   | * | call ___cxa_atexit ",icc,1
+"mov cs:s, offset unk_607558  | * | pxor xmm0, xmm0 ",icc,1
+"call ___cxa_atexit  | * | movq cs:qword_6226F8, xmm0 ",icc,1
+"pxor xmm0, xmm0  | * | movaps cs:xmmword_622700, xmm0 ",icc,1
+"movq cs:qword_6226F8, xmm0  | * | movq cs:qword_622710, xmm0 ",icc,1
+"movaps cs:xmmword_622700, xmm0  | * | mov cs:qword_622718, rbp ",icc,1
+"movq cs:qword_622710, xmm0  | * | mov edi, offset _ZNSt3setISt4pairIiiESt4lessIS1_ESaIS1_EED1Ev  ",icc,1
+"mov cs:qword_622718, rbp  | * | mov dword ptr cs:qword_6226F8, 0 ",icc,1
+"mov edi, offset _ZNSt3setISt4pairIiiESt4lessIS1_ESaIS1_EED1Ev   | * | mov esi, offset g  ",icc,1
+"mov dword ptr cs:qword_6226F8, 0  | * | mov qword ptr cs:xmmword_622700, rbp ",icc,1
+"mov esi, offset g   | * | mov edx, offset __dso_handle  ",icc,1
+"mov qword ptr cs:xmmword_622700, rbp  | * | mov qword ptr cs:xmmword_622700+8, offset qword_6226F8 ",icc,1
+"mov edx, offset __dso_handle   | * | mov cs:qword_622710, offset qword_6226F8 ",icc,1
+"mov qword ptr cs:xmmword_622700+8, offset qword_6226F8  | * | pop rbp ",icc,1
+"mov cs:qword_622710, offset qword_6226F8  | * | jmp ___cxa_atexit ",icc,1
+pop rbp  | * | __sti__$E endp ,icc,1
+jmp ___cxa_atexit  | * | align 10h ,icc,1
+__sti__$E endp  | * | public _ZNSt8_Rb_treeISt4pairIiiES1_St9_IdentityIS1_ESt4lessIS1_ESaIS1_EE11_M_put_nodeEPSt13_Rb_tree_nodeIS1_E  ,icc,1
+align 10h  | * | _ZNSt8_Rb_treeISt4pairIiiES1_St9_IdentityIS1_ESt4lessIS1_ESaIS1_EE11_M_put_nodeEPSt13_Rb_tree_nodeIS1_E proc near ,icc,1
+"public _ZNSt8_Rb_treeISt4pairIiiES1_St9_IdentityIS1_ESt4lessIS1_ESaIS1_EE11_M_put_nodeEPSt13_Rb_tree_nodeIS1_E   | * | mov rdi, rsi  ",icc,1
+_ZNSt8_Rb_treeISt4pairIiiES1_St9_IdentityIS1_ESt4lessIS1_ESaIS1_EE11_M_put_nodeEPSt13_Rb_tree_nodeIS1_E proc near  | * | jmp __ZdlPv  ,icc,1
+"mov rdi, rsi   | * | _ZNSt8_Rb_treeISt4pairIiiES1_St9_IdentityIS1_ESt4lessIS1_ESaIS1_EE11_M_put_nodeEPSt13_Rb_tree_nodeIS1_E endp ",icc,1
+jmp __ZdlPv   | * | align 20h ,icc,1
+_ZNSt8_Rb_treeISt4pairIiiES1_St9_IdentityIS1_ESt4lessIS1_ESaIS1_EE11_M_put_nodeEPSt13_Rb_tree_nodeIS1_E endp  | * | public _ZNSt8_Rb_treeISt4pairIiiES1_St9_IdentityIS1_ESt4lessIS1_ESaIS1_EE16_M_insert_uniqueERKS1_  ,icc,1
+align 20h  | * | _ZNSt8_Rb_treeISt4pairIiiES1_St9_IdentityIS1_ESt4lessIS1_ESaIS1_EE16_M_insert_uniqueERKS1_ proc near ,icc,1
+"push rbx  | * | sub rsp, 18h ",icc,2
+"push rbp  | * | mov r12, rdi ",icc,2
+"sub rsp, 18h  | * | mov r13, rsi ",icc,2
+"mov r12, rdi  | * | mov r9b, 1 ",icc,1
+"mov r13, rsi  | * | mov r8, [r12+10h] ",icc,1
+"mov r9b, 1  | * | lea rbp, [r12+8] ",icc,1
+"mov r8, [r12+10h]  | * | mov rbx, rbp ",icc,1
+"lea rbp, [r12+8]  | * | test r8, r8 ",icc,1
+"mov rbx, rbp  | * | jz short loc_403244 ",icc,1
+"test r8, r8  | * | mov esi, [r13+0] ",icc,1
+"jz short loc_403244  | * | mov eax, [r13+4] ",icc,1
+"mov esi, [r13+0]  | * | loc_403211:  ",icc,1
+"mov eax, [r13+4]  | * | mov r9d, [r8+20h] ",icc,1
+"loc_403211:   | * | mov rbx, r8 ",icc,1
+"mov r9d, [r8+20h]  | * | cmp esi, r9d ",icc,1
+"mov rbx, r8  | * | jl short loc_403228 ",icc,1
+"cmp esi, r9d  | * | cmp r9d, esi ",icc,1
+jl short loc_403228  | * | jl short loc_40322D ,icc,1
+"cmp r9d, esi  | * | cmp eax, [r8+24h] ",icc,1
+jl short loc_40322D  | * | jge short loc_40322D ,icc,1
+"cmp eax, [r8+24h]  | * | loc_403228:  ",icc,1
+"jge short loc_40322D  | * | mov r9b, 1 ",icc,1
+loc_403228:   | * | jmp short loc_403230 ,icc,1
+"mov r9b, 1  | * | loc_40322D:  ",icc,1
+"jmp short loc_403230  | * | xor r9b, r9b ",icc,1
+loc_40322D:   | * | loc_403230:  ,icc,1
+"xor r9b, r9b  | * | test r9b, r9b ",icc,1
+loc_403230:   | * | jz short loc_40323B ,icc,1
+"test r9b, r9b  | * | mov r8, [r8+10h] ",icc,1
+jz short loc_40323B  | * | jmp short loc_40323F ,icc,1
+"mov r8, [r8+10h]  | * | loc_40323B:  ",icc,1
+"jmp short loc_40323F  | * | mov r8, [r8+18h] ",icc,1
+loc_40323B:   | * | loc_40323F:  ,icc,1
+"mov r8, [r8+18h]  | * | test r8, r8 ",icc,1
+loc_40323F:   | * | jnz short loc_403211 ,icc,1
+"test r8, r8  | * | loc_403244:  ",icc,1
+"jnz short loc_403211  | * | mov rax, rbx ",icc,1
+"loc_403244:   | * | test r9b, r9b ",icc,1
+"mov rax, rbx  | * | jz short loc_40325F ",icc,1
+"test r9b, r9b  | * | cmp rbx, [r12+18h] ",icc,1
+jz short loc_40325F  | * | jz loc_403325 ,icc,1
+"cmp rbx, [r12+18h]  | * | mov rdi, rbx ",icc,2
+jz loc_403325  | * | call __ZSt18_Rb_tree_decrementPSt18_Rb_tree_node_base  ,icc,1
+"mov rdi, rbx  | * | loc_40325F:  ",icc,1
+"call __ZSt18_Rb_tree_decrementPSt18_Rb_tree_node_base   | * | mov r8d, [r13+0] ",icc,1
+"loc_40325F:   | * | mov esi, [rax+20h] ",icc,1
+"mov r8d, [r13+0]  | * | cmp esi, r8d ",icc,1
+"mov esi, [rax+20h]  | * | jl short loc_403281 ",icc,1
+"cmp esi, r8d  | * | cmp r8d, esi ",icc,1
+jl short loc_403281  | * | jl loc_403308 ,icc,1
+"cmp r8d, esi  | * | mov esi, [rax+24h] ",icc,1
+"jl loc_403308  | * | cmp esi, [r13+4] ",icc,1
+"mov esi, [rax+24h]  | * | jge loc_403308 ",icc,1
+"cmp esi, [r13+4]  | * | loc_403281:  ",icc,1
+"jge loc_403308  | * | cmp rbx, rbp ",icc,1
+loc_403281:   | * | jnz short loc_40328E ,icc,1
+"cmp rbx, rbp  | * | mov r15d, 1 ",icc,4
+jnz short loc_40328E  | * | jmp short loc_4032AF ,icc,1
+"mov r15d, 1  | * | loc_40328E:  ",icc,1
+"jmp short loc_4032AF  | * | mov eax, [rbx+20h] ",icc,1
+"loc_40328E:   | * | cmp r8d, eax ",icc,1
+"mov eax, [rbx+20h]  | * | jl short loc_4032A4 ",icc,1
+"cmp r8d, eax  | * | cmp eax, r8d ",icc,1
+jl short loc_4032A4  | * | jl short loc_4032AC ,icc,1
+"cmp eax, r8d  | * | mov eax, [r13+4] ",icc,1
+"jl short loc_4032AC  | * | cmp eax, [rbx+24h] ",icc,1
+"mov eax, [r13+4]  | * | jge short loc_4032AC ",icc,1
+"cmp eax, [rbx+24h]  | * | loc_4032A4:  ",icc,1
+"jge short loc_4032AC  | * | mov r15d, 1 ",icc,1
+loc_4032A4:   | * | jmp short loc_4032AF ,icc,1
+"mov r15d, 1  | * | loc_4032AC:  ",icc,1
+"jmp short loc_4032AF  | * | xor r15d, r15d ",icc,1
+loc_4032AC:   | * | loc_4032AF:  ,icc,1
+loc_4032AF:   | * | call __Znwm  ,icc,1
+"mov r14, rax  | * | jz short loc_4032D2 ",icc,1
+"cmp r14, 0FFFFFFFFFFFFFFE0h  | * | mov r8d, [r13+0] ",icc,4
+"jz short loc_4032D2  | * | mov [r14+20h], r8d ",icc,1
+"mov r8d, [r13+0]  | * | mov r9d, [r13+4] ",icc,4
+"mov [r14+20h], r8d  | * | mov [r14+24h], r9d ",icc,4
+"mov r9d, [r13+4]  | * | loc_4032D2:  ",icc,1
+"mov [r14+24h], r9d  | * | mov edi, r15d ",icc,4
+"loc_4032D2:   | * | mov rsi, r14 ",icc,1
+"mov rsi, r14  | * | mov rcx, rbp ",icc,4
+"mov rcx, rbp  | * | mov byte ptr [rsp+48h+var_40], 1 ",icc,4
+"call __ZSt29_Rb_tree_insert_and_rebalancebPSt18_Rb_tree_node_baseS0_RS_   | * | mov rax, r14 ",icc,4
+"mov byte ptr [rsp+48h+var_40], 1  | * | inc qword ptr [r12+28h] ",icc,4
+"mov rax, r14  | * | mov [rsp+48h+var_48], r14 ",icc,4
+"inc qword ptr [r12+28h]  | * | mov rdx, [rsp+48h+var_40] ",icc,4
+"mov [rsp+48h+var_48], r14  | * | add rsp, 18h ",icc,4
+"mov rdx, [rsp+48h+var_40]  | * | pop rbp ",icc,6
+"add rsp, 18h  | * | pop rbx ",icc,6
+pop r12  | * | loc_403308:  ,icc,1
+"retn  | * | mov byte ptr [rsp+48h+var_40], 0 ",icc,2
+"loc_403308:   | * | mov [rsp+48h+var_48], rax ",icc,1
+"mov byte ptr [rsp+48h+var_40], 0  | * | mov rdx, [rsp+48h+var_40] ",icc,2
+"mov [rsp+48h+var_48], rax  | * | add rsp, 18h ",icc,2
+pop r12  | * | loc_403325:  ,icc,1
+"retn  | * | cmp rbx, rbp ",icc,2
+loc_403325:   | * | jnz short loc_403332 ,icc,1
+jnz short loc_403332  | * | jmp short loc_403355 ,icc,1
+"mov r15d, 1  | * | loc_403332:  ",icc,1
+"jmp short loc_403355  | * | mov esi, [r13+0] ",icc,1
+"loc_403332:   | * | mov eax, [rbx+20h] ",icc,1
+"mov esi, [r13+0]  | * | cmp esi, eax ",icc,1
+"mov eax, [rbx+20h]  | * | jl short loc_40334A ",icc,1
+"cmp esi, eax  | * | cmp eax, esi ",icc,1
+jl short loc_40334A  | * | jl short loc_403352 ,icc,1
+"cmp eax, esi  | * | mov eax, [r13+4] ",icc,1
+"jl short loc_403352  | * | cmp eax, [rbx+24h] ",icc,1
+"mov eax, [r13+4]  | * | jge short loc_403352 ",icc,1
+"cmp eax, [rbx+24h]  | * | loc_40334A:  ",icc,1
+"jge short loc_403352  | * | mov r15d, 1 ",icc,1
+loc_40334A:   | * | jmp short loc_403355 ,icc,1
+"mov r15d, 1  | * | loc_403352:  ",icc,1
+"jmp short loc_403355  | * | xor r15d, r15d ",icc,1
+loc_403352:   | * | loc_403355:  ,icc,1
+loc_403355:   | * | call __Znwm  ,icc,1
+"mov r14, rax  | * | jz short loc_403378 ",icc,1
+"jz short loc_403378  | * | mov [r14+20h], r8d ",icc,1
+"mov r9d, [r13+4]  | * | loc_403378:  ",icc,1
+"loc_403378:   | * | mov rsi, r14 ",icc,1
+pop r12  | * | _ZNSt8_Rb_treeISt4pairIiiES1_St9_IdentityIS1_ESt4lessIS1_ESaIS1_EE16_M_insert_uniqueERKS1_ endp ,icc,1
+_ZNSt8_Rb_treeISt4pairIiiES1_St9_IdentityIS1_ESt4lessIS1_ESaIS1_EE16_M_insert_uniqueERKS1_ endp  | * | public _ZNSt3mapIiiSt4lessIiESaISt4pairIKiiEEEixERS3_  ,icc,1
+align 10h  | * | _ZNSt3mapIiiSt4lessIiESaISt4pairIKiiEEEixERS3_ proc near ,icc,1
+"push rsi  | * | mov rdx, [rdi+10h] ",icc,1
+"mov rcx, rsi  | * | lea rsi, [rdi+8] ",icc,1
+"mov rdx, [rdi+10h]  | * | test rdx, rdx ",icc,1
+"lea rsi, [rdi+8]  | * | mov ecx, [rcx] ",icc,1
+"test rdx, rdx  | * | jz short loc_4033DA ",icc,1
+"mov ecx, [rcx]  | * | loc_4033C3:  ",icc,1
+"jz short loc_4033DA  | * | cmp ecx, [rdx+20h] ",icc,1
+loc_4033C3:   | * | jg short loc_4033D1 ,icc,1
+"cmp ecx, [rdx+20h]  | * | mov rsi, rdx ",icc,1
+"jg short loc_4033D1  | * | mov rdx, [rdx+10h] ",icc,1
+"mov rsi, rdx  | * | jmp short loc_4033D5 ",icc,1
+"mov rdx, [rdx+10h]  | * | loc_4033D1:  ",icc,1
+"jmp short loc_4033D5  | * | mov rdx, [rdx+18h] ",icc,1
+loc_4033D1:   | * | loc_4033D5:  ,icc,1
+"mov rdx, [rdx+18h]  | * | test rdx, rdx ",icc,1
+loc_4033D5:   | * | jnz short loc_4033C3 ,icc,1
+"test rdx, rdx  | * | loc_4033DA:  ",icc,1
+"jnz short loc_4033C3  | * | lea rdx, [rdi+8] ",icc,1
+"loc_4033DA:   | * | cmp rsi, rdx ",icc,1
+"lea rdx, [rdi+8]  | * | jz short loc_4033E8 ",icc,1
+"cmp rsi, rdx  | * | cmp ecx, [rsi+20h] ",icc,1
+jz short loc_4033E8  | * | jge short loc_4033FF ,icc,1
+"cmp ecx, [rsi+20h]  | * | loc_4033E8:  ",icc,1
+"jge short loc_4033FF  | * | mov [rsp+8+var_8], ecx ",icc,1
+"loc_4033E8:   | * | lea rdx, [rsp+8+var_8] ",icc,1
+"mov [rsp+8+var_8], ecx  | * | mov [rsp+8+var_4], 0 ",icc,1
+"lea rdx, [rsp+8+var_8]  | * | call _ZNSt8_Rb_treeIiSt4pairIKiiESt10_Select1stIS2_ESt4lessIiESaIS2_EE17_M_insert_unique_ESt23_Rb_tree_const_iteratorIS2_ERKS2_  ",icc,1
+"mov [rsp+8+var_4], 0  | * | mov rsi, rax ",icc,1
+call _ZNSt8_Rb_treeIiSt4pairIKiiESt10_Select1stIS2_ESt4lessIiESaIS2_EE17_M_insert_unique_ESt23_Rb_tree_const_iteratorIS2_ERKS2_   | * | loc_4033FF:  ,icc,1
+"mov rsi, rax  | * | add rsi, 24h  ",icc,1
+"loc_4033FF:   | * | mov rax, rsi ",icc,1
+"add rsi, 24h   | * | pop rcx ",icc,1
+"mov rax, rsi  | * | retn ",icc,1
+pop rcx  | * | _ZNSt3mapIiiSt4lessIiESaISt4pairIKiiEEEixERS3_ endp ,icc,1
+_ZNSt3mapIiiSt4lessIiESaISt4pairIKiiEEEixERS3_ endp  | * | public _ZNSt8_Rb_treeIiSt4pairIKiiESt10_Select1stIS2_ESt4lessIiESaIS2_EE17_M_insert_unique_ESt23_Rb_tree_const_iteratorIS2_ERKS2_  ,icc,1
+align 10h  | * | _ZNSt8_Rb_treeIiSt4pairIKiiESt10_Select1stIS2_ESt4lessIiESaIS2_EE17_M_insert_unique_ESt23_Rb_tree_const_iteratorIS2_ERKS2_ proc near ,icc,1
+"push rbx  | * | sub rsp, 28h ",icc,1
+"push rbp  | * | mov rbp, rdi ",icc,1
+"sub rsp, 28h  | * | mov r14, rsi ",icc,1
+"mov rbp, rdi  | * | mov r12, rdx ",icc,1
+"mov r14, rsi  | * | mov [rsp+58h+var_58], r14 ",icc,1
+"mov r12, rdx  | * | lea rbx, [rbp+8] ",icc,1
+"mov [rsp+58h+var_58], r14  | * | cmp r14, rbx ",icc,1
+"lea rbx, [rbp+8]  | * | jz loc_4036FA ",icc,1
+"cmp r14, rbx  | * | mov r13d, [r12] ",icc,1
+"jz loc_4036FA  | * | mov edx, [r14+20h] ",icc,1
+"mov r13d, [r12]  | * | cmp r13d, edx ",icc,1
+"mov edx, [r14+20h]  | * | jge loc_4034DA ",icc,1
+"cmp r13d, edx  | * | cmp r14, [rbp+18h] ",icc,1
+jge loc_4034DA  | * | jz loc_4035D3 ,icc,1
+"cmp r14, [rbp+18h]  | * | mov rdi, r14 ",icc,1
+jz loc_4035D3  | * | call __ZSt18_Rb_tree_decrementPKSt18_Rb_tree_node_base  ,icc,1
+"mov rdi, r14  | * | mov r14, rax ",icc,1
+"call __ZSt18_Rb_tree_decrementPKSt18_Rb_tree_node_base   | * | mov eax, [r14+20h] ",icc,1
+"mov r14, rax  | * | cmp eax, r13d ",icc,1
+"mov eax, [r14+20h]  | * | jge short loc_4034C0 ",icc,1
+"cmp eax, r13d  | * | cmp qword ptr [r14+18h], 0 ",icc,1
+jge short loc_4034C0  | * | jz loc_40356B ,icc,1
+"cmp qword ptr [r14+18h], 0  | * | mov edi, 28h  ",icc,2
+jz loc_40356B  | * | call __Znwm  ,icc,1
+"mov edi, 28h   | * | mov r13, rax ",icc,6
+"call __Znwm   | * | cmp r13, 0FFFFFFFFFFFFFFE0h ",icc,6
+"mov r13, rax  | * | jz short loc_403496 ",icc,1
+"cmp r13, 0FFFFFFFFFFFFFFE0h  | * | mov edx, [r12] ",icc,2
+"jz short loc_403496  | * | mov [r13+20h], edx ",icc,1
+"mov edx, [r12]  | * | mov r8d, [r12+4] ",icc,2
+"mov [r13+20h], edx  | * | mov [r13+24h], r8d ",icc,2
+"mov r8d, [r12+4]  | * | loc_403496:  ",icc,1
+"mov [r13+24h], r8d  | * | mov edi, 1 ",icc,1
+"loc_403496:   | * | mov rsi, r13 ",icc,1
+"mov edi, 1  | * | mov rcx, rbx ",icc,1
+"mov rsi, r13  | * | mov rdx, [rsp+58h+var_58] ",icc,2
+"mov rcx, rbx  | * | call __ZSt29_Rb_tree_insert_and_rebalancebPSt18_Rb_tree_node_baseS0_RS_  ",icc,2
+"mov rdx, [rsp+58h+var_58]  | * | inc qword ptr [rbp+28h] ",icc,2
+"call __ZSt29_Rb_tree_insert_and_rebalancebPSt18_Rb_tree_node_baseS0_RS_   | * | mov rax, r13 ",icc,6
+"inc qword ptr [rbp+28h]  | * | add rsp, 28h ",icc,7
+"mov rax, r13  | * | pop rbp ",icc,6
+"add rsp, 28h  | * | pop rbx ",icc,10
+pop r12  | * | loc_4034C0:  ,icc,1
+"retn  | * | mov rdi, rbp ",icc,1
+"loc_4034C0:   | * | mov rsi, r12 ",icc,1
+"mov rdi, rbp  | * | call _ZNSt8_Rb_treeIiSt4pairIKiiESt10_Select1stIS2_ESt4lessIiESaIS2_EE16_M_insert_uniqueERKS2_  ",icc,1
+"mov rsi, r12  | * | add rsp, 28h ",icc,1
+call _ZNSt8_Rb_treeIiSt4pairIKiiESt10_Select1stIS2_ESt4lessIiESaIS2_EE16_M_insert_uniqueERKS2_   | * | pop rbp ,icc,1
+pop r12  | * | loc_4034DA:  ,icc,1
+"retn  | * | cmp edx, r13d ",icc,1
+loc_4034DA:   | * | jge short loc_403559 ,icc,1
+"cmp edx, r13d  | * | mov r15, [rbp+20h] ",icc,1
+"jge short loc_403559  | * | cmp r14, r15 ",icc,1
+"mov r15, [rbp+20h]  | * | jz loc_403692 ",icc,1
+"cmp r14, r15  | * | mov rdi, r14 ",icc,1
+jz loc_403692  | * | call __ZSt18_Rb_tree_incrementPKSt18_Rb_tree_node_base  ,icc,1
+"mov rdi, r14  | * | mov r15, rax ",icc,1
+"call __ZSt18_Rb_tree_incrementPKSt18_Rb_tree_node_base   | * | mov r8d, [r12] ",icc,1
+"mov r15, rax  | * | cmp r8d, [r15+20h] ",icc,1
+"mov r8d, [r12]  | * | jge short loc_4034C0 ",icc,1
+"cmp r8d, [r15+20h]  | * | cmp qword ptr [r14+18h], 0 ",icc,1
+jge short loc_4034C0  | * | jz loc_403647 ,icc,1
+jz loc_403647  | * | call __Znwm  ,icc,1
+"mov r13, rax  | * | jz short loc_403530 ",icc,1
+"cmp r13, 0FFFFFFFFFFFFFFE0h  | * | mov r8d, [r12] ",icc,4
+"jz short loc_403530  | * | mov [r13+20h], r8d ",icc,1
+"mov r8d, [r12]  | * | mov r9d, [r12+4] ",icc,5
+"mov [r13+20h], r8d  | * | mov [r13+24h], r9d ",icc,4
+"mov r9d, [r12+4]  | * | loc_403530:  ",icc,1
+"mov [r13+24h], r9d  | * | mov edi, 1 ",icc,1
+"loc_403530:   | * | mov rsi, r13 ",icc,1
+"mov rsi, r13  | * | mov rcx, rbx ",icc,4
+"mov rcx, rbx  | * | inc qword ptr [rbp+28h] ",icc,5
+pop r12  | * | loc_403559:  ,icc,1
+"retn  | * | mov rax, r14 ",icc,1
+"loc_403559:   | * | add rsp, 28h ",icc,1
+"mov rax, r14  | * | pop rbp ",icc,1
+pop r12  | * | loc_40356B:  ,icc,1
+"retn  | * | cmp r14, rbx ",icc,2
+loc_40356B:   | * | jnz short loc_403578 ,icc,1
+"cmp r14, rbx  | * | mov r15d, 1 ",icc,1
+jnz short loc_403578  | * | jmp short loc_403588 ,icc,1
+"mov r15d, 1  | * | loc_403578:  ",icc,1
+"jmp short loc_403588  | * | mov r8d, 1 ",icc,1
+"loc_403578:   | * | xor r15d, r15d ",icc,1
+"mov r8d, 1  | * | cmp r13d, eax ",icc,1
+"xor r15d, r15d  | * | cmovl r15d, r8d ",icc,1
+"cmp r13d, eax  | * | loc_403588:  ",icc,1
+"cmovl r15d, r8d  | * | mov edi, 28h  ",icc,1
+loc_403588:   | * | call __Znwm  ,icc,1
+"mov r13, rax  | * | jz short loc_4035AC ",icc,1
+"jz short loc_4035AC  | * | mov [r13+20h], r8d ",icc,1
+"mov r9d, [r12+4]  | * | loc_4035AC:  ",icc,1
+"mov [r13+24h], r9d  | * | mov edi, r15d ",icc,1
+"loc_4035AC:   | * | mov rsi, r13 ",icc,1
+"mov edi, r15d  | * | mov rdx, r14 ",icc,1
+"mov rdx, r14  | * | call __ZSt29_Rb_tree_insert_and_rebalancebPSt18_Rb_tree_node_baseS0_RS_  ",icc,2
+pop r12  | * | loc_4035D3:  ,icc,1
+"retn  | * | mov r14, [rbp+18h] ",icc,1
+"loc_4035D3:   | * | test r14, r14 ",icc,1
+"mov r14, [rbp+18h]  | * | jz short loc_40362D ",icc,1
+"test r14, r14  | * | loc_4035DC:  ",icc,1
+"jz short loc_40362D  | * | mov r13d, 1 ",icc,1
+loc_4035DC:   | * | loc_4035E2:  ,icc,1
+"mov r13d, 1  | * | mov edi, 28h  ",icc,1
+loc_4035E2:   | * | call __Znwm  ,icc,1
+"mov edi, 28h   | * | mov r15, rax ",icc,1
+"call __Znwm   | * | cmp r15, 0FFFFFFFFFFFFFFE0h ",icc,1
+"mov r15, rax  | * | jz short loc_403606 ",icc,1
+"cmp r15, 0FFFFFFFFFFFFFFE0h  | * | mov r8d, [r12] ",icc,1
+"jz short loc_403606  | * | mov [r15+20h], r8d ",icc,1
+"mov [r15+20h], r8d  | * | mov [r15+24h], r9d ",icc,1
+"mov r9d, [r12+4]  | * | loc_403606:  ",icc,1
+"mov [r15+24h], r9d  | * | mov edi, r13d ",icc,1
+"loc_403606:   | * | mov rsi, r15 ",icc,1
+"mov edi, r13d  | * | mov rdx, r14 ",icc,1
+"mov rsi, r15  | * | mov rcx, rbx ",icc,1
+"call __ZSt29_Rb_tree_insert_and_rebalancebPSt18_Rb_tree_node_baseS0_RS_   | * | mov rax, r15 ",icc,1
+"mov rax, r15  | * | pop rbp ",icc,1
+pop r12  | * | loc_40362D:  ,icc,1
+loc_40362D:   | * | jz short loc_4035DC ,icc,1
+"cmp r14, rbx  | * | mov eax, 1 ",icc,1
+"jz short loc_4035DC  | * | cmp r13d, [r14+20h] ",icc,1
+"mov eax, 1  | * | mov r13d, 0 ",icc,1
+"cmp r13d, [r14+20h]  | * | cmovl r13d, eax ",icc,1
+"mov r13d, 0  | * | jmp short loc_4035E2 ",icc,1
+"cmovl r13d, eax  | * | loc_403647:  ",icc,1
+"jmp short loc_4035E2  | * | mov edi, 28h  ",icc,1
+loc_403647:   | * | call __Znwm  ,icc,1
+"mov r13, rax  | * | jz short loc_40366B ",icc,1
+"jz short loc_40366B  | * | mov [r13+20h], edx ",icc,1
+"mov r8d, [r12+4]  | * | loc_40366B:  ",icc,1
+"mov [r13+24h], r8d  | * | xor edi, edi ",icc,1
+"loc_40366B:   | * | mov rsi, r13 ",icc,1
+"xor edi, edi  | * | mov rcx, rbx ",icc,1
+pop r12  | * | loc_403692:  ,icc,1
+"retn  | * | cmp r15, rbx ",icc,1
+loc_403692:   | * | jnz short loc_40369F ,icc,1
+"cmp r15, rbx  | * | mov r14d, 1 ",icc,2
+jnz short loc_40369F  | * | jmp short loc_4036AF ,icc,1
+"mov r14d, 1  | * | loc_40369F:  ",icc,1
+"jmp short loc_4036AF  | * | mov eax, 1 ",icc,1
+"loc_40369F:   | * | xor r14d, r14d ",icc,1
+"mov eax, 1  | * | cmp r13d, [r15+20h] ",icc,1
+"xor r14d, r14d  | * | cmovl r14d, eax ",icc,1
+"cmp r13d, [r15+20h]  | * | loc_4036AF:  ",icc,1
+"cmovl r14d, eax  | * | mov edi, 28h  ",icc,1
+loc_4036AF:   | * | call __Znwm  ,icc,1
+"mov r13, rax  | * | jz short loc_4036D3 ",icc,1
+"jz short loc_4036D3  | * | mov [r13+20h], r8d ",icc,1
+"mov r9d, [r12+4]  | * | loc_4036D3:  ",icc,1
+"mov [r13+24h], r9d  | * | mov edi, r14d ",icc,2
+"loc_4036D3:   | * | mov rsi, r13 ",icc,1
+"mov edi, r14d  | * | mov rdx, r15 ",icc,2
+pop r12  | * | loc_4036FA:  ,icc,1
+"retn  | * | cmp qword ptr [rbp+28h], 0 ",icc,1
+loc_4036FA:   | * | jbe short loc_40377A ,icc,1
+"cmp qword ptr [rbp+28h], 0  | * | mov r15, [rbp+20h] ",icc,1
+"jbe short loc_40377A  | * | mov eax, [r12] ",icc,1
+"mov r15, [rbp+20h]  | * | mov r8d, [r15+20h] ",icc,1
+"mov eax, [r12]  | * | cmp r8d, eax ",icc,1
+"mov r8d, [r15+20h]  | * | jge short loc_40377A ",icc,1
+"cmp r8d, eax  | * | cmp r15, rbx ",icc,1
+jge short loc_40377A  | * | jnz short loc_40371F ,icc,1
+jnz short loc_40371F  | * | jmp short loc_40372F ,icc,1
+"mov r14d, 1  | * | loc_40371F:  ",icc,1
+"jmp short loc_40372F  | * | mov r9d, 1 ",icc,1
+"loc_40371F:   | * | xor r14d, r14d ",icc,1
+"mov r9d, 1  | * | cmp eax, r8d ",icc,1
+"xor r14d, r14d  | * | cmovl r14d, r9d ",icc,1
+"cmp eax, r8d  | * | loc_40372F:  ",icc,1
+"cmovl r14d, r9d  | * | mov edi, 28h  ",icc,1
+loc_40372F:   | * | call __Znwm  ,icc,1
+"mov r13, rax  | * | jz short loc_403753 ",icc,1
+"jz short loc_403753  | * | mov [r13+20h], r8d ",icc,1
+"mov r9d, [r12+4]  | * | loc_403753:  ",icc,1
+"loc_403753:   | * | mov rsi, r13 ",icc,1
+pop r12  | * | loc_40377A:  ,icc,1
+"retn  | * | mov r9, [rbp+10h] ",icc,1
+"loc_40377A:   | * | mov r13, rbx ",icc,1
+"mov r9, [rbp+10h]  | * | mov eax, 1 ",icc,1
+"mov r13, rbx  | * | test r9, r9 ",icc,1
+"mov eax, 1  | * | jz short loc_4037B5 ",icc,1
+"test r9, r9  | * | mov r8d, [r12] ",icc,1
+"jz short loc_4037B5  | * | mov r10d, 1 ",icc,1
+"mov r8d, [r12]  | * | loc_403795:  ",icc,1
+"mov r10d, 1  | * | xor eax, eax ",icc,1
+"loc_403795:   | * | cmp r8d, [r9+20h] ",icc,1
+"xor eax, eax  | * | mov r13, r9 ",icc,1
+"cmp r8d, [r9+20h]  | * | cmovl eax, r10d ",icc,1
+"mov r13, r9  | * | test eax, eax ",icc,1
+"cmovl eax, r10d  | * | jz short loc_4037AC ",icc,1
+"test eax, eax  | * | mov r9, [r9+10h] ",icc,1
+jz short loc_4037AC  | * | jmp short loc_4037B0 ,icc,1
+"mov r9, [r9+10h]  | * | loc_4037AC:  ",icc,1
+"jmp short loc_4037B0  | * | mov r9, [r9+18h] ",icc,1
+loc_4037AC:   | * | loc_4037B0:  ,icc,1
+"mov r9, [r9+18h]  | * | test r9, r9 ",icc,1
+loc_4037B0:   | * | jnz short loc_403795 ,icc,1
+"test r9, r9  | * | loc_4037B5:  ",icc,1
+"jnz short loc_403795  | * | mov r8, r13 ",icc,1
+"loc_4037B5:   | * | test eax, eax ",icc,1
+"mov r8, r13  | * | jz short loc_4037D1 ",icc,1
+"test eax, eax  | * | cmp r13, [rbp+18h] ",icc,1
+jz short loc_4037D1  | * | jz loc_403868 ,icc,1
+"cmp r13, [rbp+18h]  | * | mov rdi, r13 ",icc,1
+jz loc_403868  | * | call __ZSt18_Rb_tree_decrementPSt18_Rb_tree_node_base  ,icc,1
+"mov rdi, r13  | * | mov r8, rax ",icc,1
+call __ZSt18_Rb_tree_decrementPSt18_Rb_tree_node_base   | * | loc_4037D1:  ,icc,1
+"mov r8, rax  | * | mov eax, [r12] ",icc,1
+"loc_4037D1:   | * | cmp eax, [r8+20h] ",icc,1
+"mov eax, [r12]  | * | jle short loc_40384E ",icc,1
+"cmp eax, [r8+20h]  | * | cmp r13, rbx ",icc,1
+jle short loc_40384E  | * | jnz short loc_4037E8 ,icc,1
+"cmp r13, rbx  | * | mov r15d, 1 ",icc,2
+jnz short loc_4037E8  | * | jmp short loc_4037F8 ,icc,1
+"mov r15d, 1  | * | loc_4037E8:  ",icc,1
+"jmp short loc_4037F8  | * | xor r15d, r15d ",icc,1
+"loc_4037E8:   | * | cmp eax, [r13+20h] ",icc,1
+"xor r15d, r15d  | * | mov eax, 1 ",icc,1
+"cmp eax, [r13+20h]  | * | cmovl r15d, eax ",icc,1
+"mov eax, 1  | * | loc_4037F8:  ",icc,1
+"cmovl r15d, eax  | * | mov edi, 28h  ",icc,4
+loc_4037F8:   | * | call __Znwm  ,icc,1
+"mov r14, rax  | * | jz short loc_40381C ",icc,1
+"cmp r14, 0FFFFFFFFFFFFFFE0h  | * | mov eax, [r12] ",icc,2
+"jz short loc_40381C  | * | mov [r14+20h], eax ",icc,1
+"mov eax, [r12]  | * | mov r8d, [r12+4] ",icc,2
+"mov [r14+20h], eax  | * | mov [r14+24h], r8d ",icc,2
+"mov r8d, [r12+4]  | * | loc_40381C:  ",icc,1
+"mov [r14+24h], r8d  | * | mov edi, r15d ",icc,2
+"loc_40381C:   | * | mov rsi, r14 ",icc,1
+"mov edi, r15d  | * | mov rdx, r13 ",icc,2
+"mov rsi, r14  | * | mov rcx, rbx ",icc,2
+"mov rcx, rbx  | * | mov byte ptr [rsp+58h+var_50], 1 ",icc,2
+"mov byte ptr [rsp+58h+var_50], 1  | * | inc qword ptr [rbp+28h] ",icc,2
+"mov rax, [rsp+58h+var_50]  | * | mov [rsp+58h+var_58], r14 ",icc,2
+"inc qword ptr [rbp+28h]  | * | mov [rsp+58h+var_48], r14 ",icc,2
+"mov [rsp+58h+var_58], r14  | * | mov [rsp+58h+var_40], rax ",icc,2
+"mov [rsp+58h+var_48], r14  | * | jmp loc_4038DD ",icc,1
+"mov [rsp+58h+var_40], rax  | * | loc_40384E:  ",icc,1
+"jmp loc_4038DD  | * | mov byte ptr [rsp+58h+var_50], 0 ",icc,1
+"loc_40384E:   | * | mov rax, [rsp+58h+var_50] ",icc,1
+"mov byte ptr [rsp+58h+var_50], 0  | * | mov [rsp+58h+var_58], r8 ",icc,1
+"mov rax, [rsp+58h+var_50]  | * | mov [rsp+58h+var_48], r8 ",icc,1
+"mov [rsp+58h+var_58], r8  | * | mov [rsp+58h+var_40], rax ",icc,1
+"mov [rsp+58h+var_48], r8  | * | jmp short loc_4038DD ",icc,1
+"mov [rsp+58h+var_40], rax  | * | loc_403868:  ",icc,1
+"jmp short loc_4038DD  | * | cmp r13, rbx ",icc,1
+loc_403868:   | * | jnz short loc_403875 ,icc,1
+jnz short loc_403875  | * | jmp short loc_40388C ,icc,1
+"mov r15d, 1  | * | loc_403875:  ",icc,1
+"jmp short loc_40388C  | * | mov r15d, [r12] ",icc,1
+"loc_403875:   | * | mov eax, 1 ",icc,1
+"mov r15d, [r12]  | * | cmp r15d, [r13+20h] ",icc,1
+"mov eax, 1  | * | mov r15d, 0 ",icc,2
+"cmp r15d, [r13+20h]  | * | cmovl r15d, eax ",icc,1
+"mov r15d, 0  | * | loc_40388C:  ",icc,1
+loc_40388C:   | * | call __Znwm  ,icc,1
+"mov r14, rax  | * | jz short loc_4038B0 ",icc,1
+"jz short loc_4038B0  | * | mov [r14+20h], eax ",icc,1
+"mov r8d, [r12+4]  | * | loc_4038B0:  ",icc,1
+"loc_4038B0:   | * | mov rsi, r14 ",icc,1
+"mov [rsp+58h+var_48], r14  | * | loc_4038DD:  ",icc,1
+"mov [rsp+58h+var_40], rax  | * | mov rax, [rsp+58h+var_48] ",icc,1
+"loc_4038DD:   | * | add rsp, 28h ",icc,1
+"mov rax, [rsp+58h+var_48]  | * | pop rbp ",icc,1
+pop r12  | * | _ZNSt8_Rb_treeIiSt4pairIKiiESt10_Select1stIS2_ESt4lessIiESaIS2_EE17_M_insert_unique_ESt23_Rb_tree_const_iteratorIS2_ERKS2_ endp ,icc,1
+_ZNSt8_Rb_treeIiSt4pairIKiiESt10_Select1stIS2_ESt4lessIiESaIS2_EE17_M_insert_unique_ESt23_Rb_tree_const_iteratorIS2_ERKS2_ endp  | * | public _ZNSt8_Rb_treeIiSt4pairIKiiESt10_Select1stIS2_ESt4lessIiESaIS2_EE11_M_put_nodeEPSt13_Rb_tree_nodeIS2_E  ,icc,1
+align 20h  | * | _ZNSt8_Rb_treeIiSt4pairIKiiESt10_Select1stIS2_ESt4lessIiESaIS2_EE11_M_put_nodeEPSt13_Rb_tree_nodeIS2_E proc near ,icc,1
+"public _ZNSt8_Rb_treeIiSt4pairIKiiESt10_Select1stIS2_ESt4lessIiESaIS2_EE11_M_put_nodeEPSt13_Rb_tree_nodeIS2_E   | * | mov rdi, rsi  ",icc,1
+_ZNSt8_Rb_treeIiSt4pairIKiiESt10_Select1stIS2_ESt4lessIiESaIS2_EE11_M_put_nodeEPSt13_Rb_tree_nodeIS2_E proc near  | * | jmp __ZdlPv  ,icc,1
+"mov rdi, rsi   | * | _ZNSt8_Rb_treeIiSt4pairIKiiESt10_Select1stIS2_ESt4lessIiESaIS2_EE11_M_put_nodeEPSt13_Rb_tree_nodeIS2_E endp ",icc,1
+jmp __ZdlPv   | * | align 10h ,icc,1
+_ZNSt8_Rb_treeIiSt4pairIKiiESt10_Select1stIS2_ESt4lessIiESaIS2_EE11_M_put_nodeEPSt13_Rb_tree_nodeIS2_E endp  | * | public _ZNSt8_Rb_treeIiSt4pairIKiiESt10_Select1stIS2_ESt4lessIiESaIS2_EE16_M_insert_uniqueERKS2_  ,icc,1
+align 10h  | * | _ZNSt8_Rb_treeIiSt4pairIKiiESt10_Select1stIS2_ESt4lessIiESaIS2_EE16_M_insert_uniqueERKS2_ proc near ,icc,1
+"mov r12, rdi  | * | mov r8d, 1 ",icc,1
+"mov r13, rsi  | * | mov rsi, [r12+10h] ",icc,1
+"mov r8d, 1  | * | lea rbp, [r12+8] ",icc,1
+"mov rsi, [r12+10h]  | * | mov rbx, rbp ",icc,1
+"lea rbp, [r12+8]  | * | test rsi, rsi ",icc,1
+"mov rbx, rbp  | * | jz short loc_403967 ",icc,1
+"test rsi, rsi  | * | mov eax, [r13+0] ",icc,1
+"jz short loc_403967  | * | mov r9d, 1 ",icc,1
+"mov eax, [r13+0]  | * | loc_403946:  ",icc,1
+"mov r9d, 1  | * | xor r8d, r8d ",icc,1
+"loc_403946:   | * | cmp eax, [rsi+20h] ",icc,1
+"xor r8d, r8d  | * | mov rbx, rsi ",icc,1
+"cmp eax, [rsi+20h]  | * | cmovl r8d, r9d ",icc,1
+"mov rbx, rsi  | * | test r8d, r8d ",icc,1
+"cmovl r8d, r9d  | * | jz short loc_40395E ",icc,1
+"test r8d, r8d  | * | mov rsi, [rsi+10h] ",icc,1
+jz short loc_40395E  | * | jmp short loc_403962 ,icc,1
+"mov rsi, [rsi+10h]  | * | loc_40395E:  ",icc,1
+"jmp short loc_403962  | * | mov rsi, [rsi+18h] ",icc,1
+loc_40395E:   | * | loc_403962:  ,icc,1
+"mov rsi, [rsi+18h]  | * | test rsi, rsi ",icc,1
+loc_403962:   | * | jnz short loc_403946 ,icc,1
+"test rsi, rsi  | * | loc_403967:  ",icc,1
+"jnz short loc_403946  | * | mov rax, rbx ",icc,1
+"loc_403967:   | * | test r8d, r8d ",icc,1
+"mov rax, rbx  | * | jz short loc_403982 ",icc,1
+"test r8d, r8d  | * | cmp rbx, [r12+18h] ",icc,1
+jz short loc_403982  | * | jz loc_403A1D ,icc,1
+jz loc_403A1D  | * | call __ZSt18_Rb_tree_decrementPSt18_Rb_tree_node_base  ,icc,1
+"mov rdi, rbx  | * | loc_403982:  ",icc,1
+"call __ZSt18_Rb_tree_decrementPSt18_Rb_tree_node_base   | * | mov esi, [r13+0] ",icc,1
+"loc_403982:   | * | cmp esi, [rax+20h] ",icc,1
+"mov esi, [r13+0]  | * | jle short loc_403A00 ",icc,1
+"cmp esi, [rax+20h]  | * | cmp rbx, rbp ",icc,1
+jle short loc_403A00  | * | jnz short loc_403998 ,icc,1
+jnz short loc_403998  | * | jmp short loc_4039A7 ,icc,1
+"mov r15d, 1  | * | loc_403998:  ",icc,1
+"jmp short loc_4039A7  | * | xor r15d, r15d ",icc,1
+"loc_403998:   | * | mov eax, 1 ",icc,1
+"xor r15d, r15d  | * | cmp esi, [rbx+20h] ",icc,1
+"mov eax, 1  | * | cmovl r15d, eax ",icc,1
+"cmp esi, [rbx+20h]  | * | loc_4039A7:  ",icc,1
+loc_4039A7:   | * | call __Znwm  ,icc,1
+"mov r14, rax  | * | jz short loc_4039CA ",icc,1
+"jz short loc_4039CA  | * | mov [r14+20h], r8d ",icc,1
+"mov r9d, [r13+4]  | * | loc_4039CA:  ",icc,1
+"loc_4039CA:   | * | mov rsi, r14 ",icc,1
+pop r12  | * | loc_403A00:  ,icc,1
+"loc_403A00:   | * | mov [rsp+48h+var_48], rax ",icc,1
+pop r12  | * | loc_403A1D:  ,icc,1
+loc_403A1D:   | * | jnz short loc_403A2A ,icc,1
+jnz short loc_403A2A  | * | jmp short loc_403A41 ,icc,1
+"mov r15d, 1  | * | loc_403A2A:  ",icc,1
+"jmp short loc_403A41  | * | mov r15d, [r13+0] ",icc,1
+"loc_403A2A:   | * | mov eax, 1 ",icc,1
+"mov r15d, [r13+0]  | * | cmp r15d, [rbx+20h] ",icc,1
+"cmp r15d, [rbx+20h]  | * | cmovl r15d, eax ",icc,1
+"mov r15d, 0  | * | loc_403A41:  ",icc,1
+loc_403A41:   | * | call __Znwm  ,icc,1
+"mov r14, rax  | * | jz short loc_403A64 ",icc,1
+"jz short loc_403A64  | * | mov [r14+20h], r8d ",icc,1
+"mov r9d, [r13+4]  | * | loc_403A64:  ",icc,1
+"loc_403A64:   | * | mov rsi, r14 ",icc,1
+pop r12  | * | _ZNSt8_Rb_treeIiSt4pairIKiiESt10_Select1stIS2_ESt4lessIiESaIS2_EE16_M_insert_uniqueERKS2_ endp ,icc,1
+_ZNSt8_Rb_treeIiSt4pairIKiiESt10_Select1stIS2_ESt4lessIiESaIS2_EE16_M_insert_uniqueERKS2_ endp  | * | public _ZNSt8_Rb_treeISt4pairIiiES1_St9_IdentityIS1_ESt4lessIS1_ESaIS1_EE8_M_eraseEPSt13_Rb_tree_nodeIS1_E  ,icc,1
+align 20h  | * | _ZNSt8_Rb_treeISt4pairIiiES1_St9_IdentityIS1_ESt4lessIS1_ESaIS1_EE8_M_eraseEPSt13_Rb_tree_nodeIS1_E proc near ,icc,1
+var_18 = qword ptr -18h  | * | var_8 = qword ptr -8 ,data,5
+"sub rsp, 18h  | * | jz short loc_403AEB ",icc,1
+"test rsi, rsi  | * | mov [rsp+18h+var_8], r12 ",icc,2
+"jz short loc_403AEB  | * | mov r12, rdi ",icc,1
+"mov [rsp+18h+var_8], r12  | * | mov [rsp+18h+var_10], r13 ",icc,4
+"mov r12, rdi  | * | mov r13, rsi ",icc,2
+"mov [rsp+18h+var_10], r13  | * | mov [rsp+18h+var_18], r14 ",icc,4
+"mov r13, rsi  | * | loc_403ABD:  ",icc,1
+"mov [rsp+18h+var_18], r14  | * | mov rdi, r12 ",icc,2
+"loc_403ABD:   | * | mov rsi, [r13+18h] ",icc,1
+"mov rdi, r12  | * | call _ZNSt8_Rb_treeISt4pairIiiES1_St9_IdentityIS1_ESt4lessIS1_ESaIS1_EE8_M_eraseEPSt13_Rb_tree_nodeIS1_E  ",icc,1
+"mov rsi, [r13+18h]  | * | mov rdi, r13  ",icc,2
+"call _ZNSt8_Rb_treeISt4pairIiiES1_St9_IdentityIS1_ESt4lessIS1_ESaIS1_EE8_M_eraseEPSt13_Rb_tree_nodeIS1_E   | * | mov r14, [r13+10h] ",icc,1
+"mov rdi, r13   | * | call __ZdlPv  ",icc,2
+"mov r14, [r13+10h]  | * | mov r13, r14 ",icc,2
+"call __ZdlPv   | * | test r14, r14 ",icc,4
+"mov r13, r14  | * | jnz short loc_403ABD ",icc,1
+"test r14, r14  | * | mov r12, [rsp+18h+var_8] ",icc,4
+"jnz short loc_403ABD  | * | mov r13, [rsp+18h+var_10] ",icc,1
+"mov r12, [rsp+18h+var_8]  | * | mov r14, [rsp+18h+var_18] ",icc,4
+"mov r13, [rsp+18h+var_10]  | * | loc_403AEB:  ",icc,1
+"mov r14, [rsp+18h+var_18]  | * | add rsp, 18h ",icc,4
+loc_403AEB:   | * | retn ,icc,1
+"add rsp, 18h  | * | _ZNSt8_Rb_treeISt4pairIiiES1_St9_IdentityIS1_ESt4lessIS1_ESaIS1_EE8_M_eraseEPSt13_Rb_tree_nodeIS1_E endp ",icc,1
+retn  | * | public _ZNSt11char_traitsIcE6lengthEPKc  ,icc,1
+_ZNSt8_Rb_treeISt4pairIiiES1_St9_IdentityIS1_ESt4lessIS1_ESaIS1_EE8_M_eraseEPSt13_Rb_tree_nodeIS1_E endp  | * | _ZNSt11char_traitsIcE6lengthEPKc proc near ,icc,1
+public _ZNSt11char_traitsIcE6lengthEPKc   | * | push rsi ,icc,1
+"_ZNSt11char_traitsIcE6lengthEPKc proc near  | * | mov rdx, rdi ",icc,1
+"push rsi  | * | mov rcx, rdx ",icc,1
+"mov rdx, rdi  | * | and rdx, 0FFFFFFFFFFFFFFF0h ",icc,1
+"shr eax, cl  | * | jnz short loc_403B1C ",icc,1
+"jnz short loc_403B1C  | * | add rdx, rcx ",icc,1
+"add rdx, rcx  | * | loc_403B1C:  ",icc,1
+call __intel_sse2_strlen  | * | pop rcx ,icc,1
+loc_403B1C:   | * | retn ,icc,1
+pop rcx  | * | _ZNSt11char_traitsIcE6lengthEPKc endp ,icc,1
+_ZNSt11char_traitsIcE6lengthEPKc endp  | * | public _ZNSt3mapIiiSt4lessIiESaISt4pairIKiiEEED1Ev  ,icc,1
+align 20h  | * | _ZNSt3mapIiiSt4lessIiESaISt4pairIKiiEEED1Ev proc near ,icc,1
+"sub rsp, 18h  | * | mov rdi, [rax+10h] ",icc,2
+"mov rax, rdi  | * | test rdi, rdi ",icc,2
+"mov rdi, [rax+10h]  | * | jz short loc_403B74 ",icc,1
+"test rdi, rdi  | * | mov [rsp+18h+var_8], r12 ",icc,2
+"jz short loc_403B74  | * | mov r12, rdi ",icc,1
+"mov r12, rdi  | * | mov r13, rax ",icc,2
+"mov r13, rax  | * | loc_403B44:  ",icc,1
+"mov [rsp+18h+var_18], r14  | * | mov rdi, r13 ",icc,2
+"loc_403B44:   | * | mov rsi, [r12+18h] ",icc,1
+"mov rdi, r13  | * | call _ZNSt8_Rb_treeIiSt4pairIKiiESt10_Select1stIS2_ESt4lessIiESaIS2_EE8_M_eraseEPSt13_Rb_tree_nodeIS2_E  ",icc,1
+"mov rsi, [r12+18h]  | * | mov rdi, r12  ",icc,2
+"call _ZNSt8_Rb_treeIiSt4pairIKiiESt10_Select1stIS2_ESt4lessIiESaIS2_EE8_M_eraseEPSt13_Rb_tree_nodeIS2_E   | * | mov r14, [r12+10h] ",icc,1
+"mov rdi, r12   | * | call __ZdlPv  ",icc,2
+"mov r14, [r12+10h]  | * | mov r12, r14 ",icc,2
+"mov r12, r14  | * | jnz short loc_403B44 ",icc,1
+"jnz short loc_403B44  | * | mov r13, [rsp+18h+var_10] ",icc,1
+"mov r13, [rsp+18h+var_10]  | * | loc_403B74:  ",icc,1
+loc_403B74:   | * | retn ,icc,1
+"add rsp, 18h  | * | _ZNSt3mapIiiSt4lessIiESaISt4pairIKiiEEED1Ev endp ",icc,1
+_ZNSt3mapIiiSt4lessIiESaISt4pairIKiiEEED1Ev endp  | * | public _ZNSt8_Rb_treeIiSt4pairIKiiESt10_Select1stIS2_ESt4lessIiESaIS2_EE8_M_eraseEPSt13_Rb_tree_nodeIS2_E  ,icc,1
+align 20h  | * | _ZNSt8_Rb_treeIiSt4pairIKiiESt10_Select1stIS2_ESt4lessIiESaIS2_EE8_M_eraseEPSt13_Rb_tree_nodeIS2_E proc near ,icc,1
+"sub rsp, 18h  | * | jz short loc_403BCB ",icc,1
+"jz short loc_403BCB  | * | mov r12, rdi ",icc,1
+"mov r13, rsi  | * | loc_403B9D:  ",icc,1
+"loc_403B9D:   | * | mov rsi, [r13+18h] ",icc,1
+"mov rdi, r12  | * | call _ZNSt8_Rb_treeIiSt4pairIKiiESt10_Select1stIS2_ESt4lessIiESaIS2_EE8_M_eraseEPSt13_Rb_tree_nodeIS2_E  ",icc,1
+"call _ZNSt8_Rb_treeIiSt4pairIKiiESt10_Select1stIS2_ESt4lessIiESaIS2_EE8_M_eraseEPSt13_Rb_tree_nodeIS2_E   | * | mov r14, [r13+10h] ",icc,1
+"mov r13, r14  | * | jnz short loc_403B9D ",icc,1
+"jnz short loc_403B9D  | * | mov r13, [rsp+18h+var_10] ",icc,1
+"mov r13, [rsp+18h+var_10]  | * | loc_403BCB:  ",icc,1
+loc_403BCB:   | * | retn ,icc,1
+"add rsp, 18h  | * | _ZNSt8_Rb_treeIiSt4pairIKiiESt10_Select1stIS2_ESt4lessIiESaIS2_EE8_M_eraseEPSt13_Rb_tree_nodeIS2_E endp ",icc,1
+retn  | * | public _ZNSt3setISt4pairIiiESt4lessIS1_ESaIS1_EED1Ev  ,icc,1
+_ZNSt8_Rb_treeIiSt4pairIKiiESt10_Select1stIS2_ESt4lessIiESaIS2_EE8_M_eraseEPSt13_Rb_tree_nodeIS2_E endp  | * | _ZNSt3setISt4pairIiiESt4lessIS1_ESaIS1_EED1Ev proc near ,icc,1
+"mov rdi, [rax+10h]  | * | jz short loc_403C24 ",icc,1
+"jz short loc_403C24  | * | mov r12, rdi ",icc,1
+"mov r13, rax  | * | loc_403BF4:  ",icc,1
+"loc_403BF4:   | * | mov rsi, [r12+18h] ",icc,1
+"mov rdi, r13  | * | call _ZNSt8_Rb_treeISt4pairIiiES1_St9_IdentityIS1_ESt4lessIS1_ESaIS1_EE8_M_eraseEPSt13_Rb_tree_nodeIS1_E  ",icc,1
+"call _ZNSt8_Rb_treeISt4pairIiiES1_St9_IdentityIS1_ESt4lessIS1_ESaIS1_EE8_M_eraseEPSt13_Rb_tree_nodeIS1_E   | * | mov r14, [r12+10h] ",icc,1
+"mov r12, r14  | * | jnz short loc_403BF4 ",icc,1
+"jnz short loc_403BF4  | * | mov r13, [rsp+18h+var_10] ",icc,1
+"mov r13, [rsp+18h+var_10]  | * | loc_403C24:  ",icc,1
+loc_403C24:   | * | retn ,icc,1
+"add rsp, 18h  | * | _ZNSt3setISt4pairIiiESt4lessIS1_ESaIS1_EED1Ev endp ",icc,1
+_ZNSt3setISt4pairIiiESt4lessIS1_ESaIS1_EED1Ev endp  | * | public __intel_new_feature_proc_init ,icc,1
+align 10h  | * | __intel_new_feature_proc_init proc near  ,icc,1
+dest = byte ptr -448h  | * | var_40 = qword ptr -40h ,data,1
+var_48 = qword ptr -48h  | * | var_38 = qword ptr -38h ,data,1
+var_30 = qword ptr -30h  | * | s = qword ptr -20h ,data,1
+"push r13  | * | sub rsp, 430h ",icc,1
+"push r14  | * | mov r14, rsi ",icc,1
+"sub rsp, 430h  | * | mov rax, cs:__intel_cpu_feature_indicator_ptr ",icc,1
+"mov r14, rsi  | * | mov r13d, edi ",icc,1
+"mov rax, cs:__intel_cpu_feature_indicator_ptr  | * | mov r12, [rax] ",icc,1
+"mov r13d, edi  | * | test r12, r12 ",icc,1
+"mov r12, [rax]  | * | jz loc_403F8D ",icc,1
+"test r12, r12  | * | loc_403C56:  ",icc,1
+"jz loc_403F8D  | * | mov rax, r12 ",icc,1
+"loc_403C56:   | * | and rax, r14 ",icc,1
+"mov rax, r12  | * | cmp r14, rax ",icc,1
+"and rax, r14  | * | jnz short loc_403C7C ",icc,1
+"cmp r14, rax  | * | test r12, 6 ",icc,1
+jnz short loc_403C7C  | * | jnz loc_403EFD ,icc,1
+"test r12, 6  | * | loc_403C6E:  ",icc,1
+"jnz loc_403EFD  | * | add rsp, 430h ",icc,1
+loc_403C6E:   | * | pop r14 ,icc,1
+"add rsp, 430h  | * | pop r13 ",icc,1
+pop r12  | * | loc_403C7C:  ,icc,1
+"retn  | * | test r14, 1 ",icc,1
+loc_403C7C:   | * | jnz loc_403F78 ,icc,1
+"test r14, 1  | * | not r12 ",icc,1
+"jnz loc_403F78  | * | mov edi, 39h  ",icc,1
+"not r12  | * | and r12, r14 ",icc,1
+"mov edi, 39h   | * | xor r14d, r14d ",icc,1
+"and r12, r14  | * | xor esi, esi ",icc,1
+"xor r14d, r14d  | * | xor eax, eax ",icc,1
+"xor esi, esi  | * | call __libirc_get_msg ",icc,1
+"xor eax, eax  | * | xor edx, edx ",icc,1
+"call __libirc_get_msg  | * | mov r8b, 1 ",icc,1
+"xor edx, edx  | * | mov [rsp+448h+dest], 0 ",icc,1
+"mov r8b, 1  | * | xor r13d, r13d ",icc,1
+"mov [rsp+448h+dest], 0  | * | mov [rsp+448h+s], rax ",icc,1
+"xor r13d, r13d  | * | mov [rsp+448h+var_28], r15 ",icc,1
+"mov [rsp+448h+s], rax  | * | mov r15, r12 ",icc,1
+"mov [rsp+448h+var_28], r15  | * | mov [rsp+448h+var_30], rbx ",icc,1
+"mov r15, r12  | * | mov r12b, r8b ",icc,1
+"mov [rsp+448h+var_30], rbx  | * | mov [rsp+448h+var_38], rbp ",icc,1
+"mov r12b, r8b  | * | mov rbp, r14 ",icc,1
+"mov [rsp+448h+var_38], rbp  | * | mov r14, rdx ",icc,1
+"mov rbp, r14  | * | loc_403CD8:  ",icc,1
+"mov r14, rdx  | * | mov ecx, r13d ",icc,1
+"loc_403CD8:   | * | mov eax, 1 ",icc,1
+"mov ecx, r13d  | * | shl rax, cl ",icc,1
+"mov eax, 1  | * | test rax, r15 ",icc,1
+"shl rax, cl  | * | jz loc_403DF4 ",icc,1
+"test rax, r15  | * | cmp r12b, 26h  ",icc,1
+jz loc_403DF4  | * | jnb loc_403ED3 ,icc,1
+"cmp r12b, 26h   | * | movzx ebx, r12b ",icc,1
+"jnb loc_403ED3  | * | lea rax, c_feature_names ",icc,1
+"movzx ebx, r12b  | * | mov rbx, [rax+rbx*8] ",icc,1
+"lea rax, c_feature_names  | * | test rbx, rbx ",icc,1
+"mov rbx, [rax+rbx*8]  | * | jz loc_403ED3 ",icc,1
+"test rbx, rbx  | * | cmp byte ptr [rbx], 0 ",icc,1
+jz loc_403ED3  | * | jz loc_403ED3 ,icc,1
+"cmp byte ptr [rbx], 0  | * | cmp [rsp+448h+dest], 0 ",icc,1
+jz loc_403ED3  | * | jz loc_403DCF ,icc,1
+"cmp [rsp+448h+dest], 0  | * | test rbp, rbp ",icc,1
+jz loc_403DCF  | * | jz loc_403DCA ,icc,1
+"test rbp, rbp  | * | mov rdi, rbp  ",icc,1
+jz loc_403DCA  | * | call _strlen ,icc,1
+"mov rdi, rbp   | * | mov [rsp+448h+var_40], rax ",icc,1
+"call _strlen  | * | mov rdi, [rsp+448h+s]  ",icc,1
+"mov [rsp+448h+var_40], rax  | * | call _strlen ",icc,1
+"mov rdi, [rsp+448h+s]   | * | mov [rsp+448h+var_48], rax ",icc,1
+"call _strlen  | * | mov rdi, rbx  ",icc,1
+"mov [rsp+448h+var_48], rax  | * | call _strlen ",icc,1
+"mov rdi, rbx   | * | mov r9, rax ",icc,1
+"call _strlen  | * | mov rax, [rsp+448h+var_40] ",icc,1
+"mov r9, rax  | * | add rax, r14 ",icc,1
+"mov rax, [rsp+448h+var_40]  | * | add rax, [rsp+448h+var_48] ",icc,1
+"add rax, r14  | * | lea r9, [rax+r9+2] ",icc,1
+"add rax, [rsp+448h+var_48]  | * | cmp r9, 400h ",icc,1
+"lea r9, [rax+r9+2]  | * | jnb loc_403F0C ",icc,1
+"cmp r9, 400h  | * | neg r14 ",icc,1
+"jnb loc_403F0C  | * | lea rdi, [rsp+448h+dest]  ",icc,1
+"neg r14  | * | add r14, 3FFh ",icc,2
+"lea rdi, [rsp+448h+dest]   | * | lea rsi, src  ",icc,1
+"add r14, 3FFh  | * | mov rdx, r14  ",icc,2
+"lea rsi, src   | * | call _strncat ",icc,1
+"mov rdx, r14   | * | lea rdi, [rsp+448h+dest]  ",icc,2
+call _strncat  | * | call _strlen ,icc,6
+"lea rdi, [rsp+448h+dest]   | * | movsxd rdx, eax ",icc,3
+"call _strlen  | * | lea rdi, [rsp+448h+dest]  ",icc,3
+"movsxd rdx, eax  | * | neg rdx ",icc,3
+"lea rdi, [rsp+448h+dest]   | * | mov rsi, rbp  ",icc,1
+"neg rdx  | * | add rdx, 3FFh  ",icc,4
+"mov rsi, rbp   | * | call _strncat ",icc,1
+"add rdx, 3FFh   | * | lea rdi, [rsp+448h+dest]  ",icc,2
+"lea rdi, [rsp+448h+dest]   | * | movsxd r14, eax ",icc,2
+call _strlen  | * | loc_403DCA:  ,icc,1
+"movsxd r14, eax  | * | mov rbp, rbx ",icc,1
+loc_403DCA:   | * | jmp short loc_403DF4 ,icc,1
+"mov rbp, rbx  | * | loc_403DCF:  ",icc,1
+jmp short loc_403DF4  | * | neg r14 ,icc,1
+"loc_403DCF:   | * | lea rdi, [rsp+448h+dest]  ",icc,1
+"lea rdi, [rsp+448h+dest]   | * | mov rsi, rbx  ",icc,1
+"mov rsi, rbx   | * | call _strncat ",icc,1
+call _strlen  | * | loc_403DF4:  ,icc,1
+"movsxd r14, eax  | * | inc r12b ",icc,1
+loc_403DF4:   | * | inc r13d ,icc,1
+"inc r12b  | * | cmp r12b, 25h  ",icc,1
+inc r13d  | * | jle loc_403CD8 ,icc,1
+"cmp r12b, 25h   | * | mov rdx, r14 ",icc,1
+"jle loc_403CD8  | * | mov r14, rbp ",icc,1
+"mov rdx, r14  | * | mov rax, [rsp+448h+s] ",icc,1
+"mov r14, rbp  | * | test r14, r14 ",icc,1
+"mov rax, [rsp+448h+s]  | * | mov r15, [rsp+448h+var_28] ",icc,1
+"test r14, r14  | * | mov rbx, [rsp+448h+var_30] ",icc,1
+"mov r15, [rsp+448h+var_28]  | * | mov rbp, [rsp+448h+var_38] ",icc,3
+"mov rbx, [rsp+448h+var_30]  | * | jz short loc_403E67 ",icc,1
+"mov rbp, [rsp+448h+var_38]  | * | neg rdx ",icc,1
+"jz short loc_403E67  | * | lea rdi, [rsp+448h+dest]  ",icc,1
+"lea rdi, [rsp+448h+dest]   | * | mov rsi, rax  ",icc,1
+"add rdx, 3FFh   | * | call _strncat ",icc,1
+"mov rsi, rax   | * | lea rdi, [rsp+448h+dest]  ",icc,1
+"lea rdi, [rsp+448h+dest]   | * | mov rsi, r14  ",icc,2
+"mov rsi, r14   | * | call _strncat ",icc,2
+"add rdx, 3FFh   | * | loc_403E67:  ",icc,1
+"call _strncat  | * | cmp [rsp+448h+dest], 0 ",icc,1
+loc_403E67:   | * | jnz short loc_403EAA ,icc,1
+"cmp [rsp+448h+dest], 0  | * | xor esi, esi ",icc,1
+"jnz short loc_403EAA  | * | mov edi, 1 ",icc,1
+"xor esi, esi  | * | xor edx, edx ",icc,6
+"mov edi, 1  | * | xor eax, eax ",icc,6
+"xor edx, edx  | * | call __libirc_print ",icc,8
+"xor eax, eax  | * | loc_403E7D:  ",icc,1
+"call __libirc_print  | * | mov edi, 1 ",icc,1
+"loc_403E7D:   | * | mov esi, 3Ah  ",icc,1
+"mov edi, 1  | * | xor edx, edx ",icc,2
+"mov esi, 3Ah   | * | xor eax, eax ",icc,1
+"xor eax, eax  | * | loc_403E90:  ",icc,1
+"call __libirc_print  | * | xor esi, esi ",icc,1
+"loc_403E90:   | * | mov edi, 1 ",icc,1
+"xor eax, eax  | * | mov edi, 1  ",icc,1
+call __libirc_print  | * | call _exit ,icc,1
+"mov edi, 1   | * | loc_403EAA:  ",icc,1
+"call _exit  | * | xor esi, esi ",icc,1
+"loc_403EAA:   | * | mov edi, 1 ",icc,1
+"xor eax, eax  | * | mov edi, 1 ",icc,2
+"call __libirc_print  | * | mov esi, 38h  ",icc,1
+"mov edi, 1  | * | mov edx, edi ",icc,1
+"mov esi, 38h   | * | lea rcx, [rsp+448h+dest] ",icc,1
+"mov edx, edi  | * | xor eax, eax ",icc,1
+"lea rcx, [rsp+448h+dest]  | * | call __libirc_print ",icc,1
+"xor eax, eax  | * | jmp short loc_403E90 ",icc,1
+call __libirc_print  | * | loc_403ED3:  ,icc,1
+"jmp short loc_403E90  | * | mov r15, [rsp+448h+var_28] ",icc,1
+"loc_403ED3:   | * | mov rbx, [rsp+448h+var_30] ",icc,1
+"mov rbx, [rsp+448h+var_30]  | * | xor esi, esi ",icc,1
+"mov rbp, [rsp+448h+var_38]  | * | mov edi, 1 ",icc,1
+"xor eax, eax  | * | jmp short loc_403E7D ",icc,1
+call __libirc_print  | * | loc_403EFD:  ,icc,1
+"jmp short loc_403E7D  | * | xor edi, edi ",icc,1
+"loc_403EFD:   | * | mov esi, r13d ",icc,1
+"xor edi, edi  | * | call __intel_proc_init_ftzdazule ",icc,1
+"mov esi, r13d  | * | jmp loc_403C6E ",icc,1
+call __intel_proc_init_ftzdazule  | * | loc_403F0C:  ,icc,1
+"jmp loc_403C6E  | * | mov rdx, r14 ",icc,1
+"loc_403F0C:   | * | lea rdi, [rsp+448h+dest]  ",icc,1
+"mov rdx, r14  | * | neg rdx ",icc,1
+"lea rdi, [rsp+448h+dest]   | * | mov r14, rbp ",icc,1
+"neg rdx  | * | mov rax, [rsp+448h+s] ",icc,1
+"mov r14, rbp  | * | add rdx, 3FFh  ",icc,1
+"mov rax, [rsp+448h+s]  | * | mov rsi, rax  ",icc,1
+"add rdx, 3FFh   | * | mov r15, [rsp+448h+var_28] ",icc,1
+"mov rsi, rax   | * | mov rbx, [rsp+448h+var_30] ",icc,1
+"mov rbx, [rsp+448h+var_30]  | * | call _strncat ",icc,1
+"mov rbp, [rsp+448h+var_38]  | * | lea rdi, [rsp+448h+dest]  ",icc,1
+"lea rdi, [rsp+448h+dest]   | * | jmp loc_403E67 ",icc,1
+call _strlen  | * | loc_403F78:  ,icc,1
+"jmp loc_403E67  | * | xor esi, esi ",icc,1
+"loc_403F78:   | * | mov edi, 1 ",icc,1
+"xor eax, eax  | * | jmp loc_403E7D ",icc,1
+call __libirc_print  | * | loc_403F8D:  ,icc,1
+"jmp loc_403E7D  | * | xor eax, eax ",icc,1
+loc_403F8D:   | * | call __intel_cpu_features_init ,icc,1
+"xor eax, eax  | * | mov rax, cs:__intel_cpu_feature_indicator_ptr ",icc,1
+"call __intel_cpu_features_init  | * | mov r12, [rax] ",icc,1
+"mov rax, cs:__intel_cpu_feature_indicator_ptr  | * | test r12, r12 ",icc,1
+"mov r12, [rax]  | * | jnz loc_403C56 ",icc,1
+"test r12, r12  | * | xor esi, esi ",icc,1
+"jnz loc_403C56  | * | mov edi, 1 ",icc,1
+"call __libirc_print  | * | mov esi, 3Bh  ",icc,1
+"mov esi, 3Bh   | * | xor eax, eax ",icc,1
+"xor eax, eax  | * | jmp loc_403E90 ",icc,1
+call __libirc_print  | * | __intel_new_feature_proc_init endp ,icc,1
+jmp loc_403E90  | * | align 10h ,icc,1
+__intel_new_feature_proc_init endp  | * | public __intel_sse2_strlen ,icc,1
+align 10h  | * | __intel_sse2_strlen proc near  ,icc,1
+"public __intel_sse2_strlen  | * | pxor xmm0, xmm0 ",icc,1
+__intel_sse2_strlen proc near   | * | loc_403FD4:  ,icc,1
+"pxor xmm0, xmm0  | * | add rax, 10h ",icc,1
+"loc_403FD4:   | * | movdqa xmm1, xmmword ptr [rax] ",icc,1
+"add rax, 10h  | * | pcmpeqb xmm1, xmm0 ",icc,1
+"movdqa xmm1, xmmword ptr [rax]  | * | pmovmskb ecx, xmm1 ",icc,1
+"pcmpeqb xmm1, xmm0  | * | test ecx, ecx ",icc,1
+"pmovmskb ecx, xmm1  | * | jz short loc_403FD4 ",icc,1
+"test ecx, ecx  | * | bsf ecx, ecx ",icc,1
+"jz short loc_403FD4  | * | sub rcx, rdx ",icc,1
+"bsf ecx, ecx  | * | add rax, rcx ",icc,1
+"sub rcx, rdx  | * | retn ",icc,1
+"add rax, rcx  | * | __intel_sse2_strlen endp ",icc,1
+__intel_sse2_strlen endp  | * | public __libirc_get_msg ,icc,1
+align 20h  | * | __libirc_get_msg proc near  ,icc,1
+dest = byte ptr -168h  | * | var_D8 = qword ptr -0D8h ,data,1
+var_E8 = byte ptr -0E8h  | * | var_D0 = qword ptr -0D0h ,data,1
+var_D8 = qword ptr -0D8h  | * | var_C8 = qword ptr -0C8h ,data,1
+var_D0 = qword ptr -0D0h  | * | var_C0 = qword ptr -0C0h ,data,2
+var_C8 = qword ptr -0C8h  | * | var_39 = byte ptr -39h ,data,2
+var_C0 = qword ptr -0C0h  | * | arg = dword ptr -38h ,data,2
+var_39 = byte ptr -39h  | * | var_34 = dword ptr -34h ,data,2
+arg = dword ptr -38h  | * | var_30 = qword ptr -30h ,data,2
+var_34 = dword ptr -34h  | * | var_28 = qword ptr -28h ,data,2
+var_30 = qword ptr -30h  | * | arg_0 = byte ptr 8 ,data,2
+"push r13  | * | sub rsp, 150h ",icc,1
+"push r14  | * | mov [rsp+168h+var_D8], rdx ",icc,1
+"sub rsp, 150h  | * | mov [rsp+168h+var_D0], rcx ",icc,1
+"mov [rsp+168h+var_D8], rdx  | * | mov [rsp+168h+var_C8], r8 ",icc,1
+"mov [rsp+168h+var_D0], rcx  | * | mov [rsp+168h+var_C0], r9 ",icc,2
+"mov [rsp+168h+var_C8], r8  | * | movzx r11d, al ",icc,2
+"mov [rsp+168h+var_C0], r9  | * | lea rax, ds:0[r11*4] ",icc,2
+"movzx r11d, al  | * | lea r11, loc_40406E ",icc,1
+"lea rax, ds:0[r11*4]  | * | sub r11, rax ",icc,2
+"lea r11, loc_40406E  | * | lea rax, [rsp+168h+var_39] ",icc,1
+"sub r11, rax  | * | jmp r11 ",icc,2
+"lea rax, [rsp+168h+var_39]  | * | movaps xmmword ptr [rax-0Fh], xmm7 ",icc,2
+"jmp r11  | * | movaps xmmword ptr [rax-1Fh], xmm6 ",icc,2
+"movaps xmmword ptr [rax-0Fh], xmm7  | * | movaps xmmword ptr [rax-2Fh], xmm5 ",icc,2
+"movaps xmmword ptr [rax-1Fh], xmm6  | * | movaps xmmword ptr [rax-3Fh], xmm4 ",icc,2
+"movaps xmmword ptr [rax-2Fh], xmm5  | * | movaps xmmword ptr [rax-4Fh], xmm3 ",icc,2
+"movaps xmmword ptr [rax-3Fh], xmm4  | * | movaps xmmword ptr [rax-5Fh], xmm2 ",icc,2
+"movaps xmmword ptr [rax-4Fh], xmm3  | * | movaps xmmword ptr [rax-6Fh], xmm1 ",icc,2
+"movaps xmmword ptr [rax-5Fh], xmm2  | * | movaps xmmword ptr [rax-7Fh], xmm0 ",icc,2
+"movaps xmmword ptr [rax-6Fh], xmm1  | * | loc_40406E:  ",icc,1
+"movaps xmmword ptr [rax-7Fh], xmm0  | * | mov r13d, edi ",icc,1
+"loc_40406E:   | * | mov r14d, esi ",icc,1
+"mov r13d, edi  | * | test r13d, r13d ",icc,1
+"mov r14d, esi  | * | jz loc_404107 ",icc,1
+"test r13d, r13d  | * | cmp cs:first_msg, 0 ",icc,1
+jz loc_404107  | * | jz short loc_4040D4 ,icc,1
+"cmp cs:first_msg, 0  | * | lea rdi, cat_name  ",icc,2
+"jz short loc_4040D4  | * | xor esi, esi  ",icc,1
+"lea rdi, cat_name   | * | mov cs:first_msg, 0 ",icc,2
+"xor esi, esi   | * | call _catopen ",icc,2
+"mov cs:first_msg, 0  | * | mov cs:message_catalog, rax ",icc,2
+"call _catopen  | * | cmp rax, 0FFFFFFFFFFFFFFFFh ",icc,2
+"mov cs:message_catalog, rax  | * | jz loc_404186 ",icc,1
+"cmp rax, 0FFFFFFFFFFFFFFFFh  | * | mov rdi, cs:message_catalog  ",icc,2
+jz loc_404186  | * | loc_4040B6:  ,icc,1
+"mov rdi, cs:message_catalog   | * | movsxd rax, r13d ",icc,1
+"loc_4040B6:   | * | lea rcx, off_606948  ",icc,1
+"movsxd rax, r13d  | * | shl rax, 4 ",icc,2
+"lea rcx, off_606948   | * | mov cs:use_internal_msg, 0 ",icc,2
+"shl rax, 4  | * | mov rcx, [rax+rcx]  ",icc,2
+"mov cs:use_internal_msg, 0  | * | jmp short loc_4040F5 ",icc,1
+"mov rcx, [rax+rcx]   | * | loc_4040D4:  ",icc,1
+"jmp short loc_4040F5  | * | mov edi, cs:use_internal_msg ",icc,1
+"loc_4040D4:   | * | movsxd rax, r13d ",icc,1
+"mov edi, cs:use_internal_msg  | * | lea rcx, off_606948  ",icc,1
+"lea rcx, off_606948   | * | test edi, edi ",icc,1
+"shl rax, 4  | * | mov rcx, [rax+rcx] ",icc,2
+"test edi, edi  | * | jnz short loc_40410E ",icc,1
+"mov rcx, [rax+rcx]  | * | jmp loc_40421D ",icc,1
+jnz short loc_40410E  | * | loc_4040F5:  ,icc,1
+"jmp loc_40421D  | * | mov esi, 1  ",icc,1
+"loc_4040F5:   | * | mov edx, r13d  ",icc,1
+"mov esi, 1   | * | call _catgets ",icc,2
+"mov edx, r13d   | * | mov rcx, rax ",icc,1
+call _catgets  | * | jmp short loc_40410E ,icc,1
+"mov rcx, rax  | * | loc_404107:  ",icc,1
+"jmp short loc_40410E  | * | lea rcx, aCannotAllocate+34h  ",icc,1
+loc_404107:   | * | loc_40410E:  ,icc,1
+"lea rcx, aCannotAllocate+34h   | * | test r14d, r14d ",icc,1
+loc_40410E:   | * | jle short loc_404175 ,icc,1
+"test r14d, r14d  | * | mov [rsp+168h+arg], 10h ",icc,1
+"jle short loc_404175  | * | lea rdx, [rsp+168h+arg_0] ",icc,1
+"mov [rsp+168h+arg], 10h  | * | mov [rsp+168h+var_34], 30h  ",icc,1
+"lea rdx, [rsp+168h+arg_0]  | * | lea rdi, [rsp+168h+var_E8] ",icc,1
+"mov [rsp+168h+var_34], 30h   | * | mov [rsp+168h+var_30], rdx ",icc,1
+"lea rdi, [rsp+168h+var_E8]  | * | mov [rsp+168h+var_28], rdi ",icc,1
+"mov [rsp+168h+var_30], rdx  | * | lea rdi, get_msg_buf  ",icc,1
+"mov [rsp+168h+var_28], rdi  | * | mov rsi, rcx  ",icc,1
+"lea rdi, get_msg_buf   | * | lea rdx, [rsp+168h+arg]  ",icc,1
+"mov rsi, rcx   | * | call _vsprintf ",icc,2
+"lea rdx, [rsp+168h+arg]   | * | lea rax, get_msg_buf ",icc,1
+"call _vsprintf  | * | add rsp, 150h ",icc,1
+"lea rax, get_msg_buf  | * | pop r14 ",icc,1
+"add rsp, 150h  | * | pop r13 ",icc,2
+pop r12  | * | loc_404175:  ,icc,1
+"retn  | * | mov rax, rcx ",icc,1
+"loc_404175:   | * | add rsp, 150h ",icc,1
+"mov rax, rcx  | * | pop r14 ",icc,1
+pop r12  | * | loc_404186:  ,icc,1
+"retn  | * | lea rdi, name  ",icc,2
+loc_404186:   | * | call _getenv ,icc,1
+"lea rdi, name   | * | test rax, rax ",icc,2
+call _getenv  | * | jz short loc_404207 ,icc,1
+"test rax, rax  | * | mov rsi, rax  ",icc,2
+"jz short loc_404207  | * | lea rdi, [rsp+168h+dest]  ",icc,1
+"mov rsi, rax   | * | mov edx, 80h  ",icc,2
+"lea rdi, [rsp+168h+dest]   | * | call _strncpy ",icc,2
+"mov edx, 80h   | * | mov esi, 2Eh  ",icc,2
+"call _strncpy  | * | lea rdi, [rsp+168h+dest]  ",icc,2
+"mov esi, 2Eh   | * | call _strchr ",icc,2
+"lea rdi, [rsp+168h+dest]   | * | mov r12, rax ",icc,1
+"call _strchr  | * | test r12, r12 ",icc,1
+"mov r12, rax  | * | jz short loc_404207 ",icc,1
+"test r12, r12  | * | lea rdi, name  ",icc,1
+"jz short loc_404207  | * | lea rsi, [rsp+168h+dest]  ",icc,1
+"lea rdi, name   | * | mov edx, 1  ",icc,4
+"lea rsi, [rsp+168h+dest]   | * | mov byte ptr [r12], 0 ",icc,1
+"mov edx, 1   | * | call _setenv ",icc,2
+"mov byte ptr [r12], 0  | * | lea rdi, cat_name  ",icc,1
+"call _setenv  | * | xor esi, esi  ",icc,2
+"lea rdi, cat_name   | * | call _catopen ",icc,2
+"xor esi, esi   | * | lea rdi, name  ",icc,2
+"call _catopen  | * | lea rsi, [rsp+168h+dest]  ",icc,2
+"lea rsi, [rsp+168h+dest]   | * | mov cs:message_catalog, rax ",icc,2
+"mov edx, 1   | * | mov byte ptr [r12], 2Eh  ",icc,1
+"mov cs:message_catalog, rax  | * | call _setenv ",icc,2
+"mov byte ptr [r12], 2Eh   | * | loc_404207:  ",icc,1
+"call _setenv  | * | mov rdi, cs:message_catalog ",icc,2
+"loc_404207:   | * | cmp rdi, 0FFFFFFFFFFFFFFFFh ",icc,1
+"mov rdi, cs:message_catalog  | * | jnz loc_4040B6 ",icc,1
+"cmp rdi, 0FFFFFFFFFFFFFFFFh  | * | jmp loc_4040D4 ",icc,1
+jnz loc_4040B6  | * | loc_40421D:  ,icc,1
+"jmp loc_4040D4  | * | mov rdi, cs:message_catalog ",icc,1
+loc_40421D:   | * | jmp loc_4040F5 ,icc,1
+"mov rdi, cs:message_catalog  | * | __libirc_get_msg endp ",icc,1
+jmp loc_4040F5  | * | align 10h ,icc,1
+__libirc_get_msg endp  | * | public __libirc_print ,icc,1
+align 10h  | * | __libirc_print proc near  ,icc,1
+dest = byte ptr -168h  | * | var_D0 = qword ptr -0D0h ,data,1
+var_E8 = byte ptr -0E8h  | * | var_C8 = qword ptr -0C8h ,data,1
+"push r15  | * | sub rsp, 148h ",icc,1
+"push rbx  | * | mov [rsp+168h+var_D0], rcx ",icc,1
+"sub rsp, 148h  | * | mov [rsp+168h+var_C8], r8 ",icc,1
+"movzx r11d, al  | * | lea r11, loc_404297 ",icc,1
+"lea r11, loc_404297  | * | lea rax, [rsp+168h+var_39] ",icc,1
+"movaps xmmword ptr [rax-6Fh], xmm1  | * | loc_404297:  ",icc,1
+"movaps xmmword ptr [rax-7Fh], xmm0  | * | mov r14d, esi ",icc,1
+"loc_404297:   | * | mov r15d, edx ",icc,1
+"mov r14d, esi  | * | mov r13d, edi ",icc,1
+"mov r15d, edx  | * | test r14d, r14d ",icc,1
+"mov r13d, edi  | * | jnz short loc_4042CC ",icc,1
+"test r14d, r14d  | * | cmp r13d, 1 ",icc,1
+jnz short loc_4042CC  | * | jz loc_4043DE ,icc,1
+"cmp r13d, 1  | * | lea rdi, asc_404BD0  ",icc,1
+"jz loc_4043DE  | * | xor eax, eax ",icc,1
+"lea rdi, asc_404BD0   | * | call _printf ",icc,2
+"xor eax, eax  | * | add rsp, 148h ",icc,4
+call _printf  | * | pop rbx ,icc,2
+"add rsp, 148h  | * | pop r15 ",icc,4
+pop r13  | * | loc_4042CC:  ,icc,1
+"retn  | * | cmp cs:first_msg, 0 ",icc,1
+loc_4042CC:   | * | jz short loc_404323 ,icc,1
+"jz short loc_404323  | * | xor esi, esi  ",icc,1
+"mov cs:message_catalog, rax  | * | jz loc_404405 ",icc,1
+jz loc_404405  | * | loc_404305:  ,icc,1
+"mov rdi, cs:message_catalog   | * | movsxd rax, r14d ",icc,1
+"loc_404305:   | * | lea rcx, off_606948  ",icc,1
+"movsxd rax, r14d  | * | shl rax, 4 ",icc,2
+"mov cs:use_internal_msg, 0  | * | jmp short loc_404344 ",icc,1
+"mov rcx, [rax+rcx]   | * | loc_404323:  ",icc,1
+"jmp short loc_404344  | * | mov ebx, cs:use_internal_msg ",icc,1
+"loc_404323:   | * | movsxd rax, r14d ",icc,1
+"mov ebx, cs:use_internal_msg  | * | lea rcx, off_606948  ",icc,1
+"lea rcx, off_606948   | * | test ebx, ebx ",icc,1
+"test ebx, ebx  | * | jnz short loc_404354 ",icc,1
+"mov rcx, [rax+rcx]  | * | jmp loc_4044D3 ",icc,1
+jnz short loc_404354  | * | loc_404344:  ,icc,1
+"jmp loc_4044D3  | * | mov esi, 1  ",icc,1
+"loc_404344:   | * | mov edx, r14d  ",icc,1
+"mov edx, r14d   | * | mov rcx, rax ",icc,1
+call _catgets  | * | loc_404354:  ,icc,1
+"mov rcx, rax  | * | test r15d, r15d ",icc,1
+loc_404354:   | * | jle short loc_4043AD ,icc,1
+"test r15d, r15d  | * | mov [rsp+168h+arg], 18h ",icc,1
+"jle short loc_4043AD  | * | lea rax, [rsp+168h+arg_0] ",icc,1
+"mov [rsp+168h+arg], 18h  | * | mov [rsp+168h+var_34], 30h  ",icc,1
+"lea rax, [rsp+168h+arg_0]  | * | lea rdx, [rsp+168h+var_E8] ",icc,1
+"mov [rsp+168h+var_34], 30h   | * | mov [rsp+168h+var_30], rax ",icc,1
+"lea rdx, [rsp+168h+var_E8]  | * | mov [rsp+168h+var_28], rdx ",icc,1
+"mov [rsp+168h+var_30], rax  | * | lea rdi, print_buf  ",icc,1
+"mov [rsp+168h+var_28], rdx  | * | mov rsi, rcx  ",icc,1
+"lea rdi, print_buf   | * | lea rdx, [rsp+168h+arg]  ",icc,1
+"lea rdx, [rsp+168h+arg]   | * | lea rcx, print_buf ",icc,1
+call _vsprintf  | * | loc_4043AD:  ,icc,1
+"lea rcx, print_buf  | * | cmp r13d, 1 ",icc,1
+loc_4043AD:   | * | jz loc_404498 ,icc,1
+"cmp r13d, 1  | * | mov rdi, rcx  ",icc,1
+"jz loc_404498  | * | xor eax, eax ",icc,1
+"mov rdi, rcx   | * | call _printf ",icc,1
+"xor eax, eax  | * | lea rdi, asc_404BD0  ",icc,1
+"call _printf  | * | xor eax, eax ",icc,1
+pop r13  | * | loc_4043DE:  ,icc,1
+"retn  | * | mov rax, cs:stderr_ptr ",icc,1
+"loc_4043DE:   | * | lea rsi, asc_404BD0  ",icc,1
+"mov rax, cs:stderr_ptr  | * | mov rdi, [rax]  ",icc,3
+"lea rsi, asc_404BD0   | * | xor eax, eax ",icc,2
+"mov rdi, [rax]   | * | call _fprintf ",icc,3
+call _fprintf  | * | pop rbx ,icc,2
+pop r13  | * | loc_404405:  ,icc,1
+loc_404405:   | * | call _getenv ,icc,1
+call _getenv  | * | jz short loc_404482 ,icc,1
+"jz short loc_404482  | * | lea rdi, [rsp+168h+dest]  ",icc,1
+"lea rdi, [rsp+168h+dest]   | * | mov rbx, rax ",icc,1
+"call _strchr  | * | test rbx, rbx ",icc,1
+"mov rbx, rax  | * | jz short loc_404482 ",icc,1
+"test rbx, rbx  | * | lea rdi, name  ",icc,1
+"jz short loc_404482  | * | lea rsi, [rsp+168h+dest]  ",icc,1
+"lea rsi, [rsp+168h+dest]   | * | mov byte ptr [rbx], 0 ",icc,1
+"mov byte ptr [rbx], 0  | * | lea rdi, cat_name  ",icc,1
+"mov edx, 1   | * | mov byte ptr [rbx], 2Eh  ",icc,1
+"mov byte ptr [rbx], 2Eh   | * | loc_404482:  ",icc,1
+"loc_404482:   | * | cmp rdi, 0FFFFFFFFFFFFFFFFh ",icc,1
+"mov rdi, cs:message_catalog  | * | jnz loc_404305 ",icc,1
+"cmp rdi, 0FFFFFFFFFFFFFFFFh  | * | jmp loc_404323 ",icc,1
+jnz loc_404305  | * | loc_404498:  ,icc,1
+"jmp loc_404323  | * | mov rax, cs:stderr_ptr ",icc,1
+"loc_404498:   | * | mov rsi, rcx  ",icc,1
+"mov rsi, rcx   | * | xor eax, eax ",icc,1
+"xor eax, eax  | * | mov rax, cs:stderr_ptr ",icc,1
+"call _fprintf  | * | lea rsi, asc_404BD0  ",icc,1
+pop r13  | * | loc_4044D3:  ,icc,1
+"retn  | * | mov rdi, cs:message_catalog ",icc,1
+loc_4044D3:   | * | jmp loc_404344 ,icc,1
+"mov rdi, cs:message_catalog  | * | __libirc_print endp ",icc,1
+jmp loc_404344  | * | align 20h ,icc,1
+__libirc_print endp  | * | public __intel_cpu_features_init_x ,icc,1
+align 20h  | * | __intel_cpu_features_init_x proc near ,icc,1
+public __intel_cpu_features_init_x  | * | push rax ,icc,1
+__intel_cpu_features_init_x proc near  | * | push rdx ,icc,1
+push rax  | * | push rcx ,icc,2
+push rdx  | * | push rsi ,icc,2
+push rcx  | * | push rdi ,icc,2
+push rsi  | * | push r8 ,icc,2
+push rdi  | * | push r9 ,icc,2
+"push r8  | * | xor edi, edi ",icc,1
+push r9  | * | call __intel_cpu_features_init_body ,icc,2
+"xor edi, edi  | * | pop r9 ",icc,1
+call __intel_cpu_features_init_body  | * | pop r8 ,icc,2
+pop r9  | * | pop rdi ,icc,2
+pop r8  | * | pop rsi ,icc,2
+pop rdi  | * | pop rcx ,icc,2
+pop rsi  | * | pop rdx ,icc,2
+pop rcx  | * | pop rax ,icc,2
+pop rdx  | * | retn ,icc,2
+pop rax  | * | __intel_cpu_features_init_x endp ,icc,1
+__intel_cpu_features_init_x endp  | * | public __intel_cpu_features_init ,icc,1
+align 20h  | * | __intel_cpu_features_init proc near  ,icc,1
+public __intel_cpu_features_init  | * | push rax ,icc,1
+__intel_cpu_features_init proc near   | * | push rdx ,icc,1
+"push r8  | * | mov edi, 1 ",icc,1
+"mov edi, 1  | * | pop r9 ",icc,1
+pop rax  | * | __intel_cpu_features_init endp ,icc,1
+__intel_cpu_features_init endp  | * | __intel_cpu_features_init_body proc near ,icc,1
+var_18 = dword ptr -18h  | * | var_10 = dword ptr -10h ,data,1
+var_14 = dword ptr -14h  | * | var_C = dword ptr -0Ch ,data,1
+"push rbx  | * | xor eax, eax ",icc,1
+"mov r11d, edi  | * | cpuid ",icc,1
+"xor eax, eax  | * | mov [rsp+8+var_18], eax ",icc,1
+"cpuid  | * | mov [rsp+8+var_14], ebx ",icc,1
+"mov [rsp+8+var_18], eax  | * | mov [rsp+8+var_10], ecx ",icc,1
+"mov [rsp+8+var_14], ebx  | * | mov [rsp+8+var_C], edx ",icc,1
+"mov [rsp+8+var_10], ecx  | * | xor sil, sil ",icc,1
+"mov [rsp+8+var_C], edx  | * | cmp [rsp+8+var_18], 0 ",icc,1
+"xor sil, sil  | * | jz loc_40487F ",icc,1
+"cmp [rsp+8+var_18], 0  | * | cmp r11d, 1 ",icc,1
+jz loc_40487F  | * | jz loc_40488C ,icc,1
+"cmp r11d, 1  | * | loc_404550:  ",icc,1
+"jz loc_40488C  | * | mov eax, 1 ",icc,1
+loc_404550:   | * | cpuid ,icc,1
+"mov eax, 1  | * | mov r8d, edx ",icc,1
+"cpuid  | * | mov r9d, eax ",icc,1
+"mov r8d, edx  | * | and r8d, 1 ",icc,1
+"mov r9d, eax  | * | mov edi, ecx ",icc,1
+"and r8d, 1  | * | lea r8, ds:1[r8*2] ",icc,1
+"mov edi, ecx  | * | mov rax, r8 ",icc,1
+"lea r8, ds:1[r8*2]  | * | or rax, 4 ",icc,1
+"mov rax, r8  | * | test edx, 8000h ",icc,1
+"or rax, 4  | * | cmovnz r8, rax ",icc,1
+"test edx, 8000h  | * | mov rcx, r8 ",icc,1
+"cmovnz r8, rax  | * | or rcx, 8 ",icc,1
+"mov rcx, r8  | * | test edx, 800000h ",icc,1
+"or rcx, 8  | * | cmovnz r8, rcx ",icc,1
+"test edx, 800000h  | * | test edx, 1000000h ",icc,1
+"cmovnz r8, rcx  | * | jz loc_404684 ",icc,1
+"test edx, 1000000h  | * | or r8, 10h ",icc,1
+"jz loc_404684  | * | mov r10, r8 ",icc,1
+"or r8, 10h  | * | or r10, 20h ",icc,1
+"mov r10, r8  | * | test edx, 2000000h ",icc,1
+"or r10, 20h  | * | cmovnz r8, r10 ",icc,1
+"test edx, 2000000h  | * | mov rsi, r8 ",icc,1
+"cmovnz r8, r10  | * | or rsi, 40h ",icc,1
+"mov rsi, r8  | * | test edx, 4000000h ",icc,1
+"or rsi, 40h  | * | cmovnz r8, rsi ",icc,1
+"test edx, 4000000h  | * | mov r10, r8 ",icc,1
+"cmovnz r8, rsi  | * | or r10, 80h ",icc,1
+"mov r10, r8  | * | test edi, 1 ",icc,1
+"or r10, 80h  | * | cmovnz r8, r10 ",icc,1
+"test edi, 1  | * | mov rax, r8 ",icc,1
+"cmovnz r8, r10  | * | or rax, 100h ",icc,1
+"mov rax, r8  | * | test edi, 200h ",icc,1
+"or rax, 100h  | * | cmovnz r8, rax ",icc,1
+"test edi, 200h  | * | mov rbx, r8 ",icc,1
+"cmovnz r8, rax  | * | or rbx, 800h ",icc,1
+"mov rbx, r8  | * | test edi, 400000h ",icc,1
+"or rbx, 800h  | * | cmovnz r8, rbx ",icc,1
+"test edi, 400000h  | * | mov rcx, r8 ",icc,1
+"cmovnz r8, rbx  | * | or rcx, 200h ",icc,1
+"mov rcx, r8  | * | test edi, 80000h ",icc,1
+"or rcx, 200h  | * | cmovnz r8, rcx ",icc,1
+"test edi, 80000h  | * | mov rdx, r8 ",icc,1
+"cmovnz r8, rcx  | * | or rdx, 400h ",icc,1
+"mov rdx, r8  | * | test edi, 100000h ",icc,1
+"or rdx, 400h  | * | cmovnz r8, rdx ",icc,1
+"test edi, 100000h  | * | mov r10, r8 ",icc,1
+"cmovnz r8, rdx  | * | or r10, 1000h ",icc,1
+"mov r10, r8  | * | test edi, 800000h ",icc,1
+"or r10, 1000h  | * | cmovnz r8, r10 ",icc,1
+"test edi, 800000h  | * | mov rsi, r8 ",icc,1
+"cmovnz r8, r10  | * | or rsi, 2000h ",icc,1
+"mov rsi, r8  | * | test edi, 2 ",icc,1
+"or rsi, 2000h  | * | cmovnz r8, rsi ",icc,1
+"test edi, 2  | * | mov sil, 1 ",icc,1
+"cmovnz r8, rsi  | * | mov rax, r8 ",icc,1
+"mov sil, 1  | * | or rax, 4000h ",icc,1
+"mov rax, r8  | * | test edi, 2000000h ",icc,1
+"or rax, 4000h  | * | cmovnz r8, rax ",icc,1
+"test edi, 2000000h  | * | mov eax, 7 ",icc,1
+"cmovnz r8, rax  | * | xor ecx, ecx ",icc,1
+"mov eax, 7  | * | cpuid ",icc,2
+"xor ecx, ecx  | * | mov r10d, ebx ",icc,2
+"cpuid  | * | mov rbx, 800000000h ",icc,1
+"mov r10d, ebx  | * | or rbx, r8 ",icc,1
+"mov rbx, 800000000h  | * | test r10d, 20000000h ",icc,1
+"or rbx, r8  | * | cmovnz r8, rbx ",icc,2
+"test r10d, 20000000h  | * | loc_404684:  ",icc,1
+"cmovnz r8, rbx  | * | mov rax, r8 ",icc,1
+"loc_404684:   | * | or rax, 20000h ",icc,1
+"mov rax, r8  | * | test edi, 40000000h ",icc,1
+"or rax, 20000h  | * | cmovnz r8, rax ",icc,1
+"test edi, 40000000h  | * | test sil, sil ",icc,1
+"cmovnz r8, rax  | * | jnz short loc_4046A8 ",icc,1
+"test sil, sil  | * | mov eax, 7 ",icc,1
+"jnz short loc_4046A8  | * | xor ecx, ecx ",icc,1
+cpuid  | * | loc_4046A8:  ,icc,1
+"mov r10d, ebx  | * | mov esi, r10d ",icc,1
+"loc_4046A8:   | * | mov rcx, r8 ",icc,1
+"mov esi, r10d  | * | and esi, 108h ",icc,1
+"mov rcx, r8  | * | or rcx, 80000h ",icc,1
+"and esi, 108h  | * | cmp esi, 108h ",icc,1
+"or rcx, 80000h  | * | cmovz r8, rcx ",icc,1
+"cmp esi, 108h  | * | mov eax, 80000001h ",icc,1
+"cmovz r8, rcx  | * | cpuid ",icc,1
+"mov eax, 80000001h  | * | mov rdx, r8 ",icc,1
+"cpuid  | * | or rdx, 100000h ",icc,1
+"mov rdx, r8  | * | test cl, 20h ",icc,1
+"or rdx, 100000h  | * | cmovnz r8, rdx ",icc,1
+"test cl, 20h  | * | mov rcx, r8 ",icc,1
+"cmovnz r8, rdx  | * | or rcx, 200000h ",icc,1
+"mov rcx, r8  | * | test r10d, 10h ",icc,1
+"or rcx, 200000h  | * | cmovnz r8, rcx ",icc,1
+"test r10d, 10h  | * | mov rbx, r8 ",icc,1
+"cmovnz r8, rcx  | * | or rbx, 400000h ",icc,1
+"mov rbx, r8  | * | test r10d, 800h ",icc,1
+"or rbx, 400000h  | * | cmovnz r8, rbx ",icc,1
+"test r10d, 800h  | * | mov rsi, r8 ",icc,1
+"cmovnz r8, rbx  | * | or rsi, 10000000h ",icc,1
+"mov rsi, r8  | * | test r10d, 80000h ",icc,1
+"or rsi, 10000000h  | * | cmovnz r8, rsi ",icc,1
+"test r10d, 80000h  | * | mov rax, r8 ",icc,1
+"cmovnz r8, rsi  | * | or rax, 20000000h ",icc,1
+"mov rax, r8  | * | test r10d, 40000h ",icc,1
+"or rax, 20000000h  | * | cmovnz r8, rax ",icc,1
+"test r10d, 40000h  | * | test edi, 8000000h ",icc,1
+"cmovnz r8, rax  | * | jz loc_404836 ",icc,1
+"test edi, 8000000h  | * | xor ecx, ecx ",icc,1
+jz loc_404836  | * | xgetbv ,icc,1
+"xor ecx, ecx  | * | or r8, 1 ",icc,1
+"xgetbv  | * | mov edx, eax ",icc,1
+"or r8, 1  | * | and edx, 6 ",icc,1
+"mov edx, eax  | * | cmp edx, 6 ",icc,1
+"and edx, 6  | * | jnz loc_404836 ",icc,1
+"cmp edx, 6  | * | mov rdx, r8 ",icc,1
+"jnz loc_404836  | * | or rdx, 10000h ",icc,1
+"mov rdx, r8  | * | test edi, 10000000h ",icc,1
+"or rdx, 10000h  | * | cmovnz r8, rdx ",icc,1
+"test edi, 10000000h  | * | mov rcx, r8 ",icc,1
+"cmovnz r8, rdx  | * | or rcx, 8000h ",icc,1
+"mov rcx, r8  | * | test edi, 20000000h ",icc,1
+"or rcx, 8000h  | * | cmovnz r8, rcx ",icc,1
+"test edi, 20000000h  | * | mov rbx, r8 ",icc,1
+"cmovnz r8, rcx  | * | or rbx, 800000h ",icc,1
+"mov rbx, r8  | * | test r10d, 20h ",icc,1
+"or rbx, 800000h  | * | cmovnz r8, rbx ",icc,1
+"test r10d, 20h  | * | mov rsi, r8 ",icc,1
+"cmovnz r8, rbx  | * | or rsi, 40000h ",icc,1
+"mov rsi, r8  | * | test edi, 1000h ",icc,1
+"or rsi, 40000h  | * | mov edi, eax ",icc,1
+"test edi, 1000h  | * | cmovnz r8, rsi ",icc,1
+"mov edi, eax  | * | and edi, 18h ",icc,1
+"cmovnz r8, rsi  | * | cmp edi, 18h ",icc,1
+"and edi, 18h  | * | jnz short loc_4047CA ",icc,1
+"cmp edi, 18h  | * | or r8, 1 ",icc,1
+"jnz short loc_4047CA  | * | mov rdx, 1000000000h ",icc,1
+"or r8, 1  | * | or rdx, r8 ",icc,1
+"mov rdx, 1000000000h  | * | test r10d, 4000h ",icc,1
+"or rdx, r8  | * | cmovnz r8, rdx ",icc,2
+"test r10d, 4000h  | * | loc_4047CA:  ",icc,1
+"cmovnz r8, rdx  | * | and eax, 0E0h ",icc,1
+"loc_4047CA:   | * | cmp eax, 0E0h ",icc,1
+"and eax, 0E0h  | * | jnz short loc_404836 ",icc,1
+"cmp eax, 0E0h  | * | or r8, 1 ",icc,1
+"jnz short loc_404836  | * | mov rdx, 400000000h ",icc,1
+"or r8, 1  | * | mov rax, r8 ",icc,1
+"mov rdx, 400000000h  | * | mov rcx, 100000000h ",icc,1
+"mov rax, r8  | * | or rax, 8000000h ",icc,1
+"mov rcx, 100000000h  | * | test r10d, 10000h ",icc,1
+"or rax, 8000000h  | * | mov rbx, 200000000h ",icc,1
+"test r10d, 10000h  | * | cmovnz r8, rax ",icc,1
+"mov rbx, 200000000h  | * | or rdx, r8 ",icc,1
+"cmovnz r8, rax  | * | test r10d, 10000000h ",icc,1
+"test r10d, 10000000h  | * | or rcx, r8 ",icc,1
+"cmovnz r8, rdx  | * | test r10d, 8000000h ",icc,1
+"or rcx, r8  | * | cmovnz r8, rcx ",icc,1
+"test r10d, 8000000h  | * | or rbx, r8 ",icc,1
+"cmovnz r8, rcx  | * | test r10d, 4000000h ",icc,1
+"test r10d, 4000000h  | * | loc_404836:  ",icc,1
+"cmovnz r8, rbx  | * | mov eax, r9d ",icc,1
+"loc_404836:   | * | shr eax, 0Ch ",icc,1
+"mov eax, r9d  | * | shr r9d, 4 ",icc,1
+"shr eax, 0Ch  | * | and eax, 0F0h ",icc,1
+"shr r9d, 4  | * | and r9d, 0Fh ",icc,1
+"and eax, 0F0h  | * | add eax, r9d ",icc,1
+"and r9d, 0Fh  | * | cmp eax, 1Ch ",icc,1
+"add eax, r9d  | * | jz short loc_40485B ",icc,1
+"cmp eax, 1Ch  | * | cmp eax, 26h  ",icc,1
+jz short loc_40485B  | * | jz short loc_40485B ,icc,1
+"cmp eax, 26h   | * | cmp eax, 27h  ",icc,1
+jz short loc_40485B  | * | jnz short loc_404860 ,icc,1
+"cmp eax, 27h   | * | loc_40485B:  ",icc,1
+"jnz short loc_404860  | * | bts r8, 1Fh ",icc,1
+loc_40485B:   | * | loc_404860:  ,icc,1
+"bts r8, 1Fh  | * | cmp r11d, 1 ",icc,1
+loc_404860:   | * | jz short loc_40486F ,icc,1
+"cmp r11d, 1  | * | mov cs:__intel_cpu_feature_indicator_x, r8 ",icc,1
+jz short loc_40486F  | * | pop rbx ,icc,1
+"mov cs:__intel_cpu_feature_indicator_x, r8  | * | retn ",icc,2
+pop rbx  | * | loc_40486F:  ,icc,1
+"retn  | * | mov cs:__intel_cpu_feature_indicator, r8 ",icc,1
+"loc_40486F:   | * | mov cs:__intel_cpu_feature_indicator_x, r8 ",icc,1
+"mov cs:__intel_cpu_feature_indicator, r8  | * | pop rbx ",icc,1
+pop rbx  | * | loc_40487F:  ,icc,1
+"retn  | * | mov cs:__intel_cpu_feature_indicator, 1 ",icc,1
+loc_40487F:   | * | pop rbx ,icc,1
+"mov cs:__intel_cpu_feature_indicator, 1  | * | retn ",icc,1
+pop rbx  | * | loc_40488C:  ,icc,1
+"retn  | * | cmp [rsp+8+var_14], 756E6547h ",icc,1
+loc_40488C:   | * | jnz short loc_40487F ,icc,1
+"cmp [rsp+8+var_14], 756E6547h  | * | cmp [rsp+8+var_C], 49656E69h ",icc,1
+jnz short loc_40487F  | * | jnz short loc_40487F ,icc,2
+"cmp [rsp+8+var_C], 49656E69h  | * | cmp [rsp+8+var_10], 6C65746Eh ",icc,1
+"cmp [rsp+8+var_10], 6C65746Eh  | * | jmp loc_404550 ",icc,1
+jnz short loc_40487F  | * | __intel_cpu_features_init_body endp ,icc,1
+jmp loc_404550  | * | align 10h ,icc,1
+__intel_cpu_features_init_body endp  | * | public __intel_proc_init_ftzdazule ,icc,1
+align 10h  | * | __intel_proc_init_ftzdazule proc near  ,icc,1
+"push rbx  | * | sub rsp, 200h ",icc,1
+"push rbp  | * | mov ebx, esi ",icc,1
+"sub rsp, 200h  | * | mov ebp, ebx ",icc,1
+"mov ebx, esi  | * | mov r15d, ebx ",icc,1
+"mov ebp, ebx  | * | and ebp, 4 ",icc,1
+"mov r15d, ebx  | * | and r15d, 2 ",icc,1
+"and ebp, 4  | * | jz short loc_4048D3 ",icc,1
+"and r15d, 2  | * | test edi, 2 ",icc,1
+jz short loc_4048D3  | * | jz short loc_4048DF ,icc,1
+"test edi, 2  | * | loc_4048D3:  ",icc,1
+"jz short loc_4048DF  | * | test ebp, ebp ",icc,1
+loc_4048D3:   | * | jz short loc_404907 ,icc,1
+"test ebp, ebp  | * | test edi, 4 ",icc,1
+jz short loc_404907  | * | jnz short loc_404907 ,icc,1
+"test edi, 4  | * | loc_4048DF:  ",icc,1
+"jnz short loc_404907  | * | xor esi, esi  ",icc,1
+"loc_4048DF:   | * | lea rdi, [rsp+218h+s]  ",icc,1
+"xor esi, esi   | * | mov edx, 200h  ",icc,1
+"lea rdi, [rsp+218h+s]   | * | call _memset ",icc,1
+"mov edx, 200h   | * | fxsave [rsp+218h+s] ",icc,1
+"call _memset  | * | xor edx, edx ",icc,1
+"fxsave [rsp+218h+s]  | * | mov eax, [rsp+218h+var_1FC] ",icc,1
+"xor edx, edx  | * | test al, 40h ",icc,1
+"mov eax, [rsp+218h+var_1FC]  | * | cmovz r15d, edx ",icc,1
+"test al, 40h  | * | test eax, 20000h ",icc,1
+"cmovz r15d, edx  | * | cmovz ebp, edx ",icc,1
+"test eax, 20000h  | * | loc_404907:  ",icc,1
+"cmovz ebp, edx  | * | test bl, 1 ",icc,1
+loc_404907:   | * | jnz short loc_404945 ,icc,1
+"test bl, 1  | * | loc_40490C:  ",icc,1
+"jnz short loc_404945  | * | test r15d, r15d ",icc,1
+loc_40490C:   | * | jz short loc_404922 ,icc,1
+"test r15d, r15d  | * | stmxcsr [rsp+218h+s] ",icc,1
+"jz short loc_404922  | * | mov eax, [rsp+218h+s] ",icc,1
+"stmxcsr [rsp+218h+s]  | * | or eax, 40h ",icc,1
+"mov eax, [rsp+218h+s]  | * | mov [rsp+218h+s], eax ",icc,3
+"or eax, 40h  | * | ldmxcsr [rsp+218h+s] ",icc,1
+"mov [rsp+218h+s], eax  | * | loc_404922:  ",icc,1
+"ldmxcsr [rsp+218h+s]  | * | test ebp, ebp ",icc,1
+loc_404922:   | * | jz short loc_404939 ,icc,1
+"test ebp, ebp  | * | stmxcsr [rsp+218h+s] ",icc,1
+"jz short loc_404939  | * | mov eax, [rsp+218h+s] ",icc,1
+"stmxcsr [rsp+218h+s]  | * | or eax, 20000h ",icc,1
+"or eax, 20000h  | * | ldmxcsr [rsp+218h+s] ",icc,1
+"mov [rsp+218h+s], eax  | * | loc_404939:  ",icc,1
+"ldmxcsr [rsp+218h+s]  | * | add rsp, 200h ",icc,1
+loc_404939:   | * | pop rbp ,icc,1
+"add rsp, 200h  | * | pop rbx ",icc,1
+pop r15  | * | loc_404945:  ,icc,1
+retn  | * | stmxcsr [rsp+218h+s] ,icc,1
+"loc_404945:   | * | mov eax, [rsp+218h+s] ",icc,1
+"stmxcsr [rsp+218h+s]  | * | or eax, 8000h ",icc,1
+"or eax, 8000h  | * | ldmxcsr [rsp+218h+s] ",icc,1
+"mov [rsp+218h+s], eax  | * | jmp short loc_40490C ",icc,1
+ldmxcsr [rsp+218h+s]  | * | __intel_proc_init_ftzdazule endp ,icc,1
+jmp short loc_40490C  | * | align 20h ,icc,1
+__intel_proc_init_ftzdazule endp  | * | public __libc_csu_init ,icc,1
+align 20h  | * | __libc_csu_init proc near  ,icc,1
+var_30 = qword ptr -30h  | * | var_20 = qword ptr -20h ,data,1
+var_28 = qword ptr -28h  | * | var_18 = qword ptr -18h ,data,1
+var_20 = qword ptr -20h  | * | var_10 = qword ptr -10h ,data,1
+"mov [rsp+var_28], rbp  | * | lea rbp, __CTOR_LIST__ ",icc,1
+"mov [rsp+var_20], r12  | * | lea r12, __init_array_start ",icc,1
+"lea rbp, __CTOR_LIST__  | * | mov [rsp+var_18], r13 ",icc,1
+"lea r12, __init_array_start  | * | mov [rsp+var_10], r14 ",icc,1
+"mov [rsp+var_18], r13  | * | mov [rsp+var_8], r15 ",icc,1
+"mov [rsp+var_10], r14  | * | mov [rsp+var_30], rbx ",icc,1
+"mov [rsp+var_8], r15  | * | sub rsp, 38h ",icc,1
+"mov [rsp+var_30], rbx  | * | sub rbp, r12 ",icc,1
+"sub rsp, 38h  | * | mov r13d, edi ",icc,1
+"sub rbp, r12  | * | mov r14, rsi ",icc,1
+"mov r13d, edi  | * | sar rbp, 3 ",icc,1
+"mov r14, rsi  | * | mov r15, rdx ",icc,1
+"sar rbp, 3  | * | call _init_proc ",icc,1
+"mov r15, rdx  | * | test rbp, rbp ",icc,1
+call _init_proc  | * | jz short loc_4049C6 ,icc,1
+"test rbp, rbp  | * | xor ebx, ebx ",icc,1
+jz short loc_4049C6  | * | nop dword ptr [rax+00h] ,icc,1
+"xor ebx, ebx  | * | loc_4049B0:  ",icc,1
+"nop dword ptr [rax+00h]  | * | mov rdx, r15 ",icc,1
+"loc_4049B0:   | * | mov rsi, r14 ",icc,1
+"mov rdx, r15  | * | mov edi, r13d ",icc,1
+"mov rsi, r14  | * | call ds:(__init_array_start - 6068F8h)[r12+rbx*8] ",icc,1
+"mov edi, r13d  | * | add rbx, 1 ",icc,1
+"call ds:(__init_array_start - 6068F8h)[r12+rbx*8]  | * | cmp rbx, rbp ",icc,1
+"add rbx, 1  | * | jnz short loc_4049B0 ",icc,1
+"cmp rbx, rbp  | * | loc_4049C6:  ",icc,1
+"jnz short loc_4049B0  | * | mov rbx, [rsp+38h+var_30] ",icc,1
+"loc_4049C6:   | * | mov rbp, [rsp+38h+var_28] ",icc,1
+"mov rbx, [rsp+38h+var_30]  | * | mov r12, [rsp+38h+var_20] ",icc,1
+"mov rbp, [rsp+38h+var_28]  | * | mov r13, [rsp+38h+var_18] ",icc,1
+"mov r12, [rsp+38h+var_20]  | * | mov r14, [rsp+38h+var_10] ",icc,1
+"mov r13, [rsp+38h+var_18]  | * | mov r15, [rsp+38h+var_8] ",icc,1
+"mov r14, [rsp+38h+var_10]  | * | add rsp, 38h ",icc,1
+"mov r15, [rsp+38h+var_8]  | * | retn ",icc,1
+"add rsp, 38h  | * | __libc_csu_init endp ",icc,1
+__libc_csu_init endp  | * | public __libc_csu_fini ,icc,1
+align 10h  | * | __libc_csu_fini proc near  ,icc,1
+public __libc_csu_fini  | * | rep retn ,icc,1
+__libc_csu_fini proc near   | * | __libc_csu_fini endp ,icc,1
+rep retn  | * | align 20h ,icc,1
+__libc_csu_fini endp  | * | __do_global_ctors_aux proc near  ,icc,1
+align 20h  | * | push rbp ,icc,1
+"__do_global_ctors_aux proc near   | * | mov rbp, rsp ",icc,1
+"push rbx  | * | mov rax, cs:__CTOR_LIST__ ",icc,1
+"sub rsp, 8  | * | cmp rax, 0FFFFFFFFFFFFFFFFh ",icc,1
+"mov rax, cs:__CTOR_LIST__  | * | jz short loc_404A2F ",icc,1
+"cmp rax, 0FFFFFFFFFFFFFFFFh  | * | mov ebx, offset __CTOR_LIST__ ",icc,1
+jz short loc_404A2F  | * | nop dword ptr [rax+rax+00h] ,icc,1
+"mov ebx, offset __CTOR_LIST__  | * | loc_404A20:  ",icc,1
+"nop dword ptr [rax+rax+00h]  | * | sub rbx, 8 ",icc,1
+loc_404A20:   | * | call rax  ,icc,1
+"sub rbx, 8  | * | mov rax, [rbx] ",icc,1
+"call rax   | * | cmp rax, 0FFFFFFFFFFFFFFFFh ",icc,1
+"mov rax, [rbx]  | * | jnz short loc_404A20 ",icc,1
+"cmp rax, 0FFFFFFFFFFFFFFFFh  | * | loc_404A2F:  ",icc,1
+"jnz short loc_404A20  | * | add rsp, 8 ",icc,1
+loc_404A2F:   | * | pop rbx ,icc,1
+pop rbp  | * | __do_global_ctors_aux endp ,icc,1
+retn  | * | align 8 ,icc,1
+__do_global_ctors_aux endp  | * | _text ends ,icc,1

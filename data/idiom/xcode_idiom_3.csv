@@ -1,0 +1,186 @@
+idiom,label,count
+var_EC = dword ptr -0ECh  | * | var_E0 = dword ptr -0E0h ,data,1
+var_E8 = qword ptr -0E8h  | * | var_DC = dword ptr -0DCh ,data,1
+var_E0 = dword ptr -0E0h  | * | var_D8 = qword ptr -0D8h ,data,1
+var_DC = dword ptr -0DCh  | * | var_CC = dword ptr -0CCh ,data,1
+var_D8 = qword ptr -0D8h  | * | var_C8 = dword ptr -0C8h ,data,1
+var_CC = dword ptr -0CCh  | * | var_C4 = dword ptr -0C4h ,data,1
+var_C8 = dword ptr -0C8h  | * | var_C0 = dword ptr -0C0h ,data,1
+var_C4 = dword ptr -0C4h  | * | var_BC = dword ptr -0BCh ,data,1
+var_C0 = dword ptr -0C0h  | * | var_B8 = dword ptr -0B8h ,data,1
+var_BC = dword ptr -0BCh  | * | var_B4 = dword ptr -0B4h ,data,1
+var_B8 = dword ptr -0B8h  | * | var_B0 = dword ptr -0B0h ,data,1
+var_B4 = dword ptr -0B4h  | * | var_AC = dword ptr -0ACh ,data,1
+var_B0 = dword ptr -0B0h  | * | var_A8 = dword ptr -0A8h ,data,1
+var_AC = dword ptr -0ACh  | * | var_A4 = dword ptr -0A4h ,data,1
+var_A8 = dword ptr -0A8h  | * | var_A0 = dword ptr -0A0h ,data,1
+var_A4 = dword ptr -0A4h  | * | var_9C = dword ptr -9Ch ,data,1
+var_A0 = dword ptr -0A0h  | * | var_98 = dword ptr -98h ,data,1
+var_9C = dword ptr -9Ch  | * | var_94 = dword ptr -94h ,data,1
+var_98 = dword ptr -98h  | * | var_88 = qword ptr -88h ,data,1
+var_94 = dword ptr -94h  | * | var_80 = qword ptr -80h ,data,1
+var_88 = qword ptr -88h  | * | var_78 = byte ptr -78h ,data,1
+var_80 = qword ptr -80h  | * | var_70 = qword ptr -70h ,data,1
+var_78 = byte ptr -78h  | * | var_68 = qword ptr -68h ,data,1
+var_70 = qword ptr -70h  | * | var_60 = qword ptr -60h ,data,1
+var_68 = qword ptr -68h  | * | var_58 = qword ptr -58h ,data,1
+var_60 = qword ptr -60h  | * | var_50 = qword ptr -50h ,data,1
+var_58 = qword ptr -58h  | * | var_40 = qword ptr -40h ,data,1
+var_50 = qword ptr -50h  | * | var_38 = qword ptr -38h ,data,1
+var_40 = qword ptr -40h  | * | var_30 = byte ptr -30h ,data,1
+var_38 = qword ptr -38h  | * | var_28 = qword ptr -28h ,data,1
+var_30 = byte ptr -30h  | * | var_20 = qword ptr -20h ,data,1
+var_28 = qword ptr -28h  | * | var_18 = qword ptr -18h ,data,1
+var_20 = qword ptr -20h  | * | var_10 = qword ptr -10h ,data,1
+var_18 = qword ptr -18h  | * | var_8 = qword ptr -8 ,data,1
+"push rbp  | * | sub rsp, 0F0h ",xcode,1
+"mov rbp, rsp  | * | lea rdi, aD  ",xcode,1
+"sub rsp, 0F0h  | * | lea rsi, [rbp+var_98] ",xcode,1
+"lea rdi, aD   | * | mov [rbp+var_94], 0 ",xcode,1
+"lea rsi, [rbp+var_98]  | * | mov al, 0 ",xcode,1
+"mov [rbp+var_94], 0  | * | call _scanf ",xcode,1
+"mov al, 0  | * | mov [rbp+var_9C], 1 ",xcode,1
+"call _scanf  | * | mov [rbp+var_BC], eax ",xcode,1
+"mov [rbp+var_9C], 1  | * | loc_100000C9A:  ",xcode,1
+"mov [rbp+var_BC], eax  | * | mov eax, [rbp+var_9C] ",xcode,1
+"loc_100000C9A:   | * | cmp eax, [rbp+var_98] ",xcode,1
+"mov eax, [rbp+var_9C]  | * | jg loc_100000F48 ",xcode,1
+"cmp eax, [rbp+var_98]  | * | lea rdi, aDDD  ",xcode,1
+"jg loc_100000F48  | * | lea rsi, _n ",xcode,1
+"lea rdi, aDDD   | * | lea rdx, _m ",xcode,1
+"lea rsi, _n  | * | lea rcx, _p ",xcode,1
+"lea rdx, _m  | * | mov al, 0 ",xcode,1
+"lea rcx, _p  | * | call _scanf ",xcode,1
+"mov al, 0  | * | mov [rbp+var_A0], 0 ",xcode,1
+"call _scanf  | * | mov [rbp+var_A4], 0 ",xcode,1
+"mov [rbp+var_A0], 0  | * | mov [rbp+var_C0], eax ",xcode,1
+"mov [rbp+var_A4], 0  | * | loc_100000CE9:  ",xcode,1
+"mov [rbp+var_C0], eax  | * | mov eax, [rbp+var_A4] ",xcode,1
+"loc_100000CE9:   | * | cmp eax, cs:_n ",xcode,1
+"mov eax, [rbp+var_A4]  | * | jge loc_100000F12 ",xcode,1
+"cmp eax, cs:_n  | * | lea rdi, aD  ",xcode,1
+"jge loc_100000F12  | * | lea rsi, [rbp+var_A8] ",xcode,1
+"lea rdi, aD   | * | mov al, 0 ",xcode,1
+"lea rsi, [rbp+var_A8]  | * | call _scanf ",xcode,1
+"mov al, 0  | * | lea rsi, [rbp+var_78] ",xcode,1
+"call _scanf  | * | lea rdi, [rbp+var_B0] ",xcode,1
+"lea rsi, [rbp+var_78]  | * | lea rcx, [rbp+var_AC] ",xcode,1
+"lea rdi, [rbp+var_B0]  | * | mov edx, [rbp+var_A8] ",xcode,1
+"lea rcx, [rbp+var_AC]  | * | mov r8d, cs:_p ",xcode,1
+"mov edx, [rbp+var_A8]  | * | mov [rbp+var_AC], 0 ",xcode,1
+"mov r8d, cs:_p  | * | mov r9d, cs:_p ",xcode,1
+"mov [rbp+var_AC], 0  | * | sub r9d, 1 ",xcode,1
+"mov r9d, cs:_p  | * | mov [rbp+var_B0], r9d ",xcode,1
+"sub r9d, 1  | * | mov [rbp+var_80], rcx ",xcode,1
+"mov [rbp+var_B0], r9d  | * | mov [rbp+var_88], rdi ",xcode,1
+"mov [rbp+var_80], rcx  | * | mov rcx, [rbp+var_80] ",xcode,1
+"mov [rbp+var_88], rdi  | * | mov rdi, [rbp+var_88] ",xcode,1
+"mov rcx, [rbp+var_80]  | * | mov [rbp+var_68], rcx ",xcode,1
+"mov rdi, [rbp+var_88]  | * | mov [rbp+var_70], rdi ",xcode,1
+"mov [rbp+var_68], rcx  | * | mov rcx, [rbp+var_68] ",xcode,1
+"mov [rbp+var_70], rdi  | * | mov rdi, [rbp+var_70] ",xcode,1
+"mov rcx, [rbp+var_68]  | * | mov [rbp+var_50], rsi ",xcode,1
+"mov rdi, [rbp+var_70]  | * | mov [rbp+var_58], rcx ",xcode,1
+"mov [rbp+var_50], rsi  | * | mov [rbp+var_60], rdi ",xcode,1
+"mov [rbp+var_58], rcx  | * | mov rcx, [rbp+var_58] ",xcode,1
+"mov [rbp+var_60], rdi  | * | mov r9d, [rcx] ",xcode,1
+"mov rcx, [rbp+var_58]  | * | mov rcx, [rbp+var_60] ",xcode,1
+"mov r9d, [rcx]  | * | cmp r9d, [rcx] ",xcode,1
+"mov rcx, [rbp+var_60]  | * | mov [rbp+var_C4], eax ",xcode,1
+"cmp r9d, [rcx]  | * | mov [rbp+var_C8], r8d ",xcode,1
+"mov [rbp+var_C4], eax  | * | mov [rbp+var_CC], edx ",xcode,1
+"mov [rbp+var_C8], r8d  | * | jge loc_100000DB7 ",xcode,1
+"mov [rbp+var_CC], edx  | * | mov rax, [rbp+var_70] ",xcode,1
+"jge loc_100000DB7  | * | mov [rbp+var_D8], rax ",xcode,1
+"mov rax, [rbp+var_70]  | * | jmp loc_100000DC2 ",xcode,1
+"mov [rbp+var_D8], rax  | * | loc_100000DB7:  ",xcode,1
+"jmp loc_100000DC2  | * | mov rax, [rbp+var_68] ",xcode,1
+"loc_100000DB7:   | * | mov [rbp+var_D8], rax ",xcode,1
+"mov rax, [rbp+var_68]  | * | loc_100000DC2:  ",xcode,1
+"mov [rbp+var_D8], rax  | * | mov rax, [rbp+var_D8] ",xcode,1
+"loc_100000DC2:   | * | mov ecx, [rax] ",xcode,1
+"mov rax, [rbp+var_D8]  | * | shl ecx, 1 ",xcode,1
+"mov ecx, [rax]  | * | mov edx, [rbp+var_C8] ",xcode,1
+"shl ecx, 1  | * | add edx, ecx ",xcode,2
+"mov edx, [rbp+var_C8]  | * | mov ecx, [rbp+var_CC] ",xcode,1
+"add edx, ecx  | * | cmp ecx, edx ",xcode,2
+"mov ecx, [rbp+var_CC]  | * | jl loc_100000DFA ",xcode,1
+"cmp ecx, edx  | * | mov eax, [rbp+var_A0] ",xcode,1
+"jl loc_100000DFA  | * | add eax, 1 ",xcode,1
+"mov eax, [rbp+var_A0]  | * | mov [rbp+var_A0], eax ",xcode,2
+"add eax, 1  | * | jmp loc_100000EF7 ",xcode,1
+"mov [rbp+var_A0], eax  | * | loc_100000DFA:  ",xcode,1
+"jmp loc_100000EF7  | * | lea rax, [rbp+var_30] ",xcode,1
+"loc_100000DFA:   | * | lea rcx, [rbp+var_B8] ",xcode,1
+"lea rax, [rbp+var_30]  | * | lea rdx, [rbp+var_B4] ",xcode,1
+"lea rcx, [rbp+var_B8]  | * | mov esi, [rbp+var_A8] ",xcode,1
+"lea rdx, [rbp+var_B4]  | * | mov edi, cs:_p ",xcode,1
+"mov esi, [rbp+var_A8]  | * | mov [rbp+var_B4], 0 ",xcode,1
+"mov edi, cs:_p  | * | mov r8d, cs:_p ",xcode,1
+"mov [rbp+var_B4], 0  | * | sub r8d, 2 ",xcode,1
+"mov r8d, cs:_p  | * | mov [rbp+var_B8], r8d ",xcode,1
+"sub r8d, 2  | * | mov [rbp+var_38], rdx ",xcode,1
+"mov [rbp+var_B8], r8d  | * | mov [rbp+var_40], rcx ",xcode,1
+"mov [rbp+var_38], rdx  | * | mov rcx, [rbp+var_38] ",xcode,1
+"mov [rbp+var_40], rcx  | * | mov rdx, [rbp+var_40] ",xcode,1
+"mov rcx, [rbp+var_38]  | * | mov [rbp+var_20], rcx ",xcode,1
+"mov rdx, [rbp+var_40]  | * | mov [rbp+var_28], rdx ",xcode,1
+"mov [rbp+var_20], rcx  | * | mov rcx, [rbp+var_20] ",xcode,1
+"mov [rbp+var_28], rdx  | * | mov rdx, [rbp+var_28] ",xcode,1
+"mov rcx, [rbp+var_20]  | * | mov [rbp+var_8], rax ",xcode,1
+"mov rdx, [rbp+var_28]  | * | mov [rbp+var_10], rcx ",xcode,1
+"mov [rbp+var_8], rax  | * | mov [rbp+var_18], rdx ",xcode,1
+"mov [rbp+var_10], rcx  | * | mov rax, [rbp+var_10] ",xcode,1
+"mov [rbp+var_18], rdx  | * | mov r8d, [rax] ",xcode,1
+"mov rax, [rbp+var_10]  | * | mov rax, [rbp+var_18] ",xcode,1
+"mov r8d, [rax]  | * | cmp r8d, [rax] ",xcode,1
+"mov rax, [rbp+var_18]  | * | mov [rbp+var_DC], edi ",xcode,1
+"cmp r8d, [rax]  | * | mov [rbp+var_E0], esi ",xcode,1
+"mov [rbp+var_DC], edi  | * | jge loc_100000E93 ",xcode,1
+"mov [rbp+var_E0], esi  | * | mov rax, [rbp+var_28] ",xcode,1
+"jge loc_100000E93  | * | mov [rbp+var_E8], rax ",xcode,1
+"mov rax, [rbp+var_28]  | * | jmp loc_100000E9E ",xcode,1
+"mov [rbp+var_E8], rax  | * | loc_100000E93:  ",xcode,1
+"jmp loc_100000E9E  | * | mov rax, [rbp+var_20] ",xcode,1
+"loc_100000E93:   | * | mov [rbp+var_E8], rax ",xcode,1
+"mov rax, [rbp+var_20]  | * | loc_100000E9E:  ",xcode,1
+"mov [rbp+var_E8], rax  | * | mov rax, [rbp+var_E8] ",xcode,1
+"loc_100000E9E:   | * | mov ecx, [rax] ",xcode,1
+"mov rax, [rbp+var_E8]  | * | shl ecx, 1 ",xcode,1
+"mov ecx, [rax]  | * | mov edx, [rbp+var_DC] ",xcode,1
+"mov edx, [rbp+var_DC]  | * | mov ecx, [rbp+var_E0] ",xcode,1
+"mov ecx, [rbp+var_E0]  | * | jl loc_100000EF2 ",xcode,1
+"cmp ecx, edx  | * | cmp cs:_m, 0 ",xcode,1
+jl loc_100000EF2  | * | jz loc_100000EF2 ,xcode,1
+"cmp cs:_m, 0  | * | mov eax, [rbp+var_A0] ",xcode,1
+"jz loc_100000EF2  | * | add eax, 1 ",xcode,1
+"add eax, 1  | * | mov eax, cs:_m ",xcode,1
+"mov [rbp+var_A0], eax  | * | add eax, 0FFFFFFFFh ",xcode,1
+"mov eax, cs:_m  | * | mov cs:_m, eax ",xcode,1
+"add eax, 0FFFFFFFFh  | * | loc_100000EF2:  ",xcode,1
+"mov cs:_m, eax  | * | jmp $+5 ",xcode,1
+loc_100000EF2:   | * | loc_100000EF7:  ,xcode,1
+jmp $+5  | * | jmp $+5 ,xcode,1
+loc_100000EF7:   | * | loc_100000EFC:  ,xcode,1
+"jmp $+5  | * | mov eax, [rbp+var_A4] ",xcode,1
+"loc_100000EFC:   | * | add eax, 1 ",xcode,1
+"mov eax, [rbp+var_A4]  | * | mov [rbp+var_A4], eax ",xcode,1
+"add eax, 1  | * | jmp loc_100000CE9 ",xcode,1
+"mov [rbp+var_A4], eax  | * | loc_100000F12:  ",xcode,1
+"jmp loc_100000CE9  | * | lea rdi, aCaseDD  ",xcode,1
+"loc_100000F12:   | * | mov esi, [rbp+var_9C] ",xcode,1
+"lea rdi, aCaseDD   | * | mov edx, [rbp+var_A0] ",xcode,1
+"mov esi, [rbp+var_9C]  | * | mov al, 0 ",xcode,1
+"mov edx, [rbp+var_A0]  | * | call _printf ",xcode,1
+"mov al, 0  | * | mov [rbp+var_EC], eax ",xcode,1
+"call _printf  | * | mov eax, [rbp+var_9C] ",xcode,1
+"mov [rbp+var_EC], eax  | * | add eax, 1 ",xcode,1
+"mov eax, [rbp+var_9C]  | * | mov [rbp+var_9C], eax ",xcode,1
+"add eax, 1  | * | jmp loc_100000C9A ",xcode,1
+"mov [rbp+var_9C], eax  | * | loc_100000F48:  ",xcode,1
+"jmp loc_100000C9A  | * | mov eax, 0 ",xcode,1
+"loc_100000F48:   | * | add rsp, 0F0h ",xcode,1
+"mov eax, 0  | * | pop rbp ",xcode,1
+"add rsp, 0F0h  | * | retn ",xcode,1
+pop rbp  | * | _main endp ,xcode,1
+retn  | * | __text ends ,xcode,1

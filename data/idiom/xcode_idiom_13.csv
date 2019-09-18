@@ -1,0 +1,78 @@
+idiom,label,count
+var_24 = dword ptr -24h  | * | var_14 = dword ptr -14h ,data,1
+var_20 = qword ptr -20h  | * | var_10 = dword ptr -10h ,data,1
+var_14 = dword ptr -14h  | * | var_C = dword ptr -0Ch ,data,1
+var_10 = dword ptr -10h  | * | var_8 = dword ptr -8 ,data,1
+var_C = dword ptr -0Ch  | * | var_4 = dword ptr -4 ,data,1
+"push rbp  | * | sub rsp, 30h ",xcode,1
+"mov rbp, rsp  | * | lea rdi, aD  ",xcode,1
+"sub rsp, 30h  | * | lea rsi, [rbp+var_C] ",xcode,1
+"lea rdi, aD   | * | mov [rbp+var_4], 0 ",xcode,1
+"lea rsi, [rbp+var_C]  | * | mov al, 0 ",xcode,1
+"mov [rbp+var_4], 0  | * | call _scanf ",xcode,1
+"mov al, 0  | * | mov [rbp+var_8], 1 ",xcode,1
+"call _scanf  | * | mov [rbp+var_14], eax ",xcode,1
+"mov [rbp+var_8], 1  | * | loc_10000077B:  ",xcode,1
+"mov [rbp+var_14], eax  | * | mov eax, [rbp+var_8] ",xcode,1
+"loc_10000077B:   | * | cmp eax, [rbp+var_C] ",xcode,1
+"mov eax, [rbp+var_8]  | * | jg loc_100000872 ",xcode,1
+"cmp eax, [rbp+var_C]  | * | lea rdi, _s  ",xcode,1
+"jg loc_100000872  | * | mov esi, 186A5h  ",xcode,1
+"lea rdi, _s   | * | mov rax, cs:___stdinp_ptr ",xcode,1
+"mov esi, 186A5h   | * | mov rdx, [rax]  ",xcode,1
+"mov rax, cs:___stdinp_ptr  | * | call _fgets ",xcode,1
+"mov rdx, [rax]   | * | lea rdi, _s  ",xcode,1
+"call _fgets  | * | mov [rbp+var_20], rax ",xcode,1
+"lea rdi, _s   | * | call _strlen ",xcode,1
+"mov [rbp+var_20], rax  | * | mov esi, eax ",xcode,1
+"call _strlen  | * | mov cs:_n, esi ",xcode,1
+"mov esi, eax  | * | mov [rbp+var_10], 0 ",xcode,1
+"mov cs:_n, esi  | * | loc_1000007C1:  ",xcode,1
+"mov [rbp+var_10], 0  | * | mov eax, [rbp+var_10] ",xcode,1
+"loc_1000007C1:   | * | cmp eax, cs:_n ",xcode,1
+"mov eax, [rbp+var_10]  | * | jge loc_100000847 ",xcode,1
+"cmp eax, cs:_n  | * | mov eax, 61h  ",xcode,1
+"jge loc_100000847  | * | lea rcx, _s ",xcode,1
+"mov eax, 61h   | * | movsxd rdx, [rbp+var_10] ",xcode,1
+"lea rcx, _s  | * | movsx esi, byte ptr [rcx+rdx] ",xcode,1
+"movsxd rdx, [rbp+var_10]  | * | cmp eax, esi ",xcode,1
+"movsx esi, byte ptr [rcx+rdx]  | * | jg loc_100000832 ",xcode,1
+"cmp eax, esi  | * | lea rax, _s ",xcode,1
+"jg loc_100000832  | * | movsxd rcx, [rbp+var_10] ",xcode,1
+"lea rax, _s  | * | movsx edx, byte ptr [rax+rcx] ",xcode,1
+"movsxd rcx, [rbp+var_10]  | * | cmp edx, 7Ah  ",xcode,1
+"movsx edx, byte ptr [rax+rcx]  | * | jg loc_100000832 ",xcode,1
+"cmp edx, 7Ah   | * | lea rax, _s ",xcode,1
+"jg loc_100000832  | * | lea rcx, __ZL1q  ",xcode,1
+"lea rax, _s  | * | movsxd rdx, [rbp+var_10] ",xcode,1
+"lea rcx, __ZL1q   | * | movsx esi, byte ptr [rax+rdx] ",xcode,1
+"movsxd rdx, [rbp+var_10]  | * | sub esi, 61h  ",xcode,1
+"movsx esi, byte ptr [rax+rdx]  | * | movsxd rdx, esi ",xcode,1
+"sub esi, 61h   | * | mov dil, [rcx+rdx] ",xcode,1
+"movsxd rdx, esi  | * | movsxd rcx, [rbp+var_10] ",xcode,1
+"mov dil, [rcx+rdx]  | * | mov [rax+rcx], dil ",xcode,1
+"movsxd rcx, [rbp+var_10]  | * | loc_100000832:  ",xcode,1
+"mov [rax+rcx], dil  | * | jmp $+5 ",xcode,1
+loc_100000832:   | * | loc_100000837:  ,xcode,1
+"jmp $+5  | * | mov eax, [rbp+var_10] ",xcode,1
+"loc_100000837:   | * | add eax, 1 ",xcode,1
+"mov eax, [rbp+var_10]  | * | mov [rbp+var_10], eax ",xcode,1
+"add eax, 1  | * | jmp loc_1000007C1 ",xcode,1
+"mov [rbp+var_10], eax  | * | loc_100000847:  ",xcode,1
+"jmp loc_1000007C1  | * | lea rdi, aCaseDS  ",xcode,1
+"loc_100000847:   | * | lea rdx, _s ",xcode,1
+"lea rdi, aCaseDS   | * | mov esi, [rbp+var_8] ",xcode,1
+"lea rdx, _s  | * | mov al, 0 ",xcode,1
+"mov esi, [rbp+var_8]  | * | call _printf ",xcode,1
+"mov al, 0  | * | mov [rbp+var_24], eax ",xcode,1
+"call _printf  | * | mov eax, [rbp+var_8] ",xcode,1
+"mov [rbp+var_24], eax  | * | add eax, 1 ",xcode,1
+"mov eax, [rbp+var_8]  | * | mov [rbp+var_8], eax ",xcode,1
+"add eax, 1  | * | jmp loc_10000077B ",xcode,1
+"mov [rbp+var_8], eax  | * | loc_100000872:  ",xcode,1
+"jmp loc_10000077B  | * | mov eax, 0 ",xcode,1
+"loc_100000872:   | * | add rsp, 30h ",xcode,1
+"mov eax, 0  | * | pop rbp ",xcode,1
+"add rsp, 30h  | * | retn ",xcode,1
+pop rbp  | * | _main endp ,xcode,1
+retn  | * | __text ends ,xcode,1
