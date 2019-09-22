@@ -20,3 +20,11 @@
     - GA 를 사용하여 컴파일러 패밀리 별 유전 특징을 추출한다.
     - 추출된 유전 특징을 이용하여 학습된 내용들을 보여줄 수 있다. (이미지로 보여줄 예정, 0, 1, 2, Code 별 색)
     - 학습된 히스토리를 보여줄 수 있다.
+
+## Version
+* ### ver 0.0.1
+    * DataLoader Class
+* ### ver 0.0.2
+    * MakeIdiomSet Class
+* ### ver 0.0.3
+    * CRFCompilerModel Class

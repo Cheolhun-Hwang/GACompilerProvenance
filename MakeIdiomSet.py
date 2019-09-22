@@ -41,7 +41,7 @@ class MakeIdiomSet:
         for line in lines:
             replace_text = self.FilteringString(line)
             replace_text = self.blankProcessing(replace_text)
-            print(replace_text)
+            # print(replace_text)
             self.splitAddressAndOp(replace_text)
         idiomset = self.sequenceDataFrame()
         return idiomset
@@ -78,7 +78,7 @@ class MakeIdiomSet:
 
         s_index = s_text[0].split(":")
 
-        print("index : " + s_index[1] + " / ops : " + ops)
+        # print("index : " + s_index[1] + " / ops : " + ops)
         if(s_index[1] in self.first_dict):
             arr = self.first_dict.get(s_index[1])
             arr.append(ops)
@@ -105,7 +105,7 @@ class MakeIdiomSet:
 
         first_dataframe = pd.DataFrame({"type":space_type, "start_point":start_offset_point,
                                         "d_code" : d_code_array})
-        print(first_dataframe.head(25))
+        # print(first_dataframe.head(25))
         idiomset = self.setIdiomList(d_code_array)
         return idiomset
 
@@ -135,12 +135,12 @@ class MakeIdiomSet:
                 pro_label = self.compiler
 
             if(pre_label == pro_label):
-                print(idiom)
-                print(pre_label)
+                # print(idiom)
+                # print(pre_label)
 
                 if(total_idiom_dict.get(idiom)):
                     # Exist
-                    print("Already exist idiom. : " + idiom)
+                    # print("Already exist idiom. : " + idiom)
                     label = total_idiom_dict.get(idiom)[0]
                     cnt = total_idiom_dict.get(idiom)[1]+1
                     total_idiom_dict.update({idiom:[label, cnt]})
