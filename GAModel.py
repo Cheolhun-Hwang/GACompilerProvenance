@@ -1,10 +1,6 @@
 import os
 import pandas as pd
 import numpy as np
-import sklearn_crfsuite
-from sklearn_crfsuite import scorers
-from sklearn_crfsuite import metrics
-import math
 import random
 
 class GAModel:

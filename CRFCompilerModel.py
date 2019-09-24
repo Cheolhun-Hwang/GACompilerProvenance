@@ -1,7 +1,6 @@
 import os
 import pandas as pd
 import sklearn_crfsuite
-from sklearn_crfsuite import scorers
 from sklearn_crfsuite import metrics
 
 
