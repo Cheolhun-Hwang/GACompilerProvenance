@@ -31,7 +31,7 @@ class MakeIdiomSet:
             print(uri + " couldn't open directory")
             return None
 
-    def fileLoad(self, filename, compiler):
+    def fileLoad(self, filename=None, compiler=None):
         # 특정 파일을 Input 데이터로 불러들인다.
         # filename : 불러들일 input 파일명
         # compiler : gcc, icc, xcode, msvs 중 어떤 컴파일러인지 작성되어야한다.
