@@ -1,7 +1,6 @@
 from MakeIdiomSet import MakeIdiomSet
 from CRFCompilerModel import CRFCompilerModel
 from GACompilerProvenance import GACompilerProvenance
-from GAModel import GAModel
 from GeneticModel import GeneticModel
 
 def runCRFModel(target = None, fold = 5):
@@ -130,7 +129,6 @@ def runGAModel(gcf_define_size=256, fold = 5):
         # gaModel.saveImpactIdiom("msvc")
         # gaModel.saveImpactIdiom("xcode")
 
-        # model = GAModel()
         model = GeneticModel()
 
         print("==> Chromos.... GCC")

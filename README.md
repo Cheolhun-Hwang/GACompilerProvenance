@@ -64,3 +64,9 @@
         * 명령 수행 과정에 대한 print 문 주석 처리
     * Main.py 수정
         * CRF, GCFL 수행 과정에 대해 runCRFModel(), runGAModel() 로 구분
+* ### ver 0.1.3    
+    * DataLoader Class 삭제
+    * GeneticModel Class 정의
+* ### ver 0.1.5    
+    * DataLoader Class 삭제
+    * GeneticModel Class 정의
