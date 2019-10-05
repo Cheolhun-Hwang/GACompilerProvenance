@@ -1,10 +1,9 @@
-import os
-import pandas as pd
 import numpy as np
 import random
 
 class GAModel:
     def __init__(self, cross_over = 0.5, mutation = 0.05, pop_generation = 100):
+        print("\n###################################")
         print("GA Model")
         self.cross_over = cross_over
         self.mutation = mutation

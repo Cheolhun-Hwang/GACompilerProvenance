@@ -1,38 +1,20 @@
-import pandas as pd
-import numpy as np
-
 from MakeIdiomSet import MakeIdiomSet
 from CRFCompilerModel import CRFCompilerModel
 from GACompilerProvenance import GACompilerProvenance
 from GAModel import GAModel
+from GeneticModel import GeneticModel
 
-type_array = ["gcc", "icc", "msvc", "xcode"]
-makeIdiom = MakeIdiomSet()
-
-gcc_idiom_dict = makeIdiom.directoryToIdiom("./data/gcj_text/ass/gcc/", type_array[0])
-# makeIdiom.checkDict(gcc_idiom_dict)
-# makeIdiom.saveIdiomDict(gcc_idiom_dict, type_array[0])
-icc_idiom_dict = makeIdiom.directoryToIdiom("./data/gcj_text/ass/icc/", type_array[1])
-# makeIdiom.checkDict(icc_idiom_dict)
-# makeIdiom.saveIdiomDict(icc_idiom_dict, type_array[1])
-msvc_idiom_dict = makeIdiom.directoryToIdiom("./data/gcj_text/ass/msvc/", type_array[2])
-# makeIdiom.checkDict(msvc_idiom_dict)
-# makeIdiom.saveIdiomDict(msvc_idiom_dict, type_array[2])
-xcode_idiom_dict = makeIdiom.directoryToIdiom("./data/gcj_text/ass/xcode/", type_array[3])
-# makeIdiom.checkDict(xcode_idiom_dict)
-# makeIdiom.saveIdiomDict(xcode_idiom_dict, type_array[3])
-
-
-def runCRFModel():
+def runCRFModel(target = None, fold = 5):
+    if target == None:
+        print("input 정보를 확인해주세요.")
+        return
     crfModel = CRFCompilerModel()
-    fold = 5
-    target = type_array[3]
     for index in range(0, fold, 1):
-        print("Index : " + str(index + 1))
-        gcc_train, gcc_test = crfModel.kfold(gcc_idiom_dict, fold, index)
-        icc_train, icc_test = crfModel.kfold(icc_idiom_dict, fold, index)
-        msvc_train, msvc_test = crfModel.kfold(msvc_idiom_dict, fold, index)
-        xcode_train, xcode_test = crfModel.kfold(xcode_idiom_dict, fold, index)
+        print("k-fold : " + str(index + 1))
+        gcc_train, gcc_test = crfModel.kfold(dict=gcc_idiom_dict, k=fold, index=index)
+        icc_train, icc_test = crfModel.kfold(dict=icc_idiom_dict, k=fold, index=index)
+        msvc_train, msvc_test = crfModel.kfold(dict=msvc_idiom_dict, k=fold, index=index)
+        xcode_train, xcode_test = crfModel.kfold(dict=xcode_idiom_dict, k=fold, index=index)
 
         train_x = []
         train_y = []
@@ -99,10 +81,7 @@ def runCRFModel():
         print(">Test")
         crfModel.test(test_x=test_x, test_y=test_y, labels=labels)
 
-def runGAModel():
-    fold = 5
-    gcf_define_size = 128 # 160 256 512 1024
-
+def runGAModel(gcf_define_size=256, fold = 5):
     final_total = []
     final_gcc=[]
     final_icc=[]
@@ -110,7 +89,7 @@ def runGAModel():
     final_xcode=[]
 
     for index in range(0, fold, 1):
-        print("Index : " + str(index + 1))
+        print("k-fold : " + str(index + 1))
         gaModel = GACompilerProvenance()
 
         gcc_train, gcc_test = gaModel.kfold(gcc_idiom_dict, fold, index)
@@ -149,31 +128,32 @@ def runGAModel():
         # gaModel.saveImpactIdiom("gcc")
         # gaModel.saveImpactIdiom("icc")
         # gaModel.saveImpactIdiom("msvc")
-        # gaModel.saveImpactIdiom("xcode")\
+        # gaModel.saveImpactIdiom("xcode")
 
-        model = GAModel()
+        # model = GAModel()
+        model = GeneticModel()
 
         print("==> Chromos.... GCC")
         gcc_chromosome = gaModel.makeChromosome(gcc_train)
-        model.run(gcc_chromosome)
+        model.run(gcc_chromosome, 100)
         gcc_max_fit = model.getMaxFit()
         gcc_optimal_chromo = model.getOptimalGene()
 
         print("==> Chromos.... ICC")
         icc_chromosome = gaModel.makeChromosome(icc_train)
-        model.run(icc_chromosome)
+        model.run(icc_chromosome, 100)
         icc_max_fit = model.getMaxFit()
         icc_optimal_chromo = model.getOptimalGene()
 
         print("==> Chromos.... MSVS")
         msvs_chromosome = gaModel.makeChromosome(msvc_train)
-        model.run(msvs_chromosome)
+        model.run(msvs_chromosome, 100)
         msvs_max_fit = model.getMaxFit()
         msvs_optimal_chromo = model.getOptimalGene()
 
         print("==> Chromos.... Xcode")
         xcode_chromosome = gaModel.makeChromosome(xcode_train)
-        model.run(xcode_chromosome)
+        model.run(xcode_chromosome, 100)
         xcode_max_fit = model.getMaxFit()
         xcode_optimal_chromo = model.getOptimalGene()
 
@@ -181,14 +161,14 @@ def runGAModel():
                   y=[0, 1, 2, 3])
 
         print("==> Test : ")
-        print("==> Chromos.... GCC")
-        gcc_chromosome_test = gaModel.makeChromosome(gcc_test)
         gcc_label_test = []
         icc_label_test = []
         msvs_label_test = []
         xcode_label_test = []
         total_label_test = []
 
+        print("==> Chromos.... GCC")
+        gcc_chromosome_test = gaModel.makeChromosome(gcc_test)
         for chromo in gcc_chromosome_test:
             total_label_test.append(0)
             gcc_label_test.append(1)
@@ -198,7 +178,6 @@ def runGAModel():
 
         print("==> Chromos.... ICC")
         icc_chromosome_test = gaModel.makeChromosome(icc_test)
-
         for chromo in icc_chromosome_test:
             total_label_test.append(1)
             gcc_label_test.append(0)
@@ -208,7 +187,6 @@ def runGAModel():
 
         print("==> Chromos.... MSVS")
         msvs_chromosome_test = gaModel.makeChromosome(msvc_test)
-
         for chromo in msvs_chromosome_test:
             total_label_test.append(2)
             gcc_label_test.append(0)
@@ -218,7 +196,6 @@ def runGAModel():
 
         print("==> Chromos.... Xcode")
         xcode_chromosome_test = gaModel.makeChromosome(xcode_test)
-
         for chromo in xcode_chromosome_test:
             total_label_test.append(3)
             gcc_label_test.append(0)
@@ -234,7 +211,6 @@ def runGAModel():
         classify_icc_y = model.classify(x=icc_label_test, label="icc")
         classify_msvs_y = model.classify(x=msvs_label_test, label="msvs")
         classify_xcode_y = model.classify(x=xcode_label_test, label="xcode")
-
 
         print("====================================================")
         print("**> Evaluate (f-measure)")
@@ -253,16 +229,44 @@ def runGAModel():
         print("> Xcode : ")
         xcode_res = model.evaluate(xcode_label_test, classify_xcode_y)
         final_xcode.append(xcode_res)
-
-        # y = input("Next Fold : ")
-
+    print("\n====================================================")
     print("> Total : {0:.4f}".format(sum(final_total)/len(final_total)))
     print("> GCC : {0:.4f}".format(sum(final_gcc) / len(final_gcc)))
     print("> ICC : {0:.4f}".format(sum(final_icc) / len(final_icc)))
     print("> MSVS : {0:.4f}".format(sum(final_msvs) / len(final_msvs)))
     print("> Xcode : {0:.4f}".format(sum(final_xcode) / len(final_xcode)))
 
-runGAModel()
+# Compiler Label 정의
+type_array = ["gcc", "icc", "msvc", "xcode"]
+
+# MakeIdiomSet : Input > Idiom dictionary 데이터 전처리
+makeIdiom = MakeIdiomSet()
+
+gcc_idiom_dict = makeIdiom.directoryToIdiom(uri="./data/gcj_text/ass/gcc/", compiler=type_array[0])
+makeIdiom.checkDict(dict_list=gcc_idiom_dict)
+makeIdiom.saveIdiomDict(save_url="./data/idiom/", dict_list=gcc_idiom_dict, type=type_array[0])
+
+icc_idiom_dict = makeIdiom.directoryToIdiom(uri="./data/gcj_text/ass/icc/", compiler=type_array[1])
+makeIdiom.checkDict(dict_list=icc_idiom_dict)
+makeIdiom.saveIdiomDict(save_url="./data/idiom/", dict_list=icc_idiom_dict, type=type_array[1])
+
+msvc_idiom_dict = makeIdiom.directoryToIdiom(uri="./data/gcj_text/ass/msvc/", compiler=type_array[2])
+makeIdiom.checkDict(dict_list=msvc_idiom_dict)
+makeIdiom.saveIdiomDict(save_url="./data/idiom/", dict_list=msvc_idiom_dict, type=type_array[2])
+
+xcode_idiom_dict = makeIdiom.directoryToIdiom(uri="./data/gcj_text/ass/xcode/", compiler=type_array[3])
+makeIdiom.checkDict(dict_list=xcode_idiom_dict)
+makeIdiom.saveIdiomDict(save_url="./data/idiom/", dict_list=xcode_idiom_dict, type=type_array[3])
+
+# CRF 모델을 이용한 idiom 데이터 분석
+# for target in type_array:
+#     runCRFModel(target=target)
+
+# ex) ICC Compiler classifier
+# runCRFModel(target=type_array[1])
+
+# GCFL과 GA 모델을 이용한 idiom 데이터 분석
+runGAModel(gcf_define_size=256)
 
 
 
